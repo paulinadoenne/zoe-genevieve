@@ -22,9 +22,9 @@ const sans = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Zoe Genevieve · Friseurin in Köln",
+  title: "Zoe Genevieve · Master Hairstylist in Köln",
   description:
-    "Zoe Genevieve, selbstständige Friseurin in Köln: Schnitt, Farbe, Balayage und Styling. Termin direkt online, per Telefon oder WhatsApp buchen.",
+    "Zoe Genevieve, Master Hairstylist und Blonde Specialist in Köln: Schnitt, Farbe, Balayage und Styling. 1:1 Termine in der Sankt-Apern-Straße. Termin direkt online, per Telefon oder WhatsApp buchen.",
 };
 
 export default function RootLayout({

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import Logo from "./Logo";
 
 const links = [
   { href: "/#leistungen", label: "Leistungen" },
@@ -17,7 +18,7 @@ export default function Header() {
     <header className={`header${open ? " is-open" : ""}`}>
       <div className="header__inner">
         <Link href="/" className="wordmark" onClick={() => setOpen(false)}>
-          Zoe Genevieve
+          <Logo className="logo--inline" />
         </Link>
         <nav className="nav" aria-label="Hauptnavigation">
           {links.map((l) => (

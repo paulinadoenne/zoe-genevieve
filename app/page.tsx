@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Photo from "@/components/Photo";
+import Logo from "@/components/Logo";
 import {
   person,
   oeffnungszeiten,
@@ -8,11 +9,12 @@ import {
   galerie,
   ueberMich,
   kundenstimme,
+  steckbrief,
 } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${person.salon} ${adresse}`
+  [person.salon, adresse].filter(Boolean).join(" ")
 )}`;
 
 export default function Home() {
@@ -25,16 +27,14 @@ export default function Home() {
           <div className="hero__stage">
             <Photo alt="Portrait von Zoe" className="hero__photo" />
             <h1 className="hero__title">
-              Zoe
-              <br />
-              Genevieve
+              <Logo />
             </h1>
           </div>
           <div className="hero__meta container">
             <span>{person.beruf}</span>
             <span className="hero__rule" aria-hidden />
             <span>
-              {person.stadt} · {person.salon}
+              {person.stadt} · Sankt-Apern-Straße
             </span>
           </div>
         </section>
@@ -230,6 +230,14 @@ export default function Home() {
                 {ueberMich.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
+                <dl className="facts">
+                  {steckbrief.map((f) => (
+                    <div key={f.label}>
+                      <dt>{f.label}</dt>
+                      <dd>{f.wert}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             </div>
           </div>
@@ -246,8 +254,12 @@ export default function Home() {
               <div>
                 <h3>Adresse</h3>
                 <p>
-                  {person.salon}
-                  <br />
+                  {person.salon && (
+                    <>
+                      {person.salon}
+                      <br />
+                    </>
+                  )}
                   {person.strasse}
                   <br />
                   {person.plz} {person.stadt}

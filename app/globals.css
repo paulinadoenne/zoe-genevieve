@@ -214,11 +214,54 @@ p {
 }
 
 .wordmark {
-  font-family: var(--serif);
-  font-size: 20px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  --logo-w: 78px;
+}
+
+/* Logo: "zoe" in Handschrift, Genevieve rechts unter dem "oe" */
+.logo {
+  position: relative;
+  display: inline-block;
+  width: var(--logo-w, 300px);
+  line-height: 1;
+}
+
+.logo__script {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo__name {
+  position: absolute;
+  right: 0;
+  top: 44%;
+  font-family: var(--condensed);
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  font-size: calc(var(--logo-w, 300px) * 0.155);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.logo__name em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 1.12em;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 .nav {
@@ -338,15 +381,10 @@ p {
   inset: 50% 0 auto;
   transform: translateY(-50%);
   text-align: center;
-  font-family: var(--serif);
   font-weight: 400;
-  text-transform: uppercase;
-  font-size: clamp(76px, 15.5vw, 236px);
-  line-height: 0.84;
-  letter-spacing: -0.02em;
   color: var(--cream);
-  text-shadow: 0 2px 30px rgb(57 27 23 / 0.25);
   pointer-events: none;
+  --logo-w: clamp(280px, 50vw, 720px);
 }
 
 .hero__meta {
@@ -744,6 +782,35 @@ p {
   max-width: 50ch;
 }
 
+/* Steckbrief */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  max-width: 50ch;
+}
+
+.facts dt {
+  font-family: var(--condensed);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.facts dd {
+  margin: 0;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
 /* Kontakt */
 .contact {
   padding: clamp(72px, 10vw, 128px) 0 clamp(56px, 8vw, 96px);
@@ -807,15 +874,10 @@ p {
 }
 
 .footer__name {
-  font-family: var(--serif);
-  text-transform: uppercase;
   text-align: center;
-  white-space: nowrap;
-  font-size: clamp(56px, 13.5vw, 200px);
-  line-height: 1;
-  letter-spacing: -0.02em;
   color: var(--cayenne);
-  padding: 32px 0 20px;
+  padding: 48px 0 32px;
+  --logo-w: clamp(220px, 34vw, 480px);
 }
 
 .footer__inner {

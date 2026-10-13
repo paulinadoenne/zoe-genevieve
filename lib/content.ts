@@ -3,11 +3,12 @@
 
 export const person = {
   name: "Zoe Genevieve",
-  beruf: "Friseurin",
+  beruf: "Master Hairstylist",
   stadt: "Köln",
-  salon: "[Salonname]",
-  strasse: "[Straße Hausnummer]",
-  plz: "[PLZ]",
+  // Salonname, in dem Zoe ihren Stuhl mietet. Leer lassen, dann wird er nicht angezeigt.
+  salon: "",
+  strasse: "Sankt-Apern-Straße 56-62",
+  plz: "50667",
   telefon: "[0221 000000]",
   telefonLink: "tel:+49221000000",
   whatsappLink: "https://wa.me/49000000000",
@@ -86,8 +87,8 @@ export const galerie = [
 ];
 
 export const ueberMich = [
-  "Hi, ich bin Zoe. Ich bin Friseurin in Köln und arbeite selbstständig auf Stuhlmiete im [Salonname].",
-  "Für dich heißt das: Du buchst direkt bei mir und hast vom Beratungsgespräch bis zum Föhnen immer dieselbe Ansprechpartnerin. Ich nehme mir Zeit, höre zu und schneide so, dass die Frisur auch zu Hause funktioniert.",
+  "Hi, ich bin Zoe, Master Hairstylist und Blonde Specialist in Köln. Ich arbeite selbstständig auf Stuhlmiete in der Sankt-Apern-Straße.",
+  "Bei mir gibt es 1:1 Dienstleistung, du stehst im Mittelpunkt. Du buchst direkt bei mir und hast vom Beratungsgespräch bis zum Föhnen immer dieselbe Ansprechpartnerin. Ich nehme mir Zeit, höre zu und schneide so, dass die Frisur auch zu Hause funktioniert.",
   "[Hier ein paar Sätze zu Ausbildung, Erfahrung und Schwerpunkten, z. B. Balayage, Locken oder Brautstyling.]",
 ];
 
@@ -96,3 +97,10 @@ export const kundenstimme = {
   zitat: "[Hier kommt eine echte Kundenstimme hin, zum Beispiel aus einer Google Bewertung oder einer Nachricht auf Instagram.]",
   name: "[Vorname]",
 };
+
+// Kleiner Steckbrief aus Zoes Instagram.
+export const steckbrief = [
+  { label: "Spezialgebiet", wert: "Blonde Specialist" },
+  { label: "Sternzeichen", wert: "Skorpion" },
+  { label: "Lieblingsdrink", wert: "Haselnuss Latte" },
+];

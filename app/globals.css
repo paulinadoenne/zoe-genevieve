@@ -2291,3 +2291,226 @@ body,
     background: linear-gradient(180deg, transparent 45%, rgb(255 255 255 / 0.85) 62%, #fff 74%);
   }
 }
+
+/* ============================================================
+   Smartphone: minimalistisch und luftig wie ein Editorial
+   Jeder Screen: Foto mit weißem Rand oben, darunter Kicker,
+   Titel, Unterzeile und nur wenig Text
+   ============================================================ */
+@media (max-width: 760px) {
+  :root {
+    --gutter: 24px;
+  }
+
+  .title-xl,
+  .about__text .title-xl,
+  #kontakt .title-xl,
+  .booking .title-xl {
+    font-size: 12.5vw;
+    line-height: 0.9;
+    letter-spacing: -0.045em;
+    text-shadow: none;
+  }
+  .subline {
+    font-size: 19px;
+    margin-top: 8px;
+  }
+  .kicker {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+
+  /* 1 Start: Foto mit Rand, Logo darauf, Text darunter */
+  .hero {
+    padding: 72px var(--gutter) 0;
+    justify-content: flex-start;
+    gap: 0;
+  }
+  .hero__media {
+    position: relative;
+    inset: auto;
+    height: 58dvh;
+    flex: none;
+    overflow: hidden;
+  }
+  .hero__media::after {
+    display: none;
+  }
+  .hero__title {
+    top: 6%;
+    left: 6%;
+    --logo-w: 62cqw;
+  }
+  .hero__title .logo {
+    color: #fff;
+  }
+  .hero__m-intro {
+    margin-top: 28px;
+    font-size: 19px;
+    line-height: 1.2;
+    max-width: 24ch;
+  }
+  .hero__m-links {
+    margin: auto 0 0;
+    padding: 16px 0 10px;
+    font-size: 12px;
+  }
+  .hero .hero__m-info {
+    padding-bottom: 14px;
+    font-size: 10px;
+  }
+
+  /* Hintergrundfotos werden gerahmte Bilder oben im Screen */
+  .screen-bg,
+  #kontakt > .screen-bg {
+    position: relative;
+    inset: auto;
+    display: block;
+    height: 46dvh;
+    flex: none;
+    order: -1;
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+  .screen-bg::after {
+    display: none;
+  }
+
+  /* 2 Termin */
+  .booking {
+    justify-content: flex-start;
+    padding: 72px var(--gutter) 0;
+  }
+  .booking__top {
+    padding: 0;
+    text-align: left;
+  }
+  .booking__bottom {
+    padding: 0;
+    margin-top: auto;
+    padding-bottom: 92px;
+  }
+  .booking .subline,
+  .booking .kicker {
+    text-shadow: none;
+  }
+
+  /* 3 Arbeiten */
+  #galerie {
+    padding-top: 96px;
+  }
+  .slideshow {
+    height: min(52dvh, 440px);
+    margin-bottom: 104px;
+  }
+  .slideshow__item.is-active {
+    height: min(52dvh, 440px);
+  }
+
+  /* 4 Über mich: nur das Wesentliche */
+  #ueber-mich,
+  #kontakt {
+    padding: 72px var(--gutter) 0;
+    justify-content: flex-start;
+  }
+  #ueber-mich .about__grid {
+    flex: none;
+  }
+  .about__panel.panel--orange,
+  .contact.panel--orange {
+    margin: 20px 0 0;
+    padding: 0;
+    border-top: 0;
+  }
+  .about__panel .small-text {
+    font-size: 13px;
+    line-height: 1.55;
+    max-width: 34ch;
+  }
+  .about__panel .small-text:not(:first-child) {
+    display: none;
+  }
+  .about__panel .facts {
+    margin-top: 20px;
+    padding-top: 14px;
+    gap: 10px;
+  }
+  .about__panel .facts dd {
+    font-size: 16px;
+  }
+
+  /* 5 Kontakt: kompakt */
+  .contact.panel--orange {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 16px;
+    font-size: 13px;
+  }
+  .contact.panel--orange p {
+    margin-bottom: 6px;
+  }
+  .contact > div:nth-child(2) {
+    grid-column: 1 / -1;
+  }
+  .contact .hours div {
+    padding: 2px 0;
+    font-size: 12px;
+  }
+  .contact h3 {
+    margin-bottom: 6px;
+    font-size: 10px;
+  }
+
+  /* Menüleiste unten schlanker */
+  .sticky-cta {
+    padding: 8px var(--gutter) calc(8px + env(safe-area-inset-bottom));
+    font-size: 11px;
+    border-top: 0;
+  }
+  .sticky-cta .sticky-cta__book {
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero__media {
+    order: -1;
+  }
+  .hero__title .logo,
+  .hero__title .logo__script,
+  .hero__title .logo__name {
+    color: #fff;
+  }
+  .hero__m-intro {
+    margin-bottom: 0;
+  }
+  .booking .screen-bg {
+    position: relative;
+    inset: auto;
+    height: 50dvh;
+    margin-bottom: 32px;
+  }
+  #ueber-mich > .screen-bg,
+  #kontakt > .screen-bg {
+    height: 34dvh;
+    margin-bottom: 24px;
+  }
+  .contact > div:nth-child(3) p br:first-of-type + a {
+    display: inline;
+  }
+}
+
+@media (max-width: 760px) {
+  #galerie .works__head {
+    width: 100%;
+    margin: 0 0 32px;
+    padding: 0 var(--gutter);
+    text-align: left;
+  }
+  #ueber-mich .about__grid,
+  #ueber-mich .about__text {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: stretch;
+  }
+}

@@ -38,7 +38,9 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__media">
-            <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" className="hero__photo" />
+            <div className="hero__img">
+              <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" className="hero__photo" />
+            </div>
             <h1 className="hero__title">
               <Logo />
             </h1>

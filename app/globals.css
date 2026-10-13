@@ -2216,3 +2216,33 @@ body {
     color: var(--navy);
   }
 }
+
+/* Über mich: drei quadratische Kacheln, ein Farbfeld, eine 1:1 Kachel */
+.scatter {
+  grid-auto-rows: auto;
+}
+.scatter > *,
+.scatter::before {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+.scatter .photo,
+.scatter img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.scatter__a { grid-column: 1; grid-row: 1; }
+.scatter::before { grid-column: 2; grid-row: 1; }
+.scatter__b { grid-column: 4; grid-row: 1; }
+.scatter__d { grid-column: 2; grid-row: 2; }
+.scatter__c { grid-column: 3; grid-row: 2; }
+
+@media (max-width: 760px) {
+  .scatter { grid-auto-rows: auto; }
+  .scatter__a { grid-column: 1; grid-row: 1; }
+  .scatter::before { grid-column: 2; grid-row: 1; }
+  .scatter__b { grid-column: 3; grid-row: 1; }
+  .scatter__d { grid-column: 2; grid-row: 2; }
+  .scatter__c { grid-column: 3; grid-row: 2; }
+}

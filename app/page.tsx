@@ -50,14 +50,12 @@ export default function Home() {
             {ueberMich[2]} {ueberMich[1]}
           </p>
           <div className="scatter">
-            <Photo src={galerie[1].src} alt={galerie[1].alt} className="scatter__a" />
-            <Photo src="/zoe-karl.jpg" alt="Zoe mit Karl, dem Salon Dog" className="scatter__b" />
+            <Photo src="/kacheln/balayage-braun.jpg" alt="Lange braune Haare mit weichem Balayage in Wellen" className="scatter__a" />
+            <Photo src="/kacheln/karamell-wellen.jpg" alt="Karamellblonde Haare mit großen Locken" className="scatter__b" />
             <div className="scatter__c scatter__accent" aria-hidden>
               <span>1:1</span>
             </div>
-            <Photo src={galerie[4].src} alt={galerie[4].alt} className="scatter__d" />
-            <Photo src="/zoe-portrait.jpg" alt="Zoe im Strickpulli" className="scatter__e" />
-            <Photo src={galerie[3].src} alt={galerie[3].alt} className="scatter__f" />
+            <Photo src="/kacheln/blond-balayage.jpg" alt="Lange Haare mit hellblondem Balayage" className="scatter__d" />
           </div>
         </section>
 

@@ -4054,3 +4054,78 @@ body,
     width: 76vw;
   }
 }
+
+/* ============================================================
+   Einheitlicher Editorial Filter für alle Fotos
+   Leicht gedämpft und warm, angehobene Schwarztöne wie Film,
+   weicher Kontrast, feines Korn
+   ============================================================ */
+:root {
+  --editorial-filter: contrast(0.96) saturate(0.86) sepia(0.1) brightness(1.02);
+}
+
+main img,
+.photo,
+img.photo,
+.hero__photo,
+img.hero__photo,
+.screen-bg img,
+.screen-bg--mono img,
+.show__slide .photo,
+.swipe__item .photo,
+.ed__img .photo,
+.carousel__item img.photo,
+.carousel__item:hover img.photo {
+  filter: var(--editorial-filter);
+}
+
+/* Warmer, matter Filmschleier und Korn über jedem Foto */
+.show__frame,
+.swipe__item {
+  position: relative;
+}
+
+.hero__img::after,
+.screen-bg::before,
+.show__frame::after,
+.swipe__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image:
+    var(--grain),
+    linear-gradient(180deg, rgb(255 236 214 / 0.07), rgb(40 22 12 / 0.06));
+  background-size: 220px 220px, 100% 100%;
+  mix-blend-mode: soft-light;
+  opacity: 0.55;
+}
+
+.swipe__item::after {
+  bottom: auto;
+  aspect-ratio: 1;
+}
+
+.show__frame::after {
+  z-index: 1;
+}
+
+.show__nav {
+  z-index: 3;
+}
+
+/* Logo und Menü einzeln einfärben, je nach Fläche darunter (Desktop) */
+@media (min-width: 761px) {
+  .header[data-theme-left="light"] .wordmark,
+  .header[data-theme-left="light"] .logo__script,
+  .header[data-theme-left="light"] .logo__name {
+    color: var(--ink);
+  }
+  .header[data-theme-right="light"] .nav a {
+    color: var(--ink);
+  }
+  .header[data-theme-right="light"] .nav__cta {
+    border-color: var(--ink);
+  }
+}

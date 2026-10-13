@@ -33,7 +33,7 @@ export default function Home() {
             </p>
           </div>
           <p className="hero__m-intro">1:1 Termine, du stehst im Mittelpunkt.</p>
-          <div className="hero__panel">
+          <div className="hero__panel" data-header="light">
             <p className="kicker kicker--light">01 · Hair · Köln</p>
             <div className="hero__bottom">
               <p className="hero__lead">

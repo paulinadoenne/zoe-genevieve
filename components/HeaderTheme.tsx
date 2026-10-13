@@ -9,10 +9,10 @@ export default function HeaderTheme() {
     const header = document.querySelector<HTMLElement>(".header");
     const bar = document.querySelector<HTMLElement>(".sticky-cta");
 
-    const themeAt = (y: number) => {
+    const themeAt = (y: number, x = window.innerWidth / 2) => {
       // Kopfzeile und Menüzeile liegen über dem Inhalt, also darunter suchen
       const el = document
-        .elementsFromPoint(window.innerWidth / 2, y)
+        .elementsFromPoint(x, y)
         .find((e) => !e.closest(".header, .sticky-cta"));
       const mobil = window.innerWidth <= 760;
       const sec = el?.closest<HTMLElement>(mobil ? "[data-header-m], [data-header]" : "[data-header]");
@@ -23,7 +23,13 @@ export default function HeaderTheme() {
     const update = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        if (header) header.dataset.theme = themeAt(header.offsetHeight / 2);
+        if (header) {
+          // Logo links und Menü rechts können über verschiedenen Flächen liegen
+          const y = header.offsetHeight / 2;
+          header.dataset.theme = themeAt(y);
+          header.dataset.themeLeft = themeAt(y, 40);
+          header.dataset.themeRight = themeAt(y, window.innerWidth - 40);
+        }
         if (bar) bar.dataset.theme = themeAt(window.innerHeight - bar.offsetHeight / 2);
       });
     };

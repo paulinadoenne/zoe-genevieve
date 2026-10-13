@@ -64,7 +64,7 @@ export default function Home() {
         </div>
 
         {/* Termin: Schwarzweißfoto, große orange Schrift, oranger Block */}
-        <section id="termin" className="booking" data-header="dark">
+        <section id="termin" className="booking" data-header="light">
           <ScreenBg {...hintergruende.termin} mono />
           <div className="container booking__top">
             <p className="kicker">02 · Termin</p>
@@ -85,7 +85,7 @@ export default function Home() {
         </section>
 
         {/* Arbeiten */}
-        <section id="galerie" className="section" data-header-m="dark">
+        <section id="galerie" className="section">
           <div className="container works__head">
             <p className="kicker">03 · Arbeiten</p>
             <h2 className="title-xl">Arbeiten</h2>
@@ -97,7 +97,7 @@ export default function Home() {
         </section>
 
         {/* Über mich */}
-        <section id="ueber-mich" className="section container about" data-header-m="dark">
+        <section id="ueber-mich" className="section container about">
           <ScreenBg {...hintergruende.ueberMich} mono />
           <div className="about__grid">
             <div className="about__media">
@@ -134,7 +134,7 @@ export default function Home() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="section container" data-header-m="dark">
+        <section id="kontakt" className="section container">
           <ScreenBg {...hintergruende.kontakt} mono />
           <p className="kicker">05 · Kontakt</p>
           <h2 className="title-xl">Kontakt</h2>

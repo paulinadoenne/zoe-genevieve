@@ -276,7 +276,7 @@ img.photo {
   position: relative;
   display: grid;
   grid-template-columns: 0.42fr 0.58fr;
-  height: calc(100svh - 60px);
+  height: calc(100dvh - 60px);
   min-height: 560px;
   max-height: 900px;
 }
@@ -1073,12 +1073,12 @@ main > .section:last-child {
   #kontakt,
   .footer {
     scroll-snap-align: start;
-    min-height: calc(100svh - 60px);
+    min-height: calc(100dvh - 60px);
   }
 
   /* 1 Start: Intro, Foto füllt den Rest, Menüzeile, Infozeile */
   .hero {
-    height: calc(100svh - 60px);
+    height: calc(100dvh - 60px);
     grid-template-rows: auto minmax(0, 1fr) auto auto;
     padding-top: 20px;
   }
@@ -1125,7 +1125,7 @@ main > .section:last-child {
     padding: 32px 0 88px;
   }
   .slideshow {
-    height: min(62svh, 520px);
+    height: min(62dvh, 520px);
     margin-bottom: 0;
     --s: 64px;
     --l: min(68vw, 300px);
@@ -1134,7 +1134,7 @@ main > .section:last-child {
     height: 96px;
   }
   .slideshow__item.is-active {
-    height: min(62svh, 520px);
+    height: min(62dvh, 520px);
   }
 
   /* 4 Über mich: erst Foto Screen, dann Text Screen */
@@ -1148,7 +1148,7 @@ main > .section:last-child {
     gap: 0;
   }
   .about__media {
-    height: calc(100svh - 60px);
+    height: calc(100dvh - 60px);
     padding: 20px 0 88px;
     grid-template-rows: minmax(0, 1fr);
   }
@@ -1359,7 +1359,7 @@ main > .section:last-child {
   #ueber-mich {
     position: relative;
     overflow: hidden;
-    min-height: calc(100svh - 60px);
+    min-height: calc(100dvh - 60px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1474,7 +1474,7 @@ html {
 }
 
 .hero {
-  height: 100svh;
+  height: 100dvh;
   max-height: none;
 }
 
@@ -1486,7 +1486,7 @@ html {
 .booking {
   display: flex;
   align-items: flex-end;
-  min-height: 100svh;
+  min-height: 100dvh;
   margin-top: clamp(64px, 8vw, 120px);
   padding: 0 0 clamp(64px, 8vw, 112px);
 }
@@ -1514,12 +1514,12 @@ html {
   #ueber-mich,
   #kontakt,
   .footer {
-    min-height: 100svh;
+    min-height: 100dvh;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
   .hero {
-    height: 100svh;
+    height: 100dvh;
   }
   .hero__title {
     top: 76px;

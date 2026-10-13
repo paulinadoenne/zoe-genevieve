@@ -283,10 +283,15 @@ p {
 }
 
 .hero__stage {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(32px, 5vw, 72px);
-  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+/* Logo liegt oben auf dem Foto, über der Tür, das Gesicht bleibt frei */
+.hero__frame {
+  position: relative;
+  width: min(52vw, 560px);
+  container-type: inline-size;
 }
 
 .hero__photo {
@@ -295,8 +300,13 @@ p {
 }
 
 .hero__title {
+  position: absolute;
+  top: 4%;
+  left: -18%;
   font-weight: 400;
-  --logo-w: clamp(260px, 44vw, 600px);
+  color: var(--cream);
+  pointer-events: none;
+  --logo-w: 88cqw;
 }
 
 .hero__meta {
@@ -657,12 +667,12 @@ p {
     pointer-events: auto;
     transform: none;
   }
-  .hero__stage {
-    grid-template-columns: 1fr;
-    gap: 32px;
+  .hero__frame {
+    width: 100%;
   }
   .hero__title {
-    --logo-w: 78vw;
+    left: 3%;
+    --logo-w: 78cqw;
   }
   .hero__meta {
     gap: 12px;

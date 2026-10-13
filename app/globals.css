@@ -365,16 +365,106 @@ p {
   color: var(--cayenne);
 }
 
-/* Galerie */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+/* Galerie: Rondell (Desktop) */
+.carousel {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
   margin-bottom: 32px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
-.gallery__item {
+.carousel__track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: max-content;
+  animation: rondell 40s linear infinite;
+}
+
+.carousel:hover .carousel__track {
+  animation-play-state: paused;
+}
+
+.carousel__item {
+  margin: 0;
+  width: 120px;
+  height: 160px;
+  flex: none;
+  transition: width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  cursor: pointer;
+}
+
+.carousel__item:hover {
+  width: 280px;
+  height: 373px;
+}
+
+.carousel__item .photo {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__item .photo--empty span {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.carousel__item:hover .photo--empty span {
+  opacity: 1;
+}
+
+@keyframes rondell {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Galerie: Diashow (Mobil) */
+.slideshow {
+  display: none;
+  margin-bottom: 28px;
+}
+
+.slideshow__track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.slideshow__track::-webkit-scrollbar {
+  display: none;
+}
+
+.slideshow__slide {
+  flex: none;
+  width: 100%;
   aspect-ratio: 4 / 5;
+  scroll-snap-align: center;
+}
+
+.slideshow__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.slideshow__dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+}
+
+.slideshow__dots button.is-active {
+  background: var(--cream);
 }
 
 /* Über mich */
@@ -584,9 +674,11 @@ p {
     grid-template-columns: 1fr;
     gap: 36px;
   }
-  .gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+  .carousel {
+    display: none;
+  }
+  .slideshow {
+    display: block;
   }
   .actions {
     flex-direction: column;
@@ -596,5 +688,11 @@ p {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .carousel__track {
+    animation: none;
+  }
+  .carousel {
+    overflow-x: auto;
   }
 }

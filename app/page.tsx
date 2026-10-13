@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Photo from "@/components/Photo";
 import Logo from "@/components/Logo";
+import Gallery from "@/components/Gallery";
 import {
   person,
   oeffnungszeiten,
@@ -71,11 +72,9 @@ export default function Home() {
           <div className="container">
             <p className="eyebrow">Galerie</p>
             <h2 className="title">Meine Arbeiten</h2>
-            <div className="gallery">
-              {galerie.map((g, i) => (
-                <Photo key={i} src={g.src} alt={g.alt} className="gallery__item" />
-              ))}
-            </div>
+          </div>
+          <Gallery bilder={galerie} />
+          <div className="container">
             <a href={person.instagramLink} target="_blank" rel="noopener" className="link">
               Mehr auf Instagram {person.instagram}
             </a>

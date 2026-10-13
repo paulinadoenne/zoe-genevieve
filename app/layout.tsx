@@ -1,12 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Instrument_Serif, Oswald, Inter } from "next/font/google";
 import "./globals.css";
 
-const serif = Cormorant_Garamond({
+const serif = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: "400",
   style: ["normal", "italic"],
   variable: "--font-serif",
+});
+
+const condensed = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-condensed",
 });
 
 const sans = Inter({
@@ -27,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="de" className={`${serif.variable} ${condensed.variable} ${sans.variable}`}>
       <body>{children}</body>
     </html>
   );

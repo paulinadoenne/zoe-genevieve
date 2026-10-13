@@ -26,12 +26,21 @@ export const oeffnungszeiten = [
 ];
 
 export type Leistung = { name: string; info?: string; preis: string };
-export type Kategorie = { titel: string; leistungen: Leistung[] };
+export type Kategorie = {
+  titel: string;
+  akzent: string;
+  ab: string;
+  text: string;
+  leistungen: Leistung[];
+};
 
 // Beispielpreise, bitte durch die echten ersetzen.
 export const leistungen: Kategorie[] = [
   {
     titel: "Schnitt",
+    akzent: "& Form",
+    ab: "ab 15 €",
+    text: "Vom Spitzenschnitt bis zur kompletten Veränderung. Wir sprechen vorher in Ruhe darüber, wie du dein Haar im Alltag trägst.",
     leistungen: [
       { name: "Waschen, Schneiden, Föhnen", info: "kurzes Haar", preis: "ab 55 €" },
       { name: "Waschen, Schneiden, Föhnen", info: "langes Haar", preis: "ab 70 €" },
@@ -42,6 +51,9 @@ export const leistungen: Kategorie[] = [
   },
   {
     titel: "Farbe",
+    akzent: "& Glanz",
+    ab: "ab 35 €",
+    text: "Natürliche Übergänge, sanfte Balayage oder ein klarer Neuanfang. Ich arbeite mit schonenden Produkten und plane genug Zeit ein.",
     leistungen: [
       { name: "Ansatzfarbe", preis: "ab 60 €" },
       { name: "Komplettfarbe", preis: "ab 80 €" },
@@ -51,7 +63,10 @@ export const leistungen: Kategorie[] = [
     ],
   },
   {
-    titel: "Styling und Pflege",
+    titel: "Styling",
+    akzent: "& Pflege",
+    ab: "ab 20 €",
+    text: "Für besondere Tage oder einfach zwischendurch. Hochsteckfrisuren, Brautstyling und Pflege, die man sieht und fühlt.",
     leistungen: [
       { name: "Waschen und Föhnen", preis: "ab 35 €" },
       { name: "Hochsteckfrisur", preis: "ab 65 €" },
@@ -75,3 +90,9 @@ export const ueberMich = [
   "Für dich heißt das: Du buchst direkt bei mir und hast vom Beratungsgespräch bis zum Föhnen immer dieselbe Ansprechpartnerin. Ich nehme mir Zeit, höre zu und schneide so, dass die Frisur auch zu Hause funktioniert.",
   "[Hier ein paar Sätze zu Ausbildung, Erfahrung und Schwerpunkten, z. B. Balayage, Locken oder Brautstyling.]",
 ];
+
+// Platzhalter, bitte durch eine echte Kundenstimme ersetzen.
+export const kundenstimme = {
+  zitat: "[Hier kommt eine echte Kundenstimme hin, zum Beispiel aus einer Google Bewertung oder einer Nachricht auf Instagram.]",
+  name: "[Vorname]",
+};

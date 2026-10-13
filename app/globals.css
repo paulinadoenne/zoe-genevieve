@@ -2697,3 +2697,179 @@ body,
     overflow-x: auto;
   }
 }
+
+/* ============================================================
+   Farben geschmackvoll: warmes Weiß, warmes Fast-Schwarz,
+   Taupe für Labels, gebranntes Orange nur als Akzent
+   ============================================================ */
+:root {
+  --orange: #c4521c;
+  --bg: #fffdfa;
+  --ink: #241c18;
+  --taupe: #9a8b80;
+  --muted: #7d6f66;
+  --line: #ebe4dc;
+  --black: #241c18;
+}
+
+body,
+.light,
+.header,
+.header[data-theme="dark"],
+.nav a,
+.footer,
+.footer a,
+.footer__links a,
+.footer__inner,
+.infoline,
+.small-text,
+.hours dt,
+.hours dd,
+.contact,
+.contact p,
+.contact a,
+.facts dd,
+.text-link,
+.hero__m-intro,
+.hero__m-links a,
+.hero .hero__m-info,
+.panel--orange,
+.panel--orange .hours dt,
+.panel--orange .hours dd,
+.hero__panel .hero__lead,
+.reel__item figcaption em,
+.folio__meta em,
+.sticky-cta a {
+  color: var(--ink);
+}
+
+body,
+.footer,
+.booking,
+#galerie,
+.hero__panel,
+.panel--orange {
+  background: var(--bg);
+}
+
+/* Kleine Labels, Nummern, Zähler in Taupe */
+.kicker,
+.kicker--light,
+.hero__panel .kicker--light,
+.contact h3,
+.panel--orange h3,
+.panel--orange dt,
+.facts dt,
+.reel__item figcaption span,
+.folio__meta span,
+.hours dd,
+.panel--orange .hours dd,
+.footer__inner,
+.infoline,
+.hero .hero__m-info {
+  color: var(--taupe);
+}
+
+/* Unterzeilen: Serif kursiv in Ink */
+.subline,
+.booking .subline {
+  color: var(--ink);
+}
+
+/* Orange nur für Titel, Logo und Buchung */
+.title-xl,
+.hero__title,
+.footer__name {
+  color: var(--orange);
+}
+
+.wordmark,
+.logo__script {
+  color: var(--ink);
+}
+
+.footer__name .logo__script,
+.hero__title .logo__script {
+  color: inherit;
+}
+
+.btn,
+.btn--light,
+.hero .btn--light,
+.btn--accent,
+.booking .btn--accent {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn:hover,
+.btn--light:hover,
+.hero .btn--light:hover,
+.btn--accent:hover {
+  background: var(--ink);
+  color: #fff;
+  box-shadow: none;
+}
+
+.nav__cta {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.nav__cta:hover,
+.header[data-theme="dark"] .nav__cta:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.facts,
+.hero__m-links,
+.folio__progress {
+  border-color: var(--line);
+}
+
+.folio__progress {
+  background: var(--line);
+}
+
+.folio__progress span {
+  background: var(--ink);
+}
+
+.text-link:hover,
+.contact a:hover,
+.footer a:hover,
+.nav a:not(.nav__cta):hover {
+  color: var(--orange);
+}
+
+@media (max-width: 760px) {
+  .sticky-cta,
+  .sticky-cta[data-theme="dark"] {
+    background: var(--bg);
+  }
+  .sticky-cta a {
+    color: var(--ink);
+  }
+  .sticky-cta .sticky-cta__book {
+    background: var(--orange);
+    color: #fff;
+  }
+  .hero__title .logo,
+  .hero__title .logo__script,
+  .hero__title .logo__name {
+    color: #fff;
+  }
+}
+
+.panel--orange,
+.panel--orange.contact,
+.about__panel.panel--orange,
+.facts.card.panel--orange {
+  background: transparent;
+}
+
+.contact.panel h3,
+.contact.panel--orange h3 {
+  color: var(--taupe);
+}

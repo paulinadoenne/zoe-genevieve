@@ -1159,3 +1159,41 @@ main {
     margin-bottom: 8px;
   }
 }
+
+/* Weniger Orange: nur Logo, Punkte hinter Überschriften, Termin-Button oben, 1:1 Feld */
+.hero__list li::before,
+.about__list li::before {
+  content: none;
+}
+
+.field__label,
+.rondell__item .caption strong,
+.caption strong {
+  color: var(--ink);
+}
+
+.foot__big a {
+  color: var(--ink);
+}
+
+.foot__big a:hover {
+  color: var(--orange);
+}
+
+.contact__fields .pill {
+  background: var(--ink);
+}
+
+.contact__fields .pill:hover {
+  background: var(--orange);
+}
+
+.pill--outline:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+::selection {
+  background: var(--ink);
+  color: #fff;
+}

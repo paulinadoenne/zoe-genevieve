@@ -1197,3 +1197,96 @@ main {
   background: var(--ink);
   color: #fff;
 }
+
+/* ============================================================
+   Rondell: nur seitlich verschiebbar, luftig
+   ============================================================ */
+.works {
+  padding-top: clamp(140px, 16vw, 260px);
+}
+
+.works__head .h-center {
+  margin-bottom: clamp(48px, 6vw, 96px) !important;
+}
+
+.rondell {
+  display: block;
+  height: auto !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x pan-y;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: var(--gutter);
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.rondell::-webkit-scrollbar {
+  display: none;
+}
+
+.rondell.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.rondell.is-dragging img {
+  pointer-events: none;
+}
+
+.rondell__track {
+  animation: none !important;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 0 var(--gutter);
+}
+
+.rondell__item,
+.rondell__item:hover {
+  width: clamp(300px, 27vw, 420px);
+  scroll-snap-align: start;
+}
+
+.rondell__item:last-child {
+  margin-right: var(--gutter);
+}
+
+.rondell__img,
+.rondell__item:hover .rondell__img {
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+
+.rondell__img .photo {
+  transition: transform 0.8s var(--ease);
+  -webkit-user-drag: none;
+}
+
+.rondell__item:hover .rondell__img .photo {
+  transform: scale(1.03);
+}
+
+.rondell__item .caption {
+  white-space: normal;
+  height: auto;
+}
+
+.works__more {
+  margin-top: 48px;
+}
+
+@media (max-width: 760px) {
+  .works {
+    padding-top: 140px;
+  }
+  .rondell__item,
+  .rondell__item:hover {
+    width: 82vw;
+  }
+  .rondell__img,
+  .rondell__item:hover .rondell__img {
+    height: auto;
+  }
+}

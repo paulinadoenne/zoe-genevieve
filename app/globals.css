@@ -1779,3 +1779,9 @@ body {
     margin-top: 0;
   }
 }
+
+/* Kein Rahmen um die Bilder */
+.rondell__img,
+.rondell__item:hover .rondell__img {
+  outline: none !important;
+}

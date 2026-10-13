@@ -69,12 +69,11 @@ export default function Home() {
         </div>
 
         {/* Termin: Schwarzweißfoto, große orange Schrift, oranger Block */}
-        <section id="termin" className="booking" data-header="dark">
-          <ScreenBg {...hintergruende.termin} mono />
+        <section id="termin" className="booking booking--color" data-header="accent">
           <div className="container booking__top">
             <p className="kicker">02 · Termin</p>
             <h2 className="title-xl">
-              Termin buchen
+              Buche deinen <em>Termin</em>
             </h2>
             <p className="subline">
               <em>bei Zoe Genevieve</em>

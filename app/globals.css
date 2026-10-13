@@ -3551,3 +3551,67 @@ body,
     text-shadow: 0 1px 18px rgb(0 0 0 / 0.35);
   }
 }
+
+/* ============================================================
+   Terminseite als volle Farbseite
+   ============================================================ */
+.booking--color {
+  background: var(--orange);
+  color: #fff;
+}
+
+.booking--color .title-xl,
+.booking--color .kicker,
+.booking--color .subline {
+  color: #fff;
+  text-shadow: none;
+}
+
+.booking--color .btn--accent {
+  background: #fff;
+  color: var(--orange);
+}
+
+.booking--color .btn--accent:hover {
+  background: var(--ink);
+  color: #fff;
+}
+
+.header[data-theme="accent"],
+.header[data-theme="accent"] .wordmark,
+.header[data-theme="accent"] .logo__script,
+.header[data-theme="accent"] .logo__name,
+.header[data-theme="accent"] .nav a {
+  color: #fff;
+}
+
+.header[data-theme="accent"] .nav__cta {
+  border-color: #fff;
+}
+
+.header[data-theme="accent"] .nav__cta:hover {
+  background: #fff;
+  color: var(--orange);
+}
+
+@media (min-width: 761px) {
+  .booking--color .booking__top {
+    padding-top: clamp(140px, 18vh, 220px);
+  }
+}
+
+@media (max-width: 760px) {
+  .booking--color {
+    justify-content: space-between;
+  }
+  .sticky-cta[data-theme="accent"] {
+    background: #fff;
+  }
+  .sticky-cta[data-theme="accent"] a {
+    color: var(--orange);
+  }
+  .sticky-cta[data-theme="accent"] .sticky-cta__book {
+    background: var(--orange);
+    color: #fff;
+  }
+}

@@ -82,27 +82,36 @@ export default function Home() {
         {/* Arbeiten */}
         <section id="galerie" className="section">
           <div className="container works__head">
-            <p className="label">(03) Arbeiten</p>
-            <h2 className="display">Arbeiten</h2>
-            <dl className="works__meta">
-              <div>
-                <dt>Fokus</dt>
-                <dd>Blond · Balayage · Schnitt · Styling</dd>
+            <h2 className="works__title">Arbeiten</h2>
+            <div className="works__meta">
+              <div className="works__col">
+                <span className="works__key">Leistungen</span>
+                <ul>
+                  <li>Blond</li>
+                  <li>Balayage</li>
+                  <li>Schnitt</li>
+                  <li>Styling</li>
+                  <li>Pflege</li>
+                </ul>
               </div>
-              <div>
-                <dt>Mehr</dt>
-                <dd>
-                  <a href={person.instagramLink} target="_blank" rel="noopener">
-                    {person.instagram}
-                  </a>
-                </dd>
+              <div className="works__col">
+                <span className="works__key">Mehr</span>
+                <ul>
+                  <li>
+                    <a href={person.instagramLink} target="_blank" rel="noopener">
+                      Instagram
+                    </a>
+                  </li>
+                  <li>
+                    <a href={terminLink} target="_blank" rel="noopener">
+                      Termin buchen
+                    </a>
+                  </li>
+                </ul>
               </div>
-            </dl>
+            </div>
           </div>
           <Gallery bilder={galerie} />
-          <p className="container works__hint">
-            ({String(galerie.length).padStart(2, "0")}) Ausgewählte Arbeiten · Fahr mit der Maus über ein Bild
-          </p>
         </section>
 
         {/* Über mich */}

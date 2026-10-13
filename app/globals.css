@@ -437,60 +437,63 @@ main > .section:last-child {
   margin-bottom: 4px;
 }
 
-/* Arbeiten */
+/* Arbeiten: Aufbau wie ein Studio-Werkverzeichnis */
 .works__head {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: end;
-  gap: 24px;
-  margin-bottom: 48px;
+  margin-bottom: clamp(56px, 7vw, 96px);
 }
 
-.works__head .label {
-  grid-column: 1 / -1;
-  margin-bottom: 0;
+.works__title {
+  font-weight: 500;
+  font-size: clamp(56px, 7vw, 104px);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  margin-bottom: clamp(48px, 6vw, 88px);
 }
 
 .works__meta {
   display: grid;
-  grid-template-columns: auto auto;
-  gap: 8px 32px;
-  font-size: 12px;
+  grid-template-columns: 1fr 1fr;
+  font-size: 11px;
+  line-height: 1.45;
 }
 
-.works__meta div {
-  display: contents;
+.works__col {
+  display: grid;
+  grid-template-columns: 90px 1fr;
 }
 
-.works__meta dt {
+.works__col:last-child {
+  padding-left: 30%;
+}
+
+.works__key {
+  color: var(--ink);
+}
+
+.works__col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   color: var(--muted);
 }
 
-.works__meta a {
+.works__col a {
   text-decoration: none;
 }
 
-.works__meta a:hover {
-  text-decoration: underline;
+.works__col a:hover {
+  color: var(--ink);
 }
 
-/* Galerie: Rondell (Desktop) */
+/* Galerie: Rondell (Desktop), große Kacheln ohne Abstand, Hover macht breiter */
 .carousel {
-  height: 390px;
-  display: flex;
-  align-items: center;
   overflow: hidden;
-  margin-bottom: 8px;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
 
 .carousel__track {
   display: flex;
-  align-items: center;
-  gap: 14px;
   width: max-content;
-  animation: rondell 40s linear infinite;
+  animation: rondell 60s linear infinite;
 }
 
 .carousel:hover .carousel__track {
@@ -499,21 +502,33 @@ main > .section:last-child {
 
 .carousel__item {
   margin: 0;
-  width: 120px;
-  height: 160px;
   flex: none;
-  transition: width 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), height 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  width: clamp(220px, 21vw, 320px);
+  aspect-ratio: auto;
+  height: clamp(210px, 20vw, 300px);
+  transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
   cursor: pointer;
 }
 
 .carousel__item:hover {
-  width: 280px;
-  height: 373px;
+  width: clamp(330px, 32vw, 480px);
 }
 
 .carousel__item .photo {
   width: 100%;
   height: 100%;
+}
+
+.carousel__item:nth-child(3n + 1) .photo--empty {
+  background: #e9e4dd;
+}
+
+.carousel__item:nth-child(3n + 2) .photo--empty {
+  background: #f1eee9;
+}
+
+.carousel__item:nth-child(3n) .photo--empty {
+  background: #e2dcd4;
 }
 
 .carousel__item .photo--empty span {
@@ -588,13 +603,6 @@ main > .section:last-child {
 
 .slideshow__item.is-active .photo--empty span {
   opacity: 1;
-}
-
-.works__hint {
-  font-size: 11px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
 }
 
 /* Über mich */
@@ -822,9 +830,15 @@ main > .section:last-child {
     gap: 14px;
   }
   .booking__row,
-  .about__grid,
-  .works__head {
+  .about__grid {
     grid-template-columns: 1fr;
+  }
+  .works__col:last-child {
+    padding-left: 16px;
+  }
+  .works__col {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
   .contact {
     grid-template-columns: 1fr;

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import Logo from "./Logo";
+import { person } from "@/lib/content";
 
 const links = [
   { href: "/#galerie", label: "Arbeiten" },
@@ -25,7 +26,7 @@ export default function Header() {
               {l.label}
             </a>
           ))}
-          <a href="/#termin" className="btn btn--small" onClick={() => setOpen(false)}>
+          <a href={person.buchungsLink || "/#termin"} className="btn btn--small" target="_blank" rel="noopener" onClick={() => setOpen(false)}>
             Termin buchen
           </a>
         </nav>

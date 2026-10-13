@@ -17,7 +17,7 @@ export const person = {
   email: "[hallo@zoegenevieve.de]",
   // Link zum Buchungstool (z. B. Treatwell, Planity, Shore). Leer lassen,
   // dann zeigt die Seite nur Telefon und WhatsApp.
-  buchungsLink: "",
+  buchungsLink: "https://www.planity.com/de-DE/zoe-genevieve-hair-50667-koln",
 };
 
 export const oeffnungszeiten = [

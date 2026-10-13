@@ -45,12 +45,10 @@ export default function Home() {
               <Logo />
             </h1>
           </div>
-          <div className="hero__accent" aria-hidden>
-            <span>1:1</span>
-          </div>
-          <nav className="hero__m-links" aria-label="Schnellzugriff">
+          <nav className="hero__m-links" aria-label="Menü">
             <a href="#galerie">Arbeiten</a>
             <a href="#ueber-mich">Über mich</a>
+            <a href="#kontakt">Kontakt</a>
             <a href={terminLink} target="_blank" rel="noopener">
               Termin buchen
             </a>

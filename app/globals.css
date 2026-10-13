@@ -2873,3 +2873,243 @@ body,
 .contact.panel--orange h3 {
   color: var(--taupe);
 }
+
+/* ============================================================
+   Stil wie Arkipelet: sachlich, Haarlinien, ruhige Grotesk,
+   aufklappbare Listen, Orange nur als volle Fläche
+   ============================================================ */
+.title-xl,
+.about__text .title-xl,
+#kontakt .title-xl,
+.booking .title-xl {
+  font-family: var(--sans);
+  font-weight: 500;
+  text-transform: none;
+  font-size: clamp(32px, 3.6vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  text-shadow: none;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.kicker,
+.kicker--light {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+
+.subline,
+.booking .subline {
+  font-family: var(--sans);
+  font-size: 13px;
+  margin-top: 10px;
+  color: var(--taupe);
+}
+
+.subline em {
+  font-style: normal;
+}
+
+.subline::before {
+  content: "↳ ";
+}
+
+/* Terminseite am Desktop: Titel weiß auf dem Foto */
+@media (min-width: 761px) {
+  .booking .title-xl {
+    color: #fff;
+    border-bottom-color: rgb(255 255 255 / 0.7);
+    font-size: clamp(48px, 6vw, 96px);
+    display: inline-block;
+  }
+  .booking .subline,
+  .booking .kicker {
+    color: #fff;
+  }
+}
+
+/* Aufklappbare Liste */
+.acc {
+  margin-top: 8px;
+  max-width: 720px;
+}
+
+.acc__item {
+  border-bottom: 1px solid var(--line);
+}
+
+.acc__item summary {
+  position: relative;
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 32px 14px 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.acc__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.acc__item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 12px;
+  font-size: 18px;
+  font-weight: 300;
+  transition: transform 0.3s;
+}
+
+.acc__item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.acc__sub {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--taupe);
+}
+
+.acc__body {
+  padding: 0 0 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.acc__body a {
+  text-decoration: none;
+}
+
+/* Steckbrief als Zeilen mit Haarlinien */
+.facts,
+.about__panel .facts {
+  display: block;
+  margin-top: 20px;
+  padding-top: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.facts div {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.facts dt {
+  font-family: var(--sans);
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--taupe);
+}
+
+.facts dd,
+.about__panel .facts dd {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+/* Galerie-Beschriftungen sachlich */
+.reel__item figcaption em,
+.folio__meta em {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 13px;
+}
+
+/* Orange als volle Fläche: Fußbereich */
+.footer {
+  background: var(--orange);
+  color: rgb(255 255 255 / 0.8);
+}
+
+.footer a,
+.footer__links a,
+.footer__inner,
+.footer .infoline,
+.footer__name {
+  color: #fff;
+}
+
+.footer a:hover {
+  color: #fff;
+  opacity: 0.7;
+}
+
+@media (max-width: 760px) {
+  /* Menüleiste unten als orange Karte */
+  .sticky-cta,
+  .sticky-cta[data-theme="dark"] {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border-radius: 14px;
+    padding: 14px 18px calc(14px + env(safe-area-inset-bottom) / 2);
+    background: var(--orange);
+  }
+  .sticky-cta a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  .sticky-cta .sticky-cta__book {
+    background: #fff;
+    color: var(--orange);
+    padding: 7px 12px;
+  }
+  .title-xl,
+  .about__text .title-xl,
+  #kontakt .title-xl,
+  .booking .title-xl {
+    font-size: 30px;
+  }
+  .hero__m-intro {
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.45;
+    max-width: 30ch;
+  }
+  .hero__m-links a {
+    text-decoration: none;
+  }
+  #kontakt > .screen-bg {
+    height: 30dvh;
+  }
+  .acc__item summary {
+    padding: 11px 28px 11px 0;
+    font-size: 13px;
+  }
+  .footer {
+    padding-bottom: 110px;
+  }
+}
+
+.hero__lead {
+  font-family: var(--sans);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+}
+
+.hero__lead em {
+  font-family: var(--sans);
+  font-style: normal;
+  color: var(--taupe);
+}
+
+.hero__panel .kicker--light {
+  color: var(--ink);
+}

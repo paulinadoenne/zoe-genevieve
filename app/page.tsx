@@ -69,9 +69,7 @@ export default function Home() {
           <div className="container booking__top">
             <p className="kicker">02 · Termin</p>
             <h2 className="title-xl">
-              Termin
-              <br />
-              buchen
+              Termin buchen
             </h2>
             <p className="subline">
               <em>bei Zoe Genevieve</em>
@@ -107,10 +105,8 @@ export default function Home() {
             <div className="about__text">
               <p className="kicker">04 · Über mich</p>
               <h2 className="title-xl">
-                Hi, ich
-                <br />
-                bin Zoe
-              </h2>
+              Hi, ich bin Zoe
+            </h2>
               <p className="subline">
                 <em>und Karl, mein Salon Dog</em>
               </p>
@@ -141,27 +137,35 @@ export default function Home() {
           <p className="subline">
             <em>Sankt-Apern-Straße, Köln</em>
           </p>
-          <div className="contact panel panel--orange">
-            <div>
-              <h3>Adresse</h3>
-              <p>
-                {person.salon && (
-                  <>
-                    {person.salon}
-                    <br />
-                  </>
-                )}
-                {person.strasse}
-                <br />
-                {person.plz} {person.stadt}
-              </p>
-              <a href={kartenLink} target="_blank" rel="noopener" className="text-link">
-                Route planen
-              </a>
-            </div>
-            <div>
-              <h3>Öffnungszeiten</h3>
-              <dl className="hours">
+          <div className="acc">
+            <details className="acc__item">
+              <summary>
+                Adresse
+                <span className="acc__sub">↳ {person.strasse}</span>
+              </summary>
+              <div className="acc__body">
+                <p>
+                  {person.salon && (
+                    <>
+                      {person.salon}
+                      <br />
+                    </>
+                  )}
+                  {person.strasse}
+                  <br />
+                  {person.plz} {person.stadt}
+                </p>
+                <a href={kartenLink} target="_blank" rel="noopener" className="text-link">
+                  Route planen ↗
+                </a>
+              </div>
+            </details>
+            <details className="acc__item">
+              <summary>
+                Öffnungszeiten
+                <span className="acc__sub">↳ Termine nach Vereinbarung</span>
+              </summary>
+              <dl className="hours acc__body">
                 {oeffnungszeiten.map((o) => (
                   <div key={o.tage}>
                     <dt>{o.tage}</dt>
@@ -169,10 +173,13 @@ export default function Home() {
                   </div>
                 ))}
               </dl>
-            </div>
-            <div>
-              <h3>Kontakt</h3>
-              <p>
+            </details>
+            <details className="acc__item">
+              <summary>
+                Kontakt
+                <span className="acc__sub">↳ WhatsApp, E-Mail, Instagram</span>
+              </summary>
+              <p className="acc__body">
                 <a href={person.whatsappLink} target="_blank" rel="noopener">WhatsApp</a>
                 <br />
                 <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`}>{person.email}</a>
@@ -181,13 +188,18 @@ export default function Home() {
                   {person.instagram}
                 </a>
               </p>
-            </div>
-            <div>
-              <h3>Termin</h3>
-              <a href={terminLink} className="text-link" target="_blank" rel="noopener">
-                Online buchen ↗
-              </a>
-            </div>
+            </details>
+            <details className="acc__item">
+              <summary>
+                Termin
+                <span className="acc__sub">↳ Online über Planity</span>
+              </summary>
+              <div className="acc__body">
+                <a href={terminLink} className="text-link" target="_blank" rel="noopener">
+                  Jetzt online buchen ↗
+                </a>
+              </div>
+            </details>
           </div>
         </section>
       </main>

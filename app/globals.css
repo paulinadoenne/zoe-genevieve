@@ -978,12 +978,6 @@ main {
   }
 }
 
-/* Orange Punkt hinter großen Überschriften */
-.dot {
-  font-style: normal;
-  color: var(--orange);
-}
-
 /* Hauptbuttons orange, Hover schwarz */
 .header .pill,
 .contact__fields .pill {

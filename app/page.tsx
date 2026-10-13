@@ -18,7 +18,7 @@ export default function Home() {
         {/* Start: riesiger Name, Portrait überlappt die Schrift */}
         <section className="hero">
           <h1 className="hero__name" aria-label="Zoe Genevieve">
-            <span>zoe</span> <span>genevieve<i className="dot">.</i></span>
+            <span>zoe</span> <span>genevieve</span>
           </h1>
           <div className="hero__portrait">
             <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" />
@@ -62,7 +62,7 @@ export default function Home() {
 
         {/* Termin: zentrierte Überschrift, großes Bild, Button */}
         <section id="termin" className="booking">
-          <h2 className="h-center">Termin buchen<i className="dot">.</i></h2>
+          <h2 className="h-center">Termin buchen</h2>
           <div className="booking__image">
             <Photo src="/haar-textur.jpg" alt="Glänzendes braunes Haar in Wellen" />
             <a href={person.buchungsLink} className="pill pill--big pill--light" target="_blank" rel="noopener">
@@ -79,7 +79,7 @@ export default function Home() {
         {/* Arbeiten: großes Bild, dann weitere Arbeiten */}
         <section id="arbeiten" className="works">
           <div className="works__head">
-            <h2 className="h-center">Arbeiten<i className="dot">.</i></h2>
+            <h2 className="h-center">Arbeiten</h2>
           </div>
           <Rondell bilder={galerie} />
           <div className="works__more">
@@ -95,7 +95,7 @@ export default function Home() {
 
         {/* Kontakt */}
         <section id="kontakt" className="contact">
-          <h2 className="contact__title">Lass uns deinen Look gestalten<i className="dot">.</i></h2>
+          <h2 className="contact__title">Lass uns deinen Look gestalten</h2>
           <div className="contact__fields">
             <div className="field">
               <span className="field__label">Adresse</span>

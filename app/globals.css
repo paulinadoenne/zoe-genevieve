@@ -4039,3 +4039,18 @@ body,
     margin-top: 20px;
   }
 }
+
+/* Neue Studiofotos sind quadratisch */
+.show__frame {
+  aspect-ratio: 1;
+  max-width: min(680px, 72vh);
+}
+
+@media (max-width: 760px) {
+  .swipe__item .photo {
+    aspect-ratio: 1;
+  }
+  .swipe__item {
+    width: 76vw;
+  }
+}

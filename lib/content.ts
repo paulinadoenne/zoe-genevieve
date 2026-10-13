@@ -27,17 +27,11 @@ export const oeffnungszeiten = [
 ];
 
 export const galerie = [
-  { src: "/galerie/balayage-wellen.jpg", alt: "Lange Wellen mit sanfter Balayage" },
-  { src: "/galerie/kupfer-stufen.jpg", alt: "Kupfer mit weichem Stufenschnitt" },
-  { src: "/galerie/hellblond-face-framing.jpg", alt: "Helles Blond mit Face Framing" },
-  { src: "/galerie/schokobraun-bob.jpg", alt: "Schokobrauner Long Bob" },
-  { src: "/galerie/honigblond-locken.jpg", alt: "Honigblond mit großen Locken" },
-  { src: "/galerie/beigeblond-foehnfrisur.jpg", alt: "Beigeblond mit Föhnwelle" },
-  { src: "/galerie/dunkelbraun-volumen.jpg", alt: "Dunkelbraun mit Stufen und Volumen" },
-  { src: "/galerie/butterblond-stufen.jpg", alt: "Butterblond mit Stufen und Pony" },
-  { src: "/galerie/karamell-wellen.jpg", alt: "Karamell mit lockeren Wellen" },
-  { src: "/galerie/kuehles-blond.jpg", alt: "Kühles Blond, glatt geföhnt" },
-  { src: "/galerie/blond-balayage-lang.jpg", alt: "Lange blonde Balayage" },
+  { src: "/arbeiten/schoko-kupfer-stufen.jpg", alt: "Schokobraun mit Kupferreflexen und Stufen" },
+  { src: "/arbeiten/goldblond-face-framing.jpg", alt: "Goldblond mit Face Framing" },
+  { src: "/arbeiten/kupferbraun-volumen.jpg", alt: "Kupferbraun mit Volumen und Stufen" },
+  { src: "/arbeiten/beigeblond-wellen.jpg", alt: "Beigeblond mit weichen Wellen" },
+  { src: "/arbeiten/schokobraun-long-bob.jpg", alt: "Schokobrauner Long Bob" },
 ];
 
 export const ueberMich = [
@@ -56,7 +50,6 @@ export const steckbrief = [
 
 // Hintergrundbilder der Screens am Handy (und beim Termin auch am Desktop).
 export const hintergruende = {
-  termin: { src: "/galerie/kuehles-blond.jpg", pos: "50% 30%" },
   ueberMich: { src: "/zoe-karl.jpg", pos: "45% 15%" },
   kontakt: { src: "/zoe-portrait.jpg", pos: "50% 25%" },
 };

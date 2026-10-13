@@ -7,7 +7,7 @@ import StickyCta from "@/components/StickyCta";
 import InfoLine from "@/components/InfoLine";
 import HeaderTheme from "@/components/HeaderTheme";
 import ScreenBg from "@/components/ScreenBg";
-import { person, oeffnungszeiten, galerie, ueberMich, steckbrief, hintergruende } from "@/lib/content";
+import { person, oeffnungszeiten, galerie, ueberMich, steckbrief, hintergruende, fotos } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -65,7 +65,7 @@ export default function Home() {
 
         {/* Termin: ein Screen, Foto im Hintergrund, nur Überschrift und Button */}
         <section id="termin" className="booking" data-header="dark">
-          <ScreenBg src={hintergruende.termin} variante="tuer" />
+          <ScreenBg {...hintergruende.termin} />
           <div className="container booking__inner">
             <h2 className="display">
               Termin <em>buchen</em>
@@ -113,12 +113,12 @@ export default function Home() {
 
         {/* Über mich */}
         <section id="ueber-mich" className="section container about" data-header-m="dark">
-          <ScreenBg src={hintergruende.ueberMich} variante="haar" />
+          <ScreenBg {...hintergruende.ueberMich} />
           <p className="label">(04) Über mich</p>
           <div className="about__grid">
             <div className="about__media">
-              <Photo alt="Zoe im Salon" className="about__photo" />
-              <Photo alt="Karl, der Salon Dog" className="about__small" />
+              <Photo src={fotos.ueberMich} alt="Zoe im Strickpulli" className="about__photo" />
+              <Photo src={fotos.karl} alt="Zoe mit Karl, dem Salon Dog" className="about__small" />
             </div>
             <div className="about__text">
               <p className="about__lead">
@@ -145,7 +145,7 @@ export default function Home() {
 
         {/* Kontakt */}
         <section id="kontakt" className="section container" data-header-m="dark">
-          <ScreenBg src={hintergruende.kontakt} variante="stufen" />
+          <ScreenBg {...hintergruende.kontakt} />
           <p className="label">(05) Kontakt</p>
           <h2 className="display contact__title">Kontakt</h2>
           <div className="contact panel panel--cream">

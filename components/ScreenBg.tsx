@@ -1,16 +1,8 @@
-// Vollflächiges Hintergrundbild für einen Screen. Mit "variante" wird ein
-// anderer Ausschnitt gewählt, solange es noch nicht für jeden Bereich ein
-// eigenes Foto gibt.
-export default function ScreenBg({
-  src,
-  variante,
-}: {
-  src: string;
-  variante: "tuer" | "haar" | "stufen";
-}) {
+// Vollflächiges Hintergrundbild für einen Screen.
+export default function ScreenBg({ src, pos = "50% 50%" }: { src: string; pos?: string }) {
   return (
-    <div className={`screen-bg screen-bg--${variante}`} aria-hidden>
-      <img src={src} alt="" loading="lazy" />
+    <div className="screen-bg" aria-hidden>
+      <img src={src} alt="" loading="lazy" style={{ objectPosition: pos }} />
     </div>
   );
 }

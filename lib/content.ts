@@ -27,12 +27,17 @@ export const oeffnungszeiten = [
 ];
 
 export const galerie = [
-  { src: "", alt: "Balayage in warmen Blondtönen" },
-  { src: "", alt: "Kurzer Bob mit weichen Konturen" },
-  { src: "", alt: "Natürliche Locken nach dem Schnitt" },
-  { src: "", alt: "Glossing für mehr Glanz" },
-  { src: "", alt: "Brautfrisur mit lockerem Knoten" },
-  { src: "", alt: "Arbeitsplatz im Salon" },
+  { src: "/galerie/balayage-wellen.jpg", alt: "Lange Wellen mit sanfter Balayage" },
+  { src: "/galerie/kupfer-stufen.jpg", alt: "Kupfer mit weichem Stufenschnitt" },
+  { src: "/galerie/hellblond-face-framing.jpg", alt: "Helles Blond mit Face Framing" },
+  { src: "/galerie/schokobraun-bob.jpg", alt: "Schokobrauner Long Bob" },
+  { src: "/galerie/honigblond-locken.jpg", alt: "Honigblond mit großen Locken" },
+  { src: "/galerie/beigeblond-foehnfrisur.jpg", alt: "Beigeblond mit Föhnwelle" },
+  { src: "/galerie/dunkelbraun-volumen.jpg", alt: "Dunkelbraun mit Stufen und Volumen" },
+  { src: "/galerie/butterblond-stufen.jpg", alt: "Butterblond mit Stufen und Pony" },
+  { src: "/galerie/karamell-wellen.jpg", alt: "Karamell mit lockeren Wellen" },
+  { src: "/galerie/kuehles-blond.jpg", alt: "Kühles Blond, glatt geföhnt" },
+  { src: "/galerie/blond-balayage-lang.jpg", alt: "Lange blonde Balayage" },
 ];
 
 export const ueberMich = [
@@ -50,9 +55,13 @@ export const steckbrief = [
 ];
 
 // Hintergrundbilder der Screens am Handy (und beim Termin auch am Desktop).
-// Vorerst Ausschnitte aus Zoes Foto, später durch eigene Fotos ersetzen.
 export const hintergruende = {
-  termin: "/zoe.jpg",
-  ueberMich: "/zoe.jpg",
-  kontakt: "/zoe.jpg",
+  termin: { src: "/galerie/kuehles-blond.jpg", pos: "50% 30%" },
+  ueberMich: { src: "/zoe-karl.jpg", pos: "45% 15%" },
+  kontakt: { src: "/zoe-portrait.jpg", pos: "50% 25%" },
+};
+
+export const fotos = {
+  ueberMich: "/zoe-portrait.jpg",
+  karl: "/zoe-karl.jpg",
 };

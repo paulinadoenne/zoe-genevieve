@@ -1245,24 +1245,6 @@ main > .section:last-child {
   background: color-mix(in srgb, var(--cocoa) 72%, transparent);
 }
 
-/* Ausschnitte aus Zoes Foto */
-.screen-bg--tuer img {
-  object-position: 70% 0%;
-  transform: scale(1.5);
-  transform-origin: 70% 0%;
-}
-
-.screen-bg--haar img {
-  object-position: 60% 50%;
-  transform: scale(2.4);
-  transform-origin: 62% 48%;
-}
-
-.screen-bg--stufen img {
-  object-position: 50% 100%;
-  transform: scale(1.5);
-  transform-origin: 45% 92%;
-}
 
 @media (max-width: 760px) {
   /* Farbige Textblöcke über die volle Breite */
@@ -1447,11 +1429,6 @@ main > .section:last-child {
   }
   .steps {
     margin-bottom: 0;
-  }
-  .screen-bg--haar img {
-    object-position: 60% 45%;
-    transform: scale(1.8);
-    transform-origin: 62% 78%;
   }
   .contact.panel {
     grid-template-columns: 1.2fr 1fr;

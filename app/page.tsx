@@ -23,15 +23,6 @@ export default function Home() {
       <main>
         {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
         <section className="hero" data-header="dark" data-header-m="dark">
-          <div className="hero__cover">
-            <p className="cover-kicker">Köln · Sankt-Apern-Straße</p>
-            <p className="cover-line">
-              Master Hairstylist
-              <br />
-              <em>&amp; Blonde Specialist</em>
-            </p>
-          </div>
-          <p className="hero__m-intro">1:1 Termine, du stehst im Mittelpunkt.</p>
           <div className="hero__panel" data-header="light">
             <p className="kicker kicker--light">01 · Hair · Köln</p>
             <div className="hero__bottom">
@@ -52,15 +43,26 @@ export default function Home() {
               <Logo />
             </h1>
           </div>
-          <nav className="hero__m-links" aria-label="Menü">
-            <a href="#galerie">Arbeiten</a>
-            <a href="#ueber-mich">Über mich</a>
-            <a href="#kontakt">Kontakt</a>
-            <a href={terminLink} target="_blank" rel="noopener">
-              Termin buchen
-            </a>
-          </nav>
-          <InfoLine className="hero__m-info" />
+          <div className="glass hero__glass">
+            <div className="hero__cover">
+              <p className="cover-kicker">Köln · Sankt-Apern-Straße</p>
+              <p className="cover-line">
+                Master Hairstylist
+                <br />
+                <em>&amp; Blonde Specialist</em>
+              </p>
+            </div>
+            <p className="hero__m-intro">1:1 Termine, du stehst im Mittelpunkt.</p>
+            <nav className="hero__m-links" aria-label="Menü">
+              <a href="#galerie">Arbeiten</a>
+              <a href="#ueber-mich">Über mich</a>
+              <a href="#kontakt">Kontakt</a>
+              <a href={terminLink} target="_blank" rel="noopener">
+                Termin buchen
+              </a>
+            </nav>
+            <InfoLine className="hero__m-info" />
+          </div>
         </section>
         <div className="ticker container">
           <span>{person.beruf}</span>
@@ -72,21 +74,15 @@ export default function Home() {
         <section id="termin" className="booking booking--photo booking--grid" data-header="dark" data-header-m="dark">
           <ScreenBg src="/haar-textur.jpg" pos="50% 50%" />
           <div className="bk">
-            <p className="bk__corner bk__corner--tl kicker">02 · Termin</p>
-            <p className="bk__corner bk__corner--tr kicker">1:1 · Köln</p>
-            <h2 className="bk__title">
-              <span className="bk__line bk__line--1">Buche deinen</span>
-              <span className="bk__line bk__line--2">
-                <em>Termin</em>
-              </span>
-            </h2>
-            <a href={terminLink} className="btn btn--accent btn--big bk__cta" target="_blank" rel="noopener">
-              Jetzt buchen <span aria-hidden>↗</span>
-            </a>
-            <p className="bk__corner bk__corner--bl subline">
-              <em>bei Zoe Genevieve</em>
-            </p>
-            <p className="bk__corner bk__corner--br kicker">Online über Planity</p>
+            <div className="glass bk__card">
+              <p className="kicker">02 · Termin</p>
+              <h2 className="ui-title">Buche deinen Termin</h2>
+              <p className="ui-sub">1:1 bei Zoe Genevieve, Sankt-Apern-Straße, Köln</p>
+              <a href={terminLink} className="btn btn--accent btn--big bk__cta" target="_blank" rel="noopener">
+                Jetzt buchen <span aria-hidden>↗</span>
+              </a>
+              <p className="bk__note">Online über Planity · dauert eine Minute</p>
+            </div>
           </div>
         </section>
 
@@ -132,7 +128,7 @@ export default function Home() {
               <Photo src={fotos.ueberMich} alt="Zoe im Strickpulli" className="about__photo" />
               <Photo src={fotos.karl} alt="Zoe mit Karl, dem Salon Dog" className="about__small" />
             </div>
-            <div className="about__text">
+            <div className="about__text glass">
               <p className="kicker">04 · Über mich</p>
               <h2 className="title-xl">
               Hi, ich bin Zoe
@@ -162,74 +158,76 @@ export default function Home() {
         {/* Kontakt */}
         <section id="kontakt" className="section container" data-header-m="dark">
           <ScreenBg {...hintergruende.kontakt} mono />
-          <p className="kicker">05 · Kontakt</p>
-          <h2 className="title-xl">Kontakt</h2>
-          <p className="subline">
-            <em>Sankt-Apern-Straße, Köln</em>
-          </p>
-          <div className="acc">
-            <details className="acc__item">
-              <summary>
-                Adresse
-                <span className="acc__sub">↳ {person.strasse}</span>
-              </summary>
-              <div className="acc__body">
-                <p>
-                  {person.salon && (
-                    <>
-                      {person.salon}
-                      <br />
-                    </>
-                  )}
-                  {person.strasse}
+          <div className="glass contact__glass">
+            <p className="kicker">05 · Kontakt</p>
+            <h2 className="title-xl">Kontakt</h2>
+            <p className="subline">
+              <em>Sankt-Apern-Straße, Köln</em>
+            </p>
+            <div className="acc">
+              <details className="acc__item">
+                <summary>
+                  Adresse
+                  <span className="acc__sub">↳ {person.strasse}</span>
+                </summary>
+                <div className="acc__body">
+                  <p>
+                    {person.salon && (
+                      <>
+                        {person.salon}
+                        <br />
+                      </>
+                    )}
+                    {person.strasse}
+                    <br />
+                    {person.plz} {person.stadt}
+                  </p>
+                  <a href={kartenLink} target="_blank" rel="noopener" className="text-link">
+                    Route planen ↗
+                  </a>
+                </div>
+              </details>
+              <details className="acc__item">
+                <summary>
+                  Öffnungszeiten
+                  <span className="acc__sub">↳ Termine nach Vereinbarung</span>
+                </summary>
+                <dl className="hours acc__body">
+                  {oeffnungszeiten.map((o) => (
+                    <div key={o.tage}>
+                      <dt>{o.tage}</dt>
+                      <dd>{o.zeit}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </details>
+              <details className="acc__item">
+                <summary>
+                  Kontakt
+                  <span className="acc__sub">↳ WhatsApp, E-Mail, Instagram</span>
+                </summary>
+                <p className="acc__body">
+                  <a href={person.whatsappLink} target="_blank" rel="noopener">WhatsApp</a>
                   <br />
-                  {person.plz} {person.stadt}
+                  <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`}>{person.email}</a>
+                  <br />
+                  <a href={person.instagramLink} target="_blank" rel="noopener">
+                    {person.instagram}
+                  </a>
                 </p>
-                <a href={kartenLink} target="_blank" rel="noopener" className="text-link">
-                  Route planen ↗
-                </a>
-              </div>
-            </details>
-            <details className="acc__item">
-              <summary>
-                Öffnungszeiten
-                <span className="acc__sub">↳ Termine nach Vereinbarung</span>
-              </summary>
-              <dl className="hours acc__body">
-                {oeffnungszeiten.map((o) => (
-                  <div key={o.tage}>
-                    <dt>{o.tage}</dt>
-                    <dd>{o.zeit}</dd>
-                  </div>
-                ))}
-              </dl>
-            </details>
-            <details className="acc__item">
-              <summary>
-                Kontakt
-                <span className="acc__sub">↳ WhatsApp, E-Mail, Instagram</span>
-              </summary>
-              <p className="acc__body">
-                <a href={person.whatsappLink} target="_blank" rel="noopener">WhatsApp</a>
-                <br />
-                <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`}>{person.email}</a>
-                <br />
-                <a href={person.instagramLink} target="_blank" rel="noopener">
-                  {person.instagram}
-                </a>
-              </p>
-            </details>
-            <details className="acc__item">
-              <summary>
-                Termin
-                <span className="acc__sub">↳ Online über Planity</span>
-              </summary>
-              <div className="acc__body">
-                <a href={terminLink} className="text-link" target="_blank" rel="noopener">
-                  Jetzt online buchen ↗
-                </a>
-              </div>
-            </details>
+              </details>
+              <details className="acc__item">
+                <summary>
+                  Termin
+                  <span className="acc__sub">↳ Online über Planity</span>
+                </summary>
+                <div className="acc__body">
+                  <a href={terminLink} className="text-link" target="_blank" rel="noopener">
+                    Jetzt online buchen ↗
+                  </a>
+                </div>
+              </details>
+            </div>
           </div>
         </section>
       </main>

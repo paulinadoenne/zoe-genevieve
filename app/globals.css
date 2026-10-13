@@ -4369,3 +4369,238 @@ img.hero__photo,
     padding: 18px 30px;
   }
 }
+
+/* ============================================================
+   UI Design statt Magazin: klare Grotesk, Milchglas-Karten
+   ============================================================ */
+
+/* Typografie: sachliche Grotesk für Titel und Unterzeilen */
+.title-xl,
+.about__text .title-xl,
+#kontakt .title-xl,
+.booking .title-xl,
+.ui-title {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-style: normal;
+  font-size: clamp(32px, 3.4vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  text-transform: none;
+  border: 0;
+  padding: 0;
+}
+
+.title-xl em {
+  font-style: normal;
+}
+
+.subline,
+.booking .subline,
+.ui-sub {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  margin-top: 8px;
+}
+
+.subline em,
+.cover-line em {
+  font-style: normal;
+}
+
+.kicker,
+.kicker--light,
+.cover-kicker {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  margin-bottom: 10px;
+}
+
+.cover-line {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+/* Milchglas */
+.glass {
+  background: rgb(255 255 255 / 0.18);
+  -webkit-backdrop-filter: blur(22px) saturate(1.4);
+  backdrop-filter: blur(22px) saturate(1.4);
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 22px;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 0.12), inset 0 1px 0 rgb(255 255 255 / 0.35);
+  color: #fff;
+}
+
+.glass,
+.glass * {
+  text-shadow: none !important;
+}
+
+/* Hero-Glas nur am Handy */
+.hero__glass {
+  display: contents;
+}
+
+/* Terminseite: zentrierte Glas-Karte */
+.bk {
+  display: grid;
+  place-items: center;
+  padding: 80px var(--gutter);
+}
+
+.bk__card {
+  width: min(440px, 100%);
+  padding: 28px;
+  text-align: left;
+}
+
+.bk__card .kicker {
+  color: rgb(255 255 255 / 0.8);
+}
+
+.bk__card .ui-title {
+  color: #fff;
+  margin: 0;
+}
+
+.bk__card .ui-sub {
+  color: rgb(255 255 255 / 0.85);
+  margin-bottom: 24px;
+}
+
+.bk__card .bk__cta {
+  position: static;
+  transform: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.bk__card .bk__cta:active {
+  transform: scale(0.98);
+}
+
+.bk__note {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 12px;
+  color: rgb(255 255 255 / 0.75);
+}
+
+.btn,
+.btn--big,
+.bk__cta {
+  border-radius: 14px;
+}
+
+@media (max-width: 760px) {
+  .title-xl,
+  .about__text .title-xl,
+  #kontakt .title-xl,
+  .ui-title {
+    font-size: 30px;
+  }
+
+  /* Startbild: Inhalt unten in einer Glas-Karte */
+  .hero__glass {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    padding: 18px 18px 14px;
+  }
+  .hero .hero__cover {
+    margin: 0 0 6px;
+  }
+  .hero .hero__m-intro {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+  .hero__m-links {
+    margin: 14px 0 0;
+    padding-top: 12px;
+    border-top: 1px solid rgb(255 255 255 / 0.3);
+  }
+  .hero .hero__m-info {
+    margin-top: 8px;
+    opacity: 0.75;
+  }
+
+  /* Über mich und Kontakt: Glas-Karte unten */
+  #ueber-mich,
+  #kontakt {
+    justify-content: flex-end;
+    padding-top: 80px;
+    padding-bottom: 24px;
+  }
+  #ueber-mich .about__grid {
+    flex: none;
+  }
+  #ueber-mich .about__text {
+    flex: none;
+    padding: 20px;
+  }
+  #ueber-mich .about__panel {
+    margin-top: 10px;
+  }
+  #ueber-mich .small-text {
+    font-size: 13px;
+  }
+  #ueber-mich .facts {
+    border-top-color: rgb(255 255 255 / 0.3);
+  }
+  #ueber-mich .facts div {
+    border-bottom-color: rgb(255 255 255 / 0.2);
+  }
+  #ueber-mich .facts div:last-child {
+    border-bottom: 0;
+  }
+  .contact__glass {
+    position: relative;
+    z-index: 2;
+    padding: 20px 20px 6px;
+  }
+  #kontakt .acc {
+    margin: 12px 0 0;
+    padding: 0;
+    background: none;
+    border-top: 1px solid rgb(255 255 255 / 0.3);
+  }
+  #kontakt .acc__item {
+    border-bottom-color: rgb(255 255 255 / 0.2);
+  }
+  #kontakt .acc__item:last-child {
+    border-bottom: 0;
+  }
+  #kontakt .acc__item summary,
+  #kontakt .acc__body,
+  #kontakt .acc__body a,
+  #kontakt .hours dt {
+    color: #fff;
+  }
+  #kontakt .acc__sub,
+  #kontakt .hours dd {
+    color: rgb(255 255 255 / 0.75);
+  }
+
+  .bk {
+    padding: 80px var(--gutter) 40px;
+  }
+  .bk__card {
+    padding: 24px;
+  }
+}
+
+.glass {
+  background: linear-gradient(160deg, rgb(255 255 255 / 0.2), rgb(70 50 40 / 0.28));
+}

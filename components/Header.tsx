@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { person } from "@/lib/content";
 
 const links = [
-  { href: "/#ueber-mich", label: "Über mich" },
   { href: "/#termin", label: "Termin" },
   { href: "/#arbeiten", label: "Arbeiten" },
+  { href: "/#ueber-mich", label: "Über mich" },
   { href: "/#kontakt", label: "Kontakt" },
 ];
 

@@ -36,29 +36,6 @@ export default function Home() {
           </ul>
         </section>
 
-        {/* Über mich: kleine Texte, versetztes Bildraster */}
-        <section id="ueber-mich" className="about">
-          <ul className="about__list">
-            {steckbrief.map((f) => (
-              <li key={f.label}>
-                <span>{f.label}</span> {f.wert}
-              </li>
-            ))}
-          </ul>
-          <p className="about__text about__text--1">{ueberMich[0]}</p>
-          <p className="about__text about__text--2">
-            {ueberMich[2]} {ueberMich[1]}
-          </p>
-          <div className="scatter">
-            <Photo src="/kacheln/balayage-braun.jpg" alt="Lange braune Haare mit weichem Balayage in Wellen" className="scatter__a" />
-            <Photo src="/kacheln/karamell-wellen.jpg" alt="Karamellblonde Haare mit großen Locken" className="scatter__b" />
-            <div className="scatter__c scatter__accent" aria-hidden>
-              <span>1:1</span>
-            </div>
-            <Photo src="/kacheln/blond-balayage.jpg" alt="Lange Haare mit hellblondem Balayage" className="scatter__d" />
-          </div>
-        </section>
-
         {/* Termin: zentrierte Überschrift, großes Bild, Button */}
         <section id="termin" className="booking">
           <h2 className="h-center">Termin buchen</h2>
@@ -84,6 +61,29 @@ export default function Home() {
             <a href={person.instagramLink} className="pill pill--outline" target="_blank" rel="noopener">
               Instagram ansehen
             </a>
+          </div>
+        </section>
+
+        {/* Über mich: kleine Texte, versetztes Bildraster */}
+        <section id="ueber-mich" className="about">
+          <ul className="about__list">
+            {steckbrief.map((f) => (
+              <li key={f.label}>
+                <span>{f.label}</span> {f.wert}
+              </li>
+            ))}
+          </ul>
+          <p className="about__text about__text--1">{ueberMich[0]}</p>
+          <p className="about__text about__text--2">
+            {ueberMich[2]} {ueberMich[1]}
+          </p>
+          <div className="scatter">
+            <Photo src="/kacheln/balayage-braun.jpg" alt="Lange braune Haare mit weichem Balayage in Wellen" className="scatter__a" />
+            <Photo src="/kacheln/karamell-wellen.jpg" alt="Karamellblonde Haare mit großen Locken" className="scatter__b" />
+            <div className="scatter__c scatter__accent" aria-hidden>
+              <span>1:1</span>
+            </div>
+            <Photo src="/kacheln/blond-balayage.jpg" alt="Lange Haare mit hellblondem Balayage" className="scatter__d" />
           </div>
         </section>
 

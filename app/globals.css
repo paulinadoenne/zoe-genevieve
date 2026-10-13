@@ -460,6 +460,7 @@ main > .section:last-child {
 .works__col {
   display: grid;
   grid-template-columns: 90px 1fr;
+  align-content: start;
 }
 
 .works__col:last-child {
@@ -488,10 +489,14 @@ main > .section:last-child {
 /* Galerie: Rondell (Desktop), große Kacheln ohne Abstand, Hover macht breiter */
 .carousel {
   overflow: hidden;
+  height: clamp(300px, 29vw, 430px);
+  display: flex;
+  align-items: flex-end;
 }
 
 .carousel__track {
   display: flex;
+  align-items: flex-end;
   width: max-content;
   animation: rondell 60s linear infinite;
 }
@@ -506,12 +511,13 @@ main > .section:last-child {
   width: clamp(220px, 21vw, 320px);
   aspect-ratio: auto;
   height: clamp(210px, 20vw, 300px);
-  transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1), height 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
   cursor: pointer;
 }
 
 .carousel__item:hover {
   width: clamp(330px, 32vw, 480px);
+  height: clamp(300px, 29vw, 430px);
 }
 
 .carousel__item .photo {
@@ -550,7 +556,7 @@ main > .section:last-child {
 .slideshow {
   display: none;
   position: relative;
-  height: 300px;
+  height: 280px;
   overflow: hidden;
   margin-bottom: 28px;
   --s: 58px;
@@ -564,7 +570,7 @@ main > .section:last-child {
   bottom: 0;
   left: 50%;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: var(--gap);
   transform: translateX(calc(var(--i) * -1 * (var(--s) + var(--gap)) - var(--l) / 2));
   transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);

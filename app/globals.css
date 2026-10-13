@@ -4151,3 +4151,80 @@ img.hero__photo,
 .hero__img::before {
   background: none;
 }
+
+/* ============================================================
+   Keine Vignette, hohe Sättigung
+   ============================================================ */
+:root {
+  --editorial-filter: contrast(1.1) saturate(1.35) brightness(1.03);
+}
+
+.hero__img::before,
+.hero__img::after,
+.hero__media::after,
+.screen-bg::before,
+.screen-bg::after,
+.booking .screen-bg::after,
+.booking--photo .screen-bg::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+
+/* Lesbarkeit über weichen Schriftschatten statt dunkler Fläche */
+.booking--photo .title-xl,
+.booking--photo .kicker,
+.booking--photo .subline {
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.25), 0 2px 24px rgb(0 0 0 / 0.35);
+}
+
+@media (max-width: 760px) {
+  .hero .hero__cover,
+  .hero .hero__m-intro,
+  .hero .hero__m-links a,
+  .hero .hero__m-info,
+  #ueber-mich .title-xl,
+  #ueber-mich .kicker,
+  #ueber-mich .subline,
+  #ueber-mich .small-text,
+  #ueber-mich .facts dt,
+  #ueber-mich .facts dd,
+  #kontakt .title-xl,
+  #kontakt .kicker,
+  #kontakt .subline,
+  #kontakt .acc__item summary,
+  #kontakt .acc__sub,
+  #kontakt .acc__body {
+    text-shadow: 0 1px 2px rgb(0 0 0 / 0.35), 0 2px 20px rgb(0 0 0 / 0.45);
+  }
+  .hero__title .logo {
+    filter: drop-shadow(0 2px 16px rgb(0 0 0 / 0.3));
+  }
+}
+
+@media (max-width: 760px) {
+  #kontakt .acc {
+    margin-left: calc(-1 * var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
+    margin-bottom: -96px;
+    padding: 6px var(--gutter) 96px;
+    background: #fff;
+    border-top: 0;
+  }
+  #kontakt .acc__item summary,
+  #kontakt .acc__body,
+  #kontakt .acc__body a,
+  #kontakt .hours dt {
+    color: var(--ink);
+    text-shadow: none;
+  }
+  #kontakt .acc__sub,
+  #kontakt .hours dd {
+    color: var(--taupe);
+    text-shadow: none;
+    opacity: 1;
+  }
+  #kontakt .acc__item {
+    border-bottom-color: var(--line);
+  }
+}

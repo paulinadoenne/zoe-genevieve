@@ -84,7 +84,7 @@ export default function Home() {
         </section>
 
         {/* Über mich */}
-        <section id="ueber-mich" className="section light">
+        <section id="ueber-mich" className="section glass">
           <div className="container about">
             <Photo alt="Zoe im Salon" className="about__photo" />
             <div>

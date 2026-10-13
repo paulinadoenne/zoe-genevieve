@@ -23,11 +23,11 @@ export default function Home() {
       <main>
         {/* Hero */}
         <section className="hero">
-          <div className="hero__stage">
-            <Photo alt="Portrait von Zoe" className="hero__photo" />
+          <div className="hero__stage container">
             <h1 className="hero__title">
               <Logo />
             </h1>
+            <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" className="hero__photo" />
           </div>
           <div className="hero__meta container">
             <span>{person.beruf}</span>

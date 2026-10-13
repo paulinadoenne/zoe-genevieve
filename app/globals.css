@@ -3925,3 +3925,117 @@ body,
   background: #fff;
   color: var(--orange);
 }
+
+/* ============================================================
+   Arbeiten mobil: viel Weißraum oben, Bildreihe zum Wischen
+   ============================================================ */
+.swipe,
+.works__info {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .show {
+    display: none;
+  }
+  #galerie {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 0 92px;
+    background: #fff;
+  }
+  #galerie .works__head {
+    margin: 0 0 28px;
+  }
+  #galerie .works__head .kicker {
+    display: none;
+  }
+  #galerie .title-xl {
+    font-family: var(--sans);
+    font-weight: 500;
+    font-size: 44px;
+    letter-spacing: -0.04em;
+    line-height: 1;
+  }
+  #galerie .subline {
+    display: none;
+  }
+  .works__info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 28px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  .works__info > div {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+  }
+  .works__info span {
+    color: var(--ink);
+  }
+  .works__info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: var(--taupe);
+  }
+  .works__info a {
+    text-decoration: none;
+    color: inherit;
+  }
+  .swipe {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-left: var(--gutter);
+    scroll-padding-left: var(--gutter);
+  }
+  .swipe::-webkit-scrollbar {
+    display: none;
+  }
+  .swipe__item {
+    flex: none;
+    width: 46vw;
+    margin: 0;
+    scroll-snap-align: start;
+  }
+  .swipe__item:last-child {
+    margin-right: var(--gutter);
+  }
+  .swipe__item .photo {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+  .swipe__item figcaption {
+    padding: 8px 10px 0 0;
+    font-size: 10px;
+    line-height: 1.35;
+    color: var(--ink);
+  }
+  .swipe__item figcaption span {
+    color: var(--taupe);
+  }
+}
+
+@media (max-width: 760px) {
+  #galerie {
+    padding-bottom: 100px;
+  }
+  .swipe__item {
+    width: 68vw;
+  }
+  .swipe__item .photo {
+    aspect-ratio: 4 / 5;
+  }
+  #galerie .works__head {
+    margin-bottom: 22px;
+  }
+  .works__info {
+    margin-top: 20px;
+  }
+}

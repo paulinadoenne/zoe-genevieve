@@ -29,6 +29,17 @@ export default function Gallery({ bilder }: { bilder: Bild[] }) {
   const nr = (i: number) => String(i + 1).padStart(2, "0");
 
   return (
+    <>
+    <div className="swipe" aria-label="Arbeiten, nach rechts wischen">
+      {bilder.map((b, i) => (
+        <figure key={b.src} className="swipe__item">
+          <Photo src={b.src} alt={b.alt} />
+          <figcaption>
+            <span>{nr(i)}</span> {b.alt}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
     <div
       className="show"
       aria-label="Arbeiten"
@@ -60,5 +71,6 @@ export default function Gallery({ bilder }: { bilder: Bild[] }) {
         <span key={`${aktiv}-${pause}`} className={pause ? "" : "is-running"} />
       </div>
     </div>
+    </>
   );
 }

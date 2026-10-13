@@ -96,6 +96,28 @@ export default function Home() {
             <p className="subline">
               <em>Blond, Balayage, Schnitt</em>
             </p>
+            <div className="works__info">
+              <div>
+                <span>Leistungen</span>
+                <ul>
+                  <li>Blond</li>
+                  <li>Balayage</li>
+                  <li>Schnitt</li>
+                  <li>Styling</li>
+                </ul>
+              </div>
+              <div>
+                <span>Mehr</span>
+                <ul>
+                  <li>
+                    <a href={person.instagramLink} target="_blank" rel="noopener">
+                      Instagram
+                    </a>
+                  </li>
+                  <li>Nach rechts wischen →</li>
+                </ul>
+              </div>
+            </div>
           </div>
           <Gallery bilder={galerie} />
         </section>

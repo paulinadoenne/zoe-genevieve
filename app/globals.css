@@ -1,9 +1,9 @@
 :root {
   /* Ruhige Basis, Farben aus Zoes Konzept nur als Akzent */
-  --bg: #f3f0eb;
+  --bg: #ffffff;
   --ink: #1f1714;
   --muted: #8a7f78;
-  --line: #ddd5cb;
+  --line: #e7e1da;
   --cayenne: #c24e0c;
   --cocoa: #391b17;
   --glass: #9ab0aa;
@@ -80,7 +80,7 @@ dd {
   font-size: 11px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--cayenne);
   margin-bottom: 20px;
 }
 
@@ -99,6 +99,7 @@ dd {
   font-style: italic;
   font-weight: 400;
   letter-spacing: -0.01em;
+  color: var(--cayenne);
 }
 
 .small-text {
@@ -114,8 +115,8 @@ dd {
   align-items: center;
   gap: 10px;
   padding: 14px 22px;
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--cocoa);
+  color: #fff;
   text-decoration: none;
   font-size: 13px;
   letter-spacing: 0.01em;
@@ -124,7 +125,7 @@ dd {
 }
 
 .btn:hover {
-  background: var(--cocoa);
+  background: var(--cayenne);
 }
 
 .btn--accent {
@@ -217,14 +218,15 @@ dd {
 
 .nav__cta {
   padding: 8px 16px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--cayenne);
+  color: var(--cayenne);
   border-radius: 999px;
   transition: background 0.2s, color 0.2s;
 }
 
 .nav__cta:hover {
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--cayenne);
+  color: #fff;
 }
 
 .nav-toggle {
@@ -269,7 +271,7 @@ dd {
 .photo {
   width: 100%;
   object-fit: cover;
-  background: #e2dbd2;
+  background: #dfe7e4;
 }
 
 .photo--empty {
@@ -277,7 +279,7 @@ dd {
   align-items: flex-end;
   padding: 10px;
   overflow: hidden;
-  background: #e2dbd2;
+  background: linear-gradient(165deg, #e6edea 0%, #cddbd6 100%);
 }
 
 .photo--empty span {
@@ -553,7 +555,7 @@ main > .section:last-child {
   gap: 16px;
   margin-top: 32px;
   padding-top: 16px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--glass);
   max-width: 560px;
 }
 
@@ -615,16 +617,16 @@ main > .section:last-child {
 
 /* Footer */
 .footer {
-  border-top: 1px solid var(--line);
-  color: var(--muted);
+  background: var(--cocoa);
+  color: color-mix(in srgb, var(--cream) 65%, transparent);
   font-size: 11px;
   padding-bottom: 24px;
 }
 
 .footer__name {
   text-align: center;
-  color: var(--cocoa);
-  padding: 64px 0 48px;
+  color: var(--glass);
+  padding: 72px 0 56px;
   --logo-w: clamp(180px, 20vw, 280px);
 }
 
@@ -647,7 +649,7 @@ main > .section:last-child {
 }
 
 .footer a:hover {
-  color: var(--ink);
+  color: var(--cream);
 }
 
 /* Am Handy immer sichtbarer Buchungsbutton */
@@ -747,8 +749,8 @@ main > .section:last-child {
     z-index: 30;
     padding: 16px;
     border-radius: 999px;
-    background: var(--ink);
-    color: var(--bg);
+    background: var(--cayenne);
+    color: #fff;
     text-align: center;
     text-decoration: none;
     font-size: 14px;

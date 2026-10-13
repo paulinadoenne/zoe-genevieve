@@ -26,7 +26,7 @@ export default function Home() {
               Master Hairstylist und <em>Blonde Specialist</em> in Köln. 1:1
               Termine, du stehst im Mittelpunkt.
             </p>
-            <a href={terminLink} className="btn" target="_blank" rel="noopener">
+            <a href={terminLink} className="btn btn--accent" target="_blank" rel="noopener">
               Termin buchen <span aria-hidden>↗</span>
             </a>
           </div>

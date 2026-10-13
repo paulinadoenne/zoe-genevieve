@@ -5,22 +5,19 @@ import { useEffect } from "react";
 // Dezente Einblend-Animationen beim Scrollen. Elemente werden erst versteckt,
 // wenn dieses Skript läuft, ohne JavaScript bleibt alles sichtbar.
 const TEXT = [
-  ".kicker",
-  ".title-xl",
-  ".subline",
-  ".cover-kicker",
-  ".cover-line",
-  ".hero__m-intro",
   ".hero__lead",
-  ".small-text",
-  ".facts div",
-  ".acc__item",
-  ".booking__bottom",
-  ".show__meta",
-  ".footer__name",
+  ".hero__list li",
+  ".about__list li",
+  ".about__text",
+  ".h-center",
+  ".caption",
+  ".more__text",
+  ".contact__title",
+  ".field",
+  ".foot__big > *",
 ].join(",");
 
-const BILDER = [".show__frame", ".about__photo", ".hero__img"].join(",");
+const BILDER = [".scatter > *", ".booking__image", ".works__main .photo", ".more__grid .photo"].join(",");
 
 export default function Motion() {
   useEffect(() => {

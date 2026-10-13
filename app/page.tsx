@@ -1,240 +1,153 @@
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import SiteFooter from "@/components/SiteFooter";
 import Photo from "@/components/Photo";
-import Logo from "@/components/Logo";
-import Gallery from "@/components/Gallery";
-import InfoLine from "@/components/InfoLine";
-import HeaderTheme from "@/components/HeaderTheme";
 import Motion from "@/components/Motion";
-import ScreenBg from "@/components/ScreenBg";
-import { person, oeffnungszeiten, galerie, ueberMich, steckbrief, hintergruende, fotos } from "@/lib/content";
+import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
-const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  [person.salon, adresse].filter(Boolean).join(" ")
-)}`;
-// Hauptbutton: Online-Buchung, solange kein Link hinterlegt ist WhatsApp
-const terminLink = person.buchungsLink || person.whatsappLink;
+const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
+const leistungen = ["Blonde Specialist", "Balayage", "Farbe", "Schnitt", "Styling"];
+const [haupt, ...weitere] = galerie;
 
 export default function Home() {
   return (
     <>
       <Header />
       <main>
-        {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
-        <section className="hero" data-header="dark" data-header-m="dark">
-          <div className="hero__panel" data-header="light">
-            <p className="kicker kicker--light">01 · Hair · Köln</p>
-            <div className="hero__bottom">
-              <p className="hero__lead">
-                Master Hairstylist und <em>Blonde Specialist.</em> 1:1 Termine,
-                du stehst im Mittelpunkt.
-              </p>
-              <a href={terminLink} className="btn btn--light hero__cta" target="_blank" rel="noopener">
-                Termin buchen <span aria-hidden>↗</span>
-              </a>
-            </div>
+        {/* Start: riesiger Name, Portrait überlappt die Schrift */}
+        <section className="hero">
+          <h1 className="hero__name" aria-label="Zoe Genevieve">
+            <span>zoe</span> <span>genevieve</span>
+          </h1>
+          <div className="hero__portrait">
+            <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" />
           </div>
-          <div className="hero__media">
-            <div className="hero__img">
-              <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" className="hero__photo" />
-            </div>
-            <h1 className="hero__title">
-              <Logo />
-            </h1>
-          </div>
-          <div className="glass hero__glass">
-            <div className="hero__cover">
-              <p className="cover-kicker">Köln · Sankt-Apern-Straße</p>
-              <p className="cover-line">
-                Master Hairstylist
-                <br />
-                <em>&amp; Blonde Specialist</em>
-              </p>
-            </div>
-            <p className="hero__m-intro">1:1 Termine, du stehst im Mittelpunkt.</p>
-            <nav className="hero__m-links" aria-label="Menü">
-              <a href="#galerie">Arbeiten</a>
-              <a href="#ueber-mich">Über mich</a>
-              <a href="#kontakt">Kontakt</a>
-              <a href={terminLink} target="_blank" rel="noopener">
-                Termin buchen
-              </a>
-            </nav>
-            <InfoLine className="hero__m-info" />
-          </div>
+          <p className="hero__lead">
+            Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
+            Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer Hand, du stehst
+            im Mittelpunkt.
+          </p>
+          <ul className="hero__list">
+            {leistungen.map((l) => (
+              <li key={l}>{l}</li>
+            ))}
+          </ul>
         </section>
-        <div className="ticker container">
-          <span>{person.beruf}</span>
-          <span>Sankt-Apern-Straße, {person.stadt}</span>
-          <span>{person.instagram}</span>
-        </div>
 
-        {/* Termin: modernes Layout, Titel oben links und unten rechts, Button in der Mitte */}
-        <section id="termin" className="booking booking--photo booking--grid" data-header="dark" data-header-m="dark">
-          <ScreenBg src="/haar-textur.jpg" pos="50% 50%" />
-          <div className="bk">
-            <div className="glass bk__card">
-              <p className="kicker">02 · Termin</p>
-              <h2 className="ui-title">Buche deinen Termin</h2>
-              <p className="ui-sub">1:1 bei Zoe Genevieve, Sankt-Apern-Straße, Köln</p>
-              <a href={terminLink} className="btn btn--accent btn--big bk__cta" target="_blank" rel="noopener">
-                Jetzt buchen <span aria-hidden>↗</span>
-              </a>
-              <p className="bk__note">Online über Planity · dauert eine Minute</p>
+        {/* Über mich: kleine Texte, versetztes Bildraster */}
+        <section id="ueber-mich" className="about">
+          <ul className="about__list">
+            {steckbrief.map((f) => (
+              <li key={f.label}>
+                <span>{f.label}</span> {f.wert}
+              </li>
+            ))}
+          </ul>
+          <p className="about__text about__text--1">{ueberMich[0]}</p>
+          <p className="about__text about__text--2">
+            {ueberMich[2]} {ueberMich[1]}
+          </p>
+          <div className="scatter">
+            <Photo src={galerie[1].src} alt={galerie[1].alt} className="scatter__a" />
+            <Photo src="/zoe-karl.jpg" alt="Zoe mit Karl, dem Salon Dog" className="scatter__b" />
+            <div className="scatter__c scatter__accent" aria-hidden>
+              <span>1:1</span>
             </div>
+            <Photo src={galerie[4].src} alt={galerie[4].alt} className="scatter__d" />
+            <Photo src="/zoe-portrait.jpg" alt="Zoe im Strickpulli" className="scatter__e" />
+            <Photo src={galerie[3].src} alt={galerie[3].alt} className="scatter__f" />
           </div>
         </section>
 
-        {/* Arbeiten */}
-        <section id="galerie" className="section">
-          <div className="container works__head">
-            <p className="kicker">03 · Arbeiten</p>
-            <h2 className="title-xl">Arbeiten</h2>
-            <p className="subline">
-              <em>Blond, Balayage, Schnitt</em>
-            </p>
-            <div className="works__info">
-              <div>
-                <span>Leistungen</span>
-                <ul>
-                  <li>Blond</li>
-                  <li>Balayage</li>
-                  <li>Schnitt</li>
-                  <li>Styling</li>
-                </ul>
-              </div>
-              <div>
-                <span>Mehr</span>
-                <ul>
-                  <li>
-                    <a href={person.instagramLink} target="_blank" rel="noopener">
-                      Instagram
-                    </a>
-                  </li>
-                  <li>Nach rechts wischen →</li>
-                </ul>
-              </div>
-            </div>
+        {/* Termin: zentrierte Überschrift, großes Bild, Button */}
+        <section id="termin" className="booking">
+          <h2 className="h-center">Termin buchen</h2>
+          <div className="booking__image">
+            <Photo src="/haar-textur.jpg" alt="Glänzendes braunes Haar in Wellen" />
+            <a href={person.buchungsLink} className="pill pill--big pill--light" target="_blank" rel="noopener">
+              Jetzt online buchen ↗
+            </a>
           </div>
-          <Gallery bilder={galerie} />
+          <p className="caption">
+            <strong>Planity</strong>
+            <br />
+            1:1 Termin bei Zoe
+          </p>
         </section>
 
-        {/* Über mich */}
-        <section id="ueber-mich" className="section container about" data-header-m="dark">
-          <ScreenBg {...hintergruende.ueberMich} mono />
-          <div className="about__grid">
-            <div className="about__media">
-              <Photo src={fotos.ueberMich} alt="Zoe im Strickpulli" className="about__photo" />
-              <Photo src={fotos.karl} alt="Zoe mit Karl, dem Salon Dog" className="about__small" />
+        {/* Arbeiten: großes Bild, dann weitere Arbeiten */}
+        <section id="arbeiten" className="works">
+          <h2 className="h-center">Arbeiten</h2>
+          <figure className="works__main">
+            <Photo src={haupt.src} alt={haupt.alt} />
+            <figcaption className="caption">
+              <strong>{haupt.titel}</strong>
+              <br />
+              {haupt.info}
+            </figcaption>
+          </figure>
+
+          <div className="more">
+            <div className="more__grid">
+              {weitere.map((b) => (
+                <figure key={b.src}>
+                  <Photo src={b.src} alt={b.alt} />
+                  <figcaption className="caption">
+                    <strong>{b.titel}</strong>
+                    <br />
+                    {b.info}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
-            <div className="about__text glass">
-              <p className="kicker">04 · Über mich</p>
-              <h2 className="title-xl">
-              Hi, ich bin Zoe
-            </h2>
-              <p className="subline">
-                <em>und Karl, mein Salon Dog</em>
+            <div className="more__text">
+              <h3>Mehr Arbeiten</h3>
+              <p>
+                Blond, Balayage, Kupfer und Schoko. Neue Looks zeige ich laufend auf
+                Instagram, schau gern vorbei und lass dich für deinen nächsten Termin
+                inspirieren.
               </p>
-              <div className="panel panel--orange about__panel">
-                {ueberMich.map((p, i) => (
-                  <p key={i} className="small-text">
-                    {p}
-                  </p>
-                ))}
-                <dl className="facts">
-                  {steckbrief.map((f) => (
-                    <div key={f.label}>
-                      <dt>{f.label}</dt>
-                      <dd>{f.wert}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </div>
+              <a href={person.instagramLink} className="pill pill--outline" target="_blank" rel="noopener">
+                Instagram ansehen
+              </a>
             </div>
           </div>
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="section container" data-header-m="light">
-          <ScreenBg {...hintergruende.kontakt} mono />
-          <div className="glass contact__glass">
-            <p className="kicker">05 · Kontakt</p>
-            <h2 className="title-xl">Kontakt</h2>
-            <p className="subline">
-              <em>Sankt-Apern-Straße, Köln</em>
-            </p>
-            <div className="acc">
-              <details className="acc__item">
-                <summary>
-                  Adresse
-                  <span className="acc__sub">↳ {person.strasse}</span>
-                </summary>
-                <div className="acc__body">
-                  <p>
-                    {person.salon && (
-                      <>
-                        {person.salon}
-                        <br />
-                      </>
-                    )}
-                    {person.strasse}
-                    <br />
-                    {person.plz} {person.stadt}
-                  </p>
-                  <a href={kartenLink} target="_blank" rel="noopener" className="text-link">
-                    Route planen ↗
-                  </a>
-                </div>
-              </details>
-              <details className="acc__item">
-                <summary>
-                  Öffnungszeiten
-                  <span className="acc__sub">↳ Termine nach Vereinbarung</span>
-                </summary>
-                <dl className="hours acc__body">
-                  {oeffnungszeiten.map((o) => (
-                    <div key={o.tage}>
-                      <dt>{o.tage}</dt>
-                      <dd>{o.zeit}</dd>
-                    </div>
-                  ))}
-                </dl>
-              </details>
-              <details className="acc__item">
-                <summary>
-                  Kontakt
-                  <span className="acc__sub">↳ WhatsApp, E-Mail, Instagram</span>
-                </summary>
-                <p className="acc__body">
-                  <a href={person.whatsappLink} target="_blank" rel="noopener">WhatsApp</a>
-                  <br />
-                  <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`}>{person.email}</a>
-                  <br />
-                  <a href={person.instagramLink} target="_blank" rel="noopener">
-                    {person.instagram}
-                  </a>
-                </p>
-              </details>
-              <details className="acc__item">
-                <summary>
-                  Termin
-                  <span className="acc__sub">↳ Online über Planity</span>
-                </summary>
-                <div className="acc__body">
-                  <a href={terminLink} className="text-link" target="_blank" rel="noopener">
-                    Jetzt online buchen ↗
-                  </a>
-                </div>
-              </details>
+        <section id="kontakt" className="contact">
+          <h2 className="contact__title">Lass uns deinen Look gestalten</h2>
+          <div className="contact__fields">
+            <div className="field">
+              <span className="field__label">Adresse</span>
+              <a href={kartenLink} target="_blank" rel="noopener">
+                {adresse}
+              </a>
             </div>
+            <div className="field">
+              <span className="field__label">Öffnungszeiten</span>
+              {oeffnungszeiten.map((o) => (
+                <span key={o.tage} className="field__row">
+                  <span>{o.tage}</span>
+                  <span>{o.zeit}</span>
+                </span>
+              ))}
+            </div>
+            <div className="field">
+              <span className="field__label">Kontakt</span>
+              <a href={person.whatsappLink} target="_blank" rel="noopener">
+                WhatsApp
+              </a>
+              <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`}>{person.email}</a>
+            </div>
+            <a href={person.buchungsLink} className="pill" target="_blank" rel="noopener">
+              Termin buchen
+            </a>
           </div>
         </section>
       </main>
-
-      <HeaderTheme />
+      <SiteFooter />
       <Motion />
-      <Footer />
     </>
   );
 }

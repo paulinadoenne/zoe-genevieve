@@ -1686,3 +1686,240 @@ html {
     justify-content: center;
   }
 }
+
+/* ============================================================
+   Einheitliches System für alle Seiten
+   Farben: Schwarz, Weiß, Orange. Fotos im Hintergrund schwarzweiß.
+   Kopf jeder Seite: Kicker (Mono) · großer Titel · Unterzeile (Serif)
+   ============================================================ */
+:root {
+  --black: #141110;
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.kicker--light {
+  color: #fff;
+}
+
+.title-xl {
+  font-family: var(--sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(64px, 11vw, 180px);
+  line-height: 0.84;
+  letter-spacing: -0.055em;
+  color: var(--orange);
+  margin: 0;
+}
+
+.subline {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-size: clamp(24px, 2.6vw, 36px);
+  line-height: 1.1;
+  color: var(--orange);
+}
+
+/* Desktop: Abschnitte einheitlich, Kopf linksbündig */
+.works__head,
+#ueber-mich,
+#kontakt {
+  text-align: left;
+}
+
+.works__head {
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+.booking__top {
+  text-align: center;
+}
+
+.about__text .title-xl,
+#kontakt .title-xl {
+  font-size: clamp(56px, 7vw, 112px);
+}
+
+.about__text .subline {
+  margin-bottom: 32px;
+}
+
+#kontakt .subline {
+  margin-bottom: 40px;
+}
+
+/* Hero-Fläche im selben Orange */
+.hero__panel {
+  background: var(--orange);
+}
+
+/* Orange Textblöcke überall gleich */
+.panel--orange {
+  background: var(--orange);
+  color: var(--black);
+}
+
+.panel--orange h3,
+.panel--orange dt {
+  font-family: var(--mono);
+  color: rgb(20 17 16 / 0.6);
+}
+
+.panel--orange .hours dd {
+  color: rgb(20 17 16 / 0.7);
+}
+
+.contact.panel--orange {
+  padding: 32px;
+  border-top: 0;
+}
+
+.facts {
+  border-top: 1px solid rgb(20 17 16 / 0.2);
+  margin-top: 24px;
+  padding-top: 16px;
+}
+
+.facts dt {
+  font-family: var(--mono);
+  color: rgb(20 17 16 / 0.6);
+}
+
+.facts dd {
+  color: var(--black);
+}
+
+/* Footer schwarz mit orangem Logo */
+.footer {
+  background: var(--black);
+}
+
+.footer__name {
+  color: var(--orange);
+}
+
+/* Galerie-Fotos bleiben farbig, Hintergründe schwarzweiß */
+.screen-bg img {
+  filter: grayscale(1) contrast(1.15) brightness(0.85);
+}
+
+.screen-bg::after,
+.booking .screen-bg::after {
+  background: linear-gradient(180deg, rgb(0 0 0 / 0.25) 0%, rgb(0 0 0 / 0.05) 45%, rgb(0 0 0 / 0.4) 100%);
+}
+
+@media (max-width: 760px) {
+  .title-xl,
+  .about__text .title-xl,
+  #kontakt .title-xl {
+    font-size: 18.5vw;
+  }
+  .booking .title-xl {
+    font-size: 22vw;
+  }
+  .subline {
+    font-size: 24px;
+  }
+
+  /* Alle Foto-Screens: Kopf oben, Block unten */
+  #ueber-mich,
+  #kontakt {
+    justify-content: space-between;
+    padding-top: 110px;
+    padding-bottom: 0;
+  }
+  #ueber-mich .about__grid,
+  #ueber-mich .about__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .about__text .subline,
+  #kontakt .subline {
+    margin-bottom: 24px;
+  }
+  .about__panel {
+    margin-top: auto;
+    padding-bottom: 84px;
+  }
+  .about__panel .small-text {
+    font-size: 13px;
+  }
+  .contact.panel--orange {
+    margin-top: auto;
+    padding: 24px var(--gutter) 84px;
+  }
+
+  /* Arbeiten: schwarzer Screen mit gleichem Kopf */
+  #galerie {
+    background: var(--black);
+    justify-content: flex-start;
+    padding-top: 110px;
+  }
+  #galerie .works__head {
+    margin-bottom: 32px;
+  }
+  .works__head::after {
+    content: none;
+  }
+  .slideshow {
+    margin-top: auto;
+    margin-bottom: 96px;
+    height: min(48dvh, 420px);
+  }
+  .slideshow__item.is-active {
+    height: min(48dvh, 420px);
+  }
+
+  .hero__m-intro {
+    color: #fff;
+  }
+}
+
+/* Startfoto ebenfalls schwarzweiß */
+.hero__photo,
+img.hero__photo {
+  filter: grayscale(1) contrast(1.12) brightness(0.9);
+}
+
+.panel--orange .hours dt {
+  font-family: var(--sans);
+  color: var(--black);
+}
+
+.about__panel .facts {
+  max-width: none;
+}
+
+@media (max-width: 760px) {
+  .about__panel .small-text {
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-bottom: 0.7em;
+  }
+  .about__panel .facts {
+    margin-top: 12px;
+    padding-top: 12px;
+  }
+  .about__panel .facts dd {
+    font-size: 17px;
+  }
+}
+
+.about__panel.panel--orange {
+  padding: 28px 32px;
+}
+
+@media (max-width: 760px) {
+  .about__panel.panel--orange {
+    padding: 20px var(--gutter) 84px;
+  }
+}

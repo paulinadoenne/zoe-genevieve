@@ -28,7 +28,7 @@ export default function Home() {
             Sankt-Apern-Straße, du stehst im Mittelpunkt.
           </p>
           <div className="hero__panel">
-            <p className="hero__label">(01) Hair · Köln</p>
+            <p className="kicker kicker--light">01 · Hair · Köln</p>
             <div className="hero__bottom">
               <p className="hero__lead">
                 Master Hairstylist und <em>Blonde Specialist.</em> 1:1 Termine,
@@ -67,13 +67,13 @@ export default function Home() {
         <section id="termin" className="booking" data-header="dark">
           <ScreenBg {...hintergruende.termin} mono />
           <div className="container booking__top">
-            <p className="kicker">The art of hair · Köln</p>
-            <h2 className="booking__title">
+            <p className="kicker">02 · Termin</p>
+            <h2 className="title-xl">
               Termin
               <br />
               buchen
             </h2>
-            <p className="booking__serif">
+            <p className="subline">
               <em>bei Zoe Genevieve</em>
             </p>
           </div>
@@ -85,52 +85,34 @@ export default function Home() {
         </section>
 
         {/* Arbeiten */}
-        <section id="galerie" className="section">
+        <section id="galerie" className="section" data-header-m="dark">
           <div className="container works__head">
-            <h2 className="works__title">Arbeiten</h2>
-            <div className="works__meta">
-              <div className="works__col">
-                <span className="works__key">Leistungen</span>
-                <ul>
-                  <li>Blond</li>
-                  <li>Balayage</li>
-                  <li>Schnitt</li>
-                  <li>Styling</li>
-                  <li>Pflege</li>
-                </ul>
-              </div>
-              <div className="works__col">
-                <span className="works__key">Mehr</span>
-                <ul>
-                  <li>
-                    <a href={person.instagramLink} target="_blank" rel="noopener">
-                      Instagram
-                    </a>
-                  </li>
-                  <li>
-                    <a href={terminLink} target="_blank" rel="noopener">
-                      Termin buchen
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            <p className="kicker">03 · Arbeiten</p>
+            <h2 className="title-xl">Arbeiten</h2>
+            <p className="subline">
+              <em>Blond, Balayage, Schnitt</em>
+            </p>
           </div>
           <Gallery bilder={galerie} />
         </section>
 
         {/* Über mich */}
         <section id="ueber-mich" className="section container about" data-header-m="dark">
-          <ScreenBg {...hintergruende.ueberMich} />
-          <p className="label">(04) Über mich</p>
+          <ScreenBg {...hintergruende.ueberMich} mono />
           <div className="about__grid">
             <div className="about__media">
               <Photo src={fotos.ueberMich} alt="Zoe im Strickpulli" className="about__photo" />
               <Photo src={fotos.karl} alt="Zoe mit Karl, dem Salon Dog" className="about__small" />
             </div>
             <div className="about__text">
-              <p className="about__lead">
-                Hi, ich bin <em>Zoe.</em>
+              <p className="kicker">04 · Über mich</p>
+              <h2 className="title-xl">
+                Hi, ich
+                <br />
+                bin Zoe
+              </h2>
+              <p className="subline">
+                <em>und Karl, mein Salon Dog</em>
               </p>
               <div className="panel panel--orange about__panel">
                 {ueberMich.map((p, i) => (
@@ -138,15 +120,15 @@ export default function Home() {
                     {p}
                   </p>
                 ))}
+                <dl className="facts">
+                  {steckbrief.map((f) => (
+                    <div key={f.label}>
+                      <dt>{f.label}</dt>
+                      <dd>{f.wert}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
-              <dl className="facts card panel--orange">
-                {steckbrief.map((f) => (
-                  <div key={f.label}>
-                    <dt>{f.label}</dt>
-                    <dd>{f.wert}</dd>
-                  </div>
-                ))}
-              </dl>
             </div>
           </div>
         </section>
@@ -154,9 +136,12 @@ export default function Home() {
         {/* Kontakt */}
         <section id="kontakt" className="section container" data-header-m="dark">
           <ScreenBg {...hintergruende.kontakt} mono />
-          <p className="label">(05) Kontakt</p>
-          <h2 className="display contact__title">Kontakt</h2>
-          <div className="contact panel panel--cream">
+          <p className="kicker">05 · Kontakt</p>
+          <h2 className="title-xl">Kontakt</h2>
+          <p className="subline">
+            <em>Sankt-Apern-Straße, Köln</em>
+          </p>
+          <div className="contact panel panel--orange">
             <div>
               <h3>Adresse</h3>
               <p>

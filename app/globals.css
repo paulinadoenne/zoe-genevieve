@@ -2054,3 +2054,165 @@ body {
     padding-top: 80px;
   }
 }
+
+/* ============================================================
+   Farbkombi Navy · Cognac · Warm White, dezent eingesetzt
+   Weiß als Grund, Navy für Schrift, Cognac als Akzent
+   ============================================================ */
+:root {
+  --navy: #1c2a44;
+  --cognac: #8f4a1e;
+  --warm: #f1ebe3;
+
+  --burgund: var(--navy);
+  --ink: var(--navy);
+  --cocoa: var(--navy);
+  --cayenne: var(--cognac);
+  --orange: var(--cognac);
+  --blau: var(--warm);
+  --rose: var(--warm);
+  --glass: var(--warm);
+  --glass-light: var(--warm);
+  --muted: rgb(28 42 68 / 0.58);
+  --line: rgb(28 42 68 / 0.12);
+}
+
+body {
+  color: var(--ink);
+}
+
+/* Logo: zoe in Cognac, GENEVIEVE in Navy */
+.hero__logo,
+.header__logo {
+  color: var(--cognac);
+}
+
+.hero__logo .logo__name {
+  color: var(--navy);
+}
+
+/* Über mich auf Weiß, nur das Raster bekommt zwei ruhige Felder */
+.about {
+  background: #fff;
+}
+
+.scatter::before {
+  background: var(--warm);
+}
+
+.scatter__accent {
+  background: var(--navy);
+  color: var(--warm);
+}
+
+/* Buttons Navy, Hover Cognac */
+.pill,
+.contact__fields .pill {
+  background: var(--navy);
+  color: #fff;
+}
+
+.pill:hover,
+.contact__fields .pill:hover {
+  background: var(--cognac);
+  color: #fff;
+}
+
+.pill--light {
+  background: #fff;
+  color: var(--navy);
+}
+
+.pill--light:hover {
+  background: var(--cognac);
+  color: #fff;
+}
+
+.pill--outline {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.pill--outline:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+/* Kontakt auf Warm White */
+.contact {
+  background: var(--warm);
+}
+
+.contact .field {
+  border-bottom-color: rgb(28 42 68 / 0.14);
+}
+
+/* Abschluss Navy */
+.foot {
+  background: var(--navy);
+  color: var(--warm);
+}
+
+.foot__big a {
+  color: var(--warm);
+}
+
+.foot__big a:hover {
+  color: #d9a37a;
+}
+
+.foot__small,
+.foot__legal {
+  color: rgb(241 235 227 / 0.62);
+}
+
+.foot__right a,
+.foot__legal a:hover {
+  color: var(--warm);
+}
+
+/* Menü Warm White */
+.menu {
+  background: var(--warm);
+}
+
+.menu__list li {
+  border-bottom-color: rgb(28 42 68 / 0.14);
+}
+
+.menu__list a:hover {
+  color: var(--cognac);
+}
+
+.menu__foot .pill {
+  background: var(--navy);
+  color: #fff;
+}
+
+.menu__foot .pill:hover {
+  background: var(--cognac);
+}
+
+::selection {
+  background: var(--navy);
+  color: var(--warm);
+}
+
+@media (max-width: 760px) {
+  .about {
+    background: #fff;
+  }
+  .scatter::before {
+    background: var(--warm);
+  }
+  .booking {
+    background: #fff;
+  }
+  .booking .h-center {
+    color: var(--navy);
+  }
+  .hero__list {
+    color: var(--navy);
+  }
+}

@@ -39,8 +39,22 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Galerie */}
+        <section id="galerie" className="section light">
+          <div className="container">
+            <p className="eyebrow">Galerie</p>
+            <h2 className="title">Meine Arbeiten</h2>
+          </div>
+          <Gallery bilder={galerie} />
+          <div className="container">
+            <a href={person.instagramLink} target="_blank" rel="noopener" className="link">
+              Mehr auf Instagram {person.instagram}
+            </a>
+          </div>
+        </section>
+
         {/* Leistungen */}
-        <section id="leistungen" className="section light">
+        <section id="leistungen" className="section">
           <div className="container">
             <p className="eyebrow">Leistungen und Preise</p>
             <h2 className="title">1:1 Termine, du stehst im Mittelpunkt</h2>
@@ -66,20 +80,6 @@ export default function Home() {
               Alle Preise inklusive Beratung. Der genaue Preis richtet sich nach
               Haarlänge und Aufwand.
             </p>
-          </div>
-        </section>
-
-        {/* Galerie */}
-        <section id="galerie" className="section">
-          <div className="container">
-            <p className="eyebrow">Galerie</p>
-            <h2 className="title">Meine Arbeiten</h2>
-          </div>
-          <Gallery bilder={galerie} />
-          <div className="container">
-            <a href={person.instagramLink} target="_blank" rel="noopener" className="link">
-              Mehr auf Instagram {person.instagram}
-            </a>
           </div>
         </section>
 

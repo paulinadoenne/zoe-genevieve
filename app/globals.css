@@ -1,6 +1,6 @@
 :root {
   /* Hauptfarbe Cayenne Dust, Akzente Bitter Cocoa und Weathered Glass */
-  --cayenne: #9d3f0d;
+  --cayenne: #c24e0c;
   --cocoa: #391b17;
   --glass: #9ab0aa;
   --cream: #f4ede4;
@@ -344,7 +344,7 @@ p {
   font-weight: 400;
   font-size: 28px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--cayenne);
+  border-bottom: 1px solid currentColor;
 }
 
 .prices ul {
@@ -371,8 +371,7 @@ p {
 
 .prices__value {
   white-space: nowrap;
-  font-weight: 400;
-  color: var(--cayenne);
+  font-weight: 500;
 }
 
 /* Galerie: Rondell (Desktop) */

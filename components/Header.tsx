@@ -5,8 +5,8 @@ import { useState } from "react";
 import Logo from "./Logo";
 
 const links = [
-  { href: "/#leistungen", label: "Leistungen" },
-  { href: "/#galerie", label: "Galerie" },
+  { href: "/#galerie", label: "Arbeiten" },
+  { href: "/#leistungen", label: "Preise" },
   { href: "/#ueber-mich", label: "Über mich" },
   { href: "/#termin", label: "Kontakt" },
 ];

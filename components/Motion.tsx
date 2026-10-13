@@ -46,7 +46,7 @@ export default function Motion() {
           }
         });
       },
-      { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
+      { rootMargin: "0px", threshold: 0 }
     );
     els.forEach((el) => obs.observe(el));
     return () => obs.disconnect();

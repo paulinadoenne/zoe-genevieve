@@ -4228,3 +4228,32 @@ img.hero__photo,
     border-bottom-color: var(--line);
   }
 }
+
+/* Ohne feste Menüleiste unten: weniger Abstand am unteren Rand */
+@media (max-width: 760px) {
+  .hero,
+  .booking,
+  #ueber-mich {
+    padding-bottom: 40px;
+  }
+  #galerie {
+    padding-bottom: 48px;
+  }
+  #kontakt {
+    padding-bottom: 0;
+  }
+  #kontakt .acc {
+    margin-bottom: 0;
+    padding-bottom: 40px;
+  }
+  .footer {
+    padding-bottom: 32px;
+  }
+}
+
+@media (max-width: 760px) {
+  #ueber-mich .about__panel,
+  #ueber-mich .about__panel.panel--orange {
+    padding-bottom: 0;
+  }
+}

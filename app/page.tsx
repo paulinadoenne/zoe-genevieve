@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import Photo from "@/components/Photo";
 import Logo from "@/components/Logo";
 import Gallery from "@/components/Gallery";
-import StickyCta from "@/components/StickyCta";
 import InfoLine from "@/components/InfoLine";
 import HeaderTheme from "@/components/HeaderTheme";
 import Motion from "@/components/Motion";
@@ -232,7 +231,6 @@ export default function Home() {
         </section>
       </main>
 
-      <StickyCta href={terminLink} />
       <HeaderTheme />
       <Motion />
       <Footer />

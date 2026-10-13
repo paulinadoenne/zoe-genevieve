@@ -1330,3 +1330,15 @@ main {
     font-size: 16px;
   }
 }
+
+/* Kopfzeile immer komplett transparent, ohne Verlauf */
+.header::before,
+.header.is-scrolled::before {
+  content: none;
+  display: none;
+}
+
+.header {
+  background: transparent !important;
+  backdrop-filter: none !important;
+}

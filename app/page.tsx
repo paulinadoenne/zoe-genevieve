@@ -77,26 +77,10 @@ export default function Home() {
               <em>bei Zoe Genevieve</em>
             </p>
           </div>
-          <div className="booking__block">
-            <div className="container booking__block-inner">
-              <dl className="receipt">
-                <div>
-                  <dt>Format</dt>
-                  <dd>1:1 Termin</dd>
-                </div>
-                <div>
-                  <dt>Ort</dt>
-                  <dd>Sankt-Apern-Straße, Köln</dd>
-                </div>
-                <div>
-                  <dt>Buchung</dt>
-                  <dd>Online über Planity</dd>
-                </div>
-              </dl>
-              <a href={terminLink} className="btn btn--light btn--big" target="_blank" rel="noopener">
-                Jetzt buchen <span aria-hidden>↗</span>
-              </a>
-            </div>
+          <div className="container booking__bottom">
+            <a href={terminLink} className="btn btn--accent btn--big" target="_blank" rel="noopener">
+              Jetzt buchen <span aria-hidden>↗</span>
+            </a>
           </div>
         </section>
 

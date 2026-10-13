@@ -1583,46 +1583,11 @@ html {
   color: var(--orange);
 }
 
-.booking__block {
-  position: relative;
-  z-index: 1;
-  background: var(--orange);
-  color: #1d0f0a;
-}
 
-.booking__block-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-  padding-top: 28px;
-  padding-bottom: 32px;
-}
 
-.receipt {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 8px 48px;
-  font-family: var(--mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
 
-.receipt dt {
-  opacity: 0.65;
-  margin-bottom: 2px;
-}
 
-.booking__block .btn--light {
-  background: #1d0f0a;
-  color: var(--orange);
-}
 
-.booking__block .btn--light:hover {
-  background: var(--cream);
-  color: #1d0f0a;
-}
 
 /* Über mich und Kontakt: Überschriften orange, Blöcke orange */
 .about__lead em,
@@ -1662,28 +1627,6 @@ html {
   .booking__title {
     font-size: 22vw;
   }
-  .booking__block-inner {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 22px;
-    padding-bottom: 84px;
-  }
-  .receipt {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .receipt div {
-    display: flex;
-    justify-content: space-between;
-    padding: 7px 0;
-    border-bottom: 1px solid rgb(29 15 10 / 0.25);
-  }
-  .receipt dt {
-    margin: 0;
-  }
-  .booking__block .btn {
-    justify-content: center;
-  }
   .panel--orange {
     background: var(--orange);
     color: #1d0f0a;
@@ -1721,5 +1664,25 @@ html {
   .works__title {
     font-family: var(--mono);
     color: var(--orange);
+  }
+}
+
+/* Termin ohne Block: nur Foto, Titel und Button */
+.booking__bottom {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-bottom: clamp(48px, 6vw, 80px);
+}
+
+@media (max-width: 760px) {
+  .booking__bottom {
+    padding-bottom: 96px;
+  }
+  .booking__bottom .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

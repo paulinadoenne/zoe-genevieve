@@ -2155,3 +2155,139 @@ img.hero__photo,
     --l: min(76vw, 320px);
   }
 }
+
+/* ============================================================
+   Weiße Flächen, orange Schrift
+   ============================================================ */
+:root {
+  --bg: #ffffff;
+  --cream-2: #ffffff;
+  --ink: var(--orange);
+  --muted: rgb(224 96 26 / 0.7);
+  --line: rgb(224 96 26 / 0.25);
+}
+
+body,
+.light,
+.header,
+.header[data-theme="dark"],
+.nav a,
+.footer,
+.footer a,
+.footer__links a,
+.footer__inner,
+.infoline,
+.small-text,
+.hours dd,
+.contact h3,
+.facts dt,
+.facts dd,
+.text-link,
+.hero__m-intro,
+.hero__m-links a,
+.hero .hero__m-info {
+  color: var(--orange);
+}
+
+/* Flächen weiß statt orange */
+.hero__panel,
+.panel--orange,
+.panel--orange.contact,
+.about__panel.panel--orange,
+.facts.card.panel--orange,
+.footer,
+.booking,
+#galerie {
+  background: #fff;
+  color: var(--orange);
+}
+
+.panel--orange h3,
+.panel--orange dt,
+.panel--orange .hours dt,
+.panel--orange .hours dd,
+.facts dt,
+.facts dd {
+  color: var(--orange);
+}
+
+.facts {
+  border-top-color: var(--line);
+}
+
+/* Startbild: Text und Logo orange */
+.hero__panel .hero__lead,
+.hero__panel .kicker--light,
+.hero__title {
+  color: var(--orange);
+}
+
+/* Buttons: orange mit weißer Schrift, Rahmenbuttons orange */
+.btn,
+.btn--light,
+.hero .btn--light,
+.btn--accent {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn:hover,
+.btn--light:hover,
+.hero .btn--light:hover,
+.btn--accent:hover {
+  background: #fff;
+  color: var(--orange);
+  box-shadow: inset 0 0 0 1px var(--orange);
+}
+
+.nav__cta {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.nav__cta:hover,
+.header[data-theme="dark"] .nav__cta:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.logo__script,
+.wordmark {
+  color: var(--orange);
+}
+
+.footer__name {
+  color: var(--orange);
+}
+
+@media (max-width: 760px) {
+  .sticky-cta,
+  .sticky-cta[data-theme="dark"] {
+    background: #fff;
+    color: var(--orange);
+    border-top-color: var(--line);
+  }
+  .sticky-cta a {
+    color: var(--orange);
+  }
+  .sticky-cta .sticky-cta__book {
+    background: var(--orange);
+    color: #fff;
+  }
+  .hero__media::after {
+    background: linear-gradient(180deg, transparent 50%, rgb(255 255 255 / 0.92) 100%);
+  }
+  .hero__m-links {
+    border-top-color: var(--line);
+  }
+  .about__panel.panel--orange,
+  .contact.panel--orange {
+    border-top: 1px solid var(--line);
+  }
+}
+
+@media (max-width: 760px) {
+  .hero__media::after {
+    background: linear-gradient(180deg, transparent 45%, rgb(255 255 255 / 0.85) 62%, #fff 74%);
+  }
+}

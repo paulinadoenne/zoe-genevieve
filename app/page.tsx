@@ -22,7 +22,7 @@ export default function Home() {
       <Header />
       <main>
         {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
-        <section className="hero" data-header="light" data-header-m="dark">
+        <section className="hero" data-header="dark">
           <p className="hero__m-intro">
             Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
             Sankt-Apern-Straße, du stehst im Mittelpunkt.
@@ -63,38 +63,16 @@ export default function Home() {
           <span>{person.instagram}</span>
         </div>
 
-        {/* Termin: Band in Bitter Cocoa */}
+        {/* Termin: ein Screen, Foto im Hintergrund, nur Überschrift und Button */}
         <section id="termin" className="booking" data-header="dark">
           <ScreenBg src={hintergruende.termin} variante="tuer" />
-          <div className="container">
-            <p className="label">(02) Termin</p>
-            <div className="booking__row">
-              <h2 className="display">
-                Termin <em>buchen</em>
-              </h2>
-              <div className="booking__side">
-                <a href={terminLink} className="btn btn--accent btn--big" target="_blank" rel="noopener">
-                  {person.buchungsLink ? "Online buchen bei Planity" : "Per WhatsApp anfragen"}{" "}
-                  <span aria-hidden>↗</span>
-                </a>
-                {person.buchungsLink && (
-                  <a href={person.whatsappLink} className="text-link" target="_blank" rel="noopener">
-                    Fragen? Schreib mir per WhatsApp
-                  </a>
-                )}
-              </div>
-            </div>
-            <ol className="steps panel panel--cayenne">
-              <li>
-                <span>01</span>Freien Termin online wählen
-              </li>
-              <li>
-                <span>02</span>Kurz beschreiben, was du dir wünschst
-              </li>
-              <li>
-                <span>03</span>Zurücklehnen, der Rest ist meine Sache
-              </li>
-            </ol>
+          <div className="container booking__inner">
+            <h2 className="display">
+              Termin <em>buchen</em>
+            </h2>
+            <a href={terminLink} className="btn btn--accent btn--big" target="_blank" rel="noopener">
+              {person.buchungsLink ? "Online buchen" : "Per WhatsApp anfragen"} <span aria-hidden>↗</span>
+            </a>
           </div>
         </section>
 

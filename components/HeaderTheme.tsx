@@ -10,7 +10,10 @@ export default function HeaderTheme() {
     const bar = document.querySelector<HTMLElement>(".sticky-cta");
 
     const themeAt = (y: number) => {
-      const el = document.elementFromPoint(window.innerWidth / 2, y);
+      // Kopfzeile und Menüzeile liegen über dem Inhalt, also darunter suchen
+      const el = document
+        .elementsFromPoint(window.innerWidth / 2, y)
+        .find((e) => !e.closest(".header, .sticky-cta"));
       const mobil = window.innerWidth <= 760;
       const sec = el?.closest<HTMLElement>(mobil ? "[data-header-m], [data-header]" : "[data-header]");
       return (mobil && sec?.dataset.headerM) || sec?.dataset.header || "light";
@@ -20,8 +23,8 @@ export default function HeaderTheme() {
     const update = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        if (header) header.dataset.theme = themeAt(header.offsetHeight + 1);
-        if (bar) bar.dataset.theme = themeAt(window.innerHeight - bar.offsetHeight - 1);
+        if (header) header.dataset.theme = themeAt(header.offsetHeight / 2);
+        if (bar) bar.dataset.theme = themeAt(window.innerHeight - bar.offsetHeight / 2);
       });
     };
 

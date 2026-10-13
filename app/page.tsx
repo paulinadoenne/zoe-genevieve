@@ -4,6 +4,7 @@ import Photo from "@/components/Photo";
 import Logo from "@/components/Logo";
 import Gallery from "@/components/Gallery";
 import StickyCta from "@/components/StickyCta";
+import InfoLine from "@/components/InfoLine";
 import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
@@ -20,6 +21,10 @@ export default function Home() {
       <main>
         {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
         <section className="hero">
+          <p className="hero__m-intro">
+            Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
+            Sankt-Apern-Straße, du stehst im Mittelpunkt.
+          </p>
           <div className="hero__panel">
             <p className="hero__label">(01) Hair · Köln</p>
             <div className="hero__bottom">
@@ -34,10 +39,21 @@ export default function Home() {
           </div>
           <div className="hero__media">
             <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" className="hero__photo" />
+            <h1 className="hero__title">
+              <Logo />
+            </h1>
           </div>
-          <h1 className="hero__title">
-            <Logo />
-          </h1>
+          <div className="hero__accent" aria-hidden>
+            <span>1:1</span>
+          </div>
+          <nav className="hero__m-links" aria-label="Schnellzugriff">
+            <a href="#galerie">Arbeiten</a>
+            <a href="#ueber-mich">Über mich</a>
+            <a href={terminLink} target="_blank" rel="noopener">
+              Termin buchen
+            </a>
+          </nav>
+          <InfoLine className="hero__m-info" />
         </section>
         <div className="ticker container">
           <span>{person.beruf}</span>
@@ -118,7 +134,10 @@ export default function Home() {
         <section id="ueber-mich" className="section container about">
           <p className="label">(04) Über mich</p>
           <div className="about__grid">
-            <Photo alt="Zoe im Salon" className="about__photo" />
+            <div className="about__media">
+              <Photo alt="Zoe im Salon" className="about__photo" />
+              <Photo alt="Karl, der Salon Dog" className="about__small" />
+            </div>
             <div className="about__text">
               <p className="about__lead">
                 Hi, ich bin <em>Zoe.</em>

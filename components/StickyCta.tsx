@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from "react";
 
-// Mobiler Buchungsbutton, erscheint sobald der Button im Startbild weg ist.
+// Mobiler Buchungsbutton, erscheint sobald das Startbild weggescrollt ist.
 export default function StickyCta({ href }: { href: string }) {
   const [sichtbar, setSichtbar] = useState(false);
 
   useEffect(() => {
-    const ziel = document.querySelector(".hero__cta");
+    const ziel = document.querySelector(".hero");
     if (!ziel) return;
     const obs = new IntersectionObserver(([e]) =>
       setSichtbar(!e.isIntersecting && e.boundingClientRect.top < 0)

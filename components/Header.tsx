@@ -29,6 +29,26 @@ export default function Header() {
           <a href={person.buchungsLink || "/#termin"} className="nav__cta" target="_blank" rel="noopener" onClick={() => setOpen(false)}>
             Termin buchen
           </a>
+          <dl className="nav__rows">
+            <div>
+              <dt>Instagram</dt>
+              <dd>
+                <a href={person.instagramLink} target="_blank" rel="noopener">
+                  {person.instagram}
+                </a>
+              </dd>
+            </div>
+            <div>
+              <dt>Adresse</dt>
+              <dd>{person.strasse}</dd>
+            </div>
+            <div>
+              <dt>Stadt</dt>
+              <dd>
+                {person.plz} {person.stadt}
+              </dd>
+            </div>
+          </dl>
         </nav>
         <button
           className="nav-toggle"
@@ -36,8 +56,7 @@ export default function Header() {
           aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
-          <span />
-          <span />
+          {open ? "Schließen" : "Menü"}
         </button>
       </div>
     </header>

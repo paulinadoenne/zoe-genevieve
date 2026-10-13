@@ -325,7 +325,16 @@ dd {
 
 .hero__media {
   position: relative;
-  overflow: hidden;
+  container-type: inline-size;
+}
+
+.hero__m-intro,
+.hero__accent,
+.hero__m-links,
+.hero__m-info,
+.nav__rows,
+.about__small {
+  display: none;
 }
 
 .hero__photo {
@@ -337,8 +346,8 @@ dd {
 .hero__title {
   position: absolute;
   top: 12%;
-  left: 50%;
-  transform: translateX(-52%);
+  left: 0;
+  transform: translateX(-50%);
   font-weight: 400;
   color: var(--cream);
   pointer-events: none;
@@ -741,6 +750,38 @@ main > .section:last-child {
   color: var(--cream);
 }
 
+/* Infozeile mit Uhrzeit, Ort und Koordinaten */
+.infoline {
+  display: flex;
+  gap: 24px;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+
+.footer__links a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.footer__info {
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.about__media {
+  position: relative;
+}
+
 /* Am Handy immer sichtbarer Buchungsbutton */
 .sticky-cta {
   display: none;
@@ -783,19 +824,29 @@ main > .section:last-child {
 
 /* Mobil */
 @media (max-width: 760px) {
+  .header {
+    background: var(--bg);
+    backdrop-filter: none;
+  }
   .nav-toggle {
     display: block;
+    width: auto;
+    height: auto;
+    font: inherit;
+    font-size: 13px;
+    color: var(--ink);
   }
   .nav {
     position: fixed;
-    inset: 60px 0 auto 0;
+    inset: 60px 0 0 0;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20px;
-    padding: 24px var(--gutter) 32px;
+    gap: 14px;
+    padding: 28px var(--gutter) 32px;
     background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    font-size: 16px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-8px);
@@ -806,26 +857,142 @@ main > .section:last-child {
     pointer-events: auto;
     transform: none;
   }
+  .nav__cta {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+  }
+  .nav__rows {
+    display: block;
+    width: 100%;
+    margin-top: auto;
+    font-size: 11px;
+  }
+  .nav__rows div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav__rows dd {
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .nav__rows a {
+    text-decoration: none;
+  }
   .hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.46fr);
+    gap: 8px;
+    align-items: start;
     height: auto;
     max-height: none;
     min-height: 0;
-  }
-  .hero__media {
-    order: -1;
-    aspect-ratio: 4 / 5;
+    padding: 40px var(--gutter) 0;
   }
   .hero__panel {
-    gap: 48px;
-    padding-top: 28px;
-    padding-bottom: 32px;
+    display: none;
+  }
+  .hero__m-intro {
+    display: block;
+    grid-column: 1 / -1;
+    font-size: 13px;
+    line-height: 1.45;
+    max-width: 34ch;
+    margin-bottom: 64px;
+  }
+  .hero__media {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+  }
+  .hero__accent {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: flex-end;
+    aspect-ratio: 1;
+    padding: 8px;
+    background: var(--cayenne);
+    color: var(--cream);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1;
   }
   .hero__title {
-    top: 4%;
-    left: 5%;
+    top: 5%;
+    left: 4%;
     transform: none;
-    --logo-w: 78vw;
+    --logo-w: 94cqw;
+  }
+  .hero__m-links {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    grid-column: 1 / -1;
+    margin: 72px 0 28px;
+    font-size: 13px;
+  }
+  .hero__m-links a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
+  .hero__m-info {
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    padding-bottom: 12px;
+  }
+  .ticker {
+    display: none;
+  }
+  .booking .display {
+    font-size: 48px;
+  }
+  .works__title {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .works__meta {
+    display: none;
+  }
+  .works__head::after {
+    content: "@zoegenevieve.hair";
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .works__head {
+    margin-bottom: 40px;
+  }
+  .about__media {
+    display: grid;
+    grid-template-columns: 1fr 0.42fr;
+    gap: 8px;
+    align-items: start;
+  }
+  .about__small {
+    display: flex;
+    aspect-ratio: 3 / 4;
+  }
+  .about__lead {
+    font-size: 36px;
+  }
+  .footer__links {
+    gap: 20px;
+  }
+  .footer__info {
+    justify-content: space-between;
   }
   .ticker {
     flex-direction: column;

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Photo from "./Photo";
 
-type Bild = { src: string; alt: string };
+type Bild = { src: string; alt: string; titel?: string; info?: string };
 
 // Langsam wechselnde Diashow auf weißem Grund, ein Foto zur Zeit.
 const DAUER = 7000;
@@ -33,9 +33,14 @@ export default function Gallery({ bilder }: { bilder: Bild[] }) {
     <div className="swipe" aria-label="Arbeiten, nach rechts wischen">
       {bilder.map((b, i) => (
         <figure key={b.src} className="swipe__item">
-          <Photo src={b.src} alt={b.alt} />
+          <div className="swipe__frame">
+            <Photo src={b.src} alt={b.alt} />
+          </div>
           <figcaption>
-            <span>{nr(i)}</span> {b.alt}
+            <span className="swipe__name">
+              {i + 1}. {b.titel ?? b.alt}
+            </span>
+            <span className="swipe__info">{b.info ?? b.alt}</span>
           </figcaption>
         </figure>
       ))}

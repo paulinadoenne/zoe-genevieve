@@ -4604,3 +4604,147 @@ img.hero__photo,
 .glass {
   background: linear-gradient(160deg, rgb(255 255 255 / 0.2), rgb(70 50 40 / 0.28));
 }
+
+/* ============================================================
+   Milchglas wieder entfernt: Text direkt auf dem Foto
+   ============================================================ */
+.glass {
+  background: none !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.glass,
+.glass * {
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.3), 0 2px 20px rgb(0 0 0 / 0.4) !important;
+}
+
+.glass .btn,
+.glass .btn * {
+  text-shadow: none !important;
+}
+
+@media (max-width: 760px) {
+  .hero__glass,
+  .contact__glass,
+  #ueber-mich .about__text {
+    padding: 0 !important;
+  }
+}
+
+/* ============================================================
+   Arbeiten mobil: Karten mit körnigem Farbverlauf und Foto im Rahmen
+   ============================================================ */
+@media (max-width: 760px) {
+  #galerie {
+    justify-content: flex-start;
+    padding: 72px 0 0;
+  }
+  #galerie .works__head {
+    margin-bottom: 14px;
+  }
+  #galerie .title-xl {
+    font-size: 28px;
+  }
+  .works__info {
+    display: none;
+  }
+  .swipe {
+    flex: 1;
+    gap: 10px;
+    padding: 0 var(--gutter) 24px;
+    scroll-padding-left: var(--gutter);
+  }
+  .swipe__item {
+    position: relative;
+    width: calc(100vw - 2 * var(--gutter) - 24px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 22px 92px;
+    border-radius: 18px;
+    overflow: hidden;
+    background:
+      var(--grain),
+      linear-gradient(180deg, #e9c9a0 0%, #1c1310 22%, #c2763d 50%, #1c1310 78%, #e9c9a0 100%);
+    background-size: 220px 220px, 100% 100%;
+    background-blend-mode: overlay, normal;
+  }
+  .swipe__item:nth-child(even) {
+    background:
+      var(--grain),
+      linear-gradient(180deg, #f1e3d0 0%, #2a1a12 24%, #9d4a1c 52%, #2a1a12 80%, #f1e3d0 100%);
+    background-size: 220px 220px, 100% 100%;
+    background-blend-mode: overlay, normal;
+  }
+  .swipe__item:last-child {
+    margin-right: var(--gutter);
+  }
+  .swipe__item::after {
+    content: none !important;
+  }
+  .swipe__frame {
+    width: 82%;
+    box-shadow: 0 18px 40px rgb(0 0 0 / 0.35);
+  }
+  .swipe__frame .photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+  }
+  .swipe__item figcaption {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 22px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 12px;
+    padding: 0;
+    color: #1c1310;
+  }
+  .swipe__name {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #1c1310 !important;
+  }
+  .swipe__info {
+    font-size: 10.5px;
+    line-height: 1.35;
+    text-align: right;
+    color: #1c1310 !important;
+  }
+}
+
+@media (max-width: 760px) {
+  #kontakt .acc {
+    margin: 16px calc(-1 * var(--gutter)) -24px;
+    padding: 4px var(--gutter) 28px;
+    background: #fff;
+    border-top: 0;
+  }
+  #kontakt .acc,
+  #kontakt .acc * {
+    text-shadow: none !important;
+  }
+  #kontakt .acc__item summary,
+  #kontakt .acc__body,
+  #kontakt .acc__body a,
+  #kontakt .hours dt {
+    color: var(--ink);
+  }
+  #kontakt .acc__sub,
+  #kontakt .hours dd {
+    color: var(--taupe);
+  }
+  #kontakt .acc__item {
+    border-bottom-color: var(--line);
+  }
+}

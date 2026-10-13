@@ -1,8 +1,6 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import Logo from "./Logo";
 import { person } from "@/lib/content";
 
 const links = [
@@ -25,9 +23,6 @@ export default function Header() {
   return (
     <>
       <header className={`header${open ? " is-open" : ""}`}>
-        <Link href="/" className="header__logo" aria-label="Zoe Genevieve, Startseite" onClick={() => setOpen(false)}>
-          <Logo />
-        </Link>
         <button
           className="menu-btn"
           aria-expanded={open}

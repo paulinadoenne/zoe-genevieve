@@ -3615,3 +3615,136 @@ body,
     color: #fff;
   }
 }
+
+/* ============================================================
+   Minimale Animationen
+   ============================================================ */
+:root {
+  --ease: cubic-bezier(0.22, 0.61, 0.21, 1);
+}
+
+/* Text blendet von unten ein */
+.motion .rv {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.9s var(--ease) var(--d, 0ms),
+    transform 0.9s var(--ease) var(--d, 0ms);
+}
+
+.motion .rv.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Fotos öffnen sich wie ein Vorhang */
+.motion .rv-img {
+  clip-path: inset(12% 0 0 0);
+  transition: clip-path 1.3s var(--ease) var(--d, 0ms);
+}
+
+.motion .rv-img .photo,
+.motion .rv-img > img {
+  transform: scale(1.08);
+  transition: transform 1.6s var(--ease) var(--d, 0ms);
+}
+
+.motion .rv-img.is-in {
+  clip-path: inset(0 0 0 0);
+}
+
+.motion .rv-img.is-in .photo,
+.motion .rv-img.is-in > img {
+  transform: scale(1);
+}
+
+.motion .ed__item:hover .rv-img.is-in .photo {
+  transform: scale(1.03);
+}
+
+/* Links: Unterstreichung läuft mit */
+.nav a:not(.nav__cta),
+.footer__links a,
+.text-link,
+.acc__body a,
+.hero__m-links a {
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.45s var(--ease), color 0.3s;
+}
+
+.nav a:not(.nav__cta):hover,
+.footer__links a:hover,
+.text-link:hover,
+.acc__body a:hover,
+.hero__m-links a:hover {
+  background-size: 100% 1px;
+}
+
+.text-link {
+  background-size: 100% 1px;
+}
+
+.text-link:hover {
+  animation: underline-run 0.6s var(--ease);
+}
+
+@keyframes underline-run {
+  0% { background-size: 100% 1px; background-position: 100% 100%; }
+  50% { background-size: 0% 1px; background-position: 100% 100%; }
+  51% { background-position: 0 100%; }
+  100% { background-size: 100% 1px; background-position: 0 100%; }
+}
+
+/* Buttons: Pfeil bewegt sich mit */
+.btn span[aria-hidden] {
+  display: inline-block;
+  transition: transform 0.4s var(--ease);
+}
+
+.btn:hover span[aria-hidden] {
+  transform: translate(3px, -3px);
+}
+
+.btn,
+.nav__cta,
+.sticky-cta__book {
+  transition: background 0.35s var(--ease), color 0.35s var(--ease), transform 0.35s var(--ease);
+}
+
+.btn:active,
+.sticky-cta__book:active {
+  transform: scale(0.97);
+}
+
+/* Kontaktliste: Inhalt blendet weich ein */
+.acc__item[open] .acc__body {
+  animation: acc-in 0.5s var(--ease);
+}
+
+@keyframes acc-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: none; }
+}
+
+.acc__item summary::after {
+  transition: transform 0.4s var(--ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion .rv,
+  .motion .rv-img,
+  .motion .rv-img .photo {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+    transition: none;
+  }
+  .acc__item[open] .acc__body,
+  .text-link:hover {
+    animation: none;
+  }
+}

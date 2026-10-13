@@ -3113,3 +3113,262 @@ body,
 .hero__panel .kicker--light {
   color: var(--ink);
 }
+
+/* ============================================================
+   Arbeiten: Editorial Anordnung
+   ============================================================ */
+.reel,
+.folio {
+  display: none !important;
+}
+
+.ed {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(16px, 2vw, 32px);
+  row-gap: clamp(48px, 7vw, 120px);
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(80px, 10vw, 160px);
+}
+
+.ed__item {
+  margin: 0;
+}
+
+.ed__img {
+  overflow: hidden;
+}
+
+.ed__img .photo {
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.ed__item:hover .ed__img .photo {
+  transform: scale(1.03);
+}
+
+.ed__item figcaption {
+  display: flex;
+  gap: 12px;
+  padding-top: 10px;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.ed__item figcaption span {
+  color: var(--taupe);
+}
+
+/* Muster Desktop, wiederholt sich alle 6 Bilder */
+.ed__item:nth-child(6n + 1) { grid-column: 1 / 8; }
+.ed__item:nth-child(6n + 1) .ed__img { aspect-ratio: 4 / 5; }
+.ed__item:nth-child(6n + 2) { grid-column: 9 / 13; align-self: end; }
+.ed__item:nth-child(6n + 2) .ed__img { aspect-ratio: 3 / 4; }
+.ed__item:nth-child(6n + 3) { grid-column: 2 / 6; }
+.ed__item:nth-child(6n + 3) .ed__img { aspect-ratio: 3 / 4; }
+.ed__item:nth-child(6n + 4) { grid-column: 7 / 12; margin-top: 18%; }
+.ed__item:nth-child(6n + 4) .ed__img { aspect-ratio: 4 / 5; }
+.ed__item:nth-child(6n + 5) { grid-column: 4 / 10; }
+.ed__item:nth-child(6n + 5) .ed__img { aspect-ratio: 5 / 6; }
+.ed__item:nth-child(6n) { grid-column: 9 / 13; align-self: center; }
+.ed__item:nth-child(6n) .ed__img { aspect-ratio: 2 / 3; }
+
+/* ============================================================
+   Smartphone: jede Seite ein Foto über den ganzen Bildschirm
+   ============================================================ */
+@media (max-width: 760px) {
+  /* Muster Smartphone: groß, Paar versetzt, eingerückt */
+  .ed {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    column-gap: 10px;
+    row-gap: 40px;
+    padding: 0 var(--gutter) 120px;
+  }
+  .ed__item:nth-child(6n + 1) { grid-column: 1 / 7; }
+  .ed__item:nth-child(6n + 1) .ed__img { aspect-ratio: 4 / 5; }
+  .ed__item:nth-child(6n + 2) { grid-column: 1 / 4; align-self: start; }
+  .ed__item:nth-child(6n + 2) .ed__img { aspect-ratio: 3 / 4; }
+  .ed__item:nth-child(6n + 3) { grid-column: 4 / 7; margin-top: 40%; }
+  .ed__item:nth-child(6n + 3) .ed__img { aspect-ratio: 3 / 4; }
+  .ed__item:nth-child(6n + 4) { grid-column: 2 / 7; margin-top: 0; }
+  .ed__item:nth-child(6n + 4) .ed__img { aspect-ratio: 4 / 5; }
+  .ed__item:nth-child(6n + 5) { grid-column: 1 / 5; }
+  .ed__item:nth-child(6n + 5) .ed__img { aspect-ratio: 3 / 4; }
+  .ed__item:nth-child(6n) { grid-column: 3 / 7; align-self: auto; }
+  .ed__item:nth-child(6n) .ed__img { aspect-ratio: 3 / 4; }
+  .ed__item figcaption {
+    font-size: 11px;
+    padding-top: 8px;
+  }
+
+  /* Arbeiten-Abschnitt darf länger sein als ein Screen */
+  #galerie {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    padding-top: 96px;
+  }
+
+  /* Vollflächige Fotos */
+  .hero,
+  .booking,
+  #ueber-mich,
+  #kontakt {
+    position: relative;
+    height: 100dvh;
+    min-height: 0;
+    padding: 0 var(--gutter) 96px;
+    justify-content: flex-end;
+    overflow: hidden;
+    color: #fff;
+  }
+  .hero__media,
+  .screen-bg,
+  .booking .screen-bg,
+  #ueber-mich > .screen-bg,
+  #kontakt > .screen-bg {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    margin: 0;
+    order: 0;
+    z-index: 0;
+  }
+  .hero__media::after,
+  .screen-bg::after,
+  .booking .screen-bg::after {
+    display: block;
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+      180deg,
+      rgb(20 14 10 / 0.35) 0%,
+      rgb(20 14 10 / 0) 22%,
+      rgb(20 14 10 / 0) 42%,
+      rgb(20 14 10 / 0.72) 100%
+    );
+  }
+  .hero > *:not(.hero__media),
+  .booking > *:not(.screen-bg),
+  #ueber-mich > *:not(.screen-bg),
+  #kontakt > *:not(.screen-bg) {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Weiße Schrift auf den Fotos */
+  .hero .hero__m-intro,
+  .hero .hero__m-links a,
+  .hero .hero__m-info,
+  .booking .title-xl,
+  .booking .kicker,
+  .booking .subline,
+  #ueber-mich .title-xl,
+  #ueber-mich .kicker,
+  #ueber-mich .subline,
+  #ueber-mich .small-text,
+  #ueber-mich .facts dt,
+  #ueber-mich .facts dd,
+  #kontakt .title-xl,
+  #kontakt .kicker,
+  #kontakt .subline,
+  #kontakt .acc__item summary,
+  #kontakt .acc__sub,
+  #kontakt .acc__body,
+  #kontakt .acc__body a,
+  #kontakt .hours dt,
+  #kontakt .hours dd {
+    color: #fff;
+  }
+  .booking .title-xl,
+  #ueber-mich .title-xl,
+  #kontakt .title-xl {
+    border-bottom-color: rgb(255 255 255 / 0.6);
+  }
+  #ueber-mich .facts,
+  #kontakt .acc {
+    border-top-color: rgb(255 255 255 / 0.6);
+  }
+  #ueber-mich .facts div,
+  #kontakt .acc__item {
+    border-bottom-color: rgb(255 255 255 / 0.25);
+  }
+  #ueber-mich .subline,
+  #kontakt .subline,
+  .booking .subline,
+  #kontakt .acc__sub,
+  #ueber-mich .facts dt {
+    opacity: 0.8;
+  }
+
+  /* Start */
+  .hero__title {
+    top: 84px;
+    left: var(--gutter);
+    --logo-w: 64vw;
+  }
+  .hero .hero__m-intro {
+    margin-top: 0;
+    font-size: 15px;
+  }
+  .hero__m-links {
+    margin: 20px 0 0;
+    border-top: 1px solid rgb(255 255 255 / 0.4);
+  }
+  .hero .hero__m-info {
+    padding-bottom: 0;
+  }
+
+  /* Termin */
+  .booking__top {
+    margin-top: auto;
+  }
+  .booking__bottom {
+    margin-top: 24px;
+    padding-bottom: 0;
+  }
+
+  /* Über mich und Kontakt: Inhalt unten */
+  #ueber-mich .about__grid,
+  #ueber-mich .about__text {
+    flex: none;
+  }
+  #ueber-mich .about__panel {
+    margin-top: 12px;
+    padding: 0;
+  }
+  #ueber-mich .facts {
+    margin-top: 12px;
+  }
+  #ueber-mich .facts div {
+    padding: 7px 0;
+  }
+  #kontakt .acc {
+    margin-top: 4px;
+  }
+  #kontakt .acc__item summary {
+    padding: 9px 28px 9px 0;
+  }
+
+  .hero__m-links a,
+  .sticky-cta a {
+    text-decoration: none;
+  }
+}
+
+.header[data-theme="dark"],
+.header[data-theme="dark"] .wordmark,
+.header[data-theme="dark"] .logo__script,
+.header[data-theme="dark"] .logo__name,
+.header[data-theme="dark"] .nav a {
+  color: #fff;
+}
+
+.header[data-theme="dark"] .nav__cta {
+  border-color: #fff;
+}

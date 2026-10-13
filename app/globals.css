@@ -341,48 +341,6 @@ p {
   padding: clamp(64px, 9vw, 112px) 0;
 }
 
-/* Preise */
-.prices {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 48px;
-}
-
-.prices h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: 28px;
-  padding-bottom: 12px;
-  border-bottom: 1px solid currentColor;
-}
-
-.prices ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.prices li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 12px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 15px;
-}
-
-.prices small {
-  display: block;
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.prices__value {
-  white-space: nowrap;
-  font-weight: 500;
-}
-
 /* Galerie: Rondell (Desktop) */
 .carousel {
   height: 400px;
@@ -538,20 +496,67 @@ p {
   line-height: 1.1;
 }
 
-/* Termin und Kontakt */
-.actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 64px;
+/* Termin */
+.btn--big {
+  padding: 20px 40px;
+  font-size: 14px;
 }
 
+.btn--accent {
+  background: var(--cayenne);
+  border-color: var(--cayenne);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--cocoa);
+}
+
+.hero__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.booking {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+
+.booking .title {
+  font-size: clamp(44px, 6.5vw, 84px);
+  margin-bottom: 24px;
+}
+
+.booking__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.booking__hint {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.about .btn {
+  margin-top: 32px;
+}
+
+/* Am Handy immer sichtbarer Buchungsbutton */
+.sticky-cta {
+  display: none;
+}
+
+/* Kontakt */
 .contact {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 48px;
-  padding-top: 40px;
-  border-top: 1px solid var(--line);
 }
 
 .contact h3 {
@@ -658,7 +663,6 @@ p {
 
 /* Tablet */
 @media (max-width: 960px) {
-  .prices,
   .contact {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -699,7 +703,7 @@ p {
     gap: 12px;
     font-size: 10px;
   }
-  .prices,
+  .booking,
   .contact,
   .about {
     grid-template-columns: 1fr;
@@ -711,8 +715,36 @@ p {
   .slideshow {
     display: block;
   }
-  .actions {
-    flex-direction: column;
+  .sticky-cta {
+    display: block;
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 30;
+    padding: 17px;
+    background: var(--cocoa);
+    color: var(--cream);
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--condensed);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 24px rgb(57 27 23 / 0.3);
+    opacity: 0;
+    transform: translateY(140%);
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+  .sticky-cta.is-visible {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+  .footer {
+    padding-bottom: 96px;
   }
 }
 

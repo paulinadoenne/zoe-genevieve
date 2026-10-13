@@ -26,57 +26,6 @@ export const oeffnungszeiten = [
   { tage: "Sonntag und Montag", zeit: "geschlossen" },
 ];
 
-export type Leistung = { name: string; info?: string; preis: string };
-export type Kategorie = {
-  titel: string;
-  akzent: string;
-  ab: string;
-  text: string;
-  leistungen: Leistung[];
-};
-
-// Beispielpreise, bitte durch die echten ersetzen.
-export const leistungen: Kategorie[] = [
-  {
-    titel: "Schnitt",
-    akzent: "& Form",
-    ab: "ab 15 €",
-    text: "Vom Spitzenschnitt bis zur kompletten Veränderung. Wir sprechen vorher in Ruhe darüber, wie du dein Haar im Alltag trägst.",
-    leistungen: [
-      { name: "Waschen, Schneiden, Föhnen", info: "kurzes Haar", preis: "ab 55 €" },
-      { name: "Waschen, Schneiden, Föhnen", info: "langes Haar", preis: "ab 70 €" },
-      { name: "Pony nachschneiden", preis: "15 €" },
-      { name: "Herrenschnitt", preis: "ab 38 €" },
-      { name: "Kinder bis 12 Jahre", preis: "ab 25 €" },
-    ],
-  },
-  {
-    titel: "Farbe",
-    akzent: "& Glanz",
-    ab: "ab 35 €",
-    text: "Natürliche Übergänge, sanfte Balayage oder ein klarer Neuanfang. Ich arbeite mit schonenden Produkten und plane genug Zeit ein.",
-    leistungen: [
-      { name: "Ansatzfarbe", preis: "ab 60 €" },
-      { name: "Komplettfarbe", preis: "ab 80 €" },
-      { name: "Strähnen oder Foliensträhnen", preis: "ab 95 €" },
-      { name: "Balayage", info: "inkl. Glossing", preis: "ab 160 €" },
-      { name: "Glossing", preis: "ab 35 €" },
-    ],
-  },
-  {
-    titel: "Styling",
-    akzent: "& Pflege",
-    ab: "ab 20 €",
-    text: "Für besondere Tage oder einfach zwischendurch. Hochsteckfrisuren, Brautstyling und Pflege, die man sieht und fühlt.",
-    leistungen: [
-      { name: "Waschen und Föhnen", preis: "ab 35 €" },
-      { name: "Hochsteckfrisur", preis: "ab 65 €" },
-      { name: "Brautstyling", info: "inkl. Probetermin", preis: "auf Anfrage" },
-      { name: "Pflegebehandlung", preis: "ab 20 €" },
-    ],
-  },
-];
-
 export const galerie = [
   { src: "", alt: "Balayage in warmen Blondtönen" },
   { src: "", alt: "Kurzer Bob mit weichen Konturen" },

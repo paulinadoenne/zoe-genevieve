@@ -2294,3 +2294,109 @@ h1, h2, h3,
     color: #111;
   }
 }
+
+/* Schwarz-Weiß, nur das Menü in Orange */
+:root {
+  --navy: #111;
+  --cognac: #111;
+  --warm: #fff;
+  --orange: #111;
+  --menu-orange: #f07800;
+}
+.hero__logo,
+.hero__logo .logo__name,
+.header__logo {
+  color: #111;
+}
+.about,
+.contact,
+.booking {
+  background: #fff;
+}
+.scatter::before {
+  background: transparent;
+}
+.scatter__accent {
+  background: #111;
+  color: #fff;
+}
+.pill,
+.contact__fields .pill {
+  background: #111;
+  color: #fff;
+}
+.pill:hover,
+.contact__fields .pill:hover,
+.pill--light:hover {
+  background: #444;
+  color: #fff;
+}
+.pill--light {
+  background: #fff;
+  color: #111;
+}
+.contact {
+  border-top: 1px solid rgb(17 17 17 / 0.1);
+}
+.foot {
+  background: #fff;
+  color: #111;
+  border-top: 1px solid rgb(17 17 17 / 0.1);
+}
+.foot__big a,
+.foot__right a,
+.foot__legal a:hover {
+  color: #111;
+}
+.foot__big a:hover {
+  color: #555;
+}
+.foot__small,
+.foot__legal {
+  color: rgb(17 17 17 / 0.55);
+}
+
+/* Menü */
+.menu {
+  background: var(--menu-orange);
+  color: #111;
+}
+.menu a,
+.menu__list a,
+.menu__foot {
+  color: #111;
+}
+.menu__list li {
+  border-bottom-color: rgb(17 17 17 / 0.2);
+}
+.menu__list a:hover {
+  color: #fff;
+}
+.menu__foot .pill {
+  background: #111;
+  color: #fff;
+}
+.menu__foot .pill:hover {
+  background: #fff;
+  color: #111;
+}
+::selection {
+  background: #111;
+  color: #fff;
+}
+
+.pill--outline {
+  background: transparent;
+  color: #111;
+  border: 1px solid #111;
+}
+.pill--outline:hover {
+  background: #111;
+  color: #fff;
+}
+.menu__nr,
+.menu__foot,
+.menu__foot p,
+.menu__foot span {
+  color: #111;
+}

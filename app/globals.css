@@ -1740,3 +1740,42 @@ body {
   background: var(--cocoa);
   color: #fff;
 }
+
+/* ============================================================
+   Mobil: mehr Farbe durch abwechselnde Farbflächen
+   Start weiß · Über mich Glass · Termin Cayenne · Arbeiten weiß ·
+   Kontakt Glass hell · Abschluss Cocoa
+   ============================================================ */
+@media (max-width: 760px) {
+  .about {
+    background: var(--glass);
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+  .about__list span {
+    color: rgb(57 27 23 / 0.65);
+  }
+  .scatter::before {
+    background: var(--cocoa);
+  }
+
+  .booking {
+    background: var(--cayenne);
+    padding-top: 64px;
+  }
+  .booking .h-center {
+    color: #f4ede4;
+  }
+
+  .works {
+    padding-top: 72px;
+  }
+
+  .hero__list {
+    color: var(--cayenne);
+  }
+
+  .contact {
+    margin-top: 0;
+  }
+}

@@ -2,12 +2,12 @@ import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 import Photo from "@/components/Photo";
 import Motion from "@/components/Motion";
+import Rondell from "@/components/Rondell";
 import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
 const leistungen = ["Blonde Specialist", "Balayage", "Farbe", "Schnitt", "Styling"];
-const [haupt, ...weitere] = galerie;
 
 export default function Home() {
   return (
@@ -77,40 +77,18 @@ export default function Home() {
 
         {/* Arbeiten: großes Bild, dann weitere Arbeiten */}
         <section id="arbeiten" className="works">
-          <h2 className="h-center">Arbeiten</h2>
-          <figure className="works__main">
-            <Photo src={haupt.src} alt={haupt.alt} />
-            <figcaption className="caption">
-              <strong>{haupt.titel}</strong>
-              <br />
-              {haupt.info}
-            </figcaption>
-          </figure>
-
-          <div className="more">
-            <div className="more__grid">
-              {weitere.map((b) => (
-                <figure key={b.src}>
-                  <Photo src={b.src} alt={b.alt} />
-                  <figcaption className="caption">
-                    <strong>{b.titel}</strong>
-                    <br />
-                    {b.info}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-            <div className="more__text">
-              <h3>Mehr Arbeiten</h3>
-              <p>
-                Blond, Balayage, Kupfer und Schoko. Neue Looks zeige ich laufend auf
-                Instagram, schau gern vorbei und lass dich für deinen nächsten Termin
-                inspirieren.
-              </p>
-              <a href={person.instagramLink} className="pill pill--outline" target="_blank" rel="noopener">
-                Instagram ansehen
-              </a>
-            </div>
+          <div className="works__head">
+            <h2 className="h-center">Arbeiten</h2>
+          </div>
+          <Rondell bilder={galerie} />
+          <div className="works__more">
+            <p>
+              Blond, Balayage, Kupfer und Schoko. Neue Looks zeige ich laufend auf
+              Instagram.
+            </p>
+            <a href={person.instagramLink} className="pill pill--outline" target="_blank" rel="noopener">
+              Instagram ansehen
+            </a>
           </div>
         </section>
 

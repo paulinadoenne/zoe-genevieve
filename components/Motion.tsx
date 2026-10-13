@@ -11,13 +11,13 @@ const TEXT = [
   ".about__text",
   ".h-center",
   ".caption",
-  ".more__text",
+  ".works__more",
   ".contact__title",
   ".field",
   ".foot__big > *",
 ].join(",");
 
-const BILDER = [".scatter > *", ".booking__image", ".works__main .photo", ".more__grid .photo"].join(",");
+const BILDER = [".scatter > *", ".booking__image"].join(",");
 
 export default function Motion() {
   useEffect(() => {

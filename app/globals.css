@@ -1923,3 +1923,61 @@ img.hero__photo {
     padding: 20px var(--gutter) 84px;
   }
 }
+
+/* ============================================================
+   Bildlook Old Money: warm, gedämpft, analog
+   Angehobene Schwarztöne, cremige Lichter, leichte Sepia,
+   entsättigt, feines Korn
+   ============================================================ */
+:root {
+  --old-money: sepia(0.28) saturate(0.68) contrast(0.9) brightness(1.03) hue-rotate(-6deg);
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img.photo,
+.hero__photo,
+img.hero__photo,
+.screen-bg img,
+.screen-bg--mono img,
+.carousel__item img.photo,
+.carousel__item:hover img.photo {
+  filter: var(--old-money);
+}
+
+.carousel__item:hover img.photo {
+  filter: sepia(0.18) saturate(0.85) contrast(0.95) brightness(1.04);
+}
+
+/* Warmer Film-Schleier und Korn über allen Fotoflächen */
+.hero__img::before {
+  background:
+    radial-gradient(120% 90% at 55% 45%, transparent 55%, rgb(60 40 25 / 0.35) 100%),
+    linear-gradient(180deg, rgb(255 236 210 / 0.08), rgb(120 80 40 / 0.1));
+}
+
+.hero__img::after,
+.screen-bg::before,
+.carousel__item::after,
+.slideshow__item::after,
+.about__photo-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: var(--grain);
+  mix-blend-mode: overlay;
+  opacity: 0.18;
+  z-index: 1;
+}
+
+.carousel__item,
+.slideshow__item {
+  position: relative;
+}
+
+.screen-bg::after,
+.booking .screen-bg::after {
+  background:
+    linear-gradient(180deg, rgb(40 25 15 / 0.35) 0%, rgb(40 25 15 / 0.05) 45%, rgb(30 18 10 / 0.5) 100%),
+    linear-gradient(0deg, rgb(255 230 200 / 0.06), rgb(255 230 200 / 0.06));
+}

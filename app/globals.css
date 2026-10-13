@@ -3372,3 +3372,182 @@ body,
 .header[data-theme="dark"] .nav__cta {
   border-color: #fff;
 }
+
+/* ============================================================
+   Typografie wie ein Vogue Cover
+   Große Serifen-Titel oben, kleine gesperrte Coverlines,
+   Bedienelemente unten in Daumenreichweite
+   ============================================================ */
+.title-xl,
+.about__text .title-xl,
+#kontakt .title-xl,
+.booking .title-xl {
+  font-family: var(--serif);
+  font-weight: 400;
+  text-transform: none;
+  font-size: clamp(64px, 9vw, 150px);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.title-xl em {
+  font-style: italic;
+}
+
+.kicker,
+.kicker--light,
+.cover-kicker {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.subline,
+.booking .subline {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2vw, 28px);
+  margin-top: 12px;
+}
+
+.subline em {
+  font-style: italic;
+}
+
+.subline::before {
+  content: none;
+}
+
+.hero__cover {
+  display: none;
+}
+
+.cover-line {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.cover-line em {
+  font-style: italic;
+}
+
+/* Desktop: Terminseite zentriert wie ein Cover */
+@media (min-width: 761px) {
+  .booking .title-xl {
+    display: block;
+    font-size: clamp(96px, 13vw, 220px);
+    color: #fff;
+  }
+  .works__head .title-xl,
+  #kontakt .title-xl,
+  .about__text .title-xl {
+    font-size: clamp(72px, 8vw, 128px);
+  }
+}
+
+@media (max-width: 760px) {
+  .title-xl,
+  .about__text .title-xl,
+  #kontakt .title-xl,
+  .booking .title-xl {
+    font-size: 19vw;
+    line-height: 0.86;
+  }
+  .subline {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+
+  /* Start: Logo als Masthead oben, Coverline links, Menü unten */
+  .hero__cover {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    margin-bottom: 14px;
+    color: #fff;
+  }
+  .cover-kicker {
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+  .hero__title {
+    top: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    --logo-w: 82vw;
+  }
+  .hero .hero__m-intro {
+    font-size: 13px;
+    opacity: 0.85;
+  }
+
+  /* Termin, Über mich, Kontakt: Titel oben wie ein Cover, Inhalt unten */
+  .booking,
+  #ueber-mich,
+  #kontakt {
+    justify-content: flex-start;
+    padding-top: 92px;
+  }
+  .booking__top {
+    margin-top: 0;
+  }
+  .booking__bottom {
+    margin-top: auto;
+  }
+  #ueber-mich .about__grid,
+  #ueber-mich .about__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  #ueber-mich .about__panel {
+    margin-top: auto;
+  }
+  #kontakt .acc {
+    margin-top: auto;
+  }
+
+  /* Zweiter Verlauf oben für die großen Titel */
+  .screen-bg::after,
+  .booking .screen-bg::after {
+    background: linear-gradient(
+      180deg,
+      rgb(20 14 10 / 0.55) 0%,
+      rgb(20 14 10 / 0.15) 34%,
+      rgb(20 14 10 / 0) 50%,
+      rgb(20 14 10 / 0.75) 100%
+    );
+  }
+  .hero__media::after {
+    background: linear-gradient(
+      180deg,
+      rgb(20 14 10 / 0.35) 0%,
+      rgb(20 14 10 / 0) 30%,
+      rgb(20 14 10 / 0) 45%,
+      rgb(20 14 10 / 0.75) 100%
+    );
+  }
+}
+
+@media (min-width: 761px) {
+  .booking .screen-bg::after {
+    background: linear-gradient(
+      180deg,
+      rgb(20 14 10 / 0.55) 0%,
+      rgb(20 14 10 / 0.25) 45%,
+      rgb(20 14 10 / 0.1) 70%,
+      rgb(20 14 10 / 0.45) 100%
+    );
+  }
+  .booking .subline {
+    font-size: 30px;
+    text-shadow: 0 1px 18px rgb(0 0 0 / 0.35);
+  }
+}

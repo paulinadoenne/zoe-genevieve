@@ -23,10 +23,15 @@ export default function Home() {
       <main>
         {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
         <section className="hero" data-header="dark" data-header-m="dark">
-          <p className="hero__m-intro">
-            Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
-            Sankt-Apern-Straße, du stehst im Mittelpunkt.
-          </p>
+          <div className="hero__cover">
+            <p className="cover-kicker">Köln · Sankt-Apern-Straße</p>
+            <p className="cover-line">
+              Master Hairstylist
+              <br />
+              <em>&amp; Blonde Specialist</em>
+            </p>
+          </div>
+          <p className="hero__m-intro">1:1 Termine, du stehst im Mittelpunkt.</p>
           <div className="hero__panel">
             <p className="kicker kicker--light">01 · Hair · Köln</p>
             <div className="hero__bottom">
@@ -64,7 +69,7 @@ export default function Home() {
         </div>
 
         {/* Termin: Schwarzweißfoto, große orange Schrift, oranger Block */}
-        <section id="termin" className="booking" data-header="light" data-header-m="dark">
+        <section id="termin" className="booking" data-header="dark">
           <ScreenBg {...hintergruende.termin} mono />
           <div className="container booking__top">
             <p className="kicker">02 · Termin</p>

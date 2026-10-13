@@ -2514,3 +2514,18 @@ body,
     align-items: stretch;
   }
 }
+
+@media (max-width: 760px) {
+  #galerie {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .slideshow {
+    height: min(50dvh, 420px);
+    margin-bottom: 0;
+  }
+  .slideshow__item.is-active {
+    height: min(50dvh, 420px);
+  }
+}

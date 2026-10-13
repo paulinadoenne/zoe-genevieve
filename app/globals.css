@@ -3748,3 +3748,138 @@ body,
     animation: none;
   }
 }
+
+/* ============================================================
+   Arbeiten: langsame Diashow auf weißem Grund
+   ============================================================ */
+#galerie {
+  background: #fff;
+}
+
+.show {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) clamp(80px, 10vw, 140px);
+}
+
+.show__frame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  max-height: 78vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #fff;
+}
+
+.show__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 2.2s var(--ease);
+}
+
+.show__slide.is-active {
+  opacity: 1;
+}
+
+.show__slide .photo {
+  width: 100%;
+  height: 100%;
+  transform: scale(1.05);
+  transition: transform 9s ease-out;
+}
+
+.show__slide.is-active .photo {
+  transform: scale(1);
+}
+
+.show__nav {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  border: 0;
+  background: none;
+  z-index: 2;
+}
+
+.show__nav--prev {
+  left: 0;
+  cursor: w-resize;
+}
+
+.show__nav--next {
+  right: 0;
+  cursor: e-resize;
+}
+
+.show__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding-top: 14px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.show__caption {
+  transition: opacity 0.6s;
+}
+
+.show__count {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--taupe);
+  font-variant-numeric: tabular-nums;
+}
+
+.show__progress {
+  height: 1px;
+  margin-top: 12px;
+  background: var(--line);
+}
+
+.show__progress span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--ink);
+}
+
+.show__progress span.is-running {
+  animation: folio-fill 7s linear forwards;
+}
+
+@media (max-width: 760px) {
+  #galerie {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+    padding-top: 92px;
+  }
+  .show {
+    width: 100%;
+    margin-top: auto;
+    padding: 0 var(--gutter) 104px;
+  }
+  .show__frame {
+    aspect-ratio: auto;
+    height: 52dvh;
+    max-height: none;
+  }
+  .show__meta {
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .show__slide,
+  .show__slide .photo {
+    transition: none;
+    transform: none;
+  }
+  .show__progress span.is-running {
+    animation: none;
+  }
+}

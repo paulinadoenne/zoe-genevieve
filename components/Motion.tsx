@@ -16,11 +16,11 @@ const TEXT = [
   ".facts div",
   ".acc__item",
   ".booking__bottom",
-  ".ed__item figcaption",
+  ".show__meta",
   ".footer__name",
 ].join(",");
 
-const BILDER = [".ed__img", ".about__photo", ".hero__img"].join(",");
+const BILDER = [".show__frame", ".about__photo", ".hero__img"].join(",");
 
 export default function Motion() {
   useEffect(() => {

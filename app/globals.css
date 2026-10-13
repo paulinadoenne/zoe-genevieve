@@ -3883,3 +3883,45 @@ body,
     animation: none;
   }
 }
+
+/* Terminseite mit Haarfoto im Hintergrund */
+.booking--photo {
+  background: #2a1a12;
+  color: #fff;
+}
+
+.booking--photo .screen-bg {
+  display: block;
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  margin: 0;
+  z-index: 0;
+}
+
+.booking--photo .screen-bg::after {
+  display: block;
+  background: linear-gradient(180deg, rgb(20 12 8 / 0.35) 0%, rgb(20 12 8 / 0.1) 50%, rgb(20 12 8 / 0.35) 100%);
+}
+
+.booking--photo > *:not(.screen-bg) {
+  position: relative;
+  z-index: 2;
+}
+
+.booking--photo .title-xl,
+.booking--photo .kicker,
+.booking--photo .subline {
+  color: #fff;
+  text-shadow: none;
+}
+
+.booking--photo .btn--accent {
+  background: var(--orange);
+  color: #fff;
+}
+
+.booking--photo .btn--accent:hover {
+  background: #fff;
+  color: var(--orange);
+}

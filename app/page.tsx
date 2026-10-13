@@ -70,7 +70,8 @@ export default function Home() {
         </div>
 
         {/* Termin: Schwarzweißfoto, große orange Schrift, oranger Block */}
-        <section id="termin" className="booking booking--color" data-header="accent">
+        <section id="termin" className="booking booking--photo" data-header="dark" data-header-m="dark">
+          <ScreenBg src="/haar-textur.jpg" pos="50% 50%" />
           <div className="container booking__top">
             <p className="kicker">02 · Termin</p>
             <h2 className="title-xl">

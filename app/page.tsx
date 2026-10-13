@@ -18,53 +18,64 @@ export default function Home() {
     <>
       <Header />
       <main>
-        {/* Hero */}
-        <section className="hero container">
-          <div className="hero__intro">
-            <p className="label">(01) Hair · Köln</p>
-            <p className="hero__lead">
-              Master Hairstylist und <em>Blonde Specialist</em> in Köln. 1:1
-              Termine, du stehst im Mittelpunkt.
-            </p>
-            <a href={terminLink} className="btn btn--accent" target="_blank" rel="noopener">
-              Termin buchen <span aria-hidden>↗</span>
-            </a>
-          </div>
-          <div className="hero__frame">
-            <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" className="hero__photo" />
-            <h1 className="hero__title">
-              <Logo />
-            </h1>
-          </div>
-          <div className="hero__meta">
-            <span>{person.beruf}</span>
-            <span>Sankt-Apern-Straße, {person.stadt}</span>
-            <span>{person.instagram}</span>
-          </div>
-        </section>
-
-        {/* Termin */}
-        <section id="termin" className="section container booking">
-          <p className="label">(02) Termin</p>
-          <div className="booking__row">
-            <h2 className="display">
-              Termin <em>buchen</em>
-            </h2>
-            <div className="booking__side">
-              <p className="small-text">
-                Freie Termine siehst du direkt online. Fragen beantworte ich dir
-                gern per WhatsApp.
+        {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
+        <section className="hero">
+          <div className="hero__panel">
+            <p className="hero__label">(01) Hair · Köln</p>
+            <div className="hero__bottom">
+              <p className="hero__lead">
+                Master Hairstylist und <em>Blonde Specialist.</em> 1:1 Termine,
+                du stehst im Mittelpunkt.
               </p>
-              <a href={terminLink} className="btn btn--accent" target="_blank" rel="noopener">
-                {person.buchungsLink ? "Online buchen bei Planity" : "Per WhatsApp anfragen"}{" "}
-                <span aria-hidden>↗</span>
+              <a href={terminLink} className="btn btn--light hero__cta" target="_blank" rel="noopener">
+                Termin buchen <span aria-hidden>↗</span>
               </a>
-              {person.buchungsLink && (
-                <a href={person.whatsappLink} className="text-link" target="_blank" rel="noopener">
-                  Fragen per WhatsApp
-                </a>
-              )}
             </div>
+          </div>
+          <div className="hero__media">
+            <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" className="hero__photo" />
+          </div>
+          <h1 className="hero__title">
+            <Logo />
+          </h1>
+        </section>
+        <div className="ticker container">
+          <span>{person.beruf}</span>
+          <span>Sankt-Apern-Straße, {person.stadt}</span>
+          <span>{person.instagram}</span>
+        </div>
+
+        {/* Termin: Band in Bitter Cocoa */}
+        <section id="termin" className="booking">
+          <div className="container">
+            <p className="label">(02) Termin</p>
+            <div className="booking__row">
+              <h2 className="display">
+                Termin <em>buchen</em>
+              </h2>
+              <div className="booking__side">
+                <a href={terminLink} className="btn btn--accent btn--big" target="_blank" rel="noopener">
+                  {person.buchungsLink ? "Online buchen bei Planity" : "Per WhatsApp anfragen"}{" "}
+                  <span aria-hidden>↗</span>
+                </a>
+                {person.buchungsLink && (
+                  <a href={person.whatsappLink} className="text-link" target="_blank" rel="noopener">
+                    Fragen? Schreib mir per WhatsApp
+                  </a>
+                )}
+              </div>
+            </div>
+            <ol className="steps">
+              <li>
+                <span>01</span>Freien Termin online wählen
+              </li>
+              <li>
+                <span>02</span>Kurz beschreiben, was du dir wünschst
+              </li>
+              <li>
+                <span>03</span>Zurücklehnen, der Rest ist meine Sache
+              </li>
+            </ol>
           </div>
         </section>
 
@@ -89,6 +100,9 @@ export default function Home() {
             </dl>
           </div>
           <Gallery bilder={galerie} />
+          <p className="container works__hint">
+            ({String(galerie.length).padStart(2, "0")}) Ausgewählte Arbeiten · Fahr mit der Maus über ein Bild
+          </p>
         </section>
 
         {/* Über mich */}
@@ -105,7 +119,7 @@ export default function Home() {
                   {p}
                 </p>
               ))}
-              <dl className="facts">
+              <dl className="facts card">
                 {steckbrief.map((f) => (
                   <div key={f.label}>
                     <dt>{f.label}</dt>

@@ -8,7 +8,7 @@ const links = [
   { href: "/#leistungen", label: "Leistungen" },
   { href: "/#galerie", label: "Galerie" },
   { href: "/#ueber-mich", label: "Über mich" },
-  { href: "/#kontakt", label: "Kontakt" },
+  { href: "/#termin", label: "Kontakt" },
 ];
 
 export default function Header() {

@@ -1,13 +1,10 @@
 :root {
-  /* Farbkonzept: Cayenne Dust, Weathered Glass, Bitter Cocoa */
+  /* Hauptfarbe Cayenne Dust, Akzente Bitter Cocoa und Weathered Glass */
   --cayenne: #9d3f0d;
-  --glass: #9ab0aa;
   --cocoa: #391b17;
+  --glass: #9ab0aa;
   --cream: #f4ede4;
-  --ink: var(--cocoa);
-  --muted: #7b6560;
-  --line: #ddd0c4;
-  --max: 1200px;
+  --max: 1160px;
   --gutter: clamp(20px, 5vw, 56px);
   --serif: var(--font-serif), "Instrument Serif", Georgia, serif;
   --condensed: var(--font-condensed), "Oswald", "Arial Narrow", sans-serif;
@@ -27,14 +24,16 @@ html {
 
 body {
   margin: 0;
-  background: var(--cream);
-  color: var(--ink);
+  background: var(--cayenne);
+  color: var(--cream);
   font-family: var(--sans);
   font-weight: 300;
   font-size: 16px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  --line: color-mix(in srgb, var(--cream) 28%, transparent);
+  --muted: color-mix(in srgb, var(--cream) 78%, transparent);
 }
 
 a {
@@ -59,32 +58,21 @@ p {
   padding: 0 var(--gutter);
 }
 
-/* Flächen */
-.dark {
-  background: var(--cocoa);
-  color: var(--cream);
-  --muted: color-mix(in srgb, var(--cream) 68%, transparent);
-  --line: color-mix(in srgb, var(--cream) 18%, transparent);
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-.cayenne {
-  background: var(--cayenne);
-  color: var(--cream);
-  --muted: color-mix(in srgb, var(--cream) 78%, transparent);
-  --line: color-mix(in srgb, var(--cream) 25%, transparent);
-}
-
+/* Helle Flächen */
 .light {
   background: var(--cream);
   color: var(--cocoa);
-}
-
-.muted {
-  color: var(--muted);
-}
-
-.small {
-  font-size: 13px;
+  --line: color-mix(in srgb, var(--cocoa) 16%, transparent);
+  --muted: color-mix(in srgb, var(--cocoa) 70%, transparent);
 }
 
 /* Typografie */
@@ -94,56 +82,39 @@ p {
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-bottom: 20px;
-  opacity: 0.8;
+  margin-bottom: 14px;
+  color: var(--muted);
 }
 
-.eyebrow--center {
-  text-align: center;
-}
-
-/* Mischung aus schmaler Großschrift und kursiver Serifenschrift */
-.mix {
-  font-family: var(--condensed);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: clamp(30px, 4.4vw, 54px);
-  line-height: 1;
-  letter-spacing: -0.01em;
-  max-width: 17ch;
-  margin-bottom: 24px;
-  text-wrap: balance;
-}
-
-.mix em {
+.title {
   font-family: var(--serif);
-  font-style: italic;
   font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 1.08em;
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.05;
+  margin-bottom: 40px;
 }
 
-.mix--center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+.text {
+  margin-bottom: 1em;
+  max-width: 52ch;
 }
 
-.mix--big {
-  font-size: clamp(42px, 6.5vw, 84px);
+.note {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--muted);
 }
 
-/* Buttons */
+/* Buttons und Links */
 .btn {
   display: inline-block;
-  padding: 14px 26px;
+  padding: 15px 28px;
   background: var(--cocoa);
   color: var(--cream);
   border: 1px solid var(--cocoa);
   text-decoration: none;
   font-family: var(--condensed);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -153,37 +124,16 @@ p {
 
 .btn:hover {
   background: transparent;
-  color: var(--cocoa);
+  color: inherit;
 }
 
 .btn--small {
-  padding: 10px 20px;
+  padding: 10px 18px;
   font-size: 11px;
 }
 
-.btn--light {
-  background: var(--cream);
-  color: var(--cocoa);
-  border-color: var(--cream);
-}
-
-.btn--light:hover {
-  background: transparent;
-  color: var(--cream);
-}
-
-.btn--outline-light {
-  background: transparent;
-  color: var(--cream);
-  border-color: var(--cream);
-}
-
-.btn--outline-light:hover {
-  background: var(--cream);
-  color: var(--cocoa);
-}
-
 .link {
+  display: inline-block;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
@@ -193,14 +143,39 @@ p {
   text-transform: uppercase;
 }
 
+/* Logo: "zoe" in Handschrift, Genevieve rechts darunter */
+.logo {
+  position: relative;
+  display: inline-block;
+  width: var(--logo-w, 300px);
+  line-height: 1;
+}
+
+.logo__script {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.logo__name {
+  position: absolute;
+  right: 0;
+  top: 46%;
+  font-family: var(--serif);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: calc(var(--logo-w, 300px) * 0.105);
+  letter-spacing: 0.14em;
+  white-space: nowrap;
+}
+
 /* Header */
 .header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: var(--cocoa);
-  color: var(--cream);
-  border-bottom: 1px solid color-mix(in srgb, var(--cream) 14%, transparent);
+  background: var(--cayenne);
+  border-bottom: 1px solid var(--line);
 }
 
 .header__inner {
@@ -220,50 +195,6 @@ p {
   --logo-w: 78px;
 }
 
-/* Logo: "zoe" in Handschrift, Genevieve rechts unter dem "oe" */
-.logo {
-  position: relative;
-  display: inline-block;
-  width: var(--logo-w, 300px);
-  line-height: 1;
-}
-
-.logo__script {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.logo__name {
-  position: absolute;
-  right: 0;
-  top: 44%;
-  font-family: var(--condensed);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: calc(var(--logo-w, 300px) * 0.155);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-}
-
-.logo__name em {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  text-transform: none;
-  letter-spacing: 0;
-  font-size: 1.12em;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
 .nav {
   display: flex;
   align-items: center;
@@ -277,23 +208,11 @@ p {
 
 .nav a:not(.btn) {
   text-decoration: none;
-  opacity: 0.75;
-  transition: opacity 0.2s;
+  opacity: 0.8;
 }
 
 .nav a:not(.btn):hover {
   opacity: 1;
-}
-
-.nav .btn {
-  background: var(--cream);
-  color: var(--cocoa);
-  border-color: var(--cream);
-}
-
-.nav .btn:hover {
-  background: transparent;
-  color: var(--cream);
 }
 
 .nav-toggle {
@@ -334,7 +253,7 @@ p {
   transform: rotate(-45deg);
 }
 
-/* Fotos */
+/* Fotos (Platzhalter in Weathered Glass) */
 .photo {
   width: 100%;
   object-fit: cover;
@@ -368,11 +287,11 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: min(78vh, 760px);
+  min-height: min(76vh, 740px);
 }
 
 .hero__photo {
-  width: min(38vw, 440px);
+  width: min(38vw, 420px);
   aspect-ratio: 3 / 4;
 }
 
@@ -382,9 +301,8 @@ p {
   transform: translateY(-50%);
   text-align: center;
   font-weight: 400;
-  color: var(--cream);
   pointer-events: none;
-  --logo-w: clamp(280px, 50vw, 720px);
+  --logo-w: clamp(280px, 50vw, 700px);
 }
 
 .hero__meta {
@@ -402,395 +320,89 @@ p {
 .hero__rule {
   flex: 1;
   height: 1px;
-  background: currentColor;
-  opacity: 0.4;
+  background: var(--line);
 }
 
-/* Intro */
-.intro {
-  padding-top: clamp(72px, 10vw, 128px);
-  overflow: hidden;
+/* Sektionen */
+.section {
+  padding: clamp(64px, 9vw, 112px) 0;
 }
 
-.intro__text {
-  text-align: center;
-  margin-bottom: clamp(48px, 7vw, 88px);
-}
-
-.intro .mix {
-  max-width: 20ch;
-}
-
-.strip {
+/* Preise */
+.prices {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 10px;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  position: relative;
-  z-index: 1;
-  align-items: start;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px;
 }
 
-.strip__item {
-  aspect-ratio: 3 / 4;
-}
-
-.strip__item:nth-child(even) {
-  margin-top: 40px;
-}
-
-.outline-word {
-  font-family: var(--condensed);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: clamp(80px, 14vw, 200px);
-  line-height: 0.8;
-  white-space: nowrap;
-  color: transparent;
-  -webkit-text-stroke: 1px color-mix(in srgb, var(--cream) 55%, transparent);
-  margin-top: -0.35em;
-  transform: translateY(0.12em);
-}
-
-/* Arbeiten */
-.works {
-  padding: clamp(72px, 10vw, 128px) 0;
-}
-
-.works__inner {
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: clamp(40px, 7vw, 112px);
-  align-items: center;
-}
-
-.works .muted {
-  max-width: 46ch;
-  margin-bottom: 32px;
-}
-
-.works__stack {
-  display: grid;
-  gap: 10px;
-  max-width: 260px;
-  justify-self: end;
-  width: 100%;
-}
-
-.works__item {
-  aspect-ratio: 4 / 3;
-}
-
-/* Statement */
-.statement {
-  padding: clamp(72px, 10vw, 128px) 0;
-  overflow: hidden;
-}
-
-.statement__inner {
-  display: grid;
-  grid-template-columns: 0.6fr 1.4fr;
-  gap: 40px;
-  align-items: end;
-}
-
-.statement__words {
+.prices h3 {
   font-family: var(--serif);
-  text-transform: uppercase;
-  font-size: clamp(64px, 11vw, 168px);
-  line-height: 0.86;
-  letter-spacing: -0.02em;
+  font-weight: 400;
+  font-size: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--cayenne);
 }
 
-.statement__words span {
-  display: block;
-}
-
-.is-outline {
-  color: transparent;
-  -webkit-text-stroke: 1px var(--cream);
-}
-
-/* Leistungen */
-.services {
-  padding: clamp(72px, 10vw, 128px) 0;
-}
-
-.services__intro {
-  text-align: center;
-}
-
-.services__intro .mix {
-  max-width: 22ch;
-}
-
-.services__intro .muted {
-  max-width: 52ch;
-  margin: 0 auto 32px;
-}
-
-.service-index__row {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  align-items: center;
-  gap: 16px;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 16px var(--gutter);
-  border-bottom: 1px solid var(--line);
-  text-decoration: none;
-  font-family: var(--condensed);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  transition: background 0.2s;
-}
-
-.service-index__row:hover {
-  background: color-mix(in srgb, var(--cream) 6%, transparent);
-}
-
-.service-index__row span:last-child {
-  text-align: right;
-}
-
-.service-index__name {
-  font-family: var(--serif);
-  font-size: 26px;
-  font-style: italic;
-  letter-spacing: 0;
-  text-transform: none;
-  text-align: center;
-}
-
-.service__feature {
-  padding: clamp(56px, 8vw, 96px) 0;
-  border-top: 1px solid var(--line);
-}
-
-.service__feature-inner {
-  display: grid;
-  grid-template-columns: 1.4fr 0.6fr;
-  gap: clamp(32px, 6vw, 96px);
-  align-items: center;
-}
-
-.service__feature .muted {
-  max-width: 48ch;
-}
-
-.service__photo {
-  aspect-ratio: 4 / 5;
-  max-width: 300px;
-  justify-self: end;
-}
-
-.carte {
-  padding: clamp(40px, 6vw, 72px) 0;
-}
-
-.carte__head {
-  display: flex;
-  justify-content: space-between;
-  font-family: var(--condensed);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding-bottom: 14px;
-  opacity: 0.7;
-}
-
-.carte ul {
+.prices ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid var(--cocoa);
 }
 
-.carte li {
+.prices li {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  gap: 16px;
-  padding: 18px 0;
+  gap: 12px;
+  padding: 12px 0;
   border-bottom: 1px solid var(--line);
+  font-size: 15px;
 }
 
-.carte__name {
-  font-family: var(--condensed);
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: clamp(18px, 2.2vw, 26px);
-  line-height: 1.1;
-}
-
-.carte__name em {
-  font-family: var(--serif);
-  font-weight: 400;
-  text-transform: none;
-  font-size: 1.1em;
-}
-
-.carte__price {
-  white-space: nowrap;
-  font-family: var(--condensed);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-/* Termin */
-.booking {
-  position: relative;
-  padding: clamp(96px, 13vw, 176px) 0;
-  overflow: hidden;
-  text-align: center;
-}
-
-.booking__inner {
-  position: relative;
-  z-index: 1;
-}
-
-.booking__words {
-  font-family: var(--serif);
-  text-transform: uppercase;
-  font-size: clamp(60px, 10vw, 150px);
-  line-height: 0.86;
-  letter-spacing: -0.02em;
-  margin-bottom: 36px;
-}
-
-.booking__text {
-  max-width: 44ch;
-  margin: 0 auto 32px;
+.prices small {
+  display: block;
+  font-size: 13px;
   color: var(--muted);
 }
 
-.booking__actions {
-  display: flex;
-  justify-content: center;
+.prices__value {
+  white-space: nowrap;
+  font-weight: 400;
+  color: var(--cayenne);
+}
+
+/* Galerie */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
-  flex-wrap: wrap;
+  margin-bottom: 32px;
 }
 
-.booking__float {
-  position: absolute;
-  width: clamp(80px, 11vw, 150px);
-  aspect-ratio: 3 / 4;
-}
-
-.booking__float--1 {
-  top: 9%;
-  left: 7%;
-}
-
-.booking__float--2 {
-  top: 14%;
-  right: 8%;
-  width: clamp(70px, 9vw, 120px);
-}
-
-.booking__float--3 {
-  bottom: 10%;
-  right: 16%;
-}
-
-/* Kundenstimme */
-.quote {
-  padding: clamp(72px, 10vw, 128px) var(--gutter);
-}
-
-.quote__card {
-  max-width: 560px;
-  margin: 0 auto;
-  background: var(--cream);
-  color: var(--cocoa);
-  padding: 40px clamp(24px, 5vw, 56px);
-  text-align: center;
-}
-
-.quote__photo {
-  width: 64px;
-  aspect-ratio: 1;
-  margin: 0 auto 24px;
-}
-
-.quote__photo span {
-  display: none;
-}
-
-.quote blockquote {
-  margin: 0 0 20px;
-  font-family: var(--serif);
-  font-size: clamp(22px, 2.6vw, 30px);
-  line-height: 1.2;
-}
-
-.quote figcaption {
-  font-family: var(--condensed);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+.gallery__item {
+  aspect-ratio: 4 / 5;
 }
 
 /* Über mich */
 .about {
-  padding: clamp(72px, 10vw, 128px) 0;
-}
-
-.about .mix {
-  max-width: none;
-}
-
-.about__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 7vw, 112px);
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(32px, 6vw, 96px);
   align-items: center;
-  margin-top: 56px;
-}
-
-.about__photos {
-  position: relative;
-  padding: 0 0 48px 48px;
 }
 
 .about__photo {
   aspect-ratio: 4 / 5;
 }
 
-.about__polaroid {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 42%;
-  aspect-ratio: 1;
-  border: 8px solid #fff;
-  transform: rotate(-6deg);
-  box-shadow: 0 10px 30px rgb(57 27 23 / 0.18);
-}
-
-.about__text p {
-  margin-bottom: 1em;
-  max-width: 50ch;
-}
-
-/* Steckbrief */
 .facts {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin: 32px 0 0;
-  padding-top: 24px;
+  margin: 28px 0 0;
+  padding-top: 20px;
   border-top: 1px solid var(--line);
-  max-width: 50ch;
+  max-width: 52ch;
 }
 
 .facts dt {
@@ -799,38 +411,42 @@ p {
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  opacity: 0.7;
+  color: var(--muted);
   margin-bottom: 4px;
 }
 
 .facts dd {
   margin: 0;
   font-family: var(--serif);
-  font-style: italic;
   font-size: 22px;
   line-height: 1.1;
+  color: var(--cayenne);
 }
 
-/* Kontakt */
+/* Termin und Kontakt */
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+}
+
 .contact {
-  padding: clamp(72px, 10vw, 128px) 0 clamp(56px, 8vw, 96px);
-}
-
-.contact__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 48px;
-  margin-top: 32px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
 }
 
 .contact h3 {
   font-family: var(--condensed);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  margin-bottom: 14px;
-  opacity: 0.75;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
 
 .contact p {
@@ -846,14 +462,14 @@ p {
 }
 
 .hours {
-  margin: 0 0 12px;
+  margin: 0;
 }
 
 .hours div {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 7px 0;
+  padding: 6px 0;
   border-bottom: 1px solid var(--line);
   font-size: 14px;
 }
@@ -863,21 +479,19 @@ p {
   color: var(--muted);
 }
 
-/* Footer */
+/* Footer (Akzent Bitter Cocoa) */
 .footer {
   background: var(--cocoa);
   color: color-mix(in srgb, var(--cream) 70%, transparent);
   font-size: 12px;
-  overflow: hidden;
   padding-bottom: 28px;
-  border-top: 1px solid color-mix(in srgb, var(--cream) 14%, transparent);
 }
 
 .footer__name {
   text-align: center;
-  color: var(--cayenne);
+  color: var(--cream);
   padding: 48px 0 32px;
-  --logo-w: clamp(220px, 34vw, 480px);
+  --logo-w: clamp(200px, 26vw, 340px);
 }
 
 .footer__inner {
@@ -910,14 +524,13 @@ p {
 .legal h1 {
   font-family: var(--serif);
   font-weight: 400;
-  text-transform: uppercase;
-  line-height: 0.9;
+  line-height: 0.95;
   margin-bottom: 24px;
 }
 
 .legal h2 {
   font-family: var(--condensed);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -930,11 +543,9 @@ p {
 
 /* Tablet */
 @media (max-width: 960px) {
-  .contact__grid {
-    grid-template-columns: 1fr 1fr;
-  }
-  .statement__inner {
-    grid-template-columns: 1fr;
+  .prices,
+  .contact {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -950,7 +561,7 @@ p {
     align-items: flex-start;
     gap: 22px;
     padding: 28px var(--gutter) 36px;
-    background: var(--cocoa);
+    background: var(--cayenne);
     font-size: 14px;
     opacity: 0;
     pointer-events: none;
@@ -973,51 +584,18 @@ p {
     gap: 12px;
     font-size: 10px;
   }
-  .strip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
-  }
-  .strip__item:nth-child(n + 4) {
-    display: none;
-  }
-  .strip__item:nth-child(even) {
-    margin-top: 24px;
-  }
-  .works__inner,
-  .service__feature-inner,
-  .about__inner {
-    grid-template-columns: 1fr;
-  }
-  .works__stack {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    max-width: none;
-    justify-self: stretch;
-  }
-  .works__item {
-    aspect-ratio: 3 / 4;
-  }
-  .service__photo {
-    justify-self: start;
-    max-width: 200px;
-  }
-  .service-index__row {
-    grid-template-columns: 1fr auto;
-  }
-  .service-index__row span:first-child {
-    display: none;
-  }
-  .service-index__name {
-    text-align: left;
-  }
-  .booking__float {
-    display: none;
-  }
-  .booking__actions {
-    flex-direction: column;
-  }
-  .contact__grid {
+  .prices,
+  .contact,
+  .about {
     grid-template-columns: 1fr;
     gap: 36px;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .actions {
+    flex-direction: column;
   }
 }
 

@@ -4129,3 +4129,25 @@ img.hero__photo,
     border-color: var(--ink);
   }
 }
+
+/* ============================================================
+   Bildlook wie Kampagnenfotografie: klar, natürlich, satt,
+   neutrales Weiß, tiefes Schwarz, ohne Korn und Schleier
+   ============================================================ */
+:root {
+  --editorial-filter: contrast(1.1) saturate(1.06) brightness(1.03);
+}
+
+.hero__img::after,
+.screen-bg::before,
+.show__frame::after,
+.swipe__item::after,
+.carousel__item::after,
+.slideshow__item::after {
+  content: none;
+  display: none;
+}
+
+.hero__img::before {
+  background: none;
+}

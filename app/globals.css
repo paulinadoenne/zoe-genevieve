@@ -4748,3 +4748,109 @@ img.hero__photo,
     border-bottom-color: var(--line);
   }
 }
+
+/* ============================================================
+   Flächen entfernt
+   ============================================================ */
+@media (max-width: 760px) {
+  /* Arbeiten: Fotos ohne Farbverlauf-Karte direkt auf Weiß */
+  .swipe__item,
+  .swipe__item:nth-child(even) {
+    background: none;
+    border-radius: 0;
+    padding: 0 0 72px;
+    justify-content: flex-start;
+  }
+  .swipe__frame {
+    width: 100%;
+    box-shadow: none;
+  }
+  .swipe__frame .photo {
+    aspect-ratio: 4 / 5;
+  }
+  .swipe__item figcaption {
+    left: 0;
+    right: 0;
+    bottom: 8px;
+  }
+  .swipe__name,
+  .swipe__info {
+    color: var(--ink) !important;
+  }
+  .swipe__info {
+    color: var(--taupe) !important;
+  }
+
+  /* Kontakt: kein weißer Block, dunkle Schrift direkt auf dem hellen Foto */
+  #kontakt .acc {
+    margin: 16px 0 0;
+    padding: 0;
+    background: none;
+    border-top: 1px solid rgb(36 28 24 / 0.35);
+  }
+  #kontakt .contact__glass,
+  #kontakt .contact__glass * {
+    text-shadow: none !important;
+  }
+  #kontakt .kicker,
+  #kontakt .title-xl,
+  #kontakt .acc__item summary,
+  #kontakt .acc__body,
+  #kontakt .acc__body a,
+  #kontakt .hours dt {
+    color: var(--ink) !important;
+  }
+  #kontakt .subline,
+  #kontakt .acc__sub,
+  #kontakt .hours dd {
+    color: rgb(36 28 24 / 0.75) !important;
+    opacity: 1;
+  }
+  #kontakt .acc__item {
+    border-bottom-color: rgb(36 28 24 / 0.25);
+  }
+}
+
+@media (max-width: 760px) {
+  .swipe__item,
+  .swipe__item:nth-child(even) {
+    height: auto;
+    align-self: flex-start;
+    padding: 0;
+  }
+  .swipe__item figcaption {
+    position: static;
+    padding-top: 12px;
+  }
+
+  #kontakt {
+    justify-content: flex-start;
+    padding-top: 84px;
+    background: #fff;
+  }
+  #kontakt > .screen-bg {
+    top: auto;
+    bottom: 0;
+    height: 40%;
+  }
+  #kontakt > .screen-bg img {
+    object-position: 50% 30%;
+  }
+  .contact__glass {
+    flex: none;
+  }
+}
+
+@media (max-width: 760px) {
+  #galerie {
+    justify-content: center;
+    padding-top: 60px;
+  }
+  .swipe {
+    flex: none;
+    padding-bottom: 0;
+  }
+  #kontakt > .screen-bg img {
+    object-position: 50% 62%;
+  }
+}

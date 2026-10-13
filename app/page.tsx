@@ -156,7 +156,7 @@ export default function Home() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="section container" data-header-m="dark">
+        <section id="kontakt" className="section container" data-header-m="light">
           <ScreenBg {...hintergruende.kontakt} mono />
           <div className="glass contact__glass">
             <p className="kicker">05 · Kontakt</p>

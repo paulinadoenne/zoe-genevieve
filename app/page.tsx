@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 import Photo from "@/components/Photo";
+import Logo from "@/components/Logo";
 import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
@@ -17,8 +18,8 @@ export default function Home() {
       <main>
         {/* Start: riesiger Name, Portrait überlappt die Schrift */}
         <section className="hero">
-          <h1 className="hero__name" aria-label="Zoe Genevieve">
-            <span>zoe</span> <span>genevieve</span>
+          <h1 className="hero__logo">
+            <Logo />
           </h1>
           <div className="hero__portrait">
             <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" />

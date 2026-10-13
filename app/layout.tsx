@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter } from "next/font/google";
+import { Instrument_Serif, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 
 const serif = Instrument_Serif({
@@ -11,8 +11,14 @@ const serif = Instrument_Serif({
 
 const sans = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "500", "700"],
   variable: "--font-sans",
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -27,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${serif.variable} ${sans.variable}`}>
+    <html lang="de" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
       <body>{children}</body>
     </html>
   );

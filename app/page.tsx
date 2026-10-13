@@ -63,16 +63,40 @@ export default function Home() {
           <span>{person.instagram}</span>
         </div>
 
-        {/* Termin: ein Screen, Foto im Hintergrund, nur Überschrift und Button */}
+        {/* Termin: Schwarzweißfoto, große orange Schrift, oranger Block */}
         <section id="termin" className="booking" data-header="dark">
-          <ScreenBg {...hintergruende.termin} />
-          <div className="container booking__inner">
-            <h2 className="display">
-              Termin <em>buchen</em>
+          <ScreenBg {...hintergruende.termin} mono />
+          <div className="container booking__top">
+            <p className="kicker">The art of hair · Köln</p>
+            <h2 className="booking__title">
+              Termin
+              <br />
+              buchen
             </h2>
-            <a href={terminLink} className="btn btn--accent btn--big" target="_blank" rel="noopener">
-              {person.buchungsLink ? "Online buchen" : "Per WhatsApp anfragen"} <span aria-hidden>↗</span>
-            </a>
+            <p className="booking__serif">
+              <em>bei Zoe Genevieve</em>
+            </p>
+          </div>
+          <div className="booking__block">
+            <div className="container booking__block-inner">
+              <dl className="receipt">
+                <div>
+                  <dt>Format</dt>
+                  <dd>1:1 Termin</dd>
+                </div>
+                <div>
+                  <dt>Ort</dt>
+                  <dd>Sankt-Apern-Straße, Köln</dd>
+                </div>
+                <div>
+                  <dt>Buchung</dt>
+                  <dd>Online über Planity</dd>
+                </div>
+              </dl>
+              <a href={terminLink} className="btn btn--light btn--big" target="_blank" rel="noopener">
+                Jetzt buchen <span aria-hidden>↗</span>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -124,14 +148,14 @@ export default function Home() {
               <p className="about__lead">
                 Hi, ich bin <em>Zoe.</em>
               </p>
-              <div className="panel panel--glass about__panel">
+              <div className="panel panel--orange about__panel">
                 {ueberMich.map((p, i) => (
                   <p key={i} className="small-text">
                     {p}
                   </p>
                 ))}
               </div>
-              <dl className="facts card">
+              <dl className="facts card panel--orange">
                 {steckbrief.map((f) => (
                   <div key={f.label}>
                     <dt>{f.label}</dt>
@@ -145,7 +169,7 @@ export default function Home() {
 
         {/* Kontakt */}
         <section id="kontakt" className="section container" data-header-m="dark">
-          <ScreenBg {...hintergruende.kontakt} />
+          <ScreenBg {...hintergruende.kontakt} mono />
           <p className="label">(05) Kontakt</p>
           <h2 className="display contact__title">Kontakt</h2>
           <div className="contact panel panel--cream">

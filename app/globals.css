@@ -1522,3 +1522,204 @@ html {
     padding-top: 80px;
   }
 }
+
+/* Farbwelt wie Studio Five, mit Orange: orange Schrift auf Fotos, orange Blöcke */
+:root {
+  --orange: #e0601a;
+  --mono: var(--font-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.screen-bg--mono img {
+  filter: grayscale(1) contrast(1.15) brightness(0.85);
+}
+
+.kicker {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+/* Termin */
+.booking {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  min-height: 100dvh;
+  margin-top: clamp(64px, 8vw, 120px);
+  padding: 0;
+  background: #111;
+}
+
+.booking .screen-bg::after {
+  background: linear-gradient(180deg, rgb(0 0 0 / 0.15) 0%, rgb(0 0 0 / 0.05) 50%, rgb(0 0 0 / 0.35) 100%);
+}
+
+.booking__top {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: clamp(96px, 12vw, 160px);
+  text-align: center;
+}
+
+.booking__title {
+  font-family: var(--sans);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(64px, 13vw, 210px);
+  line-height: 0.84;
+  letter-spacing: -0.055em;
+  color: var(--orange);
+}
+
+.booking__serif {
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 3vw, 40px);
+  color: var(--orange);
+}
+
+.booking__block {
+  position: relative;
+  z-index: 1;
+  background: var(--orange);
+  color: #1d0f0a;
+}
+
+.booking__block-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  padding-top: 28px;
+  padding-bottom: 32px;
+}
+
+.receipt {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 8px 48px;
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.receipt dt {
+  opacity: 0.65;
+  margin-bottom: 2px;
+}
+
+.booking__block .btn--light {
+  background: #1d0f0a;
+  color: var(--orange);
+}
+
+.booking__block .btn--light:hover {
+  background: var(--cream);
+  color: #1d0f0a;
+}
+
+/* Über mich und Kontakt: Überschriften orange, Blöcke orange */
+.about__lead em,
+.contact__title {
+  color: var(--orange);
+}
+
+.facts.card.panel--orange {
+  background: var(--orange);
+  color: #1d0f0a;
+}
+
+.facts.card.panel--orange dt {
+  color: rgb(29 15 10 / 0.65);
+  font-family: var(--mono);
+}
+
+#kontakt .label,
+#ueber-mich > .label,
+#galerie .works__key {
+  font-family: var(--mono);
+  color: var(--orange);
+}
+
+.btn--accent {
+  background: var(--orange);
+}
+
+@media (max-width: 760px) {
+  .booking {
+    margin-top: 0;
+    padding: 0;
+  }
+  .booking__top {
+    padding-top: 110px;
+  }
+  .booking__title {
+    font-size: 22vw;
+  }
+  .booking__block-inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 22px;
+    padding-bottom: 84px;
+  }
+  .receipt {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .receipt div {
+    display: flex;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid rgb(29 15 10 / 0.25);
+  }
+  .receipt dt {
+    margin: 0;
+  }
+  .booking__block .btn {
+    justify-content: center;
+  }
+  .panel--orange {
+    background: var(--orange);
+    color: #1d0f0a;
+  }
+  .about__lead {
+    color: var(--orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    font-size: 15vw;
+    line-height: 0.86;
+  }
+  .about__lead em {
+    text-transform: none;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .contact__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.055em;
+    font-size: 18.5vw;
+    line-height: 0.85;
+  }
+  .contact.panel h3 {
+    font-family: var(--mono);
+    color: var(--orange);
+  }
+  .hero__m-intro {
+    font-family: var(--serif);
+    font-size: 24px;
+    line-height: 1.1;
+    color: var(--cream);
+  }
+  .works__title {
+    font-family: var(--mono);
+    color: var(--orange);
+  }
+}

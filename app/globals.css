@@ -552,6 +552,156 @@ p {
   display: none;
 }
 
+/* Sticker (nach Zoes Merch) */
+.sticker {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 6px solid #fff;
+  box-shadow: 0 10px 24px rgb(57 27 23 / 0.22);
+  transform: rotate(var(--r, 0deg));
+  pointer-events: none;
+  line-height: 1;
+}
+
+.sticker small {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sticker span {
+  font-family: var(--serif);
+  font-size: 26px;
+}
+
+.sticker em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 30px;
+}
+
+.sticker--cream {
+  background: var(--cream);
+  color: var(--cocoa);
+}
+
+.sticker--cream em {
+  color: var(--cayenne);
+}
+
+.sticker--cocoa {
+  background: #2a1a14;
+  color: var(--cream);
+}
+
+.sticker--cocoa em {
+  color: #e8a07a;
+}
+
+.sticker--circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.sticker--arch {
+  width: 150px;
+  padding: 28px 14px 18px;
+  border-radius: 75px 75px 4px 4px;
+}
+
+.sticker--card {
+  padding: 18px 22px;
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.sticker--card span {
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+  border-bottom: 1px solid var(--cayenne);
+}
+
+.sticker--ticket {
+  width: 230px;
+  padding: 18px 20px 12px;
+  align-items: flex-start;
+  text-align: left;
+  border-radius: 4px;
+}
+
+.sticker--ticket small {
+  color: var(--cayenne);
+}
+
+.sticker--ticket span {
+  font-size: 20px;
+}
+
+.sticker--ticket em {
+  font-size: 22px;
+}
+
+.sticker__dog {
+  width: 96px;
+  height: auto;
+  margin-top: 8px;
+}
+
+.sticker--ticket .sticker__dog {
+  align-self: flex-end;
+  width: 84px;
+  margin-top: 2px;
+}
+
+/* Positionen */
+.sticker--hero {
+  right: -64px;
+  bottom: 10%;
+}
+
+.booking__actions {
+  position: relative;
+}
+
+.sticker--booking {
+  right: -12px;
+  top: -190px;
+}
+
+#galerie .container,
+#kontakt .container {
+  position: relative;
+}
+
+.sticker--works {
+  right: var(--gutter);
+  top: 0;
+}
+
+.about__media {
+  position: relative;
+}
+
+.sticker--karl {
+  right: -40px;
+  bottom: -36px;
+}
+
+.sticker--contact {
+  right: var(--gutter);
+  top: -20px;
+}
+
 /* Kontakt */
 .contact {
   display: grid;
@@ -714,6 +864,30 @@ p {
   }
   .slideshow {
     display: block;
+  }
+  .sticker {
+    transform: rotate(var(--r, 0deg)) scale(0.72);
+  }
+  .sticker--hero {
+    right: -18px;
+    bottom: -40px;
+  }
+  .sticker--booking {
+    display: none;
+  }
+  .sticker--works {
+    top: -24px;
+    right: 4px;
+  }
+  .sticker--karl {
+    right: -14px;
+    bottom: -40px;
+  }
+  .sticker--contact {
+    position: relative;
+    top: 0;
+    right: auto;
+    margin: 0 0 24px -20px;
   }
   .sticky-cta {
     display: block;

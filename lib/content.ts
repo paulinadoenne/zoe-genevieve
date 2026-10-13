@@ -37,6 +37,7 @@ export const galerie = [
 
 export const ueberMich = [
   "Hi, ich bin Zoe, Master Hairstylist und Blonde Specialist in Köln. Ich arbeite selbstständig auf Stuhlmiete in der Sankt-Apern-Straße.",
+  "Meistens ist auch Karl dabei, mein Dackel und offizieller Salon Dog. Er ist für die gute Laune zuständig.",
   "Bei mir gibt es 1:1 Dienstleistung, du stehst im Mittelpunkt. Du buchst direkt bei mir und hast vom Beratungsgespräch bis zum Föhnen immer dieselbe Ansprechpartnerin. Ich nehme mir Zeit, höre zu und schneide so, dass die Frisur auch zu Hause funktioniert.",
   "[Hier ein paar Sätze zu Ausbildung, Erfahrung und Schwerpunkten, z. B. Balayage, Locken oder Brautstyling.]",
 ];
@@ -50,6 +51,6 @@ export const kundenstimme = {
 // Kleiner Steckbrief aus Zoes Instagram.
 export const steckbrief = [
   { label: "Spezialgebiet", wert: "Blonde Specialist" },
-  { label: "Sternzeichen", wert: "Skorpion" },
+  { label: "Salon Dog", wert: "Dackel Karl" },
   { label: "Lieblingsdrink", wert: "Haselnuss Latte" },
 ];

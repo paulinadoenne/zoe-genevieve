@@ -4,6 +4,8 @@ import Photo from "@/components/Photo";
 import Logo from "@/components/Logo";
 import Gallery from "@/components/Gallery";
 import StickyCta from "@/components/StickyCta";
+import Sticker from "@/components/Sticker";
+import Karl from "@/components/Karl";
 import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
@@ -26,6 +28,10 @@ export default function Home() {
               <h1 className="hero__title">
                 <Logo />
               </h1>
+              <Sticker form="circle" farbe="cream" drehung={8} className="sticker--hero">
+                <small>Hair is my</small>
+                <em>love language</em>
+              </Sticker>
             </div>
           </div>
           <div className="hero__cta container">
@@ -52,6 +58,11 @@ export default function Home() {
               </p>
             </div>
             <div className="booking__actions">
+              <Sticker form="arch" farbe="cocoa" drehung={-6} className="sticker--booking">
+                <span>Hot girls</span>
+                <em>book</em>
+                <span>ahead</span>
+              </Sticker>
               <a href={terminLink} className="btn btn--big btn--accent" target="_blank" rel="noopener">
                 {person.buchungsLink ? "Online Termin buchen" : "Termin per WhatsApp anfragen"}
               </a>
@@ -72,6 +83,10 @@ export default function Home() {
           <div className="container">
             <p className="eyebrow">Arbeiten</p>
             <h2 className="title">Meine Arbeiten</h2>
+            <Sticker form="card" farbe="cream" drehung={-4} className="sticker--works">
+              <span>Good hair.</span>
+              <em>No notes.</em>
+            </Sticker>
           </div>
           <Gallery bilder={galerie} />
           <div className="container">
@@ -84,7 +99,14 @@ export default function Home() {
         {/* Über mich */}
         <section id="ueber-mich" className="section glass">
           <div className="container about">
-            <Photo alt="Zoe im Salon" className="about__photo" />
+            <div className="about__media">
+              <Photo alt="Zoe im Salon" className="about__photo" />
+              <Sticker form="arch" farbe="cream" drehung={5} className="sticker--karl">
+                <small>Official</small>
+                <em>Salon Dog</em>
+                <Karl className="sticker__dog" />
+              </Sticker>
+            </div>
             <div>
               <p className="eyebrow">Über mich</p>
               <h2 className="title">Hi, ich bin Zoe</h2>
@@ -113,6 +135,12 @@ export default function Home() {
           <div className="container">
             <p className="eyebrow">Kontakt</p>
             <h2 className="title">So findest du mich</h2>
+            <Sticker form="ticket" farbe="cream" drehung={-5} className="sticker--contact">
+              <small>Ehrlich gesagt</small>
+              <span>Ich komm eigentlich</span>
+              <em>nur wegen Karl.</em>
+              <Karl className="sticker__dog" />
+            </Sticker>
             <div className="contact">
               <div>
                 <h3>Adresse</h3>

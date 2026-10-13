@@ -1627,3 +1627,116 @@ html.menu-open .header {
     width: 62vw;
   }
 }
+
+/* ============================================================
+   Mehr von der Farbkombi: Cayenne Dust, Weathered Glass, Bitter Cocoa
+   ============================================================ */
+:root {
+  --cocoa: #391b17;
+  --glass: #9ab0aa;
+  --glass-light: #dfe7e4;
+  --cayenne: #9d3f0d;
+  --ink: var(--cocoa);
+  --muted: #7d6a64;
+  --line: #e4dbd5;
+}
+
+body {
+  color: var(--ink);
+}
+
+/* Dunkle Buttons in Bitter Cocoa */
+.pill {
+  background: var(--cocoa);
+}
+
+.pill--light {
+  background: #fff;
+  color: var(--cocoa);
+}
+
+/* Über mich: zweites Farbfeld in Weathered Glass */
+.scatter__d {
+  position: relative;
+}
+
+.scatter::before {
+  content: "";
+  grid-column: 2;
+  grid-row: 1;
+  background: var(--glass);
+}
+
+@media (max-width: 760px) {
+  .scatter::before {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+/* Kontakt auf Weathered Glass, volle Breite */
+.contact {
+  position: relative;
+  max-width: none;
+  margin-top: clamp(80px, 10vw, 160px);
+  padding-left: calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter));
+  padding-right: calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter));
+  background: var(--glass-light);
+}
+
+.contact .field {
+  border-bottom-color: rgb(57 27 23 / 0.15);
+}
+
+/* Abschluss in Bitter Cocoa */
+.foot {
+  max-width: none;
+  padding: clamp(56px, 7vw, 96px) calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter)) 28px;
+  background: var(--cocoa);
+  color: #f4ede4;
+}
+
+.foot__big a {
+  color: var(--orange);
+}
+
+.foot__big a:hover {
+  color: #f4ede4;
+}
+
+.foot__small,
+.foot__legal {
+  color: rgb(244 237 228 / 0.6);
+}
+
+.foot__right a,
+.foot__legal a:hover {
+  color: #f4ede4;
+}
+
+/* Arbeiten: Hover-Rahmen in Cayenne */
+.rondell__img {
+  outline: 0 solid var(--cayenne);
+  outline-offset: -1px;
+  transition: outline-width 0.3s var(--ease);
+}
+
+.rondell__item:hover .rondell__img {
+  outline-width: 4px;
+}
+
+/* Menü: Hover in Cayenne */
+.menu__list a:hover {
+  color: var(--cayenne);
+}
+
+.pill--outline {
+  background: transparent;
+  color: var(--cocoa);
+  border: 1px solid var(--cocoa);
+}
+
+.pill--outline:hover {
+  background: var(--cocoa);
+  color: #fff;
+}

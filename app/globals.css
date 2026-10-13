@@ -1785,3 +1785,179 @@ body {
 .rondell__item:hover .rondell__img {
   outline: none !important;
 }
+
+/* ============================================================
+   Neue Farbkombi: Burgund #761725 · Hellblau #B5CFE1 ·
+   Orange #FA9208 · Rosé #E7D9CE
+   Burgund für Schrift, Orange als Akzent, Blau und Rosé als Flächen
+   ============================================================ */
+:root {
+  --burgund: #761725;
+  --blau: #b5cfe1;
+  --orange: #fa9208;
+  --rose: #e7d9ce;
+
+  --ink: var(--burgund);
+  --cocoa: var(--burgund);
+  --cayenne: var(--burgund);
+  --glass: var(--blau);
+  --glass-light: var(--blau);
+  --muted: rgb(118 23 37 / 0.62);
+  --line: rgb(118 23 37 / 0.16);
+}
+
+body {
+  color: var(--ink);
+}
+
+/* Logo: zoe in Orange, GENEVIEVE in Burgund */
+.hero__logo,
+.header__logo {
+  color: var(--orange);
+}
+
+.hero__logo .logo__name {
+  color: var(--burgund);
+}
+
+/* Buttons Burgund, Hover Orange */
+.pill,
+.contact__fields .pill {
+  background: var(--burgund);
+  color: #fff;
+}
+
+.pill:hover,
+.contact__fields .pill:hover {
+  background: var(--orange);
+  color: var(--burgund);
+}
+
+.pill--light {
+  background: #fff;
+  color: var(--burgund);
+}
+
+.pill--light:hover {
+  background: var(--orange);
+  color: var(--burgund);
+}
+
+.pill--outline {
+  background: transparent;
+  color: var(--burgund);
+  border-color: var(--burgund);
+}
+
+.pill--outline:hover {
+  background: var(--burgund);
+  color: #fff;
+}
+
+/* Über mich auf Rosé, über die volle Breite */
+.about {
+  max-width: none;
+  background: var(--rose);
+  padding-left: calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter));
+  padding-right: calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter));
+}
+
+.about__list span {
+  color: var(--muted);
+}
+
+/* Farbfelder im Bildraster */
+.scatter__accent {
+  background: var(--orange);
+  color: var(--burgund);
+}
+
+.scatter::before {
+  background: var(--blau);
+}
+
+/* Kontakt auf Hellblau */
+.contact {
+  background: var(--blau);
+}
+
+.contact .field {
+  border-bottom-color: rgb(118 23 37 / 0.22);
+}
+
+.field__row span:last-child {
+  color: var(--muted);
+}
+
+/* Abschluss in Burgund */
+.foot {
+  background: var(--burgund);
+  color: var(--rose);
+}
+
+.foot__big a {
+  color: var(--orange);
+}
+
+.foot__big a:hover {
+  color: var(--rose);
+}
+
+.foot__small,
+.foot__legal {
+  color: rgb(231 217 206 / 0.7);
+}
+
+.foot__right a,
+.foot__legal a:hover {
+  color: var(--rose);
+}
+
+/* Menü */
+.menu {
+  background: var(--rose);
+}
+
+.menu__list li {
+  border-bottom-color: rgb(118 23 37 / 0.2);
+}
+
+.menu__list a:hover {
+  color: var(--orange);
+}
+
+.menu__foot .pill {
+  background: var(--orange);
+  color: var(--burgund);
+}
+
+.menu__foot .pill:hover {
+  background: var(--burgund);
+  color: #fff;
+}
+
+::selection {
+  background: var(--orange);
+  color: var(--burgund);
+}
+
+@media (max-width: 760px) {
+  .about {
+    background: var(--rose);
+  }
+  .about__list span {
+    color: var(--muted);
+  }
+  .scatter::before {
+    background: var(--blau);
+  }
+  .booking {
+    background: var(--orange);
+  }
+  .booking .h-center {
+    color: var(--burgund);
+  }
+  .hero__list {
+    color: var(--burgund);
+  }
+}

@@ -26,7 +26,7 @@ export default function Header() {
               {l.label}
             </a>
           ))}
-          <a href={person.buchungsLink || "/#termin"} className="btn btn--small" target="_blank" rel="noopener" onClick={() => setOpen(false)}>
+          <a href={person.buchungsLink || "/#termin"} className="nav__cta" target="_blank" rel="noopener" onClick={() => setOpen(false)}>
             Termin buchen
           </a>
         </nav>

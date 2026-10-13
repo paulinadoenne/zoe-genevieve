@@ -1,13 +1,16 @@
 :root {
-  /* Hauptfarbe Cayenne Dust, Akzente Bitter Cocoa und Weathered Glass */
+  /* Ruhige Basis, Farben aus Zoes Konzept nur als Akzent */
+  --bg: #f3f0eb;
+  --ink: #1f1714;
+  --muted: #8a7f78;
+  --line: #ddd5cb;
   --cayenne: #c24e0c;
   --cocoa: #391b17;
   --glass: #9ab0aa;
   --cream: #f4ede4;
-  --max: 1160px;
-  --gutter: clamp(20px, 5vw, 56px);
+  --max: 1320px;
+  --gutter: clamp(20px, 4vw, 48px);
   --serif: var(--font-serif), "Instrument Serif", Georgia, serif;
-  --condensed: var(--font-condensed), "Oswald", "Arial Narrow", sans-serif;
   --sans: var(--font-sans), "Inter", system-ui, sans-serif;
 }
 
@@ -24,16 +27,19 @@ html {
 
 body {
   margin: 0;
-  background: var(--cayenne);
-  color: var(--cream);
+  background: var(--bg);
+  color: var(--ink);
   font-family: var(--sans);
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.65;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  --line: color-mix(in srgb, var(--cream) 28%, transparent);
-  --muted: color-mix(in srgb, var(--cream) 78%, transparent);
+}
+
+::selection {
+  background: var(--glass);
+  color: var(--ink);
 }
 
 a {
@@ -48,7 +54,9 @@ img {
 h1,
 h2,
 h3,
-p {
+p,
+dl,
+dd {
   margin: 0;
 }
 
@@ -67,89 +75,76 @@ p {
   white-space: nowrap;
 }
 
-/* Helle Flächen */
-.light {
-  background: var(--cream);
-  color: var(--cocoa);
-  --line: color-mix(in srgb, var(--cocoa) 16%, transparent);
-  --muted: color-mix(in srgb, var(--cocoa) 70%, transparent);
-}
-
-/* Blaue Akzentfläche (Weathered Glass) */
-.glass {
-  background: var(--glass);
-  color: var(--cocoa);
-  --line: color-mix(in srgb, var(--cocoa) 22%, transparent);
-  --muted: color-mix(in srgb, var(--cocoa) 72%, transparent);
-}
-
 /* Typografie */
-.eyebrow {
-  font-family: var(--condensed);
+.label {
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  margin-bottom: 14px;
   color: var(--muted);
+  margin-bottom: 20px;
 }
 
-.title {
+.display {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: clamp(56px, 9vw, 132px);
+  line-height: 0.9;
+  letter-spacing: -0.045em;
+}
+
+.display em,
+.hero__lead em,
+.about__lead em {
   font-family: var(--serif);
+  font-style: italic;
   font-weight: 400;
-  font-size: clamp(36px, 5vw, 60px);
-  line-height: 1.05;
-  margin-bottom: 40px;
+  letter-spacing: -0.01em;
 }
 
-.text {
-  margin-bottom: 1em;
-  max-width: 52ch;
-}
-
-.note {
-  margin-top: 32px;
+.small-text {
   font-size: 14px;
-  color: var(--muted);
+  line-height: 1.6;
+  max-width: 46ch;
+  margin-bottom: 1em;
 }
 
 /* Buttons und Links */
 .btn {
-  display: inline-block;
-  padding: 15px 28px;
-  background: var(--cocoa);
-  color: var(--cream);
-  border: 1px solid var(--cocoa);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  background: var(--ink);
+  color: var(--bg);
   text-decoration: none;
-  font-family: var(--condensed);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  text-align: center;
-  transition: background 0.2s, color 0.2s;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  border-radius: 999px;
+  transition: background 0.2s;
 }
 
 .btn:hover {
-  background: var(--glass);
-  border-color: var(--glass);
-  color: var(--cocoa);
+  background: var(--cocoa);
 }
 
-.btn--small {
-  padding: 10px 18px;
-  font-size: 11px;
+.btn--accent {
+  background: var(--cayenne);
 }
 
-.link {
+.btn--accent:hover {
+  background: var(--cocoa);
+}
+
+.text-link {
   display: inline-block;
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
-  font-family: var(--condensed);
-  font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.text-link:hover {
+  color: var(--cayenne);
 }
 
 /* Logo: "zoe" in Handschrift, Genevieve rechts darunter */
@@ -183,8 +178,8 @@ p {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: var(--cayenne);
-  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--bg) 90%, transparent);
+  backdrop-filter: blur(10px);
 }
 
 .header__inner {
@@ -201,27 +196,35 @@ p {
   display: flex;
   align-items: center;
   text-decoration: none;
-  --logo-w: 78px;
+  --logo-w: 74px;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: 32px;
-  font-family: var(--condensed);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
+  gap: 28px;
+  font-size: 12px;
 }
 
-.nav a:not(.btn) {
+.nav a {
   text-decoration: none;
-  opacity: 0.8;
 }
 
-.nav a:not(.btn):hover {
-  opacity: 1;
+.nav a:not(.nav__cta):hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nav__cta {
+  padding: 8px 16px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav__cta:hover {
+  background: var(--ink);
+  color: var(--bg);
 }
 
 .nav-toggle {
@@ -240,7 +243,7 @@ p {
   left: 9px;
   right: 9px;
   height: 1px;
-  background: var(--cream);
+  background: var(--ink);
   transition: transform 0.25s, top 0.25s;
 }
 
@@ -262,83 +265,150 @@ p {
   transform: rotate(-45deg);
 }
 
-/* Fotos (Platzhalter in Weathered Glass) */
+/* Fotos */
 .photo {
   width: 100%;
   object-fit: cover;
-  background: #d9cabb;
+  background: #e2dbd2;
 }
 
 .photo--empty {
   display: flex;
   align-items: flex-end;
-  padding: 12px;
+  padding: 10px;
   overflow: hidden;
-  background: linear-gradient(165deg, #e9dfd3 0%, #d9cabb 100%);
+  background: #e2dbd2;
 }
 
 .photo--empty span {
-  font-size: 11px;
+  font-size: 10px;
   line-height: 1.3;
-  color: #7b6560;
+  color: var(--muted);
   min-width: 0;
   overflow-wrap: anywhere;
 }
 
 /* Hero */
 .hero {
-  padding: clamp(32px, 6vw, 72px) 0 32px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 520px);
+  gap: clamp(32px, 6vw, 120px);
+  align-items: end;
+  padding-top: clamp(40px, 7vw, 96px);
+  padding-bottom: 28px;
 }
 
-.hero__stage {
-  display: flex;
-  justify-content: center;
+.hero__intro {
+  padding-bottom: 8px;
 }
 
-/* Logo liegt oben auf dem Foto, über der Tür, das Gesicht bleibt frei */
+.hero__lead {
+  font-size: clamp(22px, 2.4vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+  margin-bottom: 32px;
+}
+
 .hero__frame {
   position: relative;
-  width: min(52vw, 560px);
   container-type: inline-size;
 }
 
 .hero__photo {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 5;
   object-position: 60% 60%;
 }
 
+/* Logo liegt oben auf dem Foto, über der Tür, das Gesicht bleibt frei */
 .hero__title {
   position: absolute;
   top: 4%;
-  left: -18%;
+  left: 5%;
   font-weight: 400;
   color: var(--cream);
   pointer-events: none;
-  --logo-w: 88cqw;
+  --logo-w: 82cqw;
 }
 
 .hero__meta {
+  grid-column: 1 / -1;
   display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-top: 28px;
-  font-family: var(--condensed);
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-}
-
-.hero__rule {
-  flex: 1;
-  height: 1px;
-  background: var(--line);
+  color: var(--muted);
 }
 
 /* Sektionen */
 .section {
-  padding: clamp(64px, 9vw, 112px) 0;
+  padding-top: clamp(80px, 11vw, 160px);
+}
+
+main > .section:last-child {
+  padding-bottom: clamp(80px, 11vw, 160px);
+}
+
+/* Termin */
+.booking__row {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 360px);
+  gap: 48px;
+  align-items: end;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.booking__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.booking__side .small-text {
+  margin: 0;
+}
+
+/* Arbeiten */
+.works__head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.works__head .label {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.works__meta {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 8px 32px;
+  font-size: 12px;
+}
+
+.works__meta div {
+  display: contents;
+}
+
+.works__meta dt {
+  color: var(--muted);
+}
+
+.works__meta a {
+  text-decoration: none;
+}
+
+.works__meta a:hover {
+  text-decoration: underline;
 }
 
 /* Galerie: Rondell (Desktop) */
@@ -458,310 +528,104 @@ p {
 }
 
 /* Über mich */
-.about {
+.about__grid {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  gap: clamp(32px, 6vw, 96px);
-  align-items: center;
+  grid-template-columns: minmax(0, 420px) 1fr;
+  gap: clamp(32px, 8vw, 140px);
+  align-items: end;
 }
 
 .about__photo {
   aspect-ratio: 4 / 5;
 }
 
+.about__lead {
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
 .facts {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin: 28px 0 0;
-  padding-top: 20px;
+  margin-top: 32px;
+  padding-top: 16px;
   border-top: 1px solid var(--line);
-  max-width: 52ch;
+  max-width: 560px;
 }
 
 .facts dt {
-  font-family: var(--condensed);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 11px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 4px;
 }
 
 .facts dd {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 22px;
-  line-height: 1.1;
-}
-
-/* Termin */
-.btn--big {
-  padding: 20px 40px;
-  font-size: 14px;
-}
-
-.btn--accent {
-  background: var(--cayenne);
-  border-color: var(--cayenne);
-}
-
-.btn--ghost {
-  background: transparent;
-  color: var(--cocoa);
-}
-
-.hero__cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-.booking {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: clamp(32px, 6vw, 96px);
-  align-items: center;
-}
-
-.booking .title {
-  font-size: clamp(44px, 6.5vw, 84px);
-  margin-bottom: 24px;
-}
-
-.booking__actions {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.booking__hint {
-  margin-top: 6px;
-  font-size: 13px;
-  color: var(--muted);
-  text-align: center;
-}
-
-.about .btn {
-  margin-top: 32px;
-}
-
-/* Am Handy immer sichtbarer Buchungsbutton */
-.sticky-cta {
-  display: none;
-}
-
-/* Sticker (nach Zoes Merch) */
-.sticker {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 6px solid #fff;
-  box-shadow: 0 10px 24px rgb(57 27 23 / 0.22);
-  transform: rotate(var(--r, 0deg));
-  pointer-events: none;
-  line-height: 1;
-}
-
-.sticker small {
-  font-family: var(--sans);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  margin-bottom: 6px;
-}
-
-.sticker span {
-  font-family: var(--serif);
-  font-size: 26px;
-}
-
-.sticker em {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 30px;
-}
-
-.sticker--cream {
-  background: var(--cream);
-  color: var(--cocoa);
-}
-
-.sticker--cream em {
-  color: var(--cayenne);
-}
-
-.sticker--cocoa {
-  background: #2a1a14;
-  color: var(--cream);
-}
-
-.sticker--cocoa em {
-  color: #e8a07a;
-}
-
-.sticker--circle {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-}
-
-.sticker--arch {
-  width: 150px;
-  padding: 28px 14px 18px;
-  border-radius: 75px 75px 4px 4px;
-}
-
-.sticker--card {
-  padding: 18px 22px;
-  align-items: flex-start;
-  text-align: left;
-  border-radius: 4px;
-}
-
-.sticker--card span {
-  padding-bottom: 6px;
-  margin-bottom: 6px;
-  border-bottom: 1px solid var(--cayenne);
-}
-
-.sticker--ticket {
-  width: 230px;
-  padding: 18px 20px 12px;
-  align-items: flex-start;
-  text-align: left;
-  border-radius: 4px;
-}
-
-.sticker--ticket small {
-  color: var(--cayenne);
-}
-
-.sticker--ticket span {
   font-size: 20px;
-}
-
-.sticker--ticket em {
-  font-size: 22px;
-}
-
-.sticker__dog {
-  width: 96px;
-  height: auto;
-  margin-top: 8px;
-}
-
-.sticker--ticket .sticker__dog {
-  align-self: flex-end;
-  width: 84px;
-  margin-top: 2px;
-}
-
-/* Positionen */
-.sticker--hero {
-  right: -64px;
-  bottom: 10%;
-}
-
-.booking__actions {
-  position: relative;
-}
-
-.sticker--booking {
-  right: -12px;
-  top: -190px;
-}
-
-#galerie .container,
-#kontakt .container {
-  position: relative;
-}
-
-.sticker--works {
-  right: var(--gutter);
-  top: 0;
-}
-
-.about__media {
-  position: relative;
-}
-
-.sticker--karl {
-  right: -40px;
-  bottom: -36px;
-}
-
-.sticker--contact {
-  right: var(--gutter);
-  top: -20px;
+  line-height: 1.15;
 }
 
 /* Kontakt */
 .contact {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 48px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
 }
 
 .contact h3 {
-  font-family: var(--condensed);
   font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 12px;
 }
 
 .contact p {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
-.contact a:not(.link) {
+.contact a:not(.text-link) {
   text-decoration: none;
 }
 
-.contact a:not(.link):hover {
+.contact a:not(.text-link):hover {
   text-decoration: underline;
-}
-
-.hours {
-  margin: 0;
 }
 
 .hours div {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  padding: 6px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
+  padding: 3px 0;
 }
 
 .hours dd {
-  margin: 0;
   color: var(--muted);
 }
 
-/* Footer (Akzent Bitter Cocoa) */
+/* Footer */
 .footer {
-  background: var(--cocoa);
-  color: color-mix(in srgb, var(--cream) 70%, transparent);
-  font-size: 12px;
-  padding-bottom: 28px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 11px;
+  padding-bottom: 24px;
 }
 
 .footer__name {
   text-align: center;
-  color: var(--glass);
-  padding: 48px 0 32px;
-  --logo-w: clamp(200px, 26vw, 340px);
+  color: var(--cocoa);
+  padding: 64px 0 48px;
+  --logo-w: clamp(180px, 20vw, 280px);
 }
 
 .footer__inner {
@@ -769,6 +633,8 @@ p {
   justify-content: space-between;
   gap: 16px;
   flex-wrap: wrap;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .footer nav {
@@ -781,7 +647,12 @@ p {
 }
 
 .footer a:hover {
-  color: var(--cream);
+  color: var(--ink);
+}
+
+/* Am Handy immer sichtbarer Buchungsbutton */
+.sticky-cta {
+  display: none;
 }
 
 /* Rechtstexte */
@@ -792,23 +663,24 @@ p {
 }
 
 .legal h1 {
-  font-family: var(--serif);
-  font-weight: 400;
+  font-family: var(--sans);
+  font-weight: 500;
+  letter-spacing: -0.04em;
   line-height: 0.95;
   margin-bottom: 24px;
 }
 
 .legal h2 {
-  font-family: var(--condensed);
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
+  color: var(--muted);
   margin: 40px 0 10px;
 }
 
 .legal p {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 /* Tablet */
@@ -828,10 +700,11 @@ p {
     inset: 60px 0 auto 0;
     flex-direction: column;
     align-items: flex-start;
-    gap: 22px;
-    padding: 28px var(--gutter) 36px;
-    background: var(--cayenne);
-    font-size: 14px;
+    gap: 20px;
+    padding: 24px var(--gutter) 32px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    font-size: 16px;
     opacity: 0;
     pointer-events: none;
     transform: translateY(-8px);
@@ -842,52 +715,28 @@ p {
     pointer-events: auto;
     transform: none;
   }
-  .hero__frame {
-    width: 100%;
+  .hero,
+  .booking__row,
+  .about__grid,
+  .works__head {
+    grid-template-columns: 1fr;
   }
-  .hero__title {
-    left: 3%;
-    --logo-w: 78cqw;
+  .hero__frame {
+    order: -1;
   }
   .hero__meta {
-    gap: 12px;
-    font-size: 10px;
+    flex-direction: column;
+    gap: 4px;
   }
-  .booking,
-  .contact,
-  .about {
+  .contact {
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 28px;
   }
   .carousel {
     display: none;
   }
   .slideshow {
     display: block;
-  }
-  .sticker {
-    transform: rotate(var(--r, 0deg)) scale(0.72);
-  }
-  .sticker--hero {
-    right: -18px;
-    bottom: -40px;
-  }
-  .sticker--booking {
-    display: none;
-  }
-  .sticker--works {
-    top: -24px;
-    right: 4px;
-  }
-  .sticker--karl {
-    right: -14px;
-    bottom: -40px;
-  }
-  .sticker--contact {
-    position: relative;
-    top: 0;
-    right: auto;
-    margin: 0 0 24px -20px;
   }
   .sticky-cta {
     display: block;
@@ -896,17 +745,14 @@ p {
     right: 12px;
     bottom: 12px;
     z-index: 30;
-    padding: 17px;
-    background: var(--cocoa);
-    color: var(--cream);
+    padding: 16px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--bg);
     text-align: center;
     text-decoration: none;
-    font-family: var(--condensed);
     font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    box-shadow: 0 8px 24px rgb(57 27 23 / 0.3);
+    box-shadow: 0 8px 24px rgb(31 23 20 / 0.25);
     opacity: 0;
     transform: translateY(140%);
     pointer-events: none;

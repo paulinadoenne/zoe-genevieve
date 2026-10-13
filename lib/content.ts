@@ -36,17 +36,11 @@ export const galerie = [
 ];
 
 export const ueberMich = [
-  "Hi, ich bin Zoe, Master Hairstylist und Blonde Specialist in Köln. Ich arbeite selbstständig auf Stuhlmiete in der Sankt-Apern-Straße.",
+  "Ich bin Master Hairstylist und Blonde Specialist in Köln und arbeite selbstständig auf Stuhlmiete in der Sankt-Apern-Straße.",
   "Meistens ist auch Karl dabei, mein Dackel und offizieller Salon Dog. Er ist für die gute Laune zuständig.",
   "Bei mir gibt es 1:1 Dienstleistung, du stehst im Mittelpunkt. Du buchst direkt bei mir und hast vom Beratungsgespräch bis zum Föhnen immer dieselbe Ansprechpartnerin. Ich nehme mir Zeit, höre zu und schneide so, dass die Frisur auch zu Hause funktioniert.",
   "[Hier ein paar Sätze zu Ausbildung, Erfahrung und Schwerpunkten, z. B. Balayage, Locken oder Brautstyling.]",
 ];
-
-// Platzhalter, bitte durch eine echte Kundenstimme ersetzen.
-export const kundenstimme = {
-  zitat: "[Hier kommt eine echte Kundenstimme hin, zum Beispiel aus einer Google Bewertung oder einer Nachricht auf Instagram.]",
-  name: "[Vorname]",
-};
 
 // Kleiner Steckbrief aus Zoes Instagram.
 export const steckbrief = [

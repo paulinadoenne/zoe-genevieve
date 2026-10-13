@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Oswald, Inter } from "next/font/google";
+import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 
 const serif = Instrument_Serif({
@@ -7,12 +7,6 @@ const serif = Instrument_Serif({
   weight: "400",
   style: ["normal", "italic"],
   variable: "--font-serif",
-});
-
-const condensed = Oswald({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-condensed",
 });
 
 const sans = Inter({
@@ -33,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${serif.variable} ${condensed.variable} ${sans.variable}`}>
+    <html lang="de" className={`${serif.variable} ${sans.variable}`}>
       <body>{children}</body>
     </html>
   );

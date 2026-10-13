@@ -2078,3 +2078,80 @@ body {
   background: var(--ink);
   color: var(--bg);
 }
+
+/* ============================================================
+   Fotos farbintensiv und im Vordergrund, wie ein Editorial
+   ============================================================ */
+:root {
+  --editorial: saturate(1.18) contrast(1.08) brightness(1.02) sepia(0.04);
+}
+
+img.photo,
+.hero__photo,
+img.hero__photo,
+.screen-bg img,
+.screen-bg--mono img,
+.carousel__item img.photo,
+.carousel__item:hover img.photo,
+.slideshow__item img.photo {
+  filter: var(--editorial);
+}
+
+/* Kein Schleier mehr, nur oben ein schmaler Verlauf für Logo und Menü */
+.screen-bg::after,
+.booking .screen-bg::after {
+  background: linear-gradient(180deg, rgb(251 247 241 / 0.55) 0%, rgb(251 247 241 / 0) 22%);
+}
+
+.hero__img::before {
+  background: none;
+}
+
+/* Korn nur noch ganz dezent */
+.hero__img::after,
+.screen-bg::before,
+.carousel__item::after,
+.slideshow__item::after {
+  opacity: 0.08;
+}
+
+/* Titel auf Fotos bleiben lesbar */
+.screen-bg ~ * .title-xl,
+.booking .title-xl,
+#ueber-mich .title-xl,
+#kontakt .title-xl {
+  text-shadow: 0 2px 24px rgb(0 0 0 / 0.18);
+}
+
+.booking .subline,
+.booking .kicker {
+  text-shadow: 0 1px 12px rgb(255 255 255 / 0.5);
+}
+
+/* Galerie größer, Fotos im Mittelpunkt */
+.carousel {
+  height: clamp(380px, 38vw, 560px);
+}
+
+.carousel__item {
+  width: clamp(260px, 25vw, 380px);
+  height: clamp(280px, 27vw, 400px);
+}
+
+.carousel__item:hover {
+  width: clamp(380px, 37vw, 540px);
+  height: clamp(380px, 38vw, 560px);
+}
+
+@media (max-width: 760px) {
+  .hero__media::after {
+    background: linear-gradient(180deg, transparent 58%, rgb(40 25 15 / 0.5) 100%);
+  }
+  .slideshow {
+    height: min(56dvh, 480px);
+  }
+  .slideshow__item.is-active {
+    height: min(56dvh, 480px);
+    --l: min(76vw, 320px);
+  }
+}

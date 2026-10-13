@@ -69,11 +69,6 @@ export default function Home() {
               Jetzt online buchen ↗
             </a>
           </div>
-          <p className="caption">
-            <strong>Planity</strong>
-            <br />
-            1:1 Termin bei Zoe
-          </p>
         </section>
 
         {/* Arbeiten: großes Bild, dann weitere Arbeiten */}

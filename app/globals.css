@@ -1342,3 +1342,25 @@ main {
   background: transparent !important;
   backdrop-filter: none !important;
 }
+
+/* Überschriften linksbündig */
+.h-center {
+  text-align: left;
+  max-width: var(--max);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--gutter);
+}
+
+.hero__name {
+  text-align: left;
+}
+
+/* Bildreihe an der linken Kante der Überschriften ausrichten */
+.rondell__track {
+  padding-left: calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter));
+}
+
+.rondell {
+  scroll-padding-left: calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter));
+}

@@ -11,7 +11,9 @@ export default function HeaderTheme() {
 
     const themeAt = (y: number) => {
       const el = document.elementFromPoint(window.innerWidth / 2, y);
-      return el?.closest<HTMLElement>("[data-header]")?.dataset.header ?? "light";
+      const mobil = window.innerWidth <= 760;
+      const sec = el?.closest<HTMLElement>(mobil ? "[data-header-m], [data-header]" : "[data-header]");
+      return (mobil && sec?.dataset.headerM) || sec?.dataset.header || "light";
     };
 
     let frame = 0;

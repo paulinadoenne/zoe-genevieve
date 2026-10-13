@@ -1204,3 +1204,256 @@ main > .section:last-child {
     border-top-color: color-mix(in srgb, var(--cream) 15%, transparent);
   }
 }
+
+/* Hintergrundbilder der Screens (Desktop nur beim Termin) */
+.screen-bg {
+  display: none;
+}
+
+.booking {
+  position: relative;
+  overflow: hidden;
+}
+
+.booking .screen-bg {
+  display: block;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.booking > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.screen-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.08) saturate(0.86) sepia(0.08);
+}
+
+.screen-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgb(31 18 14 / 0.45) 0%, rgb(31 18 14 / 0.2) 40%, rgb(31 18 14 / 0.6) 100%);
+}
+
+.booking .screen-bg::after {
+  background: color-mix(in srgb, var(--cocoa) 72%, transparent);
+}
+
+/* Ausschnitte aus Zoes Foto */
+.screen-bg--tuer img {
+  object-position: 70% 0%;
+  transform: scale(1.5);
+  transform-origin: 70% 0%;
+}
+
+.screen-bg--haar img {
+  object-position: 60% 50%;
+  transform: scale(2.4);
+  transform-origin: 62% 48%;
+}
+
+.screen-bg--stufen img {
+  object-position: 50% 100%;
+  transform: scale(1.5);
+  transform-origin: 45% 92%;
+}
+
+@media (max-width: 760px) {
+  /* Farbige Textblöcke über die volle Breite */
+  .panel {
+    margin-left: calc(-1 * var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
+    padding: 24px var(--gutter);
+  }
+  .panel--cayenne {
+    background: var(--cayenne);
+    color: var(--cream);
+  }
+  .panel--cayenne span {
+    color: var(--cream);
+  }
+  .panel--glass {
+    background: var(--glass);
+    color: var(--ink);
+  }
+  .panel--cream {
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  .screen-bg {
+    display: block;
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  /* 1 Start: Foto über den ganzen Screen, Text darauf */
+  .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 var(--gutter);
+    color: var(--cream);
+    overflow: hidden;
+  }
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    height: auto;
+    aspect-ratio: auto;
+  }
+  .hero__media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 45%, rgb(31 18 14 / 0.75) 100%);
+  }
+  .hero__title {
+    top: 5%;
+    left: 6%;
+    --logo-w: 84cqw;
+  }
+  .hero__m-intro,
+  .hero__m-links,
+  .hero .hero__m-info {
+    position: relative;
+    z-index: 2;
+  }
+  .hero__m-intro {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+  .hero__m-links {
+    margin: 24px 0 14px;
+    padding-top: 14px;
+    border-top: 1px solid color-mix(in srgb, var(--cream) 35%, transparent);
+  }
+
+  /* 2 Termin: Foto, Text darauf, Schritte im Cayenne Block */
+  .booking {
+    padding-bottom: 64px;
+  }
+  .booking .screen-bg::after {
+    background: linear-gradient(180deg, rgb(57 27 23 / 0.55) 0%, rgb(57 27 23 / 0.35) 45%, rgb(57 27 23 / 0.7) 100%);
+  }
+  .booking__row {
+    border-bottom: 0;
+    padding-bottom: 24px;
+  }
+  .steps {
+    margin-top: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  /* 4 Über mich: ein Screen, Foto im Hintergrund, Text im Glass Block */
+  #ueber-mich {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100svh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    scroll-snap-align: start;
+    padding-bottom: 56px;
+  }
+  .about__grid {
+    position: relative;
+    display: block;
+  }
+  .about__media {
+    display: none;
+  }
+  .about__text {
+    min-height: 0;
+    padding: 0;
+    scroll-snap-align: none;
+  }
+  .about__lead {
+    color: var(--cream);
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+  .about__panel {
+    padding-bottom: 8px;
+  }
+  .about__panel .small-text:last-child {
+    margin-bottom: 0;
+  }
+  .facts.card {
+    margin: 0 calc(-1 * var(--gutter));
+    padding: 16px var(--gutter) 24px;
+    max-width: none;
+    border-top: 1px solid color-mix(in srgb, var(--ink) 15%, transparent);
+  }
+
+  /* 5 Kontakt: Foto, Überschrift darauf, Infos im Creme Block */
+  #kontakt {
+    position: relative;
+    overflow: hidden;
+    justify-content: flex-end;
+    padding-bottom: 56px;
+  }
+  #kontakt > * {
+    position: relative;
+  }
+  #kontakt > .screen-bg {
+    position: absolute;
+  }
+  #kontakt .label {
+    color: color-mix(in srgb, var(--cream) 80%, transparent);
+  }
+  .contact__title {
+    color: var(--cream);
+    margin-bottom: 24px;
+  }
+  .contact.panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 16px;
+    border-top: 0;
+    padding-top: 24px;
+  }
+  .contact > div:nth-child(2) {
+    grid-column: 1 / -1;
+    order: 3;
+  }
+  .contact > div:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    align-items: stretch;
+  }
+  .booking,
+  #ueber-mich,
+  #kontakt {
+    padding-bottom: 0;
+  }
+  .steps,
+  .facts.card,
+  .contact.panel {
+    padding-bottom: 84px;
+  }
+  .steps {
+    margin-bottom: 0;
+  }
+  .screen-bg--haar img {
+    object-position: 60% 45%;
+    transform: scale(1.8);
+    transform-origin: 62% 78%;
+  }
+  .contact.panel {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}

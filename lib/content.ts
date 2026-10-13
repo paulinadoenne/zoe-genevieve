@@ -48,3 +48,11 @@ export const steckbrief = [
   { label: "Salon Dog", wert: "Dackel Karl" },
   { label: "Lieblingsdrink", wert: "Haselnuss Latte" },
 ];
+
+// Hintergrundbilder der Screens am Handy (und beim Termin auch am Desktop).
+// Vorerst Ausschnitte aus Zoes Foto, später durch eigene Fotos ersetzen.
+export const hintergruende = {
+  termin: "/zoe.jpg",
+  ueberMich: "/zoe.jpg",
+  kontakt: "/zoe.jpg",
+};

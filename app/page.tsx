@@ -6,7 +6,8 @@ import Gallery from "@/components/Gallery";
 import StickyCta from "@/components/StickyCta";
 import InfoLine from "@/components/InfoLine";
 import HeaderTheme from "@/components/HeaderTheme";
-import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
+import ScreenBg from "@/components/ScreenBg";
+import { person, oeffnungszeiten, galerie, ueberMich, steckbrief, hintergruende } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
@@ -21,7 +22,7 @@ export default function Home() {
       <Header />
       <main>
         {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
-        <section className="hero" data-header="light">
+        <section className="hero" data-header="light" data-header-m="dark">
           <p className="hero__m-intro">
             Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
             Sankt-Apern-Straße, du stehst im Mittelpunkt.
@@ -64,6 +65,7 @@ export default function Home() {
 
         {/* Termin: Band in Bitter Cocoa */}
         <section id="termin" className="booking" data-header="dark">
+          <ScreenBg src={hintergruende.termin} variante="tuer" />
           <div className="container">
             <p className="label">(02) Termin</p>
             <div className="booking__row">
@@ -82,7 +84,7 @@ export default function Home() {
                 )}
               </div>
             </div>
-            <ol className="steps">
+            <ol className="steps panel panel--cayenne">
               <li>
                 <span>01</span>Freien Termin online wählen
               </li>
@@ -132,7 +134,8 @@ export default function Home() {
         </section>
 
         {/* Über mich */}
-        <section id="ueber-mich" className="section container about">
+        <section id="ueber-mich" className="section container about" data-header-m="dark">
+          <ScreenBg src={hintergruende.ueberMich} variante="haar" />
           <p className="label">(04) Über mich</p>
           <div className="about__grid">
             <div className="about__media">
@@ -143,11 +146,13 @@ export default function Home() {
               <p className="about__lead">
                 Hi, ich bin <em>Zoe.</em>
               </p>
-              {ueberMich.map((p, i) => (
-                <p key={i} className="small-text">
-                  {p}
-                </p>
-              ))}
+              <div className="panel panel--glass about__panel">
+                {ueberMich.map((p, i) => (
+                  <p key={i} className="small-text">
+                    {p}
+                  </p>
+                ))}
+              </div>
               <dl className="facts card">
                 {steckbrief.map((f) => (
                   <div key={f.label}>
@@ -161,10 +166,11 @@ export default function Home() {
         </section>
 
         {/* Kontakt */}
-        <section id="kontakt" className="section container">
+        <section id="kontakt" className="section container" data-header-m="dark">
+          <ScreenBg src={hintergruende.kontakt} variante="stufen" />
           <p className="label">(05) Kontakt</p>
           <h2 className="display contact__title">Kontakt</h2>
-          <div className="contact">
+          <div className="contact panel panel--cream">
             <div>
               <h3>Adresse</h3>
               <p>

@@ -162,6 +162,7 @@ export default function Home() {
         {/* Kontakt */}
         <section id="kontakt" className="section container">
           <p className="label">(05) Kontakt</p>
+          <h2 className="display contact__title">Kontakt</h2>
           <div className="contact">
             <div>
               <h3>Adresse</h3>

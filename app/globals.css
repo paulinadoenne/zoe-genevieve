@@ -692,6 +692,10 @@ main > .section:last-child {
 }
 
 /* Kontakt */
+.contact__title {
+  margin-bottom: 40px;
+}
+
 .contact {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1035,5 +1039,137 @@ main > .section:last-child {
   }
   .carousel {
     overflow-x: auto;
+  }
+}
+
+/* Mobil: jeder Bereich füllt genau einen iPhone Bildschirm */
+@media (max-width: 760px) {
+  html {
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 60px;
+  }
+  .hero,
+  .booking,
+  #galerie,
+  .about__media,
+  .about__text,
+  #kontakt,
+  .footer {
+    scroll-snap-align: start;
+    min-height: calc(100svh - 60px);
+  }
+
+  /* 1 Start: Intro, Foto füllt den Rest, Menüzeile, Infozeile */
+  .hero {
+    height: calc(100svh - 60px);
+    grid-template-rows: auto minmax(0, 1fr) auto auto;
+    padding-top: 20px;
+  }
+  .hero__m-intro {
+    margin-bottom: 20px;
+  }
+  .hero__media {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+  .hero__m-links {
+    margin: 16px 0 14px;
+  }
+
+  /* 2 Termin */
+  .booking {
+    display: flex;
+    margin-top: 0;
+    padding: 32px 0 88px;
+  }
+  .booking > .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .booking .display {
+    font-size: 64px;
+    line-height: 0.95;
+  }
+  .booking__row {
+    gap: 32px;
+    margin-top: auto;
+  }
+  .steps {
+    margin-top: auto;
+  }
+
+  /* 3 Arbeiten mit Rondell */
+  #galerie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 0 88px;
+  }
+  .slideshow {
+    height: min(62svh, 520px);
+    margin-bottom: 0;
+    --s: 64px;
+    --l: min(68vw, 300px);
+  }
+  .slideshow__item {
+    height: 96px;
+  }
+  .slideshow__item.is-active {
+    height: min(62svh, 520px);
+  }
+
+  /* 4 Über mich: erst Foto Screen, dann Text Screen */
+  #ueber-mich {
+    padding-top: 0;
+  }
+  #ueber-mich > .label {
+    display: none;
+  }
+  .about__grid {
+    gap: 0;
+  }
+  .about__media {
+    height: calc(100svh - 60px);
+    padding: 20px 0 88px;
+    grid-template-rows: minmax(0, 1fr);
+  }
+  .about__photo,
+  .about__small {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+  .about__small {
+    height: 46%;
+  }
+  .about__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 32px 0 88px;
+  }
+
+  /* 5 Kontakt */
+  #kontakt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 32px;
+    padding-bottom: 88px;
+  }
+  .contact__title {
+    font-size: 64px;
+    margin-bottom: 32px;
+  }
+
+  /* 6 Abschluss mit Logo */
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer__name {
+    --logo-w: 72vw;
   }
 }

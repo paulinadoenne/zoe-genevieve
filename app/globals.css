@@ -1284,3 +1284,49 @@ main {
     height: auto;
   }
 }
+
+/* ============================================================
+   Termin buchen größer
+   ============================================================ */
+.booking {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: clamp(120px, 14vw, 220px);
+}
+
+.booking .h-center {
+  font-size: clamp(56px, 8vw, 128px);
+  margin-bottom: clamp(32px, 4vw, 56px);
+}
+
+.booking__image {
+  height: min(88vh, 860px);
+}
+
+.booking__image .pill--big {
+  padding: 22px 44px;
+  font-size: 18px;
+}
+
+.booking .caption {
+  font-size: 13px;
+  margin-top: 16px;
+}
+
+@media (max-width: 760px) {
+  .booking {
+    padding-top: 120px;
+  }
+  .booking .h-center {
+    font-size: 15vw;
+  }
+  .booking__image {
+    height: 82svh;
+    margin: 0;
+  }
+  .booking__image .pill--big {
+    padding: 18px 32px;
+    font-size: 16px;
+  }
+}

@@ -5,6 +5,7 @@ import Logo from "@/components/Logo";
 import Gallery from "@/components/Gallery";
 import StickyCta from "@/components/StickyCta";
 import InfoLine from "@/components/InfoLine";
+import HeaderTheme from "@/components/HeaderTheme";
 import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
@@ -20,7 +21,7 @@ export default function Home() {
       <Header />
       <main>
         {/* Hero: Farbfläche links, Foto rechts, Logo läuft über die Kante */}
-        <section className="hero">
+        <section className="hero" data-header="light">
           <p className="hero__m-intro">
             Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
             Sankt-Apern-Straße, du stehst im Mittelpunkt.
@@ -62,7 +63,7 @@ export default function Home() {
         </div>
 
         {/* Termin: Band in Bitter Cocoa */}
-        <section id="termin" className="booking">
+        <section id="termin" className="booking" data-header="dark">
           <div className="container">
             <p className="label">(02) Termin</p>
             <div className="booking__row">
@@ -215,6 +216,7 @@ export default function Home() {
       </main>
 
       <StickyCta href={terminLink} />
+      <HeaderTheme />
       <Footer />
     </>
   );

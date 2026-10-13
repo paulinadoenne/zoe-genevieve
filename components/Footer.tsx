@@ -5,7 +5,7 @@ import InfoLine from "./InfoLine";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" data-header="dark">
       <div className="footer__name" aria-hidden>
         <Logo />
       </div>

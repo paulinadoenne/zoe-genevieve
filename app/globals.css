@@ -4257,3 +4257,115 @@ img.hero__photo,
     padding-bottom: 0;
   }
 }
+
+/* ============================================================
+   Terminseite: modernes Layout
+   Titel oben links und unten rechts, Button exakt in der Mitte,
+   kleine Infos in den Ecken
+   ============================================================ */
+.booking--grid {
+  display: block;
+  padding: 0;
+}
+
+.bk {
+  position: relative;
+  z-index: 2;
+  height: 100dvh;
+  min-height: 560px;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 96px var(--gutter) 40px;
+  color: #fff;
+}
+
+.bk__title {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  color: #fff;
+  font-size: clamp(64px, 11vw, 190px);
+  line-height: 0.86;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 0.25), 0 2px 24px rgb(0 0 0 / 0.35);
+}
+
+.bk__line {
+  position: absolute;
+}
+
+.bk__line--1 {
+  top: 128px;
+  left: var(--gutter);
+}
+
+.bk__line--2 {
+  right: var(--gutter);
+  bottom: 84px;
+}
+
+.bk__line--2 em {
+  font-style: italic;
+}
+
+.bk__cta {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.bk__cta:active {
+  transform: translate(-50%, -50%) scale(0.97);
+}
+
+.bk__corner {
+  position: absolute;
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 1px 12px rgb(0 0 0 / 0.35);
+}
+
+.bk__corner--tl { top: 96px; left: var(--gutter); }
+.bk__corner--tr { top: 96px; right: var(--gutter); }
+.bk__corner--bl { bottom: 40px; left: var(--gutter); }
+.bk__corner--br { bottom: 44px; right: var(--gutter); }
+
+.bk .subline {
+  margin: 0;
+  font-size: clamp(18px, 1.6vw, 22px);
+}
+
+@media (max-width: 760px) {
+  .bk {
+    height: 100dvh;
+    min-height: 0;
+    padding: 0;
+  }
+  .bk__title {
+    font-size: 17vw;
+  }
+  .bk__line--1 {
+    top: 116px;
+  }
+  .bk__line--2 {
+    bottom: 76px;
+  }
+  .bk__corner--tl,
+  .bk__corner--tr {
+    top: 84px;
+  }
+  .bk__corner--bl {
+    bottom: 36px;
+  }
+  .bk__corner--br {
+    bottom: 40px;
+  }
+  .bk .subline {
+    font-size: 17px;
+  }
+  .bk__cta {
+    padding: 18px 30px;
+  }
+}

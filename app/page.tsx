@@ -68,22 +68,25 @@ export default function Home() {
           <span>{person.instagram}</span>
         </div>
 
-        {/* Termin: Schwarzweißfoto, große orange Schrift, oranger Block */}
-        <section id="termin" className="booking booking--photo" data-header="dark" data-header-m="dark">
+        {/* Termin: modernes Layout, Titel oben links und unten rechts, Button in der Mitte */}
+        <section id="termin" className="booking booking--photo booking--grid" data-header="dark" data-header-m="dark">
           <ScreenBg src="/haar-textur.jpg" pos="50% 50%" />
-          <div className="container booking__top">
-            <p className="kicker">02 · Termin</p>
-            <h2 className="title-xl">
-              Buche deinen <em>Termin</em>
+          <div className="bk">
+            <p className="bk__corner bk__corner--tl kicker">02 · Termin</p>
+            <p className="bk__corner bk__corner--tr kicker">1:1 · Köln</p>
+            <h2 className="bk__title">
+              <span className="bk__line bk__line--1">Buche deinen</span>
+              <span className="bk__line bk__line--2">
+                <em>Termin</em>
+              </span>
             </h2>
-            <p className="subline">
-              <em>bei Zoe Genevieve</em>
-            </p>
-          </div>
-          <div className="container booking__bottom">
-            <a href={terminLink} className="btn btn--accent btn--big" target="_blank" rel="noopener">
+            <a href={terminLink} className="btn btn--accent btn--big bk__cta" target="_blank" rel="noopener">
               Jetzt buchen <span aria-hidden>↗</span>
             </a>
+            <p className="bk__corner bk__corner--bl subline">
+              <em>bei Zoe Genevieve</em>
+            </p>
+            <p className="bk__corner bk__corner--br kicker">Online über Planity</p>
           </div>
         </section>
 

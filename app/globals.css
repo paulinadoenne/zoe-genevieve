@@ -1,11 +1,16 @@
 :root {
-  --bg: #faf8f5;
-  --bg-soft: #f2eee8;
-  --ink: #1d1c1a;
-  --muted: #6f6a63;
-  --line: #e2ddd5;
-  --accent: #a8876d;
-  --photo: #e9e3da;
+  /* Farbkonzept: Cayenne Dust, Weathered Glass, Bitter Cocoa */
+  --cayenne: #9d3f0d;
+  --glass: #9ab0aa;
+  --cocoa: #391b17;
+  --bg: #f8f4ef;
+  --bg-soft: #efe8e0;
+  --cream: #f8f4ef;
+  --ink: var(--cocoa);
+  --muted: #7b6560;
+  --line: #e5dbd2;
+  --accent: var(--cayenne);
+  --photo: #c9d6d2;
   --radius: 2px;
   --max: 1160px;
   --gutter: clamp(20px, 5vw, 48px);
@@ -253,13 +258,13 @@ p {
   display: flex;
   align-items: flex-end;
   padding: 16px;
-  background: linear-gradient(160deg, #ece6dd 0%, #e2d9cd 100%);
+  background: linear-gradient(160deg, #c9d6d2 0%, var(--glass) 100%);
 }
 
 .photo--empty span {
   font-size: 12px;
   letter-spacing: 0.04em;
-  color: #9a9085;
+  color: #4f625d;
 }
 
 /* Hero */
@@ -297,7 +302,7 @@ p {
 
 .price-cat h3 {
   padding-bottom: 14px;
-  border-bottom: 1px solid var(--ink);
+  border-bottom: 1px solid var(--cayenne);
   margin-bottom: 8px;
 }
 
@@ -333,8 +338,31 @@ p {
 
 /* Termin-Band */
 .band {
-  background: var(--bg-soft);
+  background: var(--cayenne);
+  color: var(--cream);
   padding: clamp(64px, 9vw, 112px) 0;
+}
+
+.band .eyebrow,
+.band .muted {
+  color: color-mix(in srgb, var(--cream) 78%, transparent);
+}
+
+.band .btn {
+  background: var(--cream);
+  color: var(--cocoa);
+  border-color: var(--cream);
+}
+
+.band .btn:hover,
+.band .btn--ghost {
+  background: transparent;
+  color: var(--cream);
+}
+
+.band .btn--ghost:hover {
+  background: var(--cream);
+  color: var(--cocoa);
 }
 
 .band__inner {
@@ -426,10 +454,10 @@ p {
 
 /* Footer */
 .footer {
-  border-top: 1px solid var(--line);
+  background: var(--cocoa);
   padding: 32px 0;
   font-size: 13px;
-  color: var(--muted);
+  color: color-mix(in srgb, var(--cream) 70%, transparent);
 }
 
 .footer__inner {
@@ -449,7 +477,7 @@ p {
 }
 
 .footer a:hover {
-  color: var(--ink);
+  color: var(--cream);
 }
 
 /* Rechtstexte */

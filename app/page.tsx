@@ -77,11 +77,6 @@ export default function Home() {
               Termin buchen →
             </a>
           </p>
-          <div className="aboutx__tiles">
-            {kacheln.map((k) => (
-              <Photo key={k.src} src={k.src} alt={k.alt} />
-            ))}
-          </div>
         </section>
 
         {/* Kontakt */}
@@ -125,6 +120,11 @@ export default function Home() {
         </section>
       </main>
       <SiteFooter />
+      <div className="aboutx__tiles page-tiles">
+        {kacheln.map((k) => (
+          <Photo key={k.src} src={k.src} alt={k.alt} />
+        ))}
+      </div>
       <Motion />
       <HeaderScroll />
     </>

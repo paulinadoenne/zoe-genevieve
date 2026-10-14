@@ -3188,3 +3188,31 @@ html.menu-open .menu-btn {
 .contact__legal a:hover {
   color: #111;
 }
+
+/* Kacheln schließen unten bündig mit dem Abschnitt ab */
+.aboutx {
+  padding-bottom: 0 !important;
+}
+.aboutx__tiles {
+  margin-bottom: 0;
+}
+.contact {
+  border-top: 0;
+}
+
+/* Kacheln ganz unten am Seitenrand */
+.aboutx {
+  padding-bottom: clamp(120px, 14vw, 220px) !important;
+}
+.page-tiles {
+  margin: 0 !important;
+  padding: 0;
+}
+.page-tiles .photo {
+  display: block;
+}
+@media (max-width: 760px) {
+  .aboutx {
+    padding-bottom: 110px !important;
+  }
+}

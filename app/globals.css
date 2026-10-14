@@ -2809,3 +2809,20 @@ html.menu-open .menu-btn {
     gap: 4px;
   }
 }
+
+/* Über mich Überschrift wie Arbeiten */
+.aboutx .h-center {
+  font-size: clamp(48px, 6vw, 96px);
+  margin-bottom: clamp(48px, 6vw, 96px);
+}
+@media (max-width: 760px) {
+  .aboutx .h-center {
+    font-size: 52px;
+  }
+}
+@media (max-width: 760px) {
+  .booking .h-center,
+  .hero__list {
+    color: var(--bordeaux);
+  }
+}

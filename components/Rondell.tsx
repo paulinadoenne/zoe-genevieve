@@ -40,9 +40,6 @@ export default function Rondell({ bilder }: { bilder: Bild[] }) {
             <div className="rondell__img">
               <Photo src={b.src} alt={b.alt} />
             </div>
-            <figcaption className="caption">
-              <strong>{b.titel}</strong> {b.info}
-            </figcaption>
           </figure>
         ))}
       </div>

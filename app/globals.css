@@ -3387,3 +3387,8 @@ html.menu-open .menu-btn {
     padding-top: calc(180px + 22svh) !important;
   }
 }
+@media (max-width: 760px) {
+  .works {
+    padding-top: calc(140px + 10svh) !important;
+  }
+}

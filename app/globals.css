@@ -3324,3 +3324,18 @@ html.menu-open .menu-btn {
 .aboutx__hero .photo {
   filter: grayscale(1) contrast(1.32) brightness(1.12);
 }
+
+/* Probe: beide Fotos farbig im Kino Look
+   (leicht entsättigt, warme Lichter, kühle Schatten, angehobenes Schwarz) */
+.hero__portrait .photo,
+.aboutx__hero .photo {
+  filter: saturate(0.82) contrast(1.12) brightness(1.08) sepia(0.12);
+}
+.hero__portrait::after,
+.aboutx__hero::after {
+  opacity: 0.5;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(160deg, rgb(255 176 104 / 0.55), rgb(40 96 112 / 0.5));
+  background-size: 220px 220px, 100% 100%;
+}

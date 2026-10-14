@@ -16,7 +16,6 @@ const kacheln = [
   { src: "/kacheln/karamell-wellen.jpg", alt: "Karamellblonde Haare mit großen Locken" },
   { src: "/kacheln/blond-balayage.jpg", alt: "Lange Haare mit hellblondem Balayage" },
 ];
-const leistungen = ["Blonde Specialist", "Balayage", "Farbe", "Schnitt", "Styling"];
 
 export default function Home() {
   return (
@@ -36,11 +35,6 @@ export default function Home() {
             Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer Hand, du stehst
             im Mittelpunkt.
           </p>
-          <ul className="hero__list">
-            {leistungen.map((l) => (
-              <li key={l}>{l}</li>
-            ))}
-          </ul>
         </section>
 
         {/* Termin: zentrierte Überschrift, großes Bild, Button */}

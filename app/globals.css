@@ -3265,3 +3265,19 @@ html.menu-open .menu-btn {
   content: none !important;
   display: none !important;
 }
+
+/* Nur ein Text unter dem Startbild, Termin rückt höher */
+.hero {
+  padding-bottom: clamp(48px, 6vw, 96px) !important;
+}
+.booking {
+  padding-top: clamp(64px, 8vw, 120px) !important;
+}
+@media (max-width: 760px) {
+  .hero {
+    padding-bottom: 40px !important;
+  }
+  .booking {
+    padding-top: 56px !important;
+  }
+}

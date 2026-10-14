@@ -3048,3 +3048,8 @@ html.menu-open .menu-btn {
 :root {
   --offwhite: #f6f5da;
 }
+
+/* Hintergrund dezentes, neutrales Gelb */
+:root {
+  --offwhite: #faf7e6;
+}

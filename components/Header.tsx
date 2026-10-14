@@ -23,6 +23,9 @@ export default function Header() {
   return (
     <>
       <header className={`header${open ? " is-open" : ""}`}>
+        <a href="/" className="header__mark" onClick={() => setOpen(false)}>
+          ( ZG )
+        </a>
         <button
           className="menu-btn"
           aria-expanded={open}
@@ -48,6 +51,9 @@ export default function Header() {
             </li>
           ))}
         </ul>
+        <div className="menu__img" aria-hidden>
+          <img src="/zoe-portrait.jpg" alt="" />
+        </div>
         <div className="menu__foot">
           <a href={person.buchungsLink} className="pill pill--big" target="_blank" rel="noopener" tabIndex={open ? 0 : -1}>
             Termin online buchen ↗

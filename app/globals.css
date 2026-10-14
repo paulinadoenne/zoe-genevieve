@@ -2498,3 +2498,8 @@ body,
     display: none;
   }
 }
+
+/* Hintergrund Hellrosa */
+:root {
+  --offwhite: #f8e9e7;
+}

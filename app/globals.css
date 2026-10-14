@@ -2872,3 +2872,8 @@ html.menu-open .menu-btn {
 .contact__fields .pill:hover {
   background: #444;
 }
+
+/* Hintergrund ganz helles Blau */
+:root {
+  --offwhite: #eef4f9;
+}

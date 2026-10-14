@@ -3156,3 +3156,35 @@ html.menu-open .menu-btn {
   border-color: #111;
   color: #fff;
 }
+
+/* Unten ohne Farbe */
+.contact,
+.foot {
+  background: #fff;
+}
+.contact {
+  border-top: 1px solid rgb(17 17 17 / 0.1);
+}
+
+/* Letzte Reihe weg, Rechtliches klein im Kontakt */
+.foot__legal {
+  display: none;
+}
+@media (max-width: 760px) {
+  .foot {
+    display: none;
+  }
+}
+.contact__legal {
+  display: flex;
+  gap: 18px;
+  margin: 8px 0 0;
+  font-size: 13px;
+}
+.contact__legal a {
+  color: rgb(17 17 17 / 0.6);
+  text-decoration: none;
+}
+.contact__legal a:hover {
+  color: #111;
+}

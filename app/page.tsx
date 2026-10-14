@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "@/components/Header";
 import SiteFooter from "@/components/SiteFooter";
 import Photo from "@/components/Photo";
@@ -116,6 +117,10 @@ export default function Home() {
                 </a>
               </span>
             </div>
+            <p className="contact__legal">
+              <Link href="/impressum">Impressum</Link>
+              <Link href="/datenschutz">Datenschutz</Link>
+            </p>
           </div>
         </section>
       </main>

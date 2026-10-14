@@ -22,12 +22,6 @@ export default function SiteFooter() {
           <br />
           {oeffnungszeiten[0].tage} {oeffnungszeiten[0].zeit}
         </p>
-        <p className="foot__right">
-          Termin?{" "}
-          <a href={person.buchungsLink} target="_blank" rel="noopener">
-            Online buchen
-          </a>
-        </p>
       </div>
       <div className="foot__legal">
         <span>© {new Date().getFullYear()} {person.name} · {person.beruf} in {person.stadt}</span>

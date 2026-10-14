@@ -116,9 +116,6 @@ export default function Home() {
                 </a>
               </span>
             </div>
-            <a href={person.buchungsLink} className="pill" target="_blank" rel="noopener">
-              Termin buchen
-            </a>
           </div>
         </section>
       </main>

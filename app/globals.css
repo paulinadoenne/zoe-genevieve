@@ -3232,3 +3232,36 @@ html.menu-open .menu-btn {
     padding-bottom: 64px !important;
   }
 }
+
+/* Spezialgebiete als ruhige Zeile statt Buttons */
+.hero__list {
+  gap: 6px 0;
+}
+.hero__list li,
+.hero__list li:first-child {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #111;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: default;
+}
+.hero__list li:first-child {
+  font-weight: 600;
+}
+.hero__list li + li::before {
+  content: "·";
+  margin: 0 12px;
+  color: rgb(17 17 17 / 0.4);
+}
+.hero__list {
+  gap: 8px 22px;
+}
+.hero__list li + li::before,
+.hero__list li::before {
+  content: none !important;
+  display: none !important;
+}

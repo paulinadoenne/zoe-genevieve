@@ -3304,3 +3304,18 @@ html.menu-open .menu-btn {
   mix-blend-mode: screen;
   opacity: 0.32;
 }
+
+/* Hundebild im gleichen dreamy Look wie das Startbild */
+.aboutx__hero .photo {
+  filter: grayscale(1) contrast(1.12) brightness(1.2);
+}
+.aboutx__hero::before {
+  background: none;
+  -webkit-backdrop-filter: blur(16px) brightness(1.05);
+  backdrop-filter: blur(16px) brightness(1.05);
+  mix-blend-mode: screen;
+  opacity: 0.32;
+}
+.aboutx__hero::after {
+  opacity: 0.42;
+}

@@ -2972,3 +2972,54 @@ html.menu-open .menu-btn {
     font-size: 15px;
   }
 }
+
+/* Unterste Seite (Kontakt und Footer) in Orange wie das Menü, Schrift weiß */
+.contact,
+.foot {
+  background: var(--menu-orange);
+  border-top: 0;
+}
+.contact,
+.contact .contact__title,
+.contact .field,
+.contact .field a,
+.contact .field__row,
+.contact .field__label,
+.foot,
+.foot__big a,
+.foot__big span,
+.foot__right a,
+.foot__legal a,
+.foot__small,
+.foot__small p,
+.foot__legal {
+  color: #fff;
+}
+.contact .field__row span:last-child,
+.foot__small,
+.foot__legal > span {
+  color: rgb(255 255 255 / 0.8);
+}
+.contact .field {
+  border-bottom-color: rgb(255 255 255 / 0.4);
+}
+.contact__icons a {
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.6);
+}
+.contact__icons a:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--menu-orange);
+}
+.contact__fields .pill {
+  background: #fff;
+  color: #111;
+}
+.contact__fields .pill:hover {
+  background: #111;
+  color: #fff;
+}
+.foot {
+  border-top: 1px solid rgb(255 255 255 / 0.35);
+}

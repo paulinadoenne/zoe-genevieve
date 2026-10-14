@@ -3053,3 +3053,9 @@ html.menu-open .menu-btn {
 :root {
   --offwhite: #faf7e6;
 }
+
+/* Logo in Orange wie Menü und Kontakt */
+.hero__logo,
+.hero__logo .logo__name {
+  color: var(--menu-orange);
+}

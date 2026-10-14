@@ -3033,3 +3033,8 @@ html.menu-open .menu-btn {
 :root {
   --offwhite: #f8f6f2;
 }
+
+/* Orange gedeckter */
+:root {
+  --menu-orange: #d4672e;
+}

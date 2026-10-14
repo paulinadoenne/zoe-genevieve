@@ -13,6 +13,24 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  // Springt sofort zum Abschnitt, solange das Menü noch alles verdeckt,
+  // und blendet das Menü erst danach aus. So ist unterwegs nichts von
+  // anderen Abschnitten zu sehen.
+  const springe = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const id = href.split("#")[1];
+    const ziel = id ? document.getElementById(id) : null;
+    if (!ziel) {
+      setOpen(false);
+      return;
+    }
+    e.preventDefault();
+    const y = ziel.getBoundingClientRect().top + window.scrollY;
+    document.documentElement.classList.remove("menu-open");
+    window.scrollTo({ top: y, behavior: "instant" as ScrollBehavior });
+    history.replaceState(null, "", `#${id}`);
+    setOpen(false);
+  };
+
   useEffect(() => {
     document.documentElement.classList.toggle("menu-open", open);
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
@@ -44,7 +62,7 @@ export default function Header() {
         <ul className="menu__list">
           {links.map((l, i) => (
             <li key={l.href} style={{ "--i": i } as React.CSSProperties}>
-              <a href={l.href} onClick={() => setOpen(false)} tabIndex={open ? 0 : -1}>
+              <a href={l.href} onClick={(e) => springe(e, l.href)} tabIndex={open ? 0 : -1}>
                 <span className="menu__nr">0{i + 1}</span>
                 {l.label}
               </a>

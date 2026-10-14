@@ -3392,3 +3392,11 @@ html.menu-open .menu-btn {
     padding-top: calc(140px + 10svh) !important;
   }
 }
+
+/* Sprung aus dem Menü: Abschnitt beginnt genau oben, nichts vom vorherigen sichtbar */
+html {
+  scroll-padding-top: 0;
+}
+.contact {
+  min-height: 100svh;
+}

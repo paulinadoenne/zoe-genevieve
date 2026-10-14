@@ -2421,9 +2421,6 @@ body,
 .header__mark {
   display: none;
 }
-.menu__img {
-  display: none;
-}
 
 /* Mobiles Menü wie im Beispiel: Kürzel links, Menü rechts,
    Links in einer Zeile, darunter ein großes Bild */
@@ -2447,56 +2444,6 @@ body,
     display: none;
   }
 
-  .menu {
-    justify-content: flex-start;
-    padding: 0 var(--gutter) var(--gutter);
-  }
-  .menu__list {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    margin: 24vh 0 14px;
-    padding: 0;
-  }
-  .menu__list li {
-    border: 0;
-  }
-  .menu__list a {
-    display: block;
-    padding: 0;
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1.2;
-    white-space: nowrap;
-  }
-  .menu__nr {
-    display: none;
-  }
-  .menu__img {
-    display: block;
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
-  }
-  .menu.is-open .menu__img {
-    opacity: 1;
-    transform: none;
-    transition-delay: 0.3s;
-  }
-  .menu__img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 25%;
-    filter: grayscale(1);
-  }
-  .menu__foot {
-    display: none;
-  }
 }
 
 /* Hintergrund Hellrosa */
@@ -2513,4 +2460,10 @@ body,
 /* Hintergrund Pfirsich, noch heller */
 :root {
   --offwhite: #fef3ea;
+}
+
+/* Startbild: Zoe im Strickpulli */
+.hero__portrait .photo {
+  transform: none;
+  object-position: 50% 30%;
 }

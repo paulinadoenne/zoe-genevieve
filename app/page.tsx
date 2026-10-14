@@ -22,7 +22,7 @@ export default function Home() {
             <Logo />
           </h1>
           <div className="hero__portrait">
-            <Photo src="/zoe.jpg" alt="Zoe Genevieve sitzt vor einer roten Holztür" />
+            <Photo src="/zoe-portrait.jpg" alt="Zoe Genevieve im Strickpulli" />
           </div>
           <p className="hero__lead">
             Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der

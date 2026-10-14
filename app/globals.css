@@ -2888,3 +2888,87 @@ html.menu-open .menu-btn {
 .booking__image img {
   filter: brightness(1.16) saturate(1.3) contrast(1.06);
 }
+
+/* Hintergrund heller */
+:root {
+  --offwhite: #f3f0eb;
+}
+
+/* Einheitliche Schrift: alle Überschriften gleich, alle Texte gleich */
+.h-center,
+.booking .h-center,
+.works__head .h-center,
+.aboutx .h-center,
+.contact__title {
+  font-size: clamp(48px, 6vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1;
+}
+
+.hero__lead,
+.hero__list,
+.hero__list li,
+.aboutx__p,
+.aboutx__note,
+.aboutx__link,
+.rondell figcaption,
+.rondell .caption,
+.caption,
+.caption strong,
+.field,
+.field a,
+.field__row,
+.field__label,
+.foot__small,
+.foot__small p,
+.foot__legal,
+.foot__legal a {
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+.hero__lead {
+  max-width: 44ch;
+}
+.field__label,
+.caption strong {
+  font-weight: 600;
+}
+.aboutx__note,
+.caption,
+.foot__small,
+.foot__legal {
+  color: rgb(17 17 17 / 0.6);
+}
+.caption strong {
+  color: #111;
+}
+@media (max-width: 760px) {
+  .h-center,
+  .booking .h-center,
+  .works__head .h-center,
+  .aboutx .h-center,
+  .contact__title {
+    font-size: 52px;
+  }
+  .hero__lead,
+  .hero__list,
+  .hero__list li,
+  .aboutx__p,
+  .aboutx__note,
+  .aboutx__link,
+  .rondell figcaption,
+  .rondell .caption,
+  .caption,
+  .caption strong,
+  .field,
+  .field a,
+  .field__row,
+  .field__label,
+  .foot__legal,
+  .foot__legal a {
+    font-size: 15px;
+  }
+}

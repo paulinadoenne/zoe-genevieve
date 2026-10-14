@@ -3376,3 +3376,14 @@ html.menu-open .menu-btn {
     margin-bottom: 30svh !important;
   }
 }
+
+/* Mobil: Überschrift wieder im gewohnten Abstand zu den Bildern,
+   dafür mehr Luft davor, damit der Block tiefer sitzt */
+@media (max-width: 760px) {
+  .works__head .h-center {
+    margin-bottom: 48px !important;
+  }
+  .works {
+    padding-top: calc(180px + 22svh) !important;
+  }
+}

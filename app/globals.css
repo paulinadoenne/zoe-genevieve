@@ -2845,3 +2845,11 @@ html.menu-open .menu-btn {
 .contact__fields .pill:hover {
   background: #b85400;
 }
+
+/* Hundebild: ohne Vignette, weniger Tiefe, Kontrast leicht erhöht */
+.aboutx__hero .photo {
+  filter: grayscale(1) contrast(1.18) brightness(1.06);
+}
+.aboutx__hero::before {
+  background: none;
+}

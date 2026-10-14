@@ -3028,3 +3028,8 @@ html.menu-open .menu-btn {
 :root {
   --menu-orange: #eb6100;
 }
+
+/* Hintergrund fast Off White */
+:root {
+  --offwhite: #f8f6f2;
+}

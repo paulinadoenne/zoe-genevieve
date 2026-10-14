@@ -2517,3 +2517,21 @@ body,
     margin-top: -130px;
   }
 }
+
+/* Mobil: Footer auf eine schlanke Rechtszeile reduziert */
+@media (max-width: 760px) {
+  .foot {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+  .foot__big,
+  .foot__small,
+  .foot__legal > span {
+    display: none;
+  }
+  .foot__legal {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+}

@@ -3319,3 +3319,8 @@ html.menu-open .menu-btn {
 .aboutx__hero::after {
   opacity: 0.42;
 }
+
+/* Hundebild mit etwas mehr Kontrast */
+.aboutx__hero .photo {
+  filter: grayscale(1) contrast(1.32) brightness(1.12);
+}

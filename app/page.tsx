@@ -10,6 +10,11 @@ import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/c
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
+const kacheln = [
+  { src: "/kacheln/balayage-braun.jpg", alt: "Lange braune Haare mit weichem Balayage in Wellen" },
+  { src: "/kacheln/karamell-wellen.jpg", alt: "Karamellblonde Haare mit großen Locken" },
+  { src: "/kacheln/blond-balayage.jpg", alt: "Lange Haare mit hellblondem Balayage" },
+];
 const leistungen = ["Blonde Specialist", "Balayage", "Farbe", "Schnitt", "Styling"];
 
 export default function Home() {
@@ -57,26 +62,28 @@ export default function Home() {
         </section>
 
         {/* Über mich: kleine Texte, versetztes Bildraster */}
-        <section id="ueber-mich" className="about">
-          <ul className="about__list">
-            {steckbrief.map((f) => (
-              <li key={f.label}>
-                <span>{f.label}</span> {f.wert}
-              </li>
-            ))}
-          </ul>
-          <p className="about__text about__text--1">{ueberMich[0]}</p>
-          <p className="about__text about__text--2">
-            {ueberMich[2]} {ueberMich[1]}
-          </p>
-          <div className="scatter">
-            <Photo src="/kacheln/balayage-braun.jpg" alt="Lange braune Haare mit weichem Balayage in Wellen" className="scatter__a" />
-            <Photo src="/kacheln/karamell-wellen.jpg" alt="Karamellblonde Haare mit großen Locken" className="scatter__b" />
-            <div className="scatter__c scatter__accent" aria-hidden>
-              <span>1:1</span>
-            </div>
-            <Photo src="/kacheln/blond-balayage.jpg" alt="Lange Haare mit hellblondem Balayage" className="scatter__d" />
+        <section id="ueber-mich" className="aboutx">
+          <h2 className="h-center">Über mich</h2>
+          <div className="aboutx__hero">
+            <Photo src="/zoe-karl.jpg" alt="Zoe mit Karl, dem Salon Dog" />
           </div>
+          <p className="aboutx__p aboutx__p--1">
+            {ueberMich[0]} {ueberMich[1]}
+          </p>
+          <p className="aboutx__p aboutx__p--2">
+            {ueberMich[2]}
+            <a href={person.buchungsLink} className="aboutx__link" target="_blank" rel="noopener">
+              Termin buchen →
+            </a>
+          </p>
+          <div className="aboutx__tiles">
+            {kacheln.map((k) => (
+              <Photo key={k.src} src={k.src} alt={k.alt} />
+            ))}
+          </div>
+          <p className="aboutx__note">
+            {steckbrief.map((f) => `${f.label} ${f.wert}`).join(" · ")}
+          </p>
         </section>
 
         {/* Kontakt */}

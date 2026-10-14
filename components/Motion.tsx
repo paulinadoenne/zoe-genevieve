@@ -15,9 +15,11 @@ const TEXT = [
   ".contact__title",
   ".field",
   ".foot__big > *",
+  ".aboutx__p",
+  ".aboutx__note",
 ].join(",");
 
-const BILDER = [".scatter > *", ".booking__image"].join(",");
+const BILDER = [".scatter > *", ".aboutx__hero", ".aboutx__tiles > *", ".booking__image"].join(",");
 
 export default function Motion() {
   useEffect(() => {

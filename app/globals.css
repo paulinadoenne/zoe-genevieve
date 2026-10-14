@@ -3023,3 +3023,8 @@ html.menu-open .menu-btn {
 .foot {
   border-top: 1px solid rgb(255 255 255 / 0.35);
 }
+
+/* Orange satter */
+:root {
+  --menu-orange: #eb6100;
+}

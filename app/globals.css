@@ -2703,3 +2703,109 @@ html.menu-open .menu-btn {
 .aboutx__link {
   display: table;
 }
+
+/* Schrift in Bordeaux */
+:root {
+  --bordeaux: #761725;
+  --ink: var(--bordeaux);
+  --cocoa: var(--bordeaux);
+  --muted: rgb(118 23 37 / 0.6);
+  --line: rgb(118 23 37 / 0.14);
+}
+body,
+h1, h2, h3,
+.h-center,
+.hero__lead,
+.hero__list,
+.contact__title,
+.hero__logo,
+.hero__logo .logo__name,
+.header__mark,
+.menu-btn,
+.aboutx__p,
+.aboutx__link,
+.field,
+.field a,
+.rondell figcaption,
+.foot,
+.foot__big a,
+.foot__right a,
+.foot__legal a,
+.contact__icons a {
+  color: var(--bordeaux);
+}
+.aboutx__note,
+.foot__small,
+.foot__legal {
+  color: rgb(118 23 37 / 0.6);
+}
+.contact__icons a {
+  border-color: rgb(118 23 37 / 0.3);
+}
+.contact__icons a:hover {
+  background: var(--bordeaux);
+  border-color: var(--bordeaux);
+  color: #fff;
+}
+.pill,
+.contact__fields .pill {
+  background: var(--bordeaux);
+  color: #fff;
+}
+.pill:hover,
+.contact__fields .pill:hover {
+  background: #4f0f19;
+}
+.pill--light {
+  background: #fff;
+  color: var(--bordeaux);
+}
+.pill--light:hover {
+  background: var(--bordeaux);
+  color: #fff;
+}
+.pill--outline {
+  color: var(--bordeaux);
+  border-color: var(--bordeaux);
+}
+.scatter__accent {
+  background: var(--bordeaux);
+}
+::selection {
+  background: var(--bordeaux);
+  color: #fff;
+}
+/* Menü bleibt weiß auf Orange */
+html.menu-open .header__mark,
+html.menu-open .menu-btn {
+  color: #fff;
+}
+.menu__foot .pill {
+  background: #fff;
+  color: var(--bordeaux);
+}
+
+/* Hundebild mit mehr Tiefe: tiefere Schatten, weniger Schleier, sanfte Vignette */
+.aboutx__hero .photo {
+  filter: grayscale(1) contrast(1.4) brightness(1.04);
+}
+.aboutx__hero::before {
+  background: radial-gradient(ellipse at 50% 45%, transparent 55%, rgb(0 0 0 / 0.28) 100%);
+  mix-blend-mode: multiply;
+}
+.aboutx__hero::after {
+  opacity: 0.4;
+}
+
+/* Kacheln größer: fast über die ganze Breite */
+.aboutx__tiles {
+  margin-left: calc(50% - 50vw + clamp(8px, 1.4vw, 20px));
+  margin-right: calc(50% - 50vw + clamp(8px, 1.4vw, 20px));
+}
+@media (max-width: 760px) {
+  .aboutx__tiles {
+    margin-left: calc(-1 * var(--gutter) + 4px);
+    margin-right: calc(-1 * var(--gutter) + 4px);
+    gap: 4px;
+  }
+}

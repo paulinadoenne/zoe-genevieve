@@ -54,15 +54,6 @@ export default function Home() {
             <h2 className="h-center">Arbeiten</h2>
           </div>
           <Rondell bilder={galerie} />
-          <div className="works__more">
-            <p>
-              Blond, Balayage, Kupfer und Schoko. Neue Looks zeige ich laufend auf
-              Instagram.
-            </p>
-            <a href={person.instagramLink} className="pill pill--outline" target="_blank" rel="noopener">
-              Instagram ansehen
-            </a>
-          </div>
         </section>
 
         {/* Über mich: kleine Texte, versetztes Bildraster */}

@@ -2826,3 +2826,22 @@ html.menu-open .menu-btn {
     color: var(--bordeaux);
   }
 }
+
+/* Schrift in Orange (Probe) */
+:root {
+  --bordeaux: #e86c00;
+  --muted: rgb(232 108 0 / 0.7);
+  --line: rgb(232 108 0 / 0.2);
+}
+.aboutx__note,
+.foot__small,
+.foot__legal {
+  color: rgb(232 108 0 / 0.7);
+}
+.contact__icons a {
+  border-color: rgb(232 108 0 / 0.4);
+}
+.pill:hover,
+.contact__fields .pill:hover {
+  background: #b85400;
+}

@@ -3059,3 +3059,15 @@ html.menu-open .menu-btn {
 .hero__logo .logo__name {
   color: var(--menu-orange);
 }
+
+/* Kacheln bis an den Rand */
+.aboutx__tiles {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+@media (max-width: 760px) {
+  .aboutx__tiles {
+    margin-left: calc(-1 * var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
+  }
+}

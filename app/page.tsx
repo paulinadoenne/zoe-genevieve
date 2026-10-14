@@ -6,7 +6,7 @@ import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
-import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
+import { person, oeffnungszeiten, galerie, ueberMich } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
@@ -81,9 +81,6 @@ export default function Home() {
               <Photo key={k.src} src={k.src} alt={k.alt} />
             ))}
           </div>
-          <p className="aboutx__note">
-            {steckbrief.map((f) => `${f.label} ${f.wert}`).join(" · ")}
-          </p>
         </section>
 
         {/* Kontakt */}

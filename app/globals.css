@@ -3369,3 +3369,10 @@ html.menu-open .menu-btn {
 .rondell__label span:last-child {
   color: #111;
 }
+
+/* Mobil: Arbeiten Bilder sitzen eher im unteren Teil des Bildschirms */
+@media (max-width: 760px) {
+  .works__head .h-center {
+    margin-bottom: 30svh !important;
+  }
+}

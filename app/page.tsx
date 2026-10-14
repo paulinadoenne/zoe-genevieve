@@ -5,6 +5,7 @@ import Logo from "@/components/Logo";
 import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
+import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
 import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
@@ -108,10 +109,17 @@ export default function Home() {
             </div>
             <div className="field">
               <span className="field__label">Kontakt</span>
-              <a href={person.whatsappLink} target="_blank" rel="noopener">
-                WhatsApp
-              </a>
-              <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`}>{person.email}</a>
+              <span className="contact__icons">
+                <a href={person.whatsappLink} target="_blank" rel="noopener" aria-label="WhatsApp">
+                  <IconWhatsApp />
+                </a>
+                <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`} aria-label="E-Mail">
+                  <IconMail />
+                </a>
+                <a href={person.instagramLink} target="_blank" rel="noopener" aria-label="Instagram">
+                  <IconInstagram />
+                </a>
+              </span>
             </div>
             <a href={person.buchungsLink} className="pill" target="_blank" rel="noopener">
               Termin buchen

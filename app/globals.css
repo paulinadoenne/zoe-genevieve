@@ -2535,3 +2535,54 @@ body,
     border: 0;
   }
 }
+
+/* Kontakt als Icons */
+.contact__icons {
+  display: flex;
+  gap: 14px;
+  margin-top: 6px;
+}
+.contact__icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgb(17 17 17 / 0.25);
+  border-radius: 50%;
+  color: #111;
+  transition: background 0.25s, color 0.25s, border-color 0.25s;
+}
+.contact__icons a:hover {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}
+
+/* Menü: Schrift weiß */
+.menu,
+.menu a,
+.menu__list a,
+.menu__nr,
+.menu__foot,
+.menu__foot p,
+.menu__foot p a,
+.menu__foot span,
+html.menu-open .header__mark,
+html.menu-open .menu-btn {
+  color: #fff;
+}
+.menu__list li {
+  border-bottom-color: rgb(255 255 255 / 0.4);
+}
+.menu__list a:hover {
+  color: #111;
+}
+.menu__foot .pill {
+  background: #fff;
+  color: #111;
+}
+.menu__foot .pill:hover {
+  background: #111;
+  color: #fff;
+}

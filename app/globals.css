@@ -3339,3 +3339,18 @@ html.menu-open .menu-btn {
     linear-gradient(160deg, rgb(255 176 104 / 0.55), rgb(40 96 112 / 0.5));
   background-size: 220px 220px, 100% 100%;
 }
+
+/* Hundebild mit mehr Dramatik: tiefere Schatten, mehr Kontrast, kräftigere Farbtrennung */
+.aboutx__hero .photo {
+  filter: saturate(0.9) contrast(1.32) brightness(0.98) sepia(0.1);
+}
+.aboutx__hero::before {
+  opacity: 0.22;
+}
+.aboutx__hero::after {
+  opacity: 0.6;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(160deg, rgb(255 168 92 / 0.6), rgb(24 78 96 / 0.6));
+  background-size: 220px 220px, 100% 100%;
+}

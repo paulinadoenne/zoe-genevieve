@@ -3145,3 +3145,14 @@ html.menu-open .menu-btn {
   border-color: var(--menu-orange);
   color: #fff;
 }
+
+/* Logo schwarz, keine orangen Details */
+.hero__logo,
+.hero__logo .logo__name {
+  color: #111;
+}
+.hero__list li:first-child {
+  background: #111;
+  border-color: #111;
+  color: #fff;
+}

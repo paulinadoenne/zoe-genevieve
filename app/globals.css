@@ -3216,3 +3216,19 @@ html.menu-open .menu-btn {
     padding-bottom: 110px !important;
   }
 }
+
+/* Kacheln direkt über dem Kontakt, sitzen auf dem Strich */
+.aboutx {
+  padding-bottom: clamp(80px, 9vw, 140px) !important;
+}
+.page-tiles {
+  display: grid;
+}
+.contact {
+  border-top: 1px solid rgb(17 17 17 / 0.15);
+}
+@media (max-width: 760px) {
+  .aboutx {
+    padding-bottom: 64px !important;
+  }
+}

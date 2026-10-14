@@ -79,6 +79,12 @@ export default function Home() {
           </p>
         </section>
 
+        <div className="aboutx__tiles page-tiles">
+          {kacheln.map((k) => (
+            <Photo key={k.src} src={k.src} alt={k.alt} />
+          ))}
+        </div>
+
         {/* Kontakt */}
         <section id="kontakt" className="contact">
           <h2 className="contact__title">Lass uns deinen Look gestalten</h2>
@@ -120,11 +126,6 @@ export default function Home() {
         </section>
       </main>
       <SiteFooter />
-      <div className="aboutx__tiles page-tiles">
-        {kacheln.map((k) => (
-          <Photo key={k.src} src={k.src} alt={k.alt} />
-        ))}
-      </div>
       <Motion />
       <HeaderScroll />
     </>

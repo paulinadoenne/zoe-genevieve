@@ -2505,3 +2505,15 @@ body,
   background: rgb(240 236 230 / 0.2);
   mix-blend-mode: lighten;
 }
+
+/* Logo läuft weiter über das Startbild */
+@media (min-width: 761px) {
+  .hero__portrait {
+    margin-top: calc(-1 * clamp(200px, 21vw, 310px));
+  }
+}
+@media (max-width: 760px) {
+  .hero__portrait {
+    margin-top: -130px;
+  }
+}

@@ -35,11 +35,15 @@ export default function Rondell({ bilder }: { bilder: Bild[] }) {
       }}
     >
       <div className="rondell__track">
-        {bilder.map((b) => (
+        {bilder.map((b, i) => (
           <figure key={b.src} className="rondell__item">
             <div className="rondell__img">
               <Photo src={b.src} alt={b.alt} />
             </div>
+            <figcaption className="rondell__label">
+              <span>{String(i + 1).padStart(2, "0")}</span>
+              <span>{b.titel}</span>
+            </figcaption>
           </figure>
         ))}
       </div>

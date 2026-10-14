@@ -2853,3 +2853,22 @@ html.menu-open .menu-btn {
 .aboutx__hero::before {
   background: none;
 }
+
+/* Schrift in Schwarz */
+:root {
+  --bordeaux: #111;
+  --muted: rgb(17 17 17 / 0.55);
+  --line: rgb(17 17 17 / 0.12);
+}
+.aboutx__note,
+.foot__small,
+.foot__legal {
+  color: rgb(17 17 17 / 0.55);
+}
+.contact__icons a {
+  border-color: rgb(17 17 17 / 0.25);
+}
+.pill:hover,
+.contact__fields .pill:hover {
+  background: #444;
+}

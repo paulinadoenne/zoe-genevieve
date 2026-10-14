@@ -10,11 +10,6 @@ import { person, oeffnungszeiten, galerie, ueberMich, steckbrief } from "@/lib/c
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
-const kacheln = [
-  { src: "/kacheln/balayage-braun.jpg", alt: "Lange braune Haare mit weichem Balayage in Wellen", titel: "Balayage" },
-  { src: "/kacheln/karamell-wellen.jpg", alt: "Karamellblonde Haare mit großen Locken", titel: "Karamell" },
-  { src: "/kacheln/blond-balayage.jpg", alt: "Lange Haare mit hellblondem Balayage", titel: "Blond" },
-];
 const leistungen = ["Blonde Specialist", "Balayage", "Farbe", "Schnitt", "Styling"];
 
 export default function Home() {
@@ -62,28 +57,26 @@ export default function Home() {
         </section>
 
         {/* Über mich: kleine Texte, versetztes Bildraster */}
-        <section id="ueber-mich" className="tiles">
-          <div className="tiles__row">
-            {kacheln.map((k, i) => (
-              <figure key={k.src} className="tiles__item">
-                <Photo src={k.src} alt={k.alt} />
-                <figcaption>
-                  <span>0{i + 1}</span>
-                  <span>{k.titel}</span>
-                </figcaption>
-              </figure>
+        <section id="ueber-mich" className="about">
+          <ul className="about__list">
+            {steckbrief.map((f) => (
+              <li key={f.label}>
+                <span>{f.label}</span> {f.wert}
+              </li>
             ))}
+          </ul>
+          <p className="about__text about__text--1">{ueberMich[0]}</p>
+          <p className="about__text about__text--2">
+            {ueberMich[2]} {ueberMich[1]}
+          </p>
+          <div className="scatter">
+            <Photo src="/kacheln/balayage-braun.jpg" alt="Lange braune Haare mit weichem Balayage in Wellen" className="scatter__a" />
+            <Photo src="/kacheln/karamell-wellen.jpg" alt="Karamellblonde Haare mit großen Locken" className="scatter__b" />
+            <div className="scatter__c scatter__accent" aria-hidden>
+              <span>1:1</span>
+            </div>
+            <Photo src="/kacheln/blond-balayage.jpg" alt="Lange Haare mit hellblondem Balayage" className="scatter__d" />
           </div>
-          <div className="tiles__intro">
-            <p className="tiles__kicker">Hallo, ich bin Zoe</p>
-            <p>
-              {ueberMich[0]} {ueberMich[2]} {ueberMich[1]}
-            </p>
-            <p className="tiles__facts">
-              {steckbrief.map((f) => `${f.label} ${f.wert}`).join(" · ")}
-            </p>
-          </div>
-          <h2 className="tiles__word">Über mich</h2>
         </section>
 
         {/* Kontakt */}

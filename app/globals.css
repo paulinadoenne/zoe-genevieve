@@ -3400,3 +3400,11 @@ html {
 .contact {
   min-height: 100svh;
 }
+
+/* zoe im Logo in Orange, GENEVIEVE bleibt schwarz */
+.hero__logo {
+  color: var(--menu-orange);
+}
+.hero__logo .logo__name {
+  color: #111;
+}

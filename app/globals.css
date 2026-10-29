@@ -5302,3 +5302,16 @@ body::before {
 .hero4__logo .logo__name {
   animation: none !important;
 }
+
+/* Vor dem Schreiben ist das Logo leer (nur mit JavaScript und erlaubter Bewegung).
+   Sicherheitsnetz: nach 6 Sekunden ist es auf jeden Fall sichtbar. */
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero4__logo .zoe-fill,
+  .js .hero4__logo .logo__name {
+    opacity: 0;
+    animation: logo-sicher 0s linear 6s forwards;
+  }
+}
+@keyframes logo-sicher {
+  to { opacity: 1; }
+}

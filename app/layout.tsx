@@ -34,6 +34,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
+      <head>
+        {/* Markiert früh, dass JavaScript läuft, damit das Logo vor dem Schreiben nicht aufblitzt */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
       <body>{children}</body>
     </html>
   );

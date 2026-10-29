@@ -2,8 +2,37 @@
 
 import { useEffect } from "react";
 
-// Schreibt "zoe" auf der Startseite in einer durchgehenden Linie vom z bis zum e
-// und blendet danach den fertigen Schriftzug und "Genevieve" ein.
+// Schreibt "zoe" auf der Startseite in einer fließenden Linie vom z bis zum e.
+// Statt Strich-Tricks (stroke-dasharray), die Safari falsch darstellt, wird die Linie
+// Bild für Bild verlängert: der Pfad bekommt nur die Punkte bis zur aktuellen Stelle.
+type Punkt = [number, number];
+
+function punkteAus(d: string): Punkt[] {
+  const zahlen = d.replace(/[ML]/g, " ").trim().split(/\s+/).map(Number);
+  const pts: Punkt[] = [];
+  for (let i = 0; i + 1 < zahlen.length; i += 2) pts.push([zahlen[i], zahlen[i + 1]]);
+  return pts;
+}
+
+function teilpfad(pts: Punkt[], kum: number[], bis: number) {
+  if (bis <= 0) return "";
+  let s = `M ${pts[0][0]} ${pts[0][1]}`;
+  for (let i = 1; i < pts.length; i++) {
+    if (kum[i] <= bis) {
+      s += ` L ${pts[i][0]} ${pts[i][1]}`;
+    } else {
+      const t = (bis - kum[i - 1]) / (kum[i] - kum[i - 1]);
+      const x = pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * t;
+      const y = pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * t;
+      s += ` L ${x.toFixed(1)} ${y.toFixed(1)}`;
+      break;
+    }
+  }
+  return s;
+}
+
+const sanft = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+
 export default function LogoSchreiben() {
   useEffect(() => {
     const svg = document.querySelector<SVGSVGElement>(".hero4__logo .logo__script");
@@ -13,46 +42,59 @@ export default function LogoSchreiben() {
     if (!svg || !linien.length || !fill) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // Gleichmäßiges Tempo: jede Teillinie bekommt Zeit im Verhältnis zu ihrer Länge
-    const laengen = linien.map((l) => l.getTotalLength());
-    const gesamt = laengen.reduce((a, b) => a + b, 0);
-    const dauer = 3200;
-    const pause = 120;
+    const teile = linien.map((l) => {
+      const pts = punkteAus(l.getAttribute("d") || "");
+      const kum = [0];
+      for (let i = 1; i < pts.length; i++) {
+        kum.push(kum[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+      }
+      return { l, pts, kum, laenge: kum[kum.length - 1], original: l.getAttribute("d") || "" };
+    });
+    const gesamt = teile.reduce((a, t) => a + t.laenge, 0);
+
     fill.style.opacity = "0";
     if (name) name.style.opacity = "0";
-
-    let start = 300;
-    const animationen = linien.map((l, i) => {
-      const laenge = laengen[i];
-      const zeit = (dauer * laenge) / gesamt;
-      l.style.strokeDasharray = `${laenge} ${laenge}`;
-      l.style.strokeDashoffset = `${laenge}`;
-      l.style.opacity = "1";
-      const anim = l.animate([{ strokeDashoffset: laenge }, { strokeDashoffset: 0 }], {
-        duration: zeit,
-        delay: start,
-        easing: i === 0 ? "cubic-bezier(0.45, 0.05, 0.55, 1)" : "cubic-bezier(0.4, 0, 0.4, 1)",
-        fill: "forwards",
-      });
-      start += zeit + pause;
-      return anim;
+    teile.forEach((t) => {
+      t.l.setAttribute("d", "");
+      t.l.style.opacity = "1";
     });
 
-    animationen[animationen.length - 1].finished
-      .then(() => {
-        fill.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 500, fill: "forwards" });
-        linien.forEach((l) => l.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 500, fill: "forwards" }));
-        name?.animate(
-          [
-            { opacity: 0, transform: "translateY(6px)" },
-            { opacity: 1, transform: "none" },
-          ],
-          { duration: 800, delay: 150, easing: "ease", fill: "forwards" },
-        );
-      })
-      .catch(() => {});
+    const dauer = 3400;
+    const verzoegerung = 300;
+    let raf = 0;
+    let startzeit = 0;
 
-    return () => animationen.forEach((a) => a.cancel());
+    const fertig = () => {
+      teile.forEach((t) => t.l.setAttribute("d", t.original));
+      fill.style.transition = "opacity 0.5s ease";
+      fill.style.opacity = "1";
+      teile.forEach((t) => {
+        t.l.style.transition = "opacity 0.5s ease";
+        t.l.style.opacity = "0";
+      });
+      if (name) {
+        name.style.transition = "opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s";
+        name.style.transform = "none";
+        name.style.opacity = "1";
+      }
+    };
+
+    const schritt = (jetzt: number) => {
+      if (!startzeit) startzeit = jetzt + verzoegerung;
+      const t = Math.min(1, Math.max(0, (jetzt - startzeit) / dauer));
+      let rest = sanft(t) * gesamt;
+      for (const teil of teile) {
+        const bis = Math.min(rest, teil.laenge);
+        teil.l.setAttribute("d", teilpfad(teil.pts, teil.kum, bis));
+        rest -= teil.laenge;
+      }
+      if (t < 1) raf = requestAnimationFrame(schritt);
+      else fertig();
+    };
+    if (name) name.style.transform = "translateY(6px)";
+    raf = requestAnimationFrame(schritt);
+
+    return () => cancelAnimationFrame(raf);
   }, []);
 
   return null;

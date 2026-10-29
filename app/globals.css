@@ -5417,3 +5417,36 @@ body::before {
 .hero4__logo .logo__script path.zoe-stift {
   stroke: #fff !important;
 }
+
+/* Eine durchgehende Linie vom z bis zum e, gleichmäßiges Tempo */
+.hero4__logo .logo__script path.zoe-stift--1 {
+  animation: stift 3.4s cubic-bezier(0.4, 0.05, 0.45, 1) 0.3s forwards !important;
+}
+.hero4__logo .logo__name {
+  animation: name-rein 0.9s ease 3.5s forwards;
+}
+
+/* Logo nimmt mehr Platz ein */
+@media (min-width: 900px) {
+  .hero4__stage {
+    width: min(70vw, 86vh);
+  }
+  .hero4__logo {
+    --logo-w: min(70vw, 86vh);
+  }
+  .hero4__portrait {
+    width: 48%;
+    margin-top: calc(-0.34 * min(70vw, 86vh));
+  }
+}
+@media (max-width: 899px) {
+  .hero4__stage {
+    width: 94vw;
+  }
+  .hero4__logo {
+    --logo-w: 94vw;
+  }
+  .hero4__portrait {
+    margin-top: calc(-0.34 * 94vw);
+  }
+}

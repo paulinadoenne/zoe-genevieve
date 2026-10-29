@@ -4084,3 +4084,39 @@ html {
     padding-bottom: 64px;
   }
 }
+
+/* Startseite gestauchter, damit sie auch auf kleinen Laptops ganz passt */
+@media (min-width: 900px) {
+  .hero {
+    padding-top: 8px !important;
+    padding-bottom: 16px !important;
+  }
+  .hero__logo {
+    --logo-w: min(54vw, 62vh);
+  }
+  .hero__portrait {
+    width: min(30vw, 33vh);
+    margin-top: calc(-0.36 * min(54vw, 62vh)) !important;
+  }
+  .hero__side .hero__lead {
+    font-size: clamp(20px, 1.8vw, 28px);
+  }
+  .hero__info {
+    margin-top: 16px !important;
+    padding-top: 12px;
+  }
+}
+@media (min-width: 900px) {
+  .hero__logo {
+    --logo-w: min(56vw, 67vh);
+  }
+  .hero__portrait {
+    width: min(32vw, 36vh);
+    margin-top: calc(-0.36 * min(56vw, 67vh)) !important;
+  }
+}
+@media (min-width: 900px) {
+  .hero {
+    height: 100svh;
+  }
+}

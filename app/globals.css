@@ -5294,3 +5294,74 @@ body::before {
     text-align: left;
   }
 }
+
+/* Logo wird geschrieben: erst zieht die Linie den Schriftzug nach,
+   dann füllt er sich. Genevieve folgt danach. */
+.hero4__logo .logo__script {
+  clip-path: none !important;
+  animation: none !important;
+  overflow: visible;
+}
+.hero4__logo .logo__script path {
+  stroke: currentColor;
+  stroke-width: 6;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  fill-opacity: 0;
+  animation:
+    logo-linie 2.4s cubic-bezier(0.45, 0, 0.25, 1) 0.2s forwards,
+    logo-fuellen 0.8s ease 2.1s forwards;
+}
+@keyframes logo-linie {
+  to { stroke-dashoffset: 0; }
+}
+@keyframes logo-fuellen {
+  to { fill-opacity: 1; stroke-width: 0; }
+}
+.hero4__logo .logo__name {
+  animation: name-rein 0.9s ease 2.3s forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero4__logo .logo__script path {
+    animation: none;
+    stroke-dashoffset: 0;
+    fill-opacity: 1;
+    stroke-width: 0;
+  }
+}
+
+/* Schreibeffekt: eine weiche Kante zieht von links nach rechts durch den Schriftzug,
+   wie Tinte, die gerade geschrieben wird */
+.hero4__logo .logo__script path {
+  animation: none !important;
+  stroke-width: 0 !important;
+  fill-opacity: 1 !important;
+}
+.hero4__logo .logo__script {
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 58%, transparent 100%);
+  mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 58%, transparent 100%);
+  -webkit-mask-size: 260% 100%;
+  mask-size: 260% 100%;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  animation: tinte 2.2s cubic-bezier(0.55, 0.1, 0.3, 1) 0.25s forwards !important;
+}
+@keyframes tinte {
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+.hero4__logo .logo__name {
+  animation: name-rein 0.9s ease 2s forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero4__logo .logo__script {
+    animation: none !important;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}

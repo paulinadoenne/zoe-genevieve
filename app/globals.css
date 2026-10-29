@@ -4819,3 +4819,231 @@ body::before {
     border-top: 1px solid rgb(17 17 17 / 0.15);
   }
 }
+
+/* ============================================================
+   Neue Startseite: 3D Ring aus Arbeiten um Zoes Portrait,
+   großes Logo darüber, kräftige schwarze Aussage unten
+   ============================================================ */
+.hero3 {
+  position: relative;
+  height: 100svh;
+  min-height: 620px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 72px var(--gutter) 28px;
+  scroll-snap-align: start;
+  --p: min(24vw, 34vh);
+}
+.hero3__logo {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 12vh;
+  transform: translateX(-50%);
+  margin: 0;
+  pointer-events: none;
+  color: var(--menu-orange);
+  --logo-w: min(62vw, 70vh);
+}
+.hero3__logo .logo__name {
+  color: var(--menu-orange);
+}
+
+/* 3D Szene */
+.orbit {
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+  perspective: 1400px;
+  perspective-origin: 50% 40%;
+  margin-top: 6vh;
+}
+.orbit__welt {
+  --tx: -8deg;
+  --ty: 0deg;
+  position: relative;
+  width: var(--p);
+  aspect-ratio: 4 / 5;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--tx)) rotateY(var(--ty));
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.orbit__portrait {
+  position: absolute;
+  inset: 0;
+  transform: translateZ(0);
+  box-shadow: 0 30px 60px -20px rgb(0 0 0 / 0.35);
+}
+.orbit__portrait .photo,
+.orbit__item .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.orbit__ring {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  animation: orbit-drehen 36s linear infinite;
+}
+.orbit__item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--p) * 0.56);
+  aspect-ratio: 4 / 5;
+  margin-left: calc(var(--p) * -0.28);
+  margin-top: calc(var(--p) * -0.35);
+  transform: rotateY(calc(360deg / var(--n) * var(--i))) translateZ(calc(var(--p) * 1.25));
+  box-shadow: 0 18px 40px -16px rgb(0 0 0 / 0.35);
+}
+@keyframes orbit-drehen {
+  to {
+    transform: rotateY(-360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .orbit__ring {
+    animation: none;
+  }
+}
+
+/* Unten: Aussage links, Text und Button rechts */
+.hero3__bottom {
+  grid-row: 2;
+  position: relative;
+  z-index: 6;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+}
+.hero3__claim {
+  margin: 0;
+  font-size: clamp(40px, 5.2vw, 84px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+  color: #111;
+}
+.hero3__right {
+  max-width: 320px;
+}
+.hero3__text {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111;
+}
+.hero3__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.25s;
+}
+.hero3__btn span {
+  transition: transform 0.3s var(--ease);
+}
+.hero3__btn:hover {
+  background: var(--menu-orange);
+}
+.hero3__btn:hover span {
+  transform: translate(3px, -3px);
+}
+
+@media (max-width: 899px) {
+  .hero3 {
+    --p: 46vw;
+    padding-top: 64px;
+    min-height: 0;
+  }
+  .hero3__logo {
+    top: 84px;
+    --logo-w: 82vw;
+  }
+  .orbit {
+    margin-top: 16vh;
+  }
+  .hero3__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+  .hero3__claim {
+    font-size: 13vw;
+  }
+}
+
+/* ============================================================
+   Keine graue Schrift mehr: alles Schwarz bzw. auf Schwarz Creme
+   ============================================================ */
+:root {
+  --muted: #111;
+}
+.aboutx__note,
+.caption,
+.rondell__label,
+.rondell__label span,
+.faq__item p,
+.foot__small,
+.foot__legal,
+.hero__info,
+.hero__lead,
+.aboutx__sub,
+.aboutx__list li::before,
+.field__row span:last-child,
+.imp__block p {
+  color: #111 !important;
+}
+.contact .field__row span:last-child,
+.contact__legal a,
+.foot2,
+.foot2__legal a {
+  color: #f4f1ec !important;
+}
+.hero3__logo {
+  top: 9vh;
+  --logo-w: min(50vw, 56vh);
+}
+.orbit {
+  margin-top: 16vh;
+}
+.hero3 {
+  --p: min(22vw, 30vh);
+}
+@media (max-width: 899px) {
+  .hero3 {
+    --p: 40vw;
+  }
+  .hero3__logo {
+    top: 76px;
+    --logo-w: 74vw;
+  }
+  .orbit {
+    margin-top: 14vh;
+  }
+  .hero3__claim {
+    font-size: 11vw;
+  }
+  .hero3__text {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+}
+@media (max-width: 899px) {
+  main {
+    padding-top: 0 !important;
+  }
+  .hero3 {
+    height: 100svh;
+  }
+}

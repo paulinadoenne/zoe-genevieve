@@ -5,6 +5,7 @@ import Logo from "@/components/Logo";
 import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
+import HeroOrbit from "@/components/HeroOrbit";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
 import {
   person,
@@ -37,26 +38,29 @@ export default function Home() {
       <Header />
       <main>
         {/* Start: riesiger Name, Portrait überlappt die Schrift */}
-        <section className="hero">
-          <div className="hero__stage">
-            <h1 className="hero__logo">
-              <Logo />
-            </h1>
-            <div className="hero__portrait">
-              <Photo src="/zoe-portrait.jpg" alt="Zoe Genevieve im Strickpulli" />
+        <section className="hero3">
+          <h1 className="hero3__logo">
+            <Logo />
+          </h1>
+          <HeroOrbit
+            portrait={{ src: "/zoe-portrait.jpg", alt: "Zoe Genevieve im Strickpulli" }}
+            bilder={galerie}
+          />
+          <div className="hero3__bottom">
+            <p className="hero3__claim">
+              Langes,
+              <br />
+              gesundes Haar.
+            </p>
+            <div className="hero3__right">
+              <p className="hero3__text">
+                Balayage, Schnitte für langes Haar und Extensions. 1:1 und nur für dich,
+                mitten in Köln.
+              </p>
+              <a href={person.buchungsLink} className="hero3__btn" target="_blank" rel="noopener">
+                Termin buchen <span aria-hidden>↗</span>
+              </a>
             </div>
-          </div>
-          <div className="hero__side">
-            <p className="hero__quote">
-              Haare, die sich so gut anfühlen, wie sie aussehen.
-            </p>
-            <p className="hero__lead">
-              Balayage, Schnitte für langes Haar und Extensions. In Ruhe, 1:1 und nur
-              für dich, mitten in Köln.
-            </p>
-            <a href={person.buchungsLink} className="hero__link" target="_blank" rel="noopener">
-              Termin buchen <span aria-hidden>↗</span>
-            </a>
           </div>
         </section>
 

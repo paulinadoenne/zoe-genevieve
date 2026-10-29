@@ -4268,3 +4268,71 @@ html {
     transform: translateX(calc((100svh - 330px) * 0.14));
   }
 }
+
+/* ============================================================
+   Ein Guss: sehr dezenter Farbverlauf über die ganze Seite
+   (kühles Hellgrau oben, warmes Sand in der Mitte, wieder hell),
+   alle Abschnitte transparent darauf. Kontakt als Abschluss schwarz.
+   ============================================================ */
+html {
+  background: #f4f3f1;
+}
+body {
+  background:
+    radial-gradient(60% 40% at 85% 12%, rgb(236 222 205 / 0.55), transparent 70%),
+    radial-gradient(50% 35% at 10% 55%, rgb(232 226 218 / 0.6), transparent 70%),
+    linear-gradient(175deg, #f5f5f3 0%, #f2eee9 30%, #efe8df 55%, #f3efea 80%, #f5f4f1 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 100% 100% !important;
+}
+.hero,
+.about,
+.aboutx,
+.booking,
+.works,
+.faq,
+.tiles {
+  background: transparent !important;
+}
+.rondell__item:hover .rondell__label {
+  background: transparent;
+}
+
+/* Kontakt schwarz */
+.contact {
+  background: #0f0f0f !important;
+  border-top: 0 !important;
+}
+.contact,
+.contact .contact__title,
+.contact .field,
+.contact .field a,
+.contact .field__row,
+.contact .field__label {
+  color: #f4f1ec !important;
+}
+.contact .field__row span:last-child {
+  color: rgb(244 241 236 / 0.6) !important;
+}
+.contact .field {
+  border-bottom-color: rgb(255 255 255 / 0.16) !important;
+}
+.contact__icons a {
+  color: #f4f1ec !important;
+  border-color: rgb(255 255 255 / 0.35) !important;
+}
+.contact__icons a:hover {
+  background: #f4f1ec !important;
+  border-color: #f4f1ec !important;
+  color: #0f0f0f !important;
+}
+.contact__legal a {
+  color: rgb(244 241 236 / 0.55) !important;
+}
+.contact__legal a:hover {
+  color: #fff !important;
+}
+.contact ::selection {
+  background: #f4f1ec;
+  color: #0f0f0f;
+}

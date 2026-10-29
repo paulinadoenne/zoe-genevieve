@@ -7,6 +7,7 @@ const links = [
   { href: "/#termin", label: "Termin" },
   { href: "/#arbeiten", label: "Arbeiten" },
   { href: "/#ueber-mich", label: "Über mich" },
+  { href: "/#fragen", label: "Q&A" },
   { href: "/#kontakt", label: "Kontakt" },
 ];
 

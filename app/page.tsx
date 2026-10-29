@@ -6,7 +6,7 @@ import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
-import { person, oeffnungszeiten, galerie, ueberMichNeu } from "@/lib/content";
+import { person, oeffnungszeiten, galerie, ueberMichNeu, fragen } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
@@ -94,15 +94,32 @@ export default function Home() {
           </div>
         </section>
 
-        <div className="aboutx__tiles page-tiles">
-          {kacheln.map((k) => (
-            <Photo key={k.src} src={k.src} alt={k.alt} />
-          ))}
-        </div>
+        {/* Q&A */}
+        <section id="fragen" className="faq">
+          <h2 className="h-center">Q&amp;A</h2>
+          <div className="faq__list">
+            {fragen.map((f, i) => (
+              <details key={f.frage} className="faq__item" name="faq" open={i === 0}>
+                <summary>
+                  <span>{f.frage}</span>
+                  <span className="faq__icon" aria-hidden />
+                </summary>
+                <p>{f.antwort}</p>
+              </details>
+            ))}
+          </div>
+        </section>
 
         {/* Kontakt */}
         <section id="kontakt" className="contact">
-          <h2 className="contact__title">Lass uns deinen Look gestalten</h2>
+          <div className="contact__left">
+            <h2 className="contact__title">Lass uns deinen Look gestalten</h2>
+            <div className="contact__tiles">
+              {kacheln.map((k) => (
+                <Photo key={k.src} src={k.src} alt={k.alt} />
+              ))}
+            </div>
+          </div>
           <div className="contact__fields">
             <div className="field">
               <span className="field__label">Adresse</span>

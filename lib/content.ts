@@ -78,3 +78,35 @@ export const ueberMichNeu = {
     "Ich freue mich darauf, dich kennenzulernen und gemeinsam deinen perfekten Look zu kreieren ✨",
   ],
 };
+
+// Häufige Fragen (Q&A).
+export const fragen = [
+  {
+    frage: "Wie buche ich einen Termin?",
+    antwort: "Ganz einfach online über Planity. Dort siehst du alle freien Termine und kannst direkt die passende Leistung auswählen.",
+  },
+  {
+    frage: "Was bedeutet 1:1 Dienstleistung?",
+    antwort: "Während deines Termins bin ich nur für dich da. Von der Beratung bis zum Föhnen hast du immer dieselbe Ansprechpartnerin, ohne Wechsel und ohne Parallelkunden.",
+  },
+  {
+    frage: "Ist eine Beratung im Termin enthalten?",
+    antwort: "Ja. Wir sprechen zu Beginn in Ruhe über deine Wünsche, deine Haarstruktur und deinen Alltag und entscheiden gemeinsam, was wirklich zu dir passt.",
+  },
+  {
+    frage: "Was kann ich zur Vorbereitung mitbringen?",
+    antwort: "Inspirationsbilder helfen sehr, gern auch Fotos von Looks, die dir nicht gefallen. Erzähl mir außerdem, was in den letzten Monaten mit deinen Haaren passiert ist, zum Beispiel Farbe oder Glätten.",
+  },
+  {
+    frage: "Machst du auch Extensions?",
+    antwort: "Ja, ich arbeite mit Wefts für mehr Länge und Fülle. Am besten buchst du vorher eine Beratung, damit wir Farbe, Länge und Menge genau planen können.",
+  },
+  {
+    frage: "Ist Karl immer dabei?",
+    antwort: "Meistens ja, Karl ist mein Dackel und offizieller Salon Dog. Wenn du eine Allergie oder Angst vor Hunden hast, sag mir einfach vorher Bescheid.",
+  },
+  {
+    frage: "Wo finde ich dich?",
+    antwort: "In der Sankt-Apern-Straße 56-62 in 50667 Köln, mitten in der Innenstadt.",
+  },
+];

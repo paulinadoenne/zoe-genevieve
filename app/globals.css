@@ -3812,3 +3812,275 @@ html {
     font-size: 15px;
   }
 }
+
+/* ============================================================
+   Desktop: jeder Abschnitt ist genau eine Bildschirmseite.
+   Menü wie vorher (Menüknopf links), Q&A neu, Kacheln im Kontakt
+   ============================================================ */
+
+/* Kacheln im Kontakt */
+.contact__tiles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+.contact__tiles .photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Q&A */
+.faq {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(96px, 10vw, 150px) var(--gutter);
+}
+.faq__list {
+  border-top: 1px solid rgb(17 17 17 / 0.12);
+}
+.faq__item {
+  border-bottom: 1px solid rgb(17 17 17 / 0.12);
+}
+.faq__item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 18px 0;
+  font-size: 17px;
+  font-weight: 500;
+  color: #111;
+  cursor: pointer;
+  list-style: none;
+}
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+.faq__icon {
+  position: relative;
+  flex: 0 0 14px;
+  height: 14px;
+}
+.faq__icon::before,
+.faq__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.5px;
+  background: #111;
+  transition: transform 0.3s var(--ease);
+}
+.faq__icon::after {
+  transform: rotate(90deg);
+}
+.faq__item[open] .faq__icon::after {
+  transform: rotate(0deg);
+}
+.faq__item p {
+  margin: 0 0 20px;
+  max-width: 56ch;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgb(17 17 17 / 0.75);
+}
+.faq__item summary:hover span:first-child {
+  color: var(--menu-orange);
+}
+
+/* Mobil: Kacheln wie bisher randlos über dem Kontakt */
+@media (max-width: 899px) {
+  .contact__left {
+    display: contents;
+  }
+  .contact__tiles {
+    order: -1;
+    margin: calc(-1 * clamp(80px, 10vw, 160px)) calc(-1 * var(--gutter)) 40px;
+    gap: 4px;
+  }
+  .contact {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0 !important;
+  }
+  .contact__tiles {
+    margin-top: 0;
+  }
+  .contact__title {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 900px) {
+  /* Menü wie vorher: nur Menüknopf links */
+  .header__links,
+  .header__mark {
+    display: none !important;
+  }
+  .menu-btn {
+    display: inline-flex !important;
+  }
+  .header {
+    justify-content: flex-start !important;
+  }
+
+  html {
+    scroll-snap-type: y proximity;
+  }
+  .hero,
+  .booking,
+  .works,
+  .aboutx,
+  .faq,
+  .contact {
+    box-sizing: border-box;
+    scroll-snap-align: start;
+  }
+
+  /* Start */
+  .hero {
+    height: calc(100svh - 64px);
+    min-height: 600px;
+    padding-top: 8px !important;
+    padding-bottom: 24px !important;
+    grid-template-rows: auto auto 1fr;
+  }
+  .hero__logo {
+    --logo-w: min(66vw, 92vh);
+  }
+  .hero__portrait {
+    width: min(34vw, 42vh);
+    margin-top: calc(-0.36 * min(66vw, 92vh)) !important;
+  }
+
+  /* Termin: Überschrift oben, Bild füllt den Rest bis zum Rand */
+  .booking {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 96px !important;
+    padding-bottom: 0 !important;
+    margin: 0;
+  }
+  .booking .h-center {
+    width: 100%;
+    margin-bottom: 32px !important;
+  }
+  .booking__image {
+    flex: 1;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  /* Arbeiten: Bildhöhe aus der Bildschirmhöhe */
+  .works {
+    height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+  }
+  .works__head .h-center {
+    margin-bottom: 32px !important;
+  }
+  .rondell__item,
+  .rondell__item:hover {
+    width: calc((100svh - 330px) * 0.8);
+    max-width: 420px;
+  }
+
+  /* Über mich */
+  .aboutx {
+    height: 100svh;
+    min-height: 0;
+  }
+
+  /* Q&A: Überschrift links, Fragen rechts */
+  .faq {
+    height: 100svh;
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+    column-gap: clamp(40px, 6vw, 120px);
+    align-items: center;
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  .faq .h-center {
+    padding: 0;
+    margin: 0;
+    align-self: center;
+  }
+
+  /* Kontakt: links Titel und Kacheln, rechts Angaben */
+  .contact {
+    min-height: 0 !important;
+    height: 100svh;
+    align-items: center;
+    align-content: center;
+    padding-top: 80px !important;
+    padding-bottom: 40px !important;
+    margin-top: 0 !important;
+  }
+  .contact__title {
+    margin-bottom: 40px;
+  }
+  .contact__tiles {
+    max-width: 560px;
+  }
+}
+@media (min-width: 900px) {
+  .hero {
+    padding-top: 20px !important;
+  }
+  .hero__logo {
+    --logo-w: min(60vw, 80vh);
+  }
+  .hero__portrait {
+    width: min(32vw, 40vh);
+    margin-top: calc(-0.36 * min(60vw, 80vh)) !important;
+  }
+}
+@media (min-width: 900px) {
+  .hero__logo {
+    --logo-w: min(60vw, 72vh);
+  }
+  .hero__portrait {
+    width: min(32vw, 36vh);
+    margin-top: calc(-0.36 * min(60vw, 72vh)) !important;
+  }
+
+  /* Arbeiten: Bild unter der Maus wächst um die Hälfte, die anderen rücken weiter */
+  .rondell__track {
+    align-items: flex-start;
+  }
+  .rondell__item {
+    width: calc((100svh - 330px) * 0.56) !important;
+    max-width: none !important;
+    transition: width 0.5s var(--ease);
+  }
+  .rondell__item:hover {
+    width: calc((100svh - 330px) * 0.84) !important;
+  }
+  .rondell__img,
+  .rondell__item:hover .rondell__img {
+    width: 100%;
+    height: auto !important;
+    aspect-ratio: 4 / 5;
+  }
+  .rondell__item:hover .rondell__img .photo {
+    transform: none;
+  }
+}
+.faq .h-center {
+  padding: 0;
+}
+@media (max-width: 899px) {
+  .faq {
+    padding-bottom: 64px;
+  }
+}

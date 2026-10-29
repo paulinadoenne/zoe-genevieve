@@ -101,7 +101,7 @@ export const fragen = [
   },
   {
     frage: "Wie komme ich zu dir?",
-    antwort: "Du findest mich in der Venloer Straße 25 in 50672 Köln. Der Eingang liegt auf der Bismarckstraße. Mit der Bahn steigst du am Friesenplatz aus, von dort sind es nur wenige Gehminuten. Mit dem Auto parkst du am besten in einem der Parkhäuser rund um die Ringe. Über die Adresse im Kontakt kommst du direkt zu Google Maps.",
+    antwort: "Du findest mich in der Venloer Straße 25 in 50672 Köln. Der Eingang liegt auf der Bismarckstraße. Mit der Bahn steigst du am Friesenplatz oder am Bahnhof Köln West aus, von dort sind es nur wenige Gehminuten. Mit dem Auto parkst du am besten in einem der Parkhäuser rund um die Ringe. Über die Adresse im Kontakt kommst du direkt zu Google Maps.",
   },
   {
     frage: "Wo finde ich dich?",

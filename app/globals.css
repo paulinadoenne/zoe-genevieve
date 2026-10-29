@@ -4643,3 +4643,88 @@ body::before {
     font-size: 30vw !important;
   }
 }
+
+/* ============================================================
+   Über mich mobil im Editorial Stil:
+   randloses Bild, Einleitung als große kursive Serifenzeile,
+   nummerierte Schwerpunkte, ruhiger Fließtext, Schluss kursiv
+   ============================================================ */
+@media (max-width: 899px) {
+  .aboutx {
+    padding-top: 96px !important;
+    padding-bottom: 96px !important;
+  }
+  .aboutx .h-center {
+    font-size: 15vw !important;
+    margin-bottom: 28px !important;
+  }
+  .aboutx__hero {
+    margin: 0 calc(-1 * var(--gutter));
+  }
+  .aboutx__hero .photo {
+    aspect-ratio: 4 / 5 !important;
+    object-position: 55% 30%;
+  }
+  .aboutx__text {
+    margin-top: 40px;
+  }
+  .aboutx__text .aboutx__p {
+    font-size: 16px !important;
+    line-height: 1.7;
+    margin: 0 0 22px !important;
+    color: #1a1a1a;
+    max-width: none;
+  }
+  /* Einleitung als Zitatzeile */
+  .aboutx__col:first-child > .aboutx__p:first-child {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 27px !important;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin-bottom: 44px !important;
+    color: #111;
+  }
+  /* Schwerpunkte als nummerierte Liste */
+  .aboutx__sub {
+    font-size: 11px !important;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgb(17 17 17 / 0.55) !important;
+    margin: 0 0 12px !important;
+  }
+  .aboutx__list {
+    counter-reset: sp;
+    margin: 0 0 48px;
+  }
+  .aboutx__list li {
+    counter-increment: sp;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    align-items: baseline;
+    padding: 14px 0;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+  .aboutx__list li::before {
+    content: counter(sp, decimal-leading-zero);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: rgb(17 17 17 / 0.45);
+  }
+  /* Schlusssatz kursiv */
+  .aboutx__col:last-child > .aboutx__p:last-of-type {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 22px !important;
+    line-height: 1.3;
+    margin-top: 36px !important;
+    color: #111;
+  }
+  .aboutx__link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 16px;
+  }
+}

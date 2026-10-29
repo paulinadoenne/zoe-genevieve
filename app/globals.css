@@ -5248,31 +5248,6 @@ body::before {
   text-align: right;
 }
 
-/* Logo: zoe schreibt sich von links nach rechts, Genevieve blendet danach ein */
-.hero4__logo .logo__script {
-  clip-path: inset(0 100% 0 0);
-  animation: schrift 1.8s cubic-bezier(0.65, 0, 0.25, 1) 0.2s forwards;
-}
-.hero4__logo .logo__name {
-  opacity: 0;
-  animation: name-rein 0.9s ease 1.5s forwards;
-}
-@keyframes schrift {
-  to { clip-path: inset(0 0 0 0); }
-}
-@keyframes name-rein {
-  from { opacity: 0; transform: translateY(6px); }
-  to { opacity: 1; transform: none; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero4__logo .logo__script,
-  .hero4__logo .logo__name {
-    animation: none;
-    clip-path: none;
-    opacity: 1;
-  }
-}
-
 @media (max-width: 899px) {
   .hero4__stage {
     width: 88vw;
@@ -5293,137 +5268,6 @@ body::before {
   .hero4__text {
     text-align: left;
   }
-}
-
-/* Logo wird geschrieben: erst zieht die Linie den Schriftzug nach,
-   dann füllt er sich. Genevieve folgt danach. */
-.hero4__logo .logo__script {
-  clip-path: none !important;
-  animation: none !important;
-  overflow: visible;
-}
-.hero4__logo .logo__script path {
-  stroke: currentColor;
-  stroke-width: 6;
-  stroke-linejoin: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  fill-opacity: 0;
-  animation:
-    logo-linie 2.4s cubic-bezier(0.45, 0, 0.25, 1) 0.2s forwards,
-    logo-fuellen 0.8s ease 2.1s forwards;
-}
-@keyframes logo-linie {
-  to { stroke-dashoffset: 0; }
-}
-@keyframes logo-fuellen {
-  to { fill-opacity: 1; stroke-width: 0; }
-}
-.hero4__logo .logo__name {
-  animation: name-rein 0.9s ease 2.3s forwards;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero4__logo .logo__script path {
-    animation: none;
-    stroke-dashoffset: 0;
-    fill-opacity: 1;
-    stroke-width: 0;
-  }
-}
-
-/* Schreibeffekt: eine weiche Kante zieht von links nach rechts durch den Schriftzug,
-   wie Tinte, die gerade geschrieben wird */
-.hero4__logo .logo__script path {
-  animation: none !important;
-  stroke-width: 0 !important;
-  fill-opacity: 1 !important;
-}
-.hero4__logo .logo__script {
-  -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 58%, transparent 100%);
-  mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 58%, transparent 100%);
-  -webkit-mask-size: 260% 100%;
-  mask-size: 260% 100%;
-  -webkit-mask-position: 100% 0;
-  mask-position: 100% 0;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  animation: tinte 2.2s cubic-bezier(0.55, 0.1, 0.3, 1) 0.25s forwards !important;
-}
-@keyframes tinte {
-  to {
-    -webkit-mask-position: 0 0;
-    mask-position: 0 0;
-  }
-}
-.hero4__logo .logo__name {
-  animation: name-rein 0.9s ease 2s forwards;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero4__logo .logo__script {
-    animation: none !important;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-}
-
-/* Logo wird in Schreibrichtung geschrieben: der Stift folgt der Mittellinie
-   von z über o bis e. Erst die Maske der Tinte, dann Genevieve */
-.hero4__logo .logo__script {
-  -webkit-mask-image: none !important;
-  mask-image: none !important;
-  animation: none !important;
-}
-.zoe-stift {
-  stroke-dasharray: 1 1;
-  stroke-dashoffset: 0;
-}
-.hero4__logo .zoe-stift {
-  stroke-dashoffset: 1;
-}
-.hero4__logo .zoe-stift--1 {
-  animation: stift 2.4s cubic-bezier(0.45, 0.05, 0.4, 1) 0.3s forwards;
-}
-.hero4__logo .zoe-stift--2 {
-  animation: stift 1.1s cubic-bezier(0.45, 0.05, 0.4, 1) 2.75s forwards;
-}
-@keyframes stift {
-  to { stroke-dashoffset: 0; }
-}
-.hero4__logo .logo__name {
-  animation: name-rein 0.9s ease 3.6s forwards;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero4__logo .zoe-stift {
-    animation: none;
-    stroke-dashoffset: 0;
-  }
-}
-.hero4__logo .logo__script path.zoe-stift {
-  stroke-width: 130px !important;
-  fill-opacity: 0 !important;
-}
-.hero4__logo .logo__script path.zoe-stift--1 {
-  animation: stift 2.4s cubic-bezier(0.45, 0.05, 0.4, 1) 0.3s forwards !important;
-}
-.hero4__logo .logo__script path.zoe-stift--2 {
-  animation: stift 1.1s cubic-bezier(0.45, 0.05, 0.4, 1) 2.75s forwards !important;
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero4__logo .logo__script path.zoe-stift {
-    animation: none !important;
-    stroke-dashoffset: 0;
-  }
-}
-.hero4__logo .logo__script path.zoe-stift {
-  stroke: #fff !important;
-}
-
-/* Eine durchgehende Linie vom z bis zum e, gleichmäßiges Tempo */
-.hero4__logo .logo__script path.zoe-stift--1 {
-  animation: stift 3.4s cubic-bezier(0.4, 0.05, 0.45, 1) 0.3s forwards !important;
-}
-.hero4__logo .logo__name {
-  animation: name-rein 0.9s ease 3.5s forwards;
 }
 
 /* Logo nimmt mehr Platz ein */
@@ -5449,4 +5293,12 @@ body::before {
   .hero4__portrait {
     margin-top: calc(-0.34 * 94vw);
   }
+}
+
+/* Linie ist nur während des Schreibens sichtbar, sonst der fertige Schriftzug */
+.zoe-linie {
+  opacity: 0;
+}
+.hero4__logo .logo__name {
+  animation: none !important;
 }

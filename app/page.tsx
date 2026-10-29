@@ -5,6 +5,7 @@ import Logo from "@/components/Logo";
 import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
+import LogoSchreiben from "@/components/LogoSchreiben";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
 import {
   person,
@@ -202,6 +203,7 @@ export default function Home() {
       </main>
       <Motion />
       <HeaderScroll />
+      <LogoSchreiben />
     </>
   );
 }

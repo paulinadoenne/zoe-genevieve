@@ -3707,3 +3707,13 @@ html {
     margin-top: calc(-0.3 * min(46vw, 66vh)) !important;
   }
 }
+
+/* Startseite ohne Fußzeile: Kontakt ist der Abschluss */
+.contact {
+  min-height: auto;
+  padding-bottom: clamp(80px, 8vw, 120px) !important;
+}
+/* Bleibt bildschirmhoch, damit beim Sprung aus dem Menü nichts vom Abschnitt davor zu sehen ist */
+.contact {
+  min-height: 100svh;
+}

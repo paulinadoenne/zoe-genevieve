@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Header from "@/components/Header";
-import SiteFooter from "@/components/SiteFooter";
 import Photo from "@/components/Photo";
 import Logo from "@/components/Logo";
 import Motion from "@/components/Motion";
@@ -135,7 +134,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <SiteFooter />
       <Motion />
       <HeaderScroll />
     </>

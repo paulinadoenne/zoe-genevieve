@@ -5047,3 +5047,178 @@ body::before {
     height: 100svh;
   }
 }
+
+/* ============================================================
+   Startseite typografisch: Zeilen gleiten beim Laden aus einer
+   Maske nach oben, ein Wort wechselt im Takt, Logo zeichnet sich ein
+   ============================================================ */
+.hero4 {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  padding: 72px var(--gutter) 28px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+.hero4__stage {
+  position: relative;
+  align-self: center;
+  justify-self: center;
+  width: min(48vw, 56vh);
+}
+.hero4__logo {
+  position: relative;
+  z-index: 3;
+  margin: 0;
+  pointer-events: none;
+  color: var(--menu-orange);
+  --logo-w: min(48vw, 56vh);
+}
+.hero4__logo .logo__name {
+  color: var(--menu-orange);
+}
+.hero4__portrait {
+  position: relative;
+  z-index: 1;
+  width: 54%;
+  margin: calc(-0.34 * min(48vw, 56vh)) 0 0 4%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.hero4__portrait .photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero4__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+}
+.hero4__claim {
+  margin: 0;
+  font-size: clamp(40px, 5.6vw, 92px);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
+  color: #111;
+}
+.hero4__right {
+  max-width: 340px;
+}
+.hero4__text {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #111;
+}
+
+/* Maskierte Zeilen */
+.line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+.line > span {
+  display: inline-block;
+  transform: translateY(105%);
+  animation: zeile-rein 1.1s cubic-bezier(0.2, 0.75, 0.15, 1) forwards;
+}
+.hero4__claim .line:nth-child(1) > span { animation-delay: 0.25s; }
+.hero4__claim .line:nth-child(2) > span { animation-delay: 0.38s; }
+.hero4__text .line:nth-child(1) > span { animation-delay: 0.6s; }
+.hero4__text .line:nth-child(2) > span { animation-delay: 0.68s; }
+@keyframes zeile-rein {
+  to { transform: translateY(0); }
+}
+
+/* Logo und Bild blenden weich ein */
+.hero4__logo {
+  animation: weich-rein 1.4s cubic-bezier(0.2, 0.75, 0.15, 1) 0.1s both;
+}
+.hero4__portrait {
+  animation: bild-rein 1.6s cubic-bezier(0.2, 0.75, 0.15, 1) both;
+}
+.hero4__btn {
+  animation: weich-rein 1s ease 0.9s both;
+}
+@keyframes weich-rein {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes bild-rein {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* Wechselndes Wort */
+.words {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+  color: var(--menu-orange);
+}
+.words__sizer {
+  visibility: hidden;
+}
+.words__w {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(105%);
+  transition: transform 0.75s cubic-bezier(0.7, 0, 0.2, 1);
+}
+.words__w.is-on {
+  transform: translateY(0);
+}
+.words__w.is-out {
+  transform: translateY(-105%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line > span,
+  .hero4__logo,
+  .hero4__portrait,
+  .hero4__btn {
+    animation: none;
+    transform: none;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero4 {
+    padding-top: 72px;
+    min-height: 0;
+  }
+  .hero4__stage {
+    width: 84vw;
+    align-self: center;
+  }
+  .hero4__logo {
+    --logo-w: 84vw;
+  }
+  .hero4__portrait {
+    width: 56%;
+    margin-top: calc(-0.34 * 84vw);
+  }
+  .hero4__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .hero4__claim {
+    font-size: 11.5vw;
+  }
+  .hero4__text {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+  .hero4__text .line {
+    display: inline;
+  }
+}

@@ -5222,3 +5222,75 @@ body::before {
     display: inline;
   }
 }
+
+/* Start: Bild und Logo führen, Text ruhig und klein, nur das Logo bewegt sich */
+.hero4__stage {
+  width: min(58vw, 70vh);
+}
+.hero4__logo {
+  --logo-w: min(58vw, 70vh);
+  animation: none;
+}
+.hero4__portrait {
+  width: 58%;
+  margin-top: calc(-0.34 * min(58vw, 70vh));
+  animation: none;
+}
+.hero4__claim {
+  font-size: clamp(22px, 2vw, 32px);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.hero4__text {
+  margin: 0;
+  max-width: 34ch;
+  font-size: 15px;
+  text-align: right;
+}
+
+/* Logo: zoe schreibt sich von links nach rechts, Genevieve blendet danach ein */
+.hero4__logo .logo__script {
+  clip-path: inset(0 100% 0 0);
+  animation: schrift 1.8s cubic-bezier(0.65, 0, 0.25, 1) 0.2s forwards;
+}
+.hero4__logo .logo__name {
+  opacity: 0;
+  animation: name-rein 0.9s ease 1.5s forwards;
+}
+@keyframes schrift {
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes name-rein {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero4__logo .logo__script,
+  .hero4__logo .logo__name {
+    animation: none;
+    clip-path: none;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 899px) {
+  .hero4__stage {
+    width: 88vw;
+  }
+  .hero4__logo {
+    --logo-w: 88vw;
+  }
+  .hero4__portrait {
+    width: 62%;
+    margin-top: calc(-0.34 * 88vw);
+  }
+  .hero4__bottom {
+    gap: 8px;
+  }
+  .hero4__claim {
+    font-size: 24px;
+  }
+  .hero4__text {
+    text-align: left;
+  }
+}

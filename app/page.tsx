@@ -5,7 +5,6 @@ import Logo from "@/components/Logo";
 import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
-import HeroWords from "@/components/HeroWords";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
 import {
   person,
@@ -48,23 +47,10 @@ export default function Home() {
             </div>
           </div>
           <div className="hero4__bottom">
-            <p className="hero4__claim">
-              <span className="line"><span>Langes, gesundes</span></span>
-              <span className="line">
-                <span>
-                  <HeroWords worte={["Haar.", "Blond.", "Balayage.", "Volumen."]} />
-                </span>
-              </span>
+            <p className="hero4__claim">Langes, gesundes Haar.</p>
+            <p className="hero4__text">
+              Balayage, Schnitte für langes Haar und Extensions. Mitten in Köln.
             </p>
-            <div className="hero4__right">
-              <p className="hero4__text">
-                <span className="line"><span>Balayage, Schnitte für langes Haar und</span></span>
-                <span className="line"><span>Extensions. 1:1 und nur für dich, in Köln.</span></span>
-              </p>
-              <a href={person.buchungsLink} className="hero3__btn hero4__btn" target="_blank" rel="noopener">
-                Termin buchen <span aria-hidden>↗</span>
-              </a>
-            </div>
           </div>
         </section>
 

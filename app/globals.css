@@ -3685,3 +3685,25 @@ html {
     padding-top: 24px !important;
   }
 }
+
+/* Logo komplett orange, Genevieve in Groß- und Kleinschreibung */
+.hero__logo,
+.hero__logo .logo__name {
+  color: var(--menu-orange);
+}
+.logo__name {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: calc(var(--logo-w, 72px) * 0.13);
+}
+
+/* Desktop: Logo und Startbild größer */
+@media (min-width: 900px) {
+  .hero__logo {
+    --logo-w: min(46vw, 66vh);
+  }
+  .hero__portrait {
+    width: min(440px, 44vh);
+    margin-top: calc(-0.3 * min(46vw, 66vh)) !important;
+  }
+}

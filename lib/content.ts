@@ -9,9 +9,9 @@ export const person = {
   salon: "",
   strasse: "Venloer Straße 25",
   plz: "50672",
-  telefon: "[0221 000000]",
-  telefonLink: "tel:+49221000000",
-  whatsappLink: "https://wa.me/49000000000",
+  telefon: "0178 5499792",
+  telefonLink: "tel:+491785499792",
+  whatsappLink: "https://wa.me/491785499792",
   instagram: "@zoegenevieve.hair",
   instagramLink: "https://instagram.com/zoegenevieve.hair",
   email: "hallo@zoegenevieve.de",
@@ -102,7 +102,7 @@ export const fragen = [
   },
   {
     frage: "Wie komme ich zu dir?",
-    antwort: "Mit der Bahn bist du schnell da: Die Haltestelle Friesenplatz liegt nur wenige Gehminuten entfernt. Mit dem Auto parkst du am besten in einem der Parkhäuser in der Innenstadt. Über die Adresse im Kontakt kommst du direkt zu Google Maps.",
+    antwort: "Du findest mich in der Venloer Straße 25 in 50672 Köln. Mit der Bahn steigst du am Friesenplatz aus, von dort sind es nur wenige Gehminuten. Mit dem Auto parkst du am besten in einem der Parkhäuser rund um die Ringe. Über die Adresse im Kontakt kommst du direkt zu Google Maps.",
   },
   {
     frage: "Wo finde ich dich?",

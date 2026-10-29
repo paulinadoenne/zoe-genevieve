@@ -3717,3 +3717,28 @@ html {
 .contact {
   min-height: 100svh;
 }
+
+/* Desktop Start: Logo und Bild als großer Hauptblickpunkt über die Seite */
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    min-height: auto;
+  }
+  .hero__logo {
+    --logo-w: min(72vw, 1080px);
+    grid-column: 1 / -1;
+    justify-self: start;
+    position: relative;
+    z-index: 3;
+  }
+  .hero__portrait {
+    grid-column: 1;
+    width: min(36vw, 560px);
+    margin-top: calc(-0.36 * min(72vw, 1080px)) !important;
+  }
+  .hero__side {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: end;
+  }
+}

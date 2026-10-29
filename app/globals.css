@@ -4553,3 +4553,11 @@ body::before {
     radial-gradient(45% 35% at 6% 92%, rgb(228 214 198 / 0.65), transparent 70%),
     linear-gradient(165deg, #fdfdfc 0%, #f7f4f0 40%, #efe7dd 100%);
 }
+.imp__h2 {
+  font-family: var(--sans);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #111;
+  margin: 40px 0 16px;
+}

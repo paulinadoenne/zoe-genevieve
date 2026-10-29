@@ -4561,3 +4561,18 @@ body::before {
   color: #111;
   margin: 40px 0 16px;
 }
+
+/* Ein durchgehender Verlauf über alle Seiten: die warmen Lichtflecken
+   wandern von Seite zu Seite (rechts oben, links, rechts unten ...),
+   sodass jede Seite anders aussieht und alles zusammenhängt */
+body::before {
+  position: absolute !important;
+  inset: 0 !important;
+  background:
+    radial-gradient(38% 9% at 90% 3%, rgb(232 208 180 / 0.75), transparent 70%),
+    radial-gradient(34% 8% at 4% 19%, rgb(230 214 196 / 0.7), transparent 70%),
+    radial-gradient(40% 9% at 96% 36%, rgb(234 210 184 / 0.7), transparent 70%),
+    radial-gradient(36% 8% at 10% 52%, rgb(228 212 194 / 0.7), transparent 70%),
+    radial-gradient(42% 9% at 80% 68%, rgb(234 212 188 / 0.7), transparent 70%),
+    linear-gradient(180deg, #fdfdfc 0%, #f8f5f1 30%, #f4efe9 55%, #f8f5f1 80%, #fdfdfc 100%) !important;
+}

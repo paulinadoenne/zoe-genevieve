@@ -27,7 +27,7 @@ export const oeffnungszeiten = [
 
 export const galerie = [
   { src: "/arbeiten/beigeblond-wellen.jpg", alt: "Beigeblond mit weichen Wellen", titel: "Beigeblond", info: "Kühles Beige mit weichen Übergängen und Wellen." },
-  { src: "/arbeiten/kupferbraun-volumen.jpg", alt: "Kupferbraun mit Volumen und Stufen", titel: "Kupferbraun", info: "Leuchtendes Kupfer, lange Stufen, viel Bewegung." },
+  { src: "/arbeiten/kupferbraun-volumen.jpg", alt: "Kupferbraun mit Volumen und Stufen", titel: "Butterfly Cut", info: "Leuchtendes Kupfer, lange Stufen, viel Bewegung." },
   { src: "/arbeiten/schoko-kupfer-stufen.jpg", alt: "Schokobraun mit Kupferreflexen und Stufen", titel: "Schoko Kupfer", info: "Warmes Braun mit Kupferreflexen, Stufenschnitt mit Volumen." },
   { src: "/arbeiten/goldblond-face-framing.jpg", alt: "Goldblond mit Face Framing", titel: "Goldblond", info: "Sonniges Blond mit Face Framing und weichem Pony." },
   { src: "/arbeiten/schokobraun-long-bob.jpg", alt: "Schokobrauner Long Bob", titel: "Long Bob", info: "Glänzendes Schokobraun als lässiger Long Bob." },

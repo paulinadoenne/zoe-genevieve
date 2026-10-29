@@ -4239,3 +4239,21 @@ html {
     justify-self: start;
   }
 }
+
+/* Über mich: beide Textspalten oben und unten in einer Flucht */
+@media (min-width: 900px) {
+  .aboutx__text {
+    align-items: stretch;
+  }
+  .aboutx__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .aboutx__col .aboutx__sub {
+    margin-top: auto !important;
+  }
+  .aboutx__col .aboutx__link {
+    margin-top: auto;
+  }
+}

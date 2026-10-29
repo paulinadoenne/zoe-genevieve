@@ -51,14 +51,6 @@ export default function Home() {
               Haare, die sich so gut anfühlen, wie sie aussehen. Balayage, Schnitte
               für langes Haar und Extensions, in Ruhe und nur für dich. Mitten in Köln.
             </p>
-            <a
-              href={person.buchungsLink}
-              className="pill hero__cta"
-              target="_blank"
-              rel="noopener"
-            >
-              Termin buchen ↗
-            </a>
           </div>
           <ul className="hero__info">
             <li>

@@ -4229,3 +4229,13 @@ html {
     padding-top: calc((100svh - 330px) * 0.23);
   }
 }
+
+/* Start Desktop: Logo und Bild weiter links, Text näher dran */
+@media (min-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 0.45fr) auto minmax(0, 1fr);
+  }
+  .hero__side {
+    justify-self: start;
+  }
+}

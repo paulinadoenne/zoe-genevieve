@@ -4632,3 +4632,14 @@ body::before {
     radial-gradient(90% 14% at 20% 93%, rgb(202 224 244 / 0.75), transparent 100%),
     #faf8f5 !important;
 }
+
+/* Q&A Überschrift größer */
+.faq .h-center {
+  font-size: clamp(96px, 13vw, 220px) !important;
+  line-height: 0.9;
+}
+@media (max-width: 899px) {
+  .faq .h-center {
+    font-size: 30vw !important;
+  }
+}

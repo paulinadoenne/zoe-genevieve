@@ -3408,3 +3408,113 @@ html {
 .hero__logo .logo__name {
   color: #111;
 }
+
+/* ============================================================
+   Desktop dichter: Inhalte nebeneinander statt verstreut,
+   größere Texte, weniger leere Flächen. Mobil bleibt unverändert.
+   ============================================================ */
+.hero__cta {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 15px;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.hero__cta:hover {
+  color: var(--menu-orange);
+}
+
+@media (min-width: 900px) {
+  /* Start: Logo oben, darunter Foto links und Einleitung rechts */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: clamp(40px, 5vw, 96px);
+    align-items: end;
+  }
+  .hero__logo {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+  .hero__portrait {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    max-width: 520px;
+  }
+  .hero__side {
+    grid-column: 2;
+    grid-row: 2;
+    padding-bottom: 8px;
+  }
+  .hero__side .hero__lead {
+    margin-top: 0;
+    max-width: 24ch;
+    font-size: clamp(24px, 2.2vw, 32px);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+  .hero__cta {
+    margin-top: 28px;
+    font-size: 17px;
+  }
+
+  /* Über mich: Bild links, Texte rechts daneben */
+  .aboutx {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: clamp(40px, 5vw, 80px);
+    align-items: end;
+  }
+  .aboutx .h-center {
+    grid-column: 1 / -1;
+  }
+  .aboutx__hero {
+    grid-column: 1;
+  }
+  .aboutx__hero .photo {
+    aspect-ratio: 4 / 5;
+    object-position: 60% 30%;
+  }
+  .aboutx__text {
+    grid-column: 2;
+  }
+  .aboutx__text .aboutx__p {
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 40ch;
+    margin: 0 0 24px;
+  }
+  .aboutx__text .aboutx__link {
+    font-size: 17px;
+  }
+
+  /* Ruhigere, aber kleinere Abstände zwischen den Abschnitten */
+  .works {
+    padding-top: clamp(96px, 9vw, 150px) !important;
+  }
+  .aboutx {
+    padding-top: clamp(96px, 9vw, 150px) !important;
+    padding-bottom: clamp(64px, 6vw, 110px) !important;
+  }
+
+  /* Texte im Kontakt etwas größer */
+  .contact .field,
+  .contact .field a,
+  .contact .field__row,
+  .contact .field__label {
+    font-size: 17px;
+  }
+}
+@media (min-width: 900px) {
+  .aboutx .h-center {
+    justify-self: stretch;
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+  }
+}

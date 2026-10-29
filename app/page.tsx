@@ -30,11 +30,16 @@ export default function Home() {
           <div className="hero__portrait">
             <Photo src="/zoe-portrait.jpg" alt="Zoe Genevieve im Strickpulli" />
           </div>
-          <p className="hero__lead">
-            Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
-            Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer Hand, du stehst
-            im Mittelpunkt.
-          </p>
+          <div className="hero__side">
+            <p className="hero__lead">
+              Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
+              Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer Hand, du stehst
+              im Mittelpunkt.
+            </p>
+            <a href={person.buchungsLink} className="hero__cta" target="_blank" rel="noopener">
+              Termin online buchen →
+            </a>
+          </div>
         </section>
 
         {/* Termin: zentrierte Überschrift, großes Bild, Button */}
@@ -62,15 +67,17 @@ export default function Home() {
           <div className="aboutx__hero">
             <Photo src="/zoe-karl.jpg" alt="Zoe mit Karl, dem Salon Dog" />
           </div>
-          <p className="aboutx__p aboutx__p--1">
-            {ueberMich[0]} {ueberMich[1]}
-          </p>
-          <p className="aboutx__p aboutx__p--2">
-            {ueberMich[2]}
-            <a href={person.buchungsLink} className="aboutx__link" target="_blank" rel="noopener">
-              Termin buchen →
-            </a>
-          </p>
+          <div className="aboutx__text">
+            <p className="aboutx__p aboutx__p--1">
+              {ueberMich[0]} {ueberMich[1]}
+            </p>
+            <p className="aboutx__p aboutx__p--2">
+              {ueberMich[2]}
+              <a href={person.buchungsLink} className="aboutx__link" target="_blank" rel="noopener">
+                Termin buchen →
+              </a>
+            </p>
+          </div>
         </section>
 
         <div className="aboutx__tiles page-tiles">

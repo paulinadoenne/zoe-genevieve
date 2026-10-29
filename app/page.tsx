@@ -47,10 +47,16 @@ export default function Home() {
             </div>
           </div>
           <div className="hero__side">
-            <p className="hero__lead">
-              Haare, die sich so gut anfühlen, wie sie aussehen. Balayage, Schnitte
-              für langes Haar und Extensions, in Ruhe und nur für dich. Mitten in Köln.
+            <p className="hero__quote">
+              Haare, die sich so gut anfühlen, wie sie aussehen.
             </p>
+            <p className="hero__lead">
+              Balayage, Schnitte für langes Haar und Extensions. In Ruhe, 1:1 und nur
+              für dich, mitten in Köln.
+            </p>
+            <a href={person.buchungsLink} className="hero__link" target="_blank" rel="noopener">
+              Termin buchen <span aria-hidden>↗</span>
+            </a>
           </div>
         </section>
 

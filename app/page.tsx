@@ -38,17 +38,18 @@ export default function Home() {
       <main>
         {/* Start: riesiger Name, Portrait überlappt die Schrift */}
         <section className="hero">
-          <h1 className="hero__logo">
-            <Logo />
-          </h1>
-          <div className="hero__portrait">
-            <Photo src="/zoe-portrait.jpg" alt="Zoe Genevieve im Strickpulli" />
+          <div className="hero__stage">
+            <h1 className="hero__logo">
+              <Logo />
+            </h1>
+            <div className="hero__portrait">
+              <Photo src="/zoe-portrait.jpg" alt="Zoe Genevieve im Strickpulli" />
+            </div>
           </div>
           <div className="hero__side">
             <p className="hero__lead">
-              Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in
-              der Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer
-              Hand, du stehst im Mittelpunkt.
+              Haare, die sich so gut anfühlen, wie sie aussehen. Balayage, Schnitte
+              für langes Haar und Extensions, in Ruhe und nur für dich. Mitten in Köln.
             </p>
             <a
               href={person.buchungsLink}
@@ -56,7 +57,7 @@ export default function Home() {
               target="_blank"
               rel="noopener"
             >
-              Termin online buchen ↗
+              Termin buchen ↗
             </a>
           </div>
           <ul className="hero__info">
@@ -88,7 +89,7 @@ export default function Home() {
               target="_blank"
               rel="noopener"
             >
-              Jetzt online buchen ↗
+              Jetzt buchen ↗
             </a>
           </div>
         </section>

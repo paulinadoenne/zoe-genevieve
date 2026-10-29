@@ -4135,3 +4135,63 @@ html {
     margin-bottom: 0 !important;
   }
 }
+
+/* ============================================================
+   Header: ( ZG ) links zur Startseite, Menü rechts (auch Desktop)
+   Start: Logo tiefer und mittig, Bild größer
+   ============================================================ */
+.hero__stage {
+  display: contents;
+}
+@media (min-width: 900px) {
+  .header {
+    justify-content: space-between !important;
+  }
+  .header__mark {
+    display: block !important;
+    font-size: 14px;
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+  .menu-btn {
+    flex-direction: row !important;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    grid-template-rows: 1fr auto;
+    column-gap: clamp(32px, 4vw, 72px);
+    align-items: end;
+  }
+  .hero__stage {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    width: min(50vw, 62vh);
+    margin-top: 5vh;
+  }
+  .hero__logo {
+    --logo-w: min(50vw, 62vh);
+    margin: 0;
+  }
+  .hero__portrait {
+    width: min(34vw, 44vh);
+    margin: calc(-0.36 * min(50vw, 62vh)) 0 0 0 !important;
+  }
+  .hero__side {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    margin-top: 30vh;
+  }
+  .hero__side .hero__lead {
+    max-width: 20ch;
+    font-size: clamp(18px, 1.5vw, 24px);
+  }
+  .hero__info {
+    grid-row: 2;
+  }
+}

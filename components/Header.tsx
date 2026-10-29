@@ -79,7 +79,7 @@ export default function Header() {
         </ul>
         <div className="menu__foot">
           <a href={person.buchungsLink} className="pill pill--big" target="_blank" rel="noopener" tabIndex={open ? 0 : -1}>
-            Termin online buchen ↗
+            Termin buchen ↗
           </a>
           <p>
             {person.strasse}, {person.plz} {person.stadt}

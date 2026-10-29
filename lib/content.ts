@@ -58,3 +58,23 @@ export const fotos = {
   ueberMich: "/zoe-portrait.jpg",
   karl: "/zoe-karl.jpg",
 };
+
+// Über mich Text von Zoe.
+export const ueberMichNeu = {
+  intro: [
+    "Hi, ich bin Zoe, deine Expertin für langes, gesundes Haar und individuelle Looks. Mein Ziel ist es, dass sich deine Haare genauso gut anfühlen, wie sie aussehen.",
+    "Ich arbeite mit viel Gefühl für Ästhetik, Natürlichkeit und vor allem für dich. Denn am Ende geht es nicht nur um schöne Haare, sondern darum, dass du dich wirklich wiedererkennst und wohlfühlst.",
+  ],
+  schwerpunkte: [
+    "Moderne Schnitte für langes Haar (Bewegung & Leichtigkeit)",
+    "Balayage & natürliche Farbverläufe",
+    "Feine Strähnen & Airtouch-Techniken",
+    "Typgerechte Stylings & Blowouts",
+    "Extensions (Wefts) für mehr Länge & Fülle",
+  ],
+  outro: [
+    "Mir ist wichtig, dass dein Look nicht nur im Salon perfekt aussieht, sondern auch im Alltag funktioniert: unkompliziert, hochwertig und genau auf dich abgestimmt.",
+    "Genauso wichtig ist mir, wie du dich bei mir fühlst: entspannt, verstanden und gut aufgehoben. Bei mir gibt es nur 1:1 Dienstleistungen, meine Aufmerksamkeit gehört ganz dir! Dein Termin soll sich anfühlen wie eine kleine Auszeit, fast wie Zeit mit einer guten Freundin. Ob wir zusammen lachen, quatschen oder du einfach mal abschalten möchtest, ich stelle mich ganz auf dich ein.",
+    "Ich freue mich darauf, dich kennenzulernen und gemeinsam deinen perfekten Look zu kreieren ✨",
+  ],
+};

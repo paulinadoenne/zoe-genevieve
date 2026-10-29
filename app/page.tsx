@@ -6,7 +6,7 @@ import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
-import { person, oeffnungszeiten, galerie, ueberMich } from "@/lib/content";
+import { person, oeffnungszeiten, galerie, ueberMichNeu } from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
@@ -76,15 +76,21 @@ export default function Home() {
             <Photo src="/zoe-karl.jpg" alt="Zoe mit Karl, dem Salon Dog" />
           </div>
           <div className="aboutx__text">
-            <p className="aboutx__p aboutx__p--1">
-              {ueberMich[0]} {ueberMich[1]}
-            </p>
-            <p className="aboutx__p aboutx__p--2">
-              {ueberMich[2]}
-              <a href={person.buchungsLink} className="aboutx__link" target="_blank" rel="noopener">
-                Termin buchen →
-              </a>
-            </p>
+            {ueberMichNeu.intro.map((t) => (
+              <p key={t} className="aboutx__p">{t}</p>
+            ))}
+            <p className="aboutx__p aboutx__sub">Meine Schwerpunkte</p>
+            <ul className="aboutx__list">
+              {ueberMichNeu.schwerpunkte.map((t) => (
+                <li key={t}>{t}</li>
+              ))}
+            </ul>
+            {ueberMichNeu.outro.map((t) => (
+              <p key={t} className="aboutx__p">{t}</p>
+            ))}
+            <a href={person.buchungsLink} className="aboutx__link" target="_blank" rel="noopener">
+              Termin buchen →
+            </a>
           </div>
         </section>
 

@@ -4430,3 +4430,53 @@ body {
     grid-template-rows: auto auto;
   }
 }
+
+/* Impressum: großer Titel, ruhige Textblöcke, Button zur Startseite */
+.imp {
+  max-width: 720px;
+  padding: clamp(140px, 22vh, 240px) var(--gutter) clamp(80px, 10vw, 140px);
+  margin: 0 auto 0 calc(max(0px, (100vw - var(--max)) / 2));
+}
+.imp__title {
+  font-family: var(--sans);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #111;
+  margin: 0 0 48px;
+}
+.imp__block p {
+  margin: 0 0 18px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: #111;
+}
+.imp__block strong {
+  font-weight: 500;
+}
+.imp__block a {
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.imp__block + .imp__block {
+  margin-top: 8px;
+}
+.imp__back {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 16px 32px;
+  border: 1px solid #111;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111;
+  text-decoration: none;
+  transition: background 0.25s, color 0.25s;
+}
+.imp__back:hover {
+  background: #111;
+  color: #fff;
+}

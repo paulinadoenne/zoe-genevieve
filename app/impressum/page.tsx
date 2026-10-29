@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/SiteFooter";
 import { person } from "@/lib/content";
@@ -8,57 +9,74 @@ export const metadata: Metadata = {
   robots: { index: false },
 };
 
+// Aufbau angelehnt an ein schlichtes Impressum: großer Titel, ruhige Textblöcke,
+// am Ende ein Button zurück zur Startseite.
 export default function Impressum() {
   return (
     <>
       <Header />
-      <main className="container legal">
-        <p className="eyebrow">Rechtliches</p>
-        <h1 style={{ fontSize: "clamp(40px, 6vw, 64px)" }}>Impressum</h1>
+      <main className="imp">
+        <h1 className="imp__title">Impressum</h1>
 
-        <h2>Angaben gemäß § 5 DDG</h2>
-        <p>
-          {person.name}
-          <br />
-          {person.beruf}
-          <br />
-          {person.strasse}
-          <br />
-          {person.plz} {person.stadt}
-        </p>
+        <div className="imp__block">
+          <p>{person.name}</p>
+          <p>{person.beruf}</p>
+          <p>
+            {person.strasse}
+            <br />
+            {person.plz} {person.stadt}
+          </p>
+        </div>
 
-        <h2>Kontakt</h2>
-        <p>
-          Telefon: {person.telefon}
-          <br />
-          E-Mail: {person.email}
-        </p>
+        <div className="imp__block">
+          <p>
+            <strong>Kontakt</strong>
+            <br />
+            Telefon: <a href={person.telefonLink}>{person.telefon}</a>
+            <br />
+            E-Mail: <a href={`mailto:${person.email}`}>{person.email}</a>
+          </p>
+        </div>
 
-        <h2>Umsatzsteuer</h2>
-        <p>
-          Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: [USt-IdNr.]
-          <br />
-          [Alternativ, falls Kleinunternehmerin: Gemäß § 19 UStG wird keine
-          Umsatzsteuer berechnet.]
-        </p>
+        <div className="imp__block">
+          <p>
+            <strong>Umsatzsteuer-ID</strong>
+            <br />
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
+            <br />
+            [USt-IdNr.]
+          </p>
+        </div>
 
-        <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
-        <p>
-          Berufsbezeichnung: Friseurin (verliehen in Deutschland)
-          <br />
-          Zuständige Kammer: Handwerkskammer zu Köln, Heumarkt 12, 50667 Köln
-          <br />
-          Eintragung in der Handwerksrolle: [Nummer]
-          <br />
-          Berufsrechtliche Regelungen: Handwerksordnung (HwO), einsehbar unter
-          gesetze-im-internet.de
-        </p>
+        <div className="imp__block">
+          <p>
+            <strong>Berufsbezeichnung und Kammer</strong>
+            <br />
+            Berufsbezeichnung: Friseurin (verliehen in Deutschland)
+            <br />
+            Zuständige Kammer: Handwerkskammer zu Köln, Heumarkt 12, 50667 Köln
+            <br />
+            Eintragung in der Handwerksrolle: [Nummer]
+            <br />
+            Berufsrechtliche Regelungen: Handwerksordnung (HwO), einsehbar unter{" "}
+            <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener">
+              gesetze-im-internet.de
+            </a>
+          </p>
+        </div>
 
-        <h2>Verbraucherstreitbeilegung</h2>
-        <p>
-          Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
-          vor einer Verbraucherschlichtungsstelle teilzunehmen.
-        </p>
+        <div className="imp__block">
+          <p>
+            <strong>Verbraucherstreitbeilegung/<wbr />Universalschlichtungsstelle</strong>
+            <br />
+            Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
+            einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </div>
+
+        <Link href="/" className="imp__back">
+          Zur Startseite
+        </Link>
       </main>
       <Footer />
     </>

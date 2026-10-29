@@ -19,7 +19,7 @@ export default function Impressum() {
         <h1 className="imp__title">Impressum</h1>
 
         <div className="imp__block">
-          <p>{person.name}</p>
+          <p>Zoe Genevieve Pusch</p>
           <p>{person.beruf}</p>
           <p>
             {person.strasse}
@@ -55,8 +55,6 @@ export default function Impressum() {
             Berufsbezeichnung: Friseurin (verliehen in Deutschland)
             <br />
             Zuständige Kammer: Handwerkskammer zu Köln, Heumarkt 12, 50667 Köln
-            <br />
-            Eintragung in der Handwerksrolle: [Nummer]
             <br />
             Berufsrechtliche Regelungen: Handwerksordnung (HwO), einsehbar unter{" "}
             <a href="https://www.gesetze-im-internet.de/hwo/" target="_blank" rel="noopener">

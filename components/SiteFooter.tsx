@@ -1,38 +1,31 @@
 import Link from "next/link";
 import { person, oeffnungszeiten } from "@/lib/content";
+import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
 
-// Abschluss wie im Template: groß Instagram und Adresse, darunter Kleingedrucktes.
+// Schlanke Fußleiste für Impressum und Datenschutz: Icons, Adresse, Rechtliches.
 export default function SiteFooter() {
   return (
-    <footer className="foot">
-      <div className="foot__big">
-        <a href={person.instagramLink} target="_blank" rel="noopener">
-          {person.instagram}
+    <footer className="foot2">
+      <div className="foot2__icons">
+        <a href={person.whatsappLink} target="_blank" rel="noopener" aria-label="WhatsApp">
+          <IconWhatsApp />
         </a>
-        <span>{person.strasse}</span>
+        <a href={`mailto:${person.email}`} aria-label="E-Mail">
+          <IconMail />
+        </a>
+        <a href={person.instagramLink} target="_blank" rel="noopener" aria-label="Instagram">
+          <IconInstagram />
+        </a>
       </div>
-      <div className="foot__small">
-        <p>
-          {person.plz} {person.stadt}
-          <br />
-          {new Date().getFullYear()}
-        </p>
-        <p>
-          Öffnungszeiten
-          <br />
-          {oeffnungszeiten[0].tage} {oeffnungszeiten[0].zeit}
-        </p>
-      </div>
-      <div className="foot__legal">
-        <span>© {new Date().getFullYear()} {person.name} · {person.beruf} in {person.stadt}</span>
-        <nav aria-label="Rechtliches">
-          <a href={person.instagramLink} target="_blank" rel="noopener">
-            Instagram
-          </a>
-          <Link href="/impressum">Impressum</Link>
-          <Link href="/datenschutz">Datenschutz</Link>
-        </nav>
-      </div>
+      <p className="foot2__info">
+        {person.strasse}, {person.plz} {person.stadt} · {oeffnungszeiten[0].tage}{" "}
+        {oeffnungszeiten[0].zeit}
+      </p>
+      <nav className="foot2__legal" aria-label="Rechtliches">
+        <Link href="/">Startseite</Link>
+        <Link href="/impressum">Impressum</Link>
+        <Link href="/datenschutz">Datenschutz</Link>
+      </nav>
     </footer>
   );
 }

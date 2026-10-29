@@ -4336,3 +4336,55 @@ body {
   background: #f4f1ec;
   color: #0f0f0f;
 }
+
+/* Fußleiste (Impressum, Datenschutz): schwarz wie der Kontakt, mit Icons */
+.foot2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  padding: 32px var(--gutter);
+  background: #0f0f0f;
+  color: rgb(244 241 236 / 0.7);
+  font-size: 13px;
+}
+.foot2__icons {
+  display: flex;
+  gap: 12px;
+}
+.foot2__icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgb(255 255 255 / 0.35);
+  border-radius: 50%;
+  color: #f4f1ec;
+  transition: background 0.25s, color 0.25s;
+}
+.foot2__icons a:hover {
+  background: #f4f1ec;
+  color: #0f0f0f;
+}
+.foot2__info {
+  margin: 0;
+}
+.foot2__legal {
+  display: flex;
+  gap: 20px;
+}
+.foot2__legal a {
+  color: rgb(244 241 236 / 0.7);
+  text-decoration: none;
+}
+.foot2__legal a:hover {
+  color: #fff;
+}
+@media (max-width: 760px) {
+  .foot2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

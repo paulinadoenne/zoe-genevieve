@@ -4388,3 +4388,45 @@ body {
     align-items: flex-start;
   }
 }
+
+/* Über mich ohne unnötigen Weißraum: Text direkt unter der Überschrift,
+   das Bild ist genau so hoch wie Überschrift und Text zusammen */
+@media (min-width: 900px) {
+  .aboutx {
+    height: auto !important;
+    min-height: 100svh;
+    align-content: center;
+    align-items: start;
+  }
+  .aboutx__hero {
+    height: auto !important;
+    align-self: stretch;
+    position: relative;
+    min-height: 420px;
+  }
+  .aboutx__hero .photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100% !important;
+  }
+  .aboutx__text {
+    align-self: start;
+    align-items: start;
+  }
+  .aboutx__col {
+    display: block;
+  }
+  .aboutx__col .aboutx__sub {
+    margin-top: 18px !important;
+  }
+  .aboutx__col .aboutx__link {
+    display: inline-block;
+    margin-top: 4px;
+  }
+}
+@media (min-width: 900px) {
+  .aboutx {
+    grid-template-rows: auto auto;
+  }
+}

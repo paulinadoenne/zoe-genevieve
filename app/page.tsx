@@ -52,19 +52,6 @@ export default function Home() {
               für langes Haar und Extensions, in Ruhe und nur für dich. Mitten in Köln.
             </p>
           </div>
-          <ul className="hero__info">
-            <li>
-              {person.strasse}, {person.stadt}
-            </li>
-            <li>
-              Di bis Fr {oeffnungszeiten[0].zeit}
-            </li>
-            <li>
-              <a href={person.instagramLink} target="_blank" rel="noopener">
-                {person.instagram}
-              </a>
-            </li>
-          </ul>
         </section>
 
         {/* Termin: zentrierte Überschrift, großes Bild, Button */}

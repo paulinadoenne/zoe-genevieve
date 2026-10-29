@@ -6,14 +6,29 @@ import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
-import { person, oeffnungszeiten, galerie, ueberMichNeu, fragen } from "@/lib/content";
+import {
+  person,
+  oeffnungszeiten,
+  galerie,
+  ueberMichNeu,
+  fragen,
+} from "@/lib/content";
 
 const adresse = `${person.strasse}, ${person.plz} ${person.stadt}`;
 const kartenLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(adresse)}`;
 const kacheln = [
-  { src: "/kacheln/balayage-braun.jpg", alt: "Lange braune Haare mit weichem Balayage in Wellen" },
-  { src: "/kacheln/karamell-wellen.jpg", alt: "Karamellblonde Haare mit großen Locken" },
-  { src: "/kacheln/blond-balayage.jpg", alt: "Lange Haare mit hellblondem Balayage" },
+  {
+    src: "/kacheln/balayage-braun.jpg",
+    alt: "Lange braune Haare mit weichem Balayage in Wellen",
+  },
+  {
+    src: "/kacheln/karamell-wellen.jpg",
+    alt: "Karamellblonde Haare mit großen Locken",
+  },
+  {
+    src: "/kacheln/blond-balayage.jpg",
+    alt: "Lange Haare mit hellblondem Balayage",
+  },
 ];
 
 export default function Home() {
@@ -31,17 +46,26 @@ export default function Home() {
           </div>
           <div className="hero__side">
             <p className="hero__lead">
-              Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in der
-              Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer Hand, du stehst
-              im Mittelpunkt.
+              Master Hairstylist und Blonde Specialist in Köln. 1:1 Termine in
+              der Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer
+              Hand, du stehst im Mittelpunkt.
             </p>
-            <a href={person.buchungsLink} className="pill hero__cta" target="_blank" rel="noopener">
+            <a
+              href={person.buchungsLink}
+              className="pill hero__cta"
+              target="_blank"
+              rel="noopener"
+            >
               Termin online buchen ↗
             </a>
           </div>
           <ul className="hero__info">
-            <li>{person.strasse}, {person.stadt}</li>
-            <li>Di bis Fr {oeffnungszeiten[0].zeit} · Sa {oeffnungszeiten[1].zeit}</li>
+            <li>
+              {person.strasse}, {person.stadt}
+            </li>
+            <li>
+              Di bis Fr {oeffnungszeiten[0].zeit} · Sa {oeffnungszeiten[1].zeit}
+            </li>
             <li>
               <a href={person.instagramLink} target="_blank" rel="noopener">
                 {person.instagram}
@@ -54,8 +78,16 @@ export default function Home() {
         <section id="termin" className="booking">
           <h2 className="h-center">Termin buchen</h2>
           <div className="booking__image">
-            <Photo src="/haar-textur.jpg" alt="Glänzendes braunes Haar in Wellen" />
-            <a href={person.buchungsLink} className="pill pill--big pill--light" target="_blank" rel="noopener">
+            <Photo
+              src="/haar-textur.jpg"
+              alt="Glänzendes braunes Haar in Wellen"
+            />
+            <a
+              href={person.buchungsLink}
+              className="pill pill--big pill--light"
+              target="_blank"
+              rel="noopener"
+            >
               Jetzt online buchen ↗
             </a>
           </div>
@@ -76,21 +108,34 @@ export default function Home() {
             <Photo src="/zoe-karl.jpg" alt="Zoe mit Karl, dem Salon Dog" />
           </div>
           <div className="aboutx__text">
-            {ueberMichNeu.intro.map((t) => (
-              <p key={t} className="aboutx__p">{t}</p>
-            ))}
-            <p className="aboutx__p aboutx__sub">Meine Schwerpunkte</p>
-            <ul className="aboutx__list">
-              {ueberMichNeu.schwerpunkte.map((t) => (
-                <li key={t}>{t}</li>
+            <div className="aboutx__col">
+              {ueberMichNeu.intro.map((t) => (
+                <p key={t} className="aboutx__p">
+                  {t}
+                </p>
               ))}
-            </ul>
-            {ueberMichNeu.outro.map((t) => (
-              <p key={t} className="aboutx__p">{t}</p>
-            ))}
-            <a href={person.buchungsLink} className="aboutx__link" target="_blank" rel="noopener">
-              Termin buchen →
-            </a>
+              <p className="aboutx__p aboutx__sub">Meine Schwerpunkte</p>
+              <ul className="aboutx__list">
+                {ueberMichNeu.schwerpunkte.map((t) => (
+                  <li key={t}>{t}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="aboutx__col">
+              {ueberMichNeu.outro.map((t) => (
+                <p key={t} className="aboutx__p">
+                  {t}
+                </p>
+              ))}
+              <a
+                href={person.buchungsLink}
+                className="aboutx__link"
+                target="_blank"
+                rel="noopener"
+              >
+                Termin buchen →
+              </a>
+            </div>
           </div>
         </section>
 
@@ -99,7 +144,12 @@ export default function Home() {
           <h2 className="h-center">Q&amp;A</h2>
           <div className="faq__list">
             {fragen.map((f, i) => (
-              <details key={f.frage} className="faq__item" name="faq" open={i === 0}>
+              <details
+                key={f.frage}
+                className="faq__item"
+                name="faq"
+                open={i === 0}
+              >
                 <summary>
                   <span>{f.frage}</span>
                   <span className="faq__icon" aria-hidden />
@@ -139,13 +189,26 @@ export default function Home() {
             <div className="field">
               <span className="field__label">Kontakt</span>
               <span className="contact__icons">
-                <a href={person.whatsappLink} target="_blank" rel="noopener" aria-label="WhatsApp">
+                <a
+                  href={person.whatsappLink}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="WhatsApp"
+                >
                   <IconWhatsApp />
                 </a>
-                <a href={`mailto:${person.email.replace(/[[\]]/g, "")}`} aria-label="E-Mail">
+                <a
+                  href={`mailto:${person.email.replace(/[[\]]/g, "")}`}
+                  aria-label="E-Mail"
+                >
                   <IconMail />
                 </a>
-                <a href={person.instagramLink} target="_blank" rel="noopener" aria-label="Instagram">
+                <a
+                  href={person.instagramLink}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Instagram"
+                >
                   <IconInstagram />
                 </a>
               </span>

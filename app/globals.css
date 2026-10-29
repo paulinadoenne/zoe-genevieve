@@ -4120,3 +4120,18 @@ html {
     height: 100svh;
   }
 }
+
+/* Über mich: beide Textspalten enden bündig mit der Unterkante des Bildes */
+@media (min-width: 900px) {
+  .aboutx__text {
+    columns: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(28px, 3vw, 48px);
+    align-self: end;
+    align-items: end;
+  }
+  .aboutx__col > :last-child {
+    margin-bottom: 0 !important;
+  }
+}

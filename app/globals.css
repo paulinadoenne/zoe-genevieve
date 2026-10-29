@@ -4257,3 +4257,14 @@ html {
     margin-top: auto;
   }
 }
+
+/* Arbeiten: beim Vergrößern weichen die Nachbarbilder zur Seite aus,
+   damit der Abstand zum nächsten Bild gleich bleibt */
+@media (min-width: 900px) {
+  .rondell__item:has(~ .rondell__item:hover) {
+    transform: translateX(calc((100svh - 330px) * -0.14));
+  }
+  .rondell__item:hover ~ .rondell__item {
+    transform: translateX(calc((100svh - 330px) * 0.14));
+  }
+}

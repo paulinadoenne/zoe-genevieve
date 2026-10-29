@@ -14,7 +14,7 @@ export const person = {
   whatsappLink: "https://wa.me/49000000000",
   instagram: "@zoegenevieve.hair",
   instagramLink: "https://instagram.com/zoegenevieve.hair",
-  email: "[hallo@zoegenevieve.de]",
+  email: "hallo@zoegenevieve.de",
   // Link zum Buchungstool (z. B. Treatwell, Planity, Shore). Leer lassen,
   // dann zeigt die Seite nur Telefon und WhatsApp.
   buchungsLink: "https://www.planity.com/de-DE/zoe-genevieve-hair-50667-koln",

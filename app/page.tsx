@@ -191,7 +191,7 @@ export default function Home() {
                   <IconWhatsApp />
                 </a>
                 <a
-                  href={`mailto:${person.email.replace(/[[\]]/g, "")}`}
+                  href={`mailto:${person.email}`}
                   aria-label="E-Mail"
                 >
                   <IconMail />

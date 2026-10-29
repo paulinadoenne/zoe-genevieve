@@ -4576,3 +4576,26 @@ body::before {
     radial-gradient(42% 9% at 80% 68%, rgb(234 212 188 / 0.7), transparent 70%),
     linear-gradient(180deg, #fdfdfc 0%, #f8f5f1 30%, #f4efe9 55%, #f8f5f1 80%, #fdfdfc 100%) !important;
 }
+
+/* Fließender Orange Blau Verlauf über alle Seiten, sehr dezent, ohne Flecken */
+body::before {
+  background:
+    linear-gradient(
+      115deg,
+      rgb(253 233 214 / 0.55) 0%,
+      rgb(255 255 255 / 0) 35%,
+      rgb(222 234 245 / 0.5) 65%,
+      rgb(255 255 255 / 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      #fdf8f3 0%,
+      #fbf1e8 14%,
+      #f6f7f8 28%,
+      #eaf1f7 42%,
+      #f7f5f2 56%,
+      #fbefe5 70%,
+      #eef3f8 84%,
+      #f6f5f3 100%
+    ) !important;
+}

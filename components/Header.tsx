@@ -44,6 +44,13 @@ export default function Header() {
         <a href="/" className="header__mark" onClick={() => setOpen(false)}>
           ( ZG )
         </a>
+        <nav className="header__links" aria-label="Navigation">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} onClick={(e) => springe(e, l.href)}>
+              {l.label}
+            </a>
+          ))}
+        </nav>
         <button
           className="menu-btn"
           aria-expanded={open}

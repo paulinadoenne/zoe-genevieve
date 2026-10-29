@@ -36,10 +36,19 @@ export default function Home() {
               Sankt-Apern-Straße: Beratung, Farbe und Schnitt aus einer Hand, du stehst
               im Mittelpunkt.
             </p>
-            <a href={person.buchungsLink} className="hero__cta" target="_blank" rel="noopener">
-              Termin online buchen →
+            <a href={person.buchungsLink} className="pill hero__cta" target="_blank" rel="noopener">
+              Termin online buchen ↗
             </a>
           </div>
+          <ul className="hero__info">
+            <li>{person.strasse}, {person.stadt}</li>
+            <li>Di bis Fr {oeffnungszeiten[0].zeit} · Sa {oeffnungszeiten[1].zeit}</li>
+            <li>
+              <a href={person.instagramLink} target="_blank" rel="noopener">
+                {person.instagram}
+              </a>
+            </li>
+          </ul>
         </section>
 
         {/* Termin: zentrierte Überschrift, großes Bild, Button */}

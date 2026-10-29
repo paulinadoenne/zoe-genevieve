@@ -4599,3 +4599,20 @@ body::before {
       #f6f5f3 100%
     ) !important;
 }
+
+/* Sehr fließender, zufällig wirkender Verlauf aus Weiß, zartem Orange und Blau.
+   Große, weiche Farbfelder ohne harte Mitte, die ineinander übergehen */
+body::before {
+  background:
+    radial-gradient(90% 14% at 78% 4%,  rgb(252 226 204 / 0.55), transparent 100%),
+    radial-gradient(80% 12% at 15% 13%, rgb(255 255 255 / 0.9),  transparent 100%),
+    radial-gradient(95% 15% at 30% 24%, rgb(220 233 246 / 0.55), transparent 100%),
+    radial-gradient(85% 13% at 88% 33%, rgb(253 230 210 / 0.45), transparent 100%),
+    radial-gradient(90% 12% at 50% 44%, rgb(255 255 255 / 0.85), transparent 100%),
+    radial-gradient(100% 16% at 8% 55%, rgb(250 225 205 / 0.5),  transparent 100%),
+    radial-gradient(90% 14% at 82% 63%, rgb(218 232 246 / 0.55), transparent 100%),
+    radial-gradient(80% 12% at 35% 73%, rgb(255 255 255 / 0.85), transparent 100%),
+    radial-gradient(95% 15% at 70% 82%, rgb(252 228 208 / 0.45), transparent 100%),
+    radial-gradient(90% 14% at 20% 93%, rgb(222 234 246 / 0.5),  transparent 100%),
+    #fbfaf8 !important;
+}

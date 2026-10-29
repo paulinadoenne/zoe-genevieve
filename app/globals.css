@@ -4491,3 +4491,34 @@ body {
   background-attachment: fixed !important;
   background-size: 100% 100% !important;
 }
+
+/* ( ZG ) und Menü größer und besser sichtbar */
+.header__mark,
+.menu-btn,
+.menu-btn__label {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #111;
+  letter-spacing: 0.01em;
+}
+.menu-btn__icon {
+  width: 28px;
+  height: 12px;
+}
+.menu-btn__icon i {
+  height: 2px;
+}
+.menu-btn__icon i:last-child {
+  top: 10px;
+}
+.is-open .menu-btn__icon i:first-child,
+.is-open .menu-btn__icon i:last-child {
+  top: 5px;
+}
+@media (min-width: 900px) {
+  .header__mark,
+  .menu-btn,
+  .menu-btn__label {
+    font-size: 20px !important;
+  }
+}

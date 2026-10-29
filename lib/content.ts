@@ -86,10 +86,6 @@ export const fragen = [
     antwort: "Ganz einfach online über Planity. Dort siehst du alle freien Termine und kannst direkt die passende Leistung auswählen.",
   },
   {
-    frage: "Was bedeutet 1:1 Dienstleistung?",
-    antwort: "Während deines Termins bin ich nur für dich da. Von der Beratung bis zum Föhnen hast du immer dieselbe Ansprechpartnerin, ohne Wechsel und ohne Parallelkunden.",
-  },
-  {
     frage: "Ist eine Beratung im Termin enthalten?",
     antwort: "Ja. Wir sprechen zu Beginn in Ruhe über deine Wünsche, deine Haarstruktur und deinen Alltag und entscheiden gemeinsam, was wirklich zu dir passt.",
   },
@@ -104,6 +100,10 @@ export const fragen = [
   {
     frage: "Ist Karl immer dabei?",
     antwort: "Meistens ja, Karl ist mein Dackel und offizieller Salon Dog. Wenn du eine Allergie oder Angst vor Hunden hast, sag mir einfach vorher Bescheid.",
+  },
+  {
+    frage: "Wie komme ich zu dir?",
+    antwort: "Mit der Bahn bist du schnell da: Die Haltestellen Appellhofplatz und Friesenplatz liegen nur wenige Gehminuten entfernt. Mit dem Auto parkst du am besten in einem der Parkhäuser in der Innenstadt. Über die Adresse im Kontakt kommst du direkt zu Google Maps.",
   },
   {
     frage: "Wo finde ich dich?",

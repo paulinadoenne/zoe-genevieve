@@ -97,7 +97,7 @@ export const fragen = [
   },
   {
     frage: "Ist Karl immer dabei?",
-    antwort: "Meistens ja, Karl ist mein Dackel und offizieller Salon Dog. Wenn du eine Allergie oder Angst vor Hunden hast, sag mir einfach vorher Bescheid.",
+    antwort: "Meistens ja. Karl ist mein Dackel und offizieller Salon Dog. Er ist nicht allein, im Salon leben noch zwei weitere Hunde, die für gute Stimmung sorgen. Du möchtest deinen eigenen Hund mitbringen? Frag mich einfach vorher kurz, dann schauen wir gemeinsam, ob es passt.",
   },
   {
     frage: "Wie komme ich zu dir?",

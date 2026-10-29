@@ -4737,3 +4737,31 @@ body::before {
     margin-bottom: 32px !important;
   }
 }
+
+/* Mobil: Schwerpunkte ohne Großbuchstaben, ohne Grau, ohne Nummern */
+@media (max-width: 899px) {
+  .aboutx__sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+    color: #111 !important;
+    margin: 0 0 10px !important;
+  }
+  .aboutx__list li {
+    display: block;
+    color: #111;
+  }
+  .aboutx__list li::before {
+    content: none;
+  }
+}
+@media (max-width: 899px) {
+  .aboutx__text .aboutx__col .aboutx__p.aboutx__sub {
+    font-size: 26px !important;
+    line-height: 1.2;
+    margin: 0 0 12px !important;
+  }
+}

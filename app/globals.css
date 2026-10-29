@@ -4522,3 +4522,13 @@ body {
     font-size: 20px !important;
   }
 }
+
+/* Farbverlauf etwas stärker */
+body {
+  background:
+    radial-gradient(50% 40% at 88% 10%, rgb(232 208 180 / 0.7), transparent 70%),
+    radial-gradient(45% 35% at 6% 92%, rgb(228 214 198 / 0.65), transparent 70%),
+    linear-gradient(165deg, #fdfdfc 0%, #f7f4f0 40%, #efe7dd 100%) !important;
+  background-attachment: fixed !important;
+  background-size: 100% 100% !important;
+}

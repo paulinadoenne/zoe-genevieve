@@ -4195,3 +4195,37 @@ html {
     grid-row: 2;
   }
 }
+
+/* Arbeiten: Bild wächst gleichmäßig aus der Mitte, ohne dass sich etwas verschiebt */
+@media (min-width: 900px) {
+  .rondell__item,
+  .rondell__item:hover {
+    width: calc((100svh - 330px) * 0.56) !important;
+  }
+  .rondell__item {
+    position: relative;
+    z-index: 1;
+    transform-origin: center center;
+    transition: transform 0.5s var(--ease), width 0s;
+  }
+  .rondell__item:hover {
+    transform: scale(1.5);
+    z-index: 5;
+  }
+  .rondell__item:hover .rondell__label {
+    background: var(--offwhite, #fff);
+  }
+  /* Platz oben und unten, damit das vergrößerte Bild nicht abgeschnitten wird */
+  .rondell {
+    padding-top: calc((100svh - 330px) * 0.18);
+    padding-bottom: calc((100svh - 330px) * 0.18);
+  }
+  .works__head .h-center {
+    margin-bottom: 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .rondell {
+    padding-top: calc((100svh - 330px) * 0.23);
+  }
+}

@@ -7,8 +7,8 @@ export const person = {
   stadt: "Köln",
   // Salonname, in dem Zoe ihren Stuhl mietet. Leer lassen, dann wird er nicht angezeigt.
   salon: "",
-  strasse: "Sankt-Apern-Straße 56-62",
-  plz: "50667",
+  strasse: "Venloer Straße 25",
+  plz: "50672",
   telefon: "[0221 000000]",
   telefonLink: "tel:+49221000000",
   whatsappLink: "https://wa.me/49000000000",
@@ -21,9 +21,8 @@ export const person = {
 };
 
 export const oeffnungszeiten = [
-  { tage: "Dienstag bis Freitag", zeit: "10 bis 19 Uhr" },
-  { tage: "Samstag", zeit: "9 bis 15 Uhr" },
-  { tage: "Sonntag und Montag", zeit: "geschlossen" },
+  { tage: "Dienstag bis Freitag", zeit: "9 bis 18 Uhr" },
+  { tage: "Samstag bis Montag", zeit: "geschlossen" },
 ];
 
 export const galerie = [
@@ -35,7 +34,7 @@ export const galerie = [
 ];
 
 export const ueberMich = [
-  "Ich bin Master Hairstylist und Blonde Specialist in Köln und arbeite selbstständig auf Stuhlmiete in der Sankt-Apern-Straße.",
+  "Ich bin Master Hairstylist und Blonde Specialist in Köln und arbeite selbstständig auf Stuhlmiete in der Venloer Straße.",
   "Meistens ist auch Karl dabei, mein Dackel und offizieller Salon Dog. Er ist für die gute Laune zuständig.",
   "Bei mir gibt es 1:1 Dienstleistung, du stehst im Mittelpunkt. Du buchst direkt bei mir und hast vom Beratungsgespräch bis zum Föhnen immer dieselbe Ansprechpartnerin. Ich nehme mir Zeit, höre zu und schneide so, dass die Frisur auch zu Hause funktioniert.",
   "[Hier ein paar Sätze zu Ausbildung, Erfahrung und Schwerpunkten, z. B. Balayage, Locken oder Brautstyling.]",
@@ -103,10 +102,10 @@ export const fragen = [
   },
   {
     frage: "Wie komme ich zu dir?",
-    antwort: "Mit der Bahn bist du schnell da: Die Haltestellen Appellhofplatz und Friesenplatz liegen nur wenige Gehminuten entfernt. Mit dem Auto parkst du am besten in einem der Parkhäuser in der Innenstadt. Über die Adresse im Kontakt kommst du direkt zu Google Maps.",
+    antwort: "Mit der Bahn bist du schnell da: Die Haltestelle Friesenplatz liegt nur wenige Gehminuten entfernt. Mit dem Auto parkst du am besten in einem der Parkhäuser in der Innenstadt. Über die Adresse im Kontakt kommst du direkt zu Google Maps.",
   },
   {
     frage: "Wo finde ich dich?",
-    antwort: "In der Sankt-Apern-Straße 56-62 in 50667 Köln, mitten in der Innenstadt.",
+    antwort: "In der Venloer Straße 25 in 50672 Köln, ganz nah am Friesenplatz.",
   },
 ];

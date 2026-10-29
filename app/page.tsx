@@ -57,7 +57,7 @@ export default function Home() {
               {person.strasse}, {person.stadt}
             </li>
             <li>
-              Di bis Fr {oeffnungszeiten[0].zeit} · Sa {oeffnungszeiten[1].zeit}
+              Di bis Fr {oeffnungszeiten[0].zeit}
             </li>
             <li>
               <a href={person.instagramLink} target="_blank" rel="noopener">

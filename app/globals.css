@@ -4728,3 +4728,12 @@ body::before {
     font-size: 16px;
   }
 }
+
+/* Über mich Überschrift auf dem Desktop so groß wie die anderen */
+@media (min-width: 900px) {
+  .aboutx .h-center {
+    font-size: clamp(48px, 6vw, 96px) !important;
+    letter-spacing: -0.045em;
+    margin-bottom: 32px !important;
+  }
+}

@@ -5615,3 +5615,34 @@ body::before {
     width: 62% !important;
   }
 }
+
+/* Startbild wieder im Kino Look mit Korn und weichem Glow (ging beim Umbau verloren) */
+.hero4__portrait {
+  position: relative;
+}
+.hero4__portrait .photo {
+  filter: saturate(0.82) contrast(1.12) brightness(1.08) sepia(0.12);
+}
+.hero4__portrait::before,
+.hero4__portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero4__portrait::before {
+  z-index: 1;
+  -webkit-backdrop-filter: blur(16px) brightness(1.05);
+  backdrop-filter: blur(16px) brightness(1.05);
+  mix-blend-mode: screen;
+  opacity: 0.32;
+}
+.hero4__portrait::after {
+  z-index: 2;
+  opacity: 0.5;
+  mix-blend-mode: overlay;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    linear-gradient(160deg, rgb(255 176 104 / 0.55), rgb(40 96 112 / 0.5));
+  background-size: 220px 220px, 100% 100%;
+}

@@ -5481,3 +5481,6 @@ body::before {
     font-size: 12px;
   }
 }
+.hero4__bottom {
+  justify-content: space-between;
+}

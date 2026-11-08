@@ -5689,3 +5689,18 @@ body::before {
     padding-top: 26px;
   }
 }
+
+/* Blonde Specialist richtig fett */
+.hero4__claim,
+.hero4__claim[class] {
+  font-weight: 900 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 0.92 !important;
+  font-size: clamp(34px, 2.6vw + 2vh, 92px) !important;
+}
+@media (max-width: 899px) {
+  .hero4__claim,
+  .hero4__claim[class] {
+    font-size: clamp(32px, 10vw, 54px) !important;
+  }
+}

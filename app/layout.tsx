@@ -11,7 +11,7 @@ const serif = Instrument_Serif({
 
 const sans = Inter({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "400", "500", "700", "900"],
   variable: "--font-sans",
 });
 

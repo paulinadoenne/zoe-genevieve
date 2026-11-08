@@ -5354,3 +5354,56 @@ body::before {
     display: none;
   }
 }
+
+/* Start unten rechts: kompakte Info Tabelle im Interface Stil */
+.hero4__meta {
+  margin: 0;
+  min-width: 300px;
+  border-top: 1px solid #111;
+}
+.hero4__meta > div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid rgb(17 17 17 / 0.18);
+}
+.hero4__meta dt {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #111;
+}
+.hero4__meta dd {
+  margin: 0;
+  font-size: 14px;
+  color: #111;
+}
+@media (max-width: 899px) {
+  .hero4__meta {
+    width: 100%;
+    min-width: 0;
+  }
+  .hero4__meta > div {
+    grid-template-columns: 88px 1fr;
+    padding: 7px 0;
+  }
+}
+@media (min-width: 900px) {
+  .hero4 {
+    grid-template-rows: minmax(0, 1fr) auto;
+    padding-bottom: 22px;
+  }
+  .hero4__stage {
+    width: min(66vw, 72vh);
+  }
+  .hero4__logo {
+    --logo-w: min(66vw, 72vh);
+  }
+  .hero4__portrait {
+    margin-top: calc(-0.34 * min(66vw, 72vh));
+  }
+  .hero4__meta > div {
+    padding: 7px 0;
+  }
+}

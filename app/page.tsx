@@ -49,9 +49,20 @@ export default function Home() {
           </div>
           <div className="hero4__bottom">
             <p className="hero4__claim">Langes, gesundes Haar.</p>
-            <p className="hero4__text">
-              Balayage, Schnitte für langes Haar und Extensions. Mitten in Köln.
-            </p>
+            <dl className="hero4__meta">
+              <div>
+                <dt>Leistungen</dt>
+                <dd>Balayage, Schnitte, Extensions</dd>
+              </div>
+              <div>
+                <dt>Studio</dt>
+                <dd>Venloer Straße 25, Köln</dd>
+              </div>
+              <div>
+                <dt>Termine</dt>
+                <dd>Di bis Fr, 9 bis 18 Uhr</dd>
+              </div>
+            </dl>
           </div>
         </section>
 

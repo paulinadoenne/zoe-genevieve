@@ -5910,3 +5910,7 @@ body::before {
     margin-top: calc(-0.55 * var(--w)) !important;
   }
 }
+/* Über mich Foto: Sättigung etwas zurück, Helligkeit bleibt */
+.aboutx__hero .photo {
+  filter: sepia(0.2) saturate(1.02) hue-rotate(-6deg) contrast(1.2) brightness(0.9) !important;
+}

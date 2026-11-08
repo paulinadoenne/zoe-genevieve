@@ -5780,3 +5780,15 @@ body::before {
     height: 45%;
   }
 }
+@media (min-width: 900px) {
+  .hero4__social {
+    left: auto;
+    right: var(--gutter);
+  }
+}
+/* Symbole mittig über dem Ring ausrichten */
+@media (min-width: 900px) {
+  .hero4__social {
+    right: calc(var(--gutter) + (clamp(120px, 5vw + 7vh, 240px) - clamp(40px, 1.4vw + 1.4vh, 56px)) / 2);
+  }
+}

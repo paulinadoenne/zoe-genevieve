@@ -7,8 +7,8 @@ import { useEffect } from "react";
 // die Enden laufen spitz aus.
 // Die Werte entsprechen der statischen Form in ZoeScript, damit am Ende nichts springt.
 type P = [number, number];
-const WMAX = 84;
-const WMIN = 14;
+const WMAX = 62;
+const WMIN = 26;
 // Richtung eines Abstrichs (Schriftneigung nach unten links)
 const AB_X = -0.5;
 const AB_Y = 0.866;

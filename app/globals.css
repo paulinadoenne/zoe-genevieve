@@ -5704,3 +5704,29 @@ body::before {
     font-size: clamp(32px, 10vw, 54px) !important;
   }
 }
+
+/* Blonde Specialist: wieder normale Stärke, auf dem Desktop gestürzt am linken Rand */
+.hero4__claim,
+.hero4__claim[class] {
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.1 !important;
+  font-size: clamp(20px, 1.3vw + 0.9vh + 4px, 46px) !important;
+}
+@media (min-width: 900px) {
+  .hero4__claim,
+  .hero4__claim[class] {
+    position: absolute;
+    left: var(--gutter);
+    bottom: 28px;
+    margin: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+  }
+}
+@media (min-width: 900px) {
+  .hero4__bottom {
+    justify-content: flex-end !important;
+  }
+}

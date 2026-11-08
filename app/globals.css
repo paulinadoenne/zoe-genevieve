@@ -5803,3 +5803,8 @@ body::before {
     margin-top: clamp(24px, 4vh, 60px);
   }
 }
+@media (min-width: 900px) {
+  .hero4__stage {
+    margin-top: clamp(40px, 7vh, 100px);
+  }
+}

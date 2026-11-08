@@ -6155,3 +6155,82 @@ body::before {
     opacity: 0.8 !important;
   }
 }
+
+/* ============================================================
+   Einheitliche Schriftskala
+   Überschriften: Desktop 86px, Handy 52px (Q&A bewusst größer)
+   Zwischentitel: Desktop 17px, Handy 16px (halbfett)
+   Fließtext:     16px
+   Klein:         13px
+   ============================================================ */
+:root {
+  --fs-titel: 17px;
+  --fs-text: 16px;
+  --fs-klein: 13px;
+}
+@media (max-width: 899px) {
+  :root {
+    --fs-titel: 16px;
+  }
+  .aboutx .h-center,
+  .aboutx .h-center[class] {
+    font-size: 52px !important;
+  }
+}
+
+/* Zwischentitel */
+.faq__item summary,
+.contact .field__label,
+.aboutx__text .aboutx__col .aboutx__p.aboutx__sub,
+.sp__titel {
+  font-size: var(--fs-titel) !important;
+}
+.faq__item summary {
+  font-weight: 600;
+}
+
+/* Fließtext */
+.aboutx__text .aboutx__p:not(.aboutx__sub),
+.faq__item p,
+.contact .field,
+.contact .field a,
+.contact .field__row,
+.aboutx__link,
+.aboutx__text .aboutx__link {
+  font-size: var(--fs-text) !important;
+}
+@media (min-width: 900px) {
+  .aboutx__text .aboutx__p:not(.aboutx__sub),
+  .aboutx__text .aboutx__link {
+    line-height: 1.55 !important;
+  }
+}
+
+/* Klein */
+.sp__text,
+.rondell__label,
+.rondell__label span,
+.contact__legal a {
+  font-size: var(--fs-klein) !important;
+}
+@media (max-width: 899px) {
+  .hero4__caption,
+  .hero4__caption[class] {
+    font-size: 12px !important;
+  }
+}
+/* Kleine Laptops: Über mich Text minimal kleiner, damit der Abschnitt auf einen Bildschirm passt */
+@media (min-width: 900px) and (max-height: 820px) {
+  .aboutx__text .aboutx__p:not(.aboutx__sub),
+  .aboutx__text .aboutx__link {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+  .aboutx__text .aboutx__col .aboutx__p.aboutx__sub,
+  .sp__titel {
+    font-size: 15px !important;
+  }
+  .sp__text {
+    font-size: 12px !important;
+  }
+}

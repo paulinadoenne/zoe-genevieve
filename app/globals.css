@@ -5914,3 +5914,78 @@ body::before {
 .aboutx__hero .photo {
   filter: sepia(0.2) saturate(1.02) hue-rotate(-6deg) contrast(1.2) brightness(0.9) !important;
 }
+
+/* Meine Schwerpunkte: ruhige Tabelle mit Begriff und Erklärung */
+.aboutx__list,
+.aboutx__list[class] {
+  margin: 4px 0 24px;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+.aboutx__list li,
+.aboutx__list li[class] {
+  display: grid !important;
+  grid-template-columns: minmax(96px, 34%) 1fr;
+  align-items: baseline;
+  gap: 16px;
+  padding: 12px 0 !important;
+  border-top: 1px solid rgb(17 17 17 / 0.14);
+  border-bottom: 0;
+  position: relative;
+}
+.aboutx__list li:last-child {
+  border-bottom: 1px solid rgb(17 17 17 / 0.14);
+}
+.aboutx__list li::before {
+  content: none !important;
+}
+.aboutx__list li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 1px;
+  width: 100%;
+  background: var(--menu-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+}
+.aboutx__list li:hover::after {
+  transform: scaleX(1);
+}
+.sp__titel {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.1;
+  color: #111;
+}
+.sp__text {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #111;
+}
+@media (max-width: 899px) {
+  .sp__titel {
+    font-size: 21px;
+  }
+  .sp__text {
+    font-size: 15px;
+  }
+  .aboutx__list li,
+  .aboutx__list li[class] {
+    grid-template-columns: 112px 1fr;
+    padding: 14px 0 !important;
+  }
+}
+@media (min-width: 900px) {
+  .aboutx__text .aboutx__col .aboutx__p.aboutx__sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400 !important;
+    font-size: 22px !important;
+    margin: 18px 0 8px !important;
+  }
+}

@@ -112,7 +112,10 @@ export default function Home() {
               <p className="aboutx__p aboutx__sub">Meine Schwerpunkte</p>
               <ul className="aboutx__list">
                 {ueberMichNeu.schwerpunkte.map((t) => (
-                  <li key={t}>{t}</li>
+                  <li key={t.titel}>
+                    <span className="sp__titel">{t.titel}</span>
+                    <span className="sp__text">{t.text}</span>
+                  </li>
                 ))}
               </ul>
             </div>

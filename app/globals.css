@@ -5668,3 +5668,24 @@ body::before {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
     linear-gradient(170deg, rgb(185 205 165 / 0.14), rgb(45 95 85 / 0.24));
 }
+
+/* Desktop: Ring, ( ZG ) und Menü größer */
+@media (min-width: 900px) {
+  .badge,
+  .badge[class] {
+    width: clamp(120px, 5vw + 7vh, 240px) !important;
+    height: clamp(120px, 5vw + 7vh, 240px) !important;
+  }
+  .header__mark,
+  .menu-btn,
+  .menu-btn__label {
+    font-size: clamp(20px, 0.7vw + 0.7vh + 6px, 34px) !important;
+  }
+  .menu-btn__icon {
+    width: 1.3em;
+    height: 0.5em;
+  }
+  .header {
+    padding-top: 26px;
+  }
+}

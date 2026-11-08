@@ -53,14 +53,14 @@ export default function Home() {
             </p>
           </div>
           <nav className="hero4__social" aria-label="Kontakt">
+            <a href={person.instagramLink} target="_blank" rel="noopener" aria-label="Instagram">
+              <IconInstagram />
+            </a>
             <a href={person.whatsappLink} target="_blank" rel="noopener" aria-label="WhatsApp">
               <IconWhatsApp />
             </a>
             <a href={`mailto:${person.email}`} aria-label="E-Mail">
               <IconMail />
-            </a>
-            <a href={person.instagramLink} target="_blank" rel="noopener" aria-label="Instagram">
-              <IconInstagram />
             </a>
           </nav>
           <div className="hero4__bottom">

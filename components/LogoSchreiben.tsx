@@ -107,7 +107,7 @@ export default function LogoSchreiben() {
 
     const teile = linien.map((l, i) => ({
       // Das o endet in der Verbindung: dort nicht spitz auslaufen lassen
-      geo: vorbereiten(punkte(l.getAttribute("d") || ""), i === 0 ? 0.75 : 0.08),
+      geo: vorbereiten(punkte(l.getAttribute("d") || ""), i === 0 ? 0.35 : 0.08),
       el: tinte[i],
     }));
     const gesamt = teile.reduce((a, t) => a + t.geo.L, 0);

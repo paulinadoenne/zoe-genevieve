@@ -6234,3 +6234,34 @@ body::before {
     font-size: 12px !important;
   }
 }
+
+/* Einheitlich auch auf Impressum, Datenschutz und im Menü */
+.imp__title {
+  font-size: 86px !important;
+  text-transform: none !important;
+  letter-spacing: -0.045em !important;
+  line-height: 1 !important;
+}
+@media (max-width: 899px) {
+  .imp__title {
+    font-size: 52px !important;
+  }
+}
+.imp__block strong {
+  font-weight: 600;
+}
+/* Buttons überall 16px */
+.pill,
+.pill--big,
+.menu__foot .pill,
+.booking__image .pill--big,
+.imp__back {
+  font-size: 16px !important;
+}
+.menu__nr {
+  font-size: var(--fs-klein) !important;
+}
+/* Impressum und Datenschutz: Abstand nach oben auch auf dem Handy */
+main.imp {
+  padding-top: clamp(120px, 20vh, 240px) !important;
+}

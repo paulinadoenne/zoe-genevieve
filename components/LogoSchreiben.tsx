@@ -2,14 +2,17 @@
 
 import { useEffect } from "react";
 
-// Schreibt "zoe" auf der Startseite wie mit einem Füller: die Linie wächst vom z bis
-// zum e, ihre Breite hängt von der Schreibrichtung ab und die Enden laufen spitz aus.
+// Schreibt "zoe" auf der Startseite wie mit einer Spitzfeder (Copperplate Kalligrafie):
+// Abstriche entlang der Schriftneigung schwellen an, Aufstriche bleiben Haarlinien,
+// die Enden laufen spitz aus.
 // Die Werte entsprechen der statischen Form in ZoeScript, damit am Ende nichts springt.
 type P = [number, number];
-const WMAX = 64;
-const WMIN = 30;
-const NIB = (-35 * Math.PI) / 180;
-const TAPER_A = 90;
+const WMAX = 84;
+const WMIN = 14;
+// Richtung eines Abstrichs (Schriftneigung nach unten links)
+const AB_X = -0.5;
+const AB_Y = 0.866;
+const TAPER_A = 150;
 const TAPER_E = 220;
 const ease = (x: number) => Math.sin(Math.min(1, Math.max(0, x)) * (Math.PI / 2));
 
@@ -42,13 +45,14 @@ function vorbereiten(pts: P[]) {
     ty /= l;
     nx.push(-ty);
     ny.push(tx);
-    roh.push(WMIN + (WMAX - WMIN) * Math.abs(Math.sin(Math.atan2(ty, tx) - NIB)));
+    const druck = Math.max(0, tx * AB_X + ty * AB_Y);
+    roh.push(WMIN + (WMAX - WMIN) * Math.pow(druck, 1.4));
   }
   const w = roh.map((_, i) => {
     let sum = 0;
-    for (let k = -20; k <= 20; k++) sum += roh[Math.min(n - 1, Math.max(0, i + k))];
-    const taper = Math.min(0.35 + 0.65 * ease(s[i] / TAPER_A), 0.08 + 0.92 * ease((L - s[i]) / TAPER_E));
-    return (sum / 41) * taper;
+    for (let k = -30; k <= 30; k++) sum += roh[Math.min(n - 1, Math.max(0, i + k))];
+    const taper = Math.min(0.2 + 0.8 * ease(s[i] / TAPER_A), 0.08 + 0.92 * ease((L - s[i]) / TAPER_E));
+    return (sum / 61) * taper;
   });
   return { pts, s, L, nx, ny, w };
 }

@@ -6,6 +6,7 @@ import Motion from "@/components/Motion";
 import Rondell from "@/components/Rondell";
 import HeaderScroll from "@/components/HeaderScroll";
 import LogoSchreiben from "@/components/LogoSchreiben";
+import ScrollBadge from "@/components/ScrollBadge";
 import { IconWhatsApp, IconMail, IconInstagram } from "@/components/Icons";
 import {
   person,
@@ -49,20 +50,7 @@ export default function Home() {
           </div>
           <div className="hero4__bottom">
             <p className="hero4__claim">Langes, gesundes Haar.</p>
-            <dl className="hero4__meta">
-              <div>
-                <dt>Leistungen</dt>
-                <dd>Balayage, Schnitte, Extensions</dd>
-              </div>
-              <div>
-                <dt>Studio</dt>
-                <dd>Venloer Straße 25, Köln</dd>
-              </div>
-              <div>
-                <dt>Termine</dt>
-                <dd>Di bis Fr, 9 bis 18 Uhr</dd>
-              </div>
-            </dl>
+            <ScrollBadge />
           </div>
         </section>
 

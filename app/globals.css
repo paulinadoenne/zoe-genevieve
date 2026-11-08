@@ -5315,3 +5315,18 @@ body::before {
 @keyframes logo-sicher {
   to { opacity: 1; }
 }
+
+/* Logo ist jetzt die geglättete Linie selbst: gleichmäßig und weich,
+   der alte gefüllte Umriss mit unruhigen Kanten wird nicht mehr gezeigt */
+.zoe-fill {
+  display: none;
+}
+.zoe-linie {
+  opacity: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero4__logo .zoe-linie {
+    opacity: 0;
+    animation: logo-sicher 0s linear 6s forwards;
+  }
+}

@@ -37,9 +37,8 @@ export default function LogoSchreiben() {
   useEffect(() => {
     const svg = document.querySelector<SVGSVGElement>(".hero4__logo .logo__script");
     const linien = svg ? Array.from(svg.querySelectorAll<SVGPathElement>(".zoe-linie")) : [];
-    const fill = svg?.querySelector<SVGPathElement>(".zoe-fill");
     const name = document.querySelector<HTMLElement>(".hero4__logo .logo__name");
-    if (!svg || !linien.length || !fill) return;
+    if (!svg || !linien.length) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const teile = linien.map((l) => {
@@ -52,11 +51,11 @@ export default function LogoSchreiben() {
     });
     const gesamt = teile.reduce((a, t) => a + t.laenge, 0);
 
-    fill.style.opacity = "0";
     if (name) name.style.opacity = "0";
     teile.forEach((t) => {
       t.l.setAttribute("d", "");
       t.l.style.opacity = "1";
+      t.l.style.animation = "none";
     });
 
     const dauer = 3400;
@@ -66,12 +65,6 @@ export default function LogoSchreiben() {
 
     const fertig = () => {
       teile.forEach((t) => t.l.setAttribute("d", t.original));
-      fill.style.transition = "opacity 0.5s ease";
-      fill.style.opacity = "1";
-      teile.forEach((t) => {
-        t.l.style.transition = "opacity 0.5s ease";
-        t.l.style.opacity = "0";
-      });
       if (name) {
         name.style.transition = "opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s";
         name.style.transform = "none";

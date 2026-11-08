@@ -47,9 +47,12 @@ export default function Home() {
             <div className="hero4__portrait">
               <Photo src="/zoe-portrait.jpg" alt="Zoe Genevieve im Strickpulli" />
             </div>
+            <p className="hero4__caption">
+              <span>Master Hairstylist</span>
+              <span>Köln</span>
+            </p>
           </div>
           <div className="hero4__bottom">
-            <p className="hero4__claim">Langes, gesundes Haar.</p>
             <ScrollBadge />
           </div>
         </section>

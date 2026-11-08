@@ -6,8 +6,8 @@ import { useEffect } from "react";
 // zum e, ihre Breite hängt von der Schreibrichtung ab und die Enden laufen spitz aus.
 // Die Werte entsprechen der statischen Form in ZoeScript, damit am Ende nichts springt.
 type P = [number, number];
-const WMAX = 74;
-const WMIN = 20;
+const WMAX = 64;
+const WMIN = 30;
 const NIB = (-35 * Math.PI) / 180;
 const TAPER_A = 90;
 const TAPER_E = 220;
@@ -46,24 +46,49 @@ function vorbereiten(pts: P[]) {
   }
   const w = roh.map((_, i) => {
     let sum = 0;
-    for (let k = -7; k <= 7; k++) sum += roh[Math.min(n - 1, Math.max(0, i + k))];
+    for (let k = -20; k <= 20; k++) sum += roh[Math.min(n - 1, Math.max(0, i + k))];
     const taper = Math.min(0.35 + 0.65 * ease(s[i] / TAPER_A), 0.08 + 0.92 * ease((L - s[i]) / TAPER_E));
-    return (sum / 15) * taper;
+    return (sum / 41) * taper;
   });
   return { pts, s, L, nx, ny, w };
 }
 
+// Strich als Kette aus Kreisen und Verbindungsstücken mit gleicher Drehrichtung.
+// So bleibt die Form an scharfen Kurven lückenlos und die Kanten sind glatt.
+function kreis(x: number, y: number, r: number) {
+  const R = r.toFixed(1);
+  return `M ${(x + r).toFixed(1)} ${y.toFixed(1)} A ${R} ${R} 0 1 1 ${(x - r).toFixed(1)} ${y.toFixed(1)} A ${R} ${R} 0 1 1 ${(x + r).toFixed(1)} ${y.toFixed(1)} Z`;
+}
+
 function umriss(t: ReturnType<typeof vorbereiten>, bis: number) {
   if (bis <= 0) return "";
-  const links: string[] = [];
-  const rechts: string[] = [];
+  const out: string[] = [];
+  let prev = -1;
   for (let i = 0; i < t.pts.length && t.s[i] <= bis; i++) {
-    const h = t.w[i] / 2;
-    links.push(`${(t.pts[i][0] + t.nx[i] * h).toFixed(1)} ${(t.pts[i][1] + t.ny[i] * h).toFixed(1)}`);
-    rechts.push(`${(t.pts[i][0] - t.nx[i] * h).toFixed(1)} ${(t.pts[i][1] - t.ny[i] * h).toFixed(1)}`);
+    const [x, y] = t.pts[i];
+    const r = Math.max(t.w[i] / 2, 0.4);
+    out.push(kreis(x, y, r));
+    if (prev >= 0) {
+      const [px, py] = t.pts[prev];
+      const pr = Math.max(t.w[prev] / 2, 0.4);
+      let dx = x - px;
+      let dy = y - py;
+      const l = Math.hypot(dx, dy) || 1;
+      dx /= l;
+      dy /= l;
+      const q = [
+        [px - dy * pr, py + dx * pr],
+        [x - dy * r, y + dx * r],
+        [x + dy * r, y - dx * r],
+        [px + dy * pr, py - dx * pr],
+      ];
+      const area = q.reduce((a, p, k) => a + p[0] * q[(k + 1) % 4][1] - q[(k + 1) % 4][0] * p[1], 0);
+      if (area < 0) q.reverse();
+      out.push(`M ${q.map((p) => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(" L ")} Z`);
+    }
+    prev = i;
   }
-  if (links.length < 2) return "";
-  return `M ${links.join(" L ")} L ${rechts.reverse().join(" L ")} Z`;
+  return out.join(" ");
 }
 
 const sanft = (t: number) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
@@ -75,14 +100,22 @@ export default function LogoSchreiben() {
     const tinte = svg ? Array.from(svg.querySelectorAll<SVGPathElement>(".zoe-tinte")) : [];
     const name = document.querySelector<HTMLElement>(".hero4__logo .logo__name");
     if (!svg || !linien.length || linien.length !== tinte.length) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const teile = linien.map((l, i) => ({
       geo: vorbereiten(punkte(l.getAttribute("d") || "")),
       el: tinte[i],
-      original: tinte[i].getAttribute("d") || "",
     }));
     const gesamt = teile.reduce((a, t) => a + t.geo.L, 0);
+    svg.classList.add("ist-tinte");
+
+    // Ohne Animation: Füllerform sofort fertig zeigen
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      teile.forEach((t) => {
+        t.el.setAttribute("d", umriss(t.geo, t.geo.L));
+        t.el.style.opacity = "1";
+      });
+      return;
+    }
 
     teile.forEach((t) => {
       t.el.setAttribute("d", "");
@@ -109,7 +142,7 @@ export default function LogoSchreiben() {
         raf = requestAnimationFrame(schritt);
         return;
       }
-      teile.forEach((t) => t.el.setAttribute("d", t.original));
+      teile.forEach((t) => t.el.setAttribute("d", umriss(t.geo, t.geo.L)));
       if (name) {
         name.style.transition = "opacity 0.8s ease 0.15s, transform 0.8s ease 0.15s";
         name.style.transform = "none";

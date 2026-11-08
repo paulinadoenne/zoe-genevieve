@@ -5341,3 +5341,16 @@ body::before {
     animation: logo-sicher 0s linear 6s forwards;
   }
 }
+
+/* Ohne JavaScript zeigt das Logo die einfache Linie, mit JavaScript den Füllerstrich */
+.zoe-linie {
+  display: inline;
+}
+.logo__script.ist-tinte .zoe-linie {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero4__logo .zoe-linie {
+    display: none;
+  }
+}

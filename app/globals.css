@@ -5792,3 +5792,14 @@ body::before {
     right: calc(var(--gutter) + (clamp(120px, 5vw + 7vh, 240px) - clamp(40px, 1.4vw + 1.4vh, 56px)) / 2);
   }
 }
+/* Symbole direkt über dem Ring, Logo etwas tiefer */
+@media (min-width: 900px) {
+  .hero4__social {
+    top: auto;
+    transform: none;
+    bottom: calc(28px + clamp(120px, 5vw + 7vh, 240px) + 18px);
+  }
+  .hero4__stage {
+    margin-top: clamp(24px, 4vh, 60px);
+  }
+}

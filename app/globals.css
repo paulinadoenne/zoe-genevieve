@@ -5898,3 +5898,15 @@ body::before {
     linear-gradient(180deg, rgb(230 190 120 / 0.1), rgb(90 110 70 / 0.18)) !important;
   mix-blend-mode: multiply !important;
 }
+
+/* Desktop: Logo etwas größer, Foto bleibt gleich groß und links bündig */
+@media (min-width: 900px) {
+  .hero4__logo,
+  .hero4__logo[class] {
+    --logo-w: calc(var(--w) * 1.14) !important;
+  }
+  .hero4__portrait,
+  .hero4__portrait[class] {
+    margin-top: calc(-0.55 * var(--w)) !important;
+  }
+}

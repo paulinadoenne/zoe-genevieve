@@ -5495,3 +5495,44 @@ body::before {
 .badge:hover .badge__pfeil {
   stroke: #111;
 }
+
+/* Startseite: Bild und Schriftzug etwas größer */
+@media (min-width: 900px) {
+  .hero4__stage {
+    width: min(76vw, 90vh);
+  }
+  .hero4__logo {
+    --logo-w: min(76vw, 90vh);
+  }
+  .hero4__portrait {
+    margin-top: calc(-0.34 * min(76vw, 90vh));
+  }
+}
+@media (max-width: 899px) {
+  .hero4__stage {
+    width: 100vw;
+    margin-left: calc(-1 * var(--gutter) + 6px);
+  }
+  .hero4__logo {
+    --logo-w: 98vw;
+  }
+  .hero4__portrait {
+    width: 66%;
+    margin-top: calc(-0.34 * 98vw);
+  }
+  .hero4__caption {
+    width: 66%;
+  }
+}
+@media (max-width: 899px) {
+  .hero4__stage {
+    width: calc(100vw - 2 * var(--gutter) + 8px);
+    margin-left: -4px;
+  }
+  .hero4__logo {
+    --logo-w: calc(100vw - 2 * var(--gutter) + 8px);
+  }
+  .hero4__portrait {
+    margin-top: calc(-0.34 * (100vw - 2 * var(--gutter) + 8px));
+  }
+}

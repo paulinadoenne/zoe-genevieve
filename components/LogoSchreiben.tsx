@@ -27,7 +27,7 @@ function punkte(d: string): P[] {
   return pts;
 }
 
-function vorbereiten(pts: P[]) {
+function vorbereiten(pts: P[], endeSpitz = 0.08) {
   const n = pts.length;
   const s = [0];
   for (let i = 1; i < n; i++) s.push(s[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
@@ -51,7 +51,7 @@ function vorbereiten(pts: P[]) {
   const w = roh.map((_, i) => {
     let sum = 0;
     for (let k = -30; k <= 30; k++) sum += roh[Math.min(n - 1, Math.max(0, i + k))];
-    const taper = Math.min(0.2 + 0.8 * ease(s[i] / TAPER_A), 0.08 + 0.92 * ease((L - s[i]) / TAPER_E));
+    const taper = Math.min(0.2 + 0.8 * ease(s[i] / TAPER_A), endeSpitz + (1 - endeSpitz) * ease((L - s[i]) / TAPER_E));
     return (sum / 61) * taper;
   });
   return { pts, s, L, nx, ny, w };
@@ -106,7 +106,8 @@ export default function LogoSchreiben() {
     if (!svg || !linien.length || linien.length !== tinte.length) return;
 
     const teile = linien.map((l, i) => ({
-      geo: vorbereiten(punkte(l.getAttribute("d") || "")),
+      // Das o endet in der Verbindung: dort nicht spitz auslaufen lassen
+      geo: vorbereiten(punkte(l.getAttribute("d") || ""), i === 0 ? 0.75 : 0.08),
       el: tinte[i],
     }));
     const gesamt = teile.reduce((a, t) => a + t.geo.L, 0);

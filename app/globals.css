@@ -5887,3 +5887,14 @@ body::before {
     margin-top: calc(-0.46 * var(--w)) !important;
   }
 }
+
+/* Über mich Foto: heller Ausgangsbild, daher dunkler und satter abgestimmt */
+.aboutx__hero .photo {
+  filter: sepia(0.22) saturate(1.25) hue-rotate(-6deg) contrast(1.2) brightness(0.9) !important;
+}
+.aboutx__hero::before {
+  background:
+    linear-gradient(rgb(50 60 35 / 0.14), rgb(50 60 35 / 0.14)),
+    linear-gradient(180deg, rgb(230 190 120 / 0.1), rgb(90 110 70 / 0.18)) !important;
+  mix-blend-mode: multiply !important;
+}

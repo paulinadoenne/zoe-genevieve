@@ -5484,3 +5484,14 @@ body::before {
 .hero4__bottom {
   justify-content: space-between;
 }
+.badge {
+  display: block;
+  text-decoration: none;
+  transition: transform 0.3s var(--ease);
+}
+.badge:hover {
+  transform: scale(1.06);
+}
+.badge:hover .badge__pfeil {
+  stroke: #111;
+}

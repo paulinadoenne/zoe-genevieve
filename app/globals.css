@@ -5536,3 +5536,82 @@ body::before {
     margin-top: calc(-0.34 * (100vw - 2 * var(--gutter) + 8px));
   }
 }
+
+/* ============================================================
+   Startseite fließend für jede Bildschirmgröße:
+   Logo und Bild skalieren aus Breite UND Höhe des Bildschirms,
+   Texte, Kopfzeile und Ring wachsen mit.
+   ============================================================ */
+.hero4 {
+  --w: min(calc(100vw - 2 * var(--gutter)), calc((100svh - 240px) / 0.98), 1500px);
+}
+.hero4__stage,
+.hero4__stage[class] {
+  width: var(--w) !important;
+  margin-left: 0 !important;
+  justify-self: center;
+}
+.hero4__logo,
+.hero4__logo[class] {
+  --logo-w: var(--w) !important;
+}
+.hero4__portrait,
+.hero4__portrait[class] {
+  width: 54% !important;
+  margin: calc(-0.34 * var(--w)) 0 0 4% !important;
+}
+.hero4__caption,
+.hero4__caption[class] {
+  width: 54% !important;
+  margin-left: 4% !important;
+  font-size: clamp(11px, 0.45vw + 0.4vh + 4px, 20px) !important;
+}
+.hero4__claim,
+.hero4__claim[class] {
+  font-size: clamp(20px, 1.3vw + 0.9vh + 4px, 46px) !important;
+}
+.badge,
+.badge[class] {
+  width: clamp(84px, 4vw + 5vh, 190px) !important;
+  height: clamp(84px, 4vw + 5vh, 190px) !important;
+}
+.header__mark,
+.menu-btn,
+.menu-btn__label {
+  font-size: clamp(16px, 0.5vw + 0.5vh + 6px, 28px) !important;
+}
+
+/* Tablet Hochformat und kleine Laptops: Kopfzeile wie überall (ZG links, Menü rechts) */
+@media (min-width: 761px) and (max-width: 899px) {
+  .header {
+    justify-content: space-between !important;
+  }
+  .header__mark {
+    display: block !important;
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .menu-btn {
+    flex-direction: row !important;
+  }
+  .menu-btn__icon {
+    display: none;
+  }
+}
+.hero4 {
+  --w: min(calc(100vw - 2 * var(--gutter)), calc((100svh - 200px) / 0.92), 1500px);
+}
+.hero4__caption {
+  gap: 12px;
+}
+@media (max-width: 899px) {
+  .hero4__portrait,
+  .hero4__portrait[class] {
+    width: 62% !important;
+  }
+  .hero4__caption,
+  .hero4__caption[class] {
+    width: 62% !important;
+  }
+}

@@ -52,6 +52,17 @@ export default function Home() {
               <span>Master Hairstylist</span>
             </p>
           </div>
+          <nav className="hero4__social" aria-label="Kontakt">
+            <a href={person.whatsappLink} target="_blank" rel="noopener" aria-label="WhatsApp">
+              <IconWhatsApp />
+            </a>
+            <a href={`mailto:${person.email}`} aria-label="E-Mail">
+              <IconMail />
+            </a>
+            <a href={person.instagramLink} target="_blank" rel="noopener" aria-label="Instagram">
+              <IconInstagram />
+            </a>
+          </nav>
           <div className="hero4__bottom">
             <p className="hero4__claim">Blonde Specialist in Köln.</p>
             <ScrollBadge />

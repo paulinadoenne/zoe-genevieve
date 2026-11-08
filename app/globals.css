@@ -5730,3 +5730,53 @@ body::before {
     justify-content: flex-end !important;
   }
 }
+
+/* Blonde Specialist wieder waagerecht unten links */
+@media (min-width: 900px) {
+  .hero4__claim,
+  .hero4__claim[class] {
+    position: static;
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .hero4__bottom {
+    justify-content: space-between !important;
+  }
+}
+
+/* Kontakt Symbole senkrecht am linken Rand (Desktop) */
+.hero4__social {
+  display: none;
+}
+@media (min-width: 900px) {
+  .hero4__social {
+    position: absolute;
+    left: var(--gutter);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 6;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .hero4__social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(40px, 1.4vw + 1.4vh, 56px);
+    height: clamp(40px, 1.4vw + 1.4vh, 56px);
+    border: 1px solid rgb(17 17 17 / 0.3);
+    border-radius: 50%;
+    color: #111;
+    transition: background 0.25s, color 0.25s, border-color 0.25s;
+  }
+  .hero4__social a:hover {
+    background: #111;
+    border-color: #111;
+    color: #fff;
+  }
+  .hero4__social svg {
+    width: 45%;
+    height: 45%;
+  }
+}

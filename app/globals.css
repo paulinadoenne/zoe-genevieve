@@ -5330,3 +5330,14 @@ body::before {
     animation: logo-sicher 0s linear 6s forwards;
   }
 }
+
+/* Füllerstrich: die Mittellinie dient nur als Vorlage, sichtbar ist die Tinte */
+.zoe-linie {
+  display: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .hero4__logo .zoe-tinte {
+    opacity: 0;
+    animation: logo-sicher 0s linear 6s forwards;
+  }
+}

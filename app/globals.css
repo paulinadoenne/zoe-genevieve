@@ -6347,3 +6347,23 @@ main.imp {
     margin-bottom: 44px !important;
   }
 }
+
+/* Schwerpunkte: breite Karte jetzt unten (Schnitte) */
+.aboutx__list li:first-child {
+  grid-column: auto !important;
+}
+.aboutx__list li:last-child {
+  grid-column: 1 / -1 !important;
+}
+/* Link in Q&A Antworten */
+.faq__link {
+  display: inline-block;
+  margin-top: 6px;
+  color: #111;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.faq__link:hover {
+  color: var(--menu-orange);
+}

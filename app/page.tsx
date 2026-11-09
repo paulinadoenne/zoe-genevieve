@@ -152,7 +152,17 @@ export default function Home() {
                   <span>{f.frage}</span>
                   <span className="faq__icon" aria-hidden />
                 </summary>
-                <p>{f.antwort}</p>
+                <p>
+                  {f.antwort}
+                  {"link" in f && f.link && (
+                    <>
+                      {" "}
+                      <a href={f.link.href} className="faq__link" target="_blank" rel="noopener">
+                        {f.link.label} ↗
+                      </a>
+                    </>
+                  )}
+                </p>
               </details>
             ))}
           </div>

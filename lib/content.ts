@@ -64,11 +64,11 @@ export const ueberMichNeu = {
     "Hi, ich bin Zoe, deine Expertin für langes, gesundes Haar. Mein Anspruch ist, dass sich deine Haare so gut anfühlen, wie sie aussehen.",
   ],
   schwerpunkte: [
-    { titel: "Schnitte", text: "Modern, für langes Haar mit Bewegung und Leichtigkeit" },
     { titel: "Balayage", text: "Natürliche Farbverläufe" },
     { titel: "Strähnen", text: "Fein gesetzt, auch als Airtouch" },
     { titel: "Styling", text: "Typgerechte Stylings und Blowouts" },
     { titel: "Extensions", text: "Weft-Technik für mehr Länge und Volumen" },
+    { titel: "Schnitte", text: "Modern, für langes Haar mit Bewegung und Leichtigkeit" },
   ],
   outro: [
     "Jeder Look entsteht bei mir mit Blick auf deinen Haartyp, deine Gesichtsform und deinen Alltag. Das Ergebnis soll nicht nur im Salon überzeugen, sondern auch zu Hause leicht zu stylen sein. Dafür nehme ich mir Zeit für eine ehrliche Beratung und verwende hochwertige Produkte von Milbon.",
@@ -82,6 +82,7 @@ export const fragen = [
   {
     frage: "Wie buche ich einen Termin?",
     antwort: "Ganz einfach online über Planity. Dort siehst du alle freien Termine und kannst direkt die passende Leistung auswählen.",
+    link: { href: "https://www.planity.com/de-DE/zoe-genevieve-hair-50667-koln", label: "Jetzt Termin buchen" },
   },
   {
     frage: "Ist eine Beratung im Termin enthalten?",

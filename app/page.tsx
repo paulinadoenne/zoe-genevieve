@@ -120,13 +120,10 @@ export default function Home() {
               </ul>
             </div>
             <div className="aboutx__col">
-              {ueberMichNeu.outro.map((t, i) => (
-                <div key={t} className="aboutx__block">
-                  {ueberMichNeu.outroTitel[i] && (
-                    <p className="aboutx__label">{ueberMichNeu.outroTitel[i]}</p>
-                  )}
-                  <p className="aboutx__p">{t}</p>
-                </div>
+              {ueberMichNeu.outro.map((t) => (
+                <p key={t} className="aboutx__p">
+                  {t}
+                </p>
               ))}
               <a
                 href={person.buchungsLink}

@@ -6336,3 +6336,14 @@ main.imp {
     padding: 10px 0 10px 10px;
   }
 }
+
+/* Handy: Einleitung bei Über mich luftiger setzen */
+@media (max-width: 899px) {
+  .aboutx__col:first-child > .aboutx__p:first-child {
+    font-size: 22px !important;
+    line-height: 1.45 !important;
+    letter-spacing: 0.01em !important;
+    word-spacing: 0.06em;
+    margin-bottom: 44px !important;
+  }
+}

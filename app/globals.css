@@ -6367,3 +6367,11 @@ main.imp {
 .faq__link:hover {
   color: var(--menu-orange);
 }
+/* Handy: Einleitung näher an der Textgröße */
+@media (max-width: 899px) {
+  .aboutx__col:first-child > .aboutx__p:first-child {
+    font-size: 19px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 36px !important;
+  }
+}

@@ -6336,3 +6336,81 @@ main.imp {
     padding: 10px 0 10px 10px;
   }
 }
+
+/* Zwischenzeilen nur auf dem Handy */
+.aboutx__label {
+  display: none;
+}
+
+/* ============================================================
+   Handy: mehr Luft und klarere Gliederung bei Über mich
+   ============================================================ */
+@media (max-width: 899px) {
+  :root {
+    --gutter: 24px;
+  }
+  .aboutx {
+    padding-top: 112px !important;
+    padding-bottom: 120px !important;
+  }
+  .aboutx .h-center {
+    margin-bottom: 32px !important;
+  }
+  .aboutx__text {
+    margin-top: 44px !important;
+  }
+  .aboutx__col:first-child > .aboutx__p:first-child {
+    margin-bottom: 56px !important;
+  }
+  .aboutx__text .aboutx__col .aboutx__p.aboutx__sub {
+    margin-bottom: 16px !important;
+  }
+
+  /* Schwerpunkte: eine Spalte, Begriff links, Text rechts */
+  .aboutx__list,
+  .aboutx__list[class] {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-bottom: 56px !important;
+  }
+  .aboutx__list li,
+  .aboutx__list li[class],
+  .aboutx__list li:last-child {
+    display: grid !important;
+    grid-template-columns: 104px 1fr;
+    align-items: baseline;
+    gap: 12px;
+    padding: 16px 16px !important;
+  }
+  .aboutx__list li:first-child {
+    grid-column: auto;
+  }
+
+  /* Fließtext in Blöcken mit kleiner Zwischenzeile */
+  .aboutx__col:last-child {
+    padding-top: 40px !important;
+  }
+  .aboutx__block {
+    margin-bottom: 40px;
+  }
+  .aboutx__label {
+    display: block;
+    margin: 0 0 8px;
+    font-size: var(--fs-titel);
+    font-weight: 600;
+    color: #111;
+  }
+  .aboutx__block .aboutx__p {
+    margin: 0 !important;
+    line-height: 1.65 !important;
+  }
+  .aboutx__block:last-of-type .aboutx__p {
+    font-family: var(--sans) !important;
+    font-style: normal !important;
+    font-weight: 600 !important;
+    font-size: var(--fs-text) !important;
+  }
+  .aboutx__block:last-of-type {
+    margin-bottom: 24px;
+  }
+}

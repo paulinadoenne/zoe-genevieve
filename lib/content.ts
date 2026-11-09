@@ -70,6 +70,8 @@ export const ueberMichNeu = {
     { titel: "Styling", text: "Typgerechte Stylings und Blowouts" },
     { titel: "Extensions", text: "Weft-Technik für mehr Länge und Volumen" },
   ],
+  // Kleine Zwischenzeilen, nur auf dem Handy sichtbar
+  outroTitel: ["Beratung", "Nur 1:1", ""],
   outro: [
     "Jeder Look entsteht bei mir mit Blick auf deinen Haartyp, deine Gesichtsform und deinen Alltag. Das Ergebnis soll nicht nur im Salon überzeugen, sondern auch zu Hause leicht zu stylen sein. Dafür nehme ich mir Zeit für eine ehrliche Beratung und verwende hochwertige Produkte von Milbon.",
     "Ich arbeite ausschließlich 1:1. So bekommst du meine volle Aufmerksamkeit von der Beratung bis zum Finish. Du kannst dich entspannt zurücklehnen und den Termin als kleine Auszeit genießen. Ob wir dabei ins Gespräch kommen oder du lieber abschaltest, entscheidest ganz du.",

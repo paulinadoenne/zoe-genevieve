@@ -54,12 +54,14 @@ export default function Header() {
         </nav>
         <button
           className="menu-btn"
+          aria-label={open ? "Menü schließen" : "Menü öffnen"}
           aria-expanded={open}
           aria-controls="menu"
           onClick={() => setOpen(!open)}
         >
           <span className="menu-btn__label">{open ? "Schließen" : "Menü"}</span>
           <span className="menu-btn__icon" aria-hidden>
+            <i />
             <i />
             <i />
           </span>

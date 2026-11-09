@@ -6300,3 +6300,39 @@ main.imp {
     margin: 0 0 18px !important;
   }
 }
+
+/* Menü Symbol: Desktop zwei Striche mit Text, Handy drei Striche ohne Text */
+.menu-btn__icon i:nth-child(2) {
+  display: none;
+}
+@media (max-width: 899px) {
+  .menu-btn__label {
+    display: none !important;
+  }
+  .menu-btn__icon,
+  .menu-btn__icon[class] {
+    display: block !important;
+    position: relative;
+    width: 26px;
+    height: 18px;
+  }
+  .menu-btn__icon i {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.35s var(--ease), top 0.35s var(--ease), opacity 0.2s;
+  }
+  .menu-btn__icon i:nth-child(1) { top: 0; }
+  .menu-btn__icon i:nth-child(2) { top: 8px; }
+  .menu-btn__icon i:nth-child(3) { top: 16px; }
+  .is-open .menu-btn__icon i:nth-child(1) { top: 8px; transform: rotate(45deg); }
+  .is-open .menu-btn__icon i:nth-child(2) { opacity: 0; }
+  .is-open .menu-btn__icon i:nth-child(3) { top: 8px; transform: rotate(-45deg); }
+  .menu-btn {
+    padding: 10px 0 10px 10px;
+  }
+}
